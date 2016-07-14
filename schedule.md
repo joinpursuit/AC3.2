@@ -2,20 +2,20 @@
 
 |  Date      |Warmup|Challenge| Lesson |Check-in|
 |:----------:|:--------:|:--:|:--|:--:|
-| 2016-07-18 ||| [Environment & Tools](lessons/env-and-tools)<br> [Intro to Pair Programming](lessons/pair-programming) ||
-| 2016-07-19 |||  ||
-| 2016-07-20 |||  ||
-| 2016-07-21 |||  ||
-| 2016-07-22 |||  |&nbsp;|
+| 2016-08-15 ||| [Environment & Tools](lessons/env-and-tools)<br> [Intro to Pair Programming](lessons/pair-programming) ||
+| 2016-08-16 |||  ||
+| 2016-08-17 |||  ||
+| 2016-08-18 |||  ||
+| 2016-08-19 |||  |&nbsp;|
 
 **Homework:**
 
 |  Date      |Warmup|Challenge| Lesson |Check-in|
 |:----------:|:--------:|:--:|:--|:--:|
-| 2016-07-25 |||  ||
-| 2016-07-26 |||  ||
-| 2016-07-27 |||  ||
-| 2016-07-28 |||  ||
-| 2016-07-29 ||| [Assessment]() |&nbsp;|
+| 2016-08-22 |||  ||
+| 2016-08-23 |||  ||
+| 2016-08-24 |||  ||
+| 2016-08-25 |||  ||
+| 2016-08-26 ||| [Assessment]() |&nbsp;|
 
 **Homework:**
