@@ -9,4 +9,4 @@
 4. When download is complete, open *Xcode* from your Applications folder. 
 5. The first time you open *Xcode* it’ll ask to install some additional components, allow it.
 6. Once complete, you should see a “Welcome to Xcode” screen. 
-7. Congratulations! You have successfully downloaded Xcode. Now you’re able to do the [pre-work assignment] (..C4Q/AC3.2/lessons/prework)
+7. Congratulations! You have successfully downloaded Xcode. Now you’re able to do the [pre-work assignment] (https://github.com/C4Q/AC3.2/blob/master/lessons/prework)
