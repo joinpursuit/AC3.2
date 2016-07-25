@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # How To Download Xcode
 
 1. From your Macbook, open the App Store.
@@ -11,11 +10,5 @@
 5. The first time you open *Xcode* it’ll ask to install some additional components, allow it.
 6. Once complete, you should see a “Welcome to Xcode” screen. 
 7. Congratulations! You have successfully downloaded Xcode. Now you’re able to do the pre-work assignment in directory: /lessons/prework 
-=======
-# put instructions here
 
 
-#I'm making edits!
-
-##Markdown is hard to read!
->>>>>>> upstream/master
