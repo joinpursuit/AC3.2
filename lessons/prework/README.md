@@ -7,6 +7,8 @@
 5. [Playgrounds and getting your feet wet](http://codewithchris.com/2-playgrounds-and-getting-your-feet-wet/)
 
 ###Complete as many challenges as you can in each of the following games:
+Try to do at least the first 4-5 levels in each game
+
 1. [Puzzle](https://blockly-games.appspot.com/puzzle?lang=en)
 2. [Maze](https://blockly-games.appspot.com/maze?lang=en)
 3. [Bird](https://blockly-games.appspot.com/bird?lang=en)
