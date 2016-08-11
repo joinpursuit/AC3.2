@@ -29,7 +29,7 @@ Try to do at least the first 4-5 levels in each game
 2. Copy and paste the code below into [repl.it](https://repl.it/languages/swift), then solve each problem.
 
 ```swift
-// Example Problem: Declare a constant called "c4qHQ" that holds the string "Long Island City". 
+// Example Problem: Declare a constant called "c4qHQ" that holds the string "Long Island City".
 // Then print it.
 
 let c4qHQ = "Long Island City"
@@ -52,25 +52,25 @@ print(c4qHQ)
 
 let aboutMe = "My name is \() and I'm \() years old."
 
-// Problem 8. Using the code below, Create variables called "myBestFriendsName" 
-// and "myBestFriendsAge" and give them both appropriate values. 
+// Problem 8. Using the code below, Create variables called "myBestFriendsName"
+// and "myBestFriendsAge" and give them both appropriate values.
 // Insert the correct variables inside the (). Print "bestFriend".
 
 let bestFriend = "My best friend is \() years old and her name is \()."
 
 // Problem 9. Create a Bool variable called "aliensAreReal", give it a value and print it.
 
-// Problem 10. Describe your hometown. 
-// a. Create a string called "townName" which holds your town's name. 
+// Problem 10. Describe your hometown.
+// a. Create a string called "townName" which holds your town's name.
 
-// b. Create an integer variable called "population" and give it a value. 
+// b. Create an integer variable called "population" and give it a value.
 
-// c. (Why should "population" be a variable instead of a constant?) 
+// c. (Why should "population" be a variable instead of a constant?)
 // Answer (not code):
 
-// d. Create a constant called "numberOfSchools" and give it a value. 
+// d. Create a constant called "numberOfSchools" and give it a value.
 
-// e. Using the code below, create a variable called "townDescription" below and 
+// e. Using the code below, create a variable called "townDescription" below and
 //    insert the correct constant or variable, then print.
 
 let townDescription = "My hometown is \() and has a population of \(). There are \() schools in town."
