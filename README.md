@@ -9,5 +9,5 @@ complete it before class begins on Monday, August 15.
 
 The first week or so has objectives for each subject. Later lessons will be added as we go.
 
-Hi my name is Leandro
+Hello my name is Leandro
 - [Lesson Schedule](schedule.md)
