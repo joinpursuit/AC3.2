@@ -80,3 +80,5 @@ The dollar sign just indicates that it's a terminal command.  Don't type the "$"
 7) Make sure the left side is the original and the right side is your version
 ![Pull Request Comparison Check Image]
 (resources/CompareCheck.png)
+
+Hi my names is Margaret.
