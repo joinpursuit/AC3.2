@@ -10,3 +10,5 @@ complete it before class begins on Monday, August 15.
 The first week or so has objectives for each subject. Later lessons will be added as we go.
 
 - [Lesson Schedule](schedule.md)
+
+My name is Tom and I'm from London's Long Island.
