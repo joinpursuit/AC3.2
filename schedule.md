@@ -1,6 +1,6 @@
 | Unit|Week|Date|Prework|Lesson|Prework HW Quiz|Midday Check-in|Pair Programming Checkin|
 |--- |---| ---|---|---|---|---|---|
-| 1|1|2016-08-15| (1) Complete all readings under ["Resources"](lessons/env-and-tools).  (2) Read and sign your terms and conditions form and pay it forwords form. (3) Read the [student handbook](https://docs.google.com/document/d/18gpBDlm3ARrIYHF69AlOCXwVaimQX-D7gzicdoYkJ1M/edit?usp=sharing). | [Environment, Tools & Resources, Pair programming](lessons/env-and-tools) | [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|1|2016-08-15| (1) Complete all readings under ["Resources"](lessons/env-and-tools).  (2) Read and sign your Terms and Conditions and Pay it Forward forms. (3) Read the [student handbook](https://docs.google.com/document/d/18gpBDlm3ARrIYHF69AlOCXwVaimQX-D7gzicdoYkJ1M/edit?usp=sharing). | [Environment, Tools & Resources, Pair programming](lessons/env-and-tools) | [Link](/link) | [Link](/link) | [Link](/link) |
 | 1|1|2016-08-16| Prework Link |[Variables/constants, interpolation, logic](/lessons/variables-and-logic) | [Link](/link) | [Link](/link) | [Link](/link) |
 | 1|1|2016-08-17| Prework Link | [Conditionals, Advanced conditionals](/lessons/conditionals) | [Link](/link) | [Link](/link) | [Link](/link) |
 | 1|1|2016-08-18| Prework Link |[Numbers & operations](/lessons/numbers)| [Link](/link) | [Link](/link) | [Link](/link) |
