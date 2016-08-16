@@ -11,4 +11,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-What up Gabriel!!? You are at C4Q! 
+What up Gabriel!!? I am learning 
