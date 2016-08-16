@@ -12,4 +12,6 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 Hello my name is Jermaine. 
 
+I made a change by updated it on my local machine
+
 - [Lesson Schedule](schedule.md)
