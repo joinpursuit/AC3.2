@@ -13,3 +13,6 @@ The first week or so has objectives for each subject. Later lessons will be adde
 - 
 Hey its Edward A. This is cool.
 this is the change im making.
+
+hello
+
