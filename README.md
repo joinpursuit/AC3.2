@@ -8,4 +8,4 @@ The reading for tomorrow is on [closures](/lessons/closures-two).
 
 - [Lesson Schedule](schedule.md)
 
-Hello World, my name is Eric. I am creative :o
+Hello World, my name is Eric!!!. I am creativity :o
