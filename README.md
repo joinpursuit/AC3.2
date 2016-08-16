@@ -12,3 +12,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 - [Lesson Schedule](schedule.md)
 
 Cash rules everything around me, Kareem gets da money, dolla dolla bills y'all!!
+Yes, Yes, Y'all
