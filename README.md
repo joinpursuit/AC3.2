@@ -11,4 +11,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-Hi my name is Karen, I am a left handed. 
+Hi my name is Karen, I am a right handed. 
