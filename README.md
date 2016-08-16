@@ -12,3 +12,5 @@ The first week or so has objectives for each subject. Later lessons will be adde
 - [Lesson Schedule](schedule.md)
 
 - I didn't write this. - Simone
+
+Another Change!
