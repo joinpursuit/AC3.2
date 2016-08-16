@@ -13,3 +13,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 
 My changes to README.md CC
+ejfdsdkndfn,dfkf 8/16/16 CC
