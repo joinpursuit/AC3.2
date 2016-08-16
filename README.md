@@ -10,4 +10,4 @@ complete it before class begins on Monday, August 15.
 The first week or so has objectives for each subject. Later lessons will be added as we go.
 
 - [Lesson Schedule](schedule.md)
-Hello, I'm Marcel. I'm from the Bronx. 
+Hello, I'm Marcel. I'm from The Bronx, I like basketball. 
