@@ -39,3 +39,6 @@ The first week or so has objectives for each subject. Later lessons will be adde
  .'          /| `-.        . ,'         ,           ,
  '-.__ __ _,','    '`-..___;-...__   ,.'\ ____.___.'
  `"^--'..'   '-`-^-'"--    `-^-'`.''"""""`.,^.`.--' mh
+
+
+Pokemon
