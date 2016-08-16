@@ -11,4 +11,6 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-My name is Tom and I'm from London's Long Island.
+My name is Tom and I'm from East East London.
+Hopefully this will end up on  my fork.
+
