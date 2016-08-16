@@ -11,6 +11,6 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-Vic Zhong says "Hi."
+Vic says "Hi."
 
 Vic says "Bye."
