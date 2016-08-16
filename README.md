@@ -11,4 +11,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-Hello My name is Miti Shah 
+Hello My name is Awesome 
