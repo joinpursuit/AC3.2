@@ -11,8 +11,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-<<<<<<< HEAD
 Sabrina edit, yay
-=======
-Sabrina edit
->>>>>>> 63f840f73e61c67bcfb262f2c67c99a034bf0db0
