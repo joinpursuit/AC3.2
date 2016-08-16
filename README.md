@@ -12,4 +12,4 @@ The first week or so has objectives for each subject. Later lessons will be adde
 - [Lesson Schedule](schedule.md)
 
 
-Harichandan Singh - Hello World!
+Harichandan Singh - Access Code 3.2
