@@ -1,3 +1,10 @@
+```swift
+}else if nameAndBirthDate.1 < 2000 && nameAndBirthDate.1 > 1899{
+print("Hi \(nameAndBirthDate.0), You are in your 19s ")
+}else if nameAndBirthDate.1 < 1900 && nameAndBirthDate.1 > 1799{
+print("Hi \(nameAndBirthDate.0), You are in your 18s ")
+```
+
 # Conditionals
 
 ### Question 1.
