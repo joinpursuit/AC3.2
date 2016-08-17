@@ -1,3 +1,136 @@
+my answers are
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+
+// 1. When the if statement becomes too complex or hard to read.  It's also more flexible than an if statement.
+//2. C
+// 3.
+var temperatureInFahrenheit = 72
+switch temperatureInFahrenheit {
+case let temperatureInFahrenheit where temperatureInFahrenheit <= 40:
+print("It's cold out.")
+case let temperatureInFahrenheit where temperatureInFahrenheit >= 85:
+print("It's really warm.")
+default:
+print("Weather is moderate")
+}
+
+//4. 
+let cardNum = 12
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+//5.
+
+let grade = 85
+switch grade {
+case 0..<65:
+print("F")
+case 65...69:
+print("D")
+case 70...79:
+print("C")
+case 80...89:
+print("B")
+case 90...99:
+print("A")
+case 100:
+print("A+")
+default:
+print("N/A")
+}
+
+//6.
+//42 it'll print "The answer to life, the universe and everything"
+//365 prints "Days in year"
+//1024 prints "Bytes in a kilobyte"
+//65 prints "Some uninteresting number"
+//Removing default gives us an error message "Switch must be exhaustive, consider adding a default clause"
+
+//7.
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+} else if (population < 10000) && (population > 5000) {
+message = "\(population) is a medium size town"
+} else {
+message = "\(population) is a mid-size town"
+}
+print(message)
+
+
+
+switch population {
+case let population where population > 10000:
+print("\(population) is a large town")
+case 5001...9999:
+print("\(population) is a medium size town")
+default:
+print("\(population) is a mid-size town")
+
+}
+
+
+
+
+//8.
+
+let myTuple: (Int, Int) = (5, 10)
+var sum = myTuple.0 + myTuple.1
+
+if sum >= 15 {
+print("The sum is at least 15")
+} else{
+print ("It's less than 15")
+}
+
+switch sum {
+
+case let sum where sum >= 15:
+print("The sum is at least 15")
+default:
+print("It's less than 15")
+}
+
+
+
+
+//9.
+
+let studentNameAndClass = ("Ben", 3.2)
+let myTupleTwo = studentNameAndClass
+switch myTupleTwo {
+case (_,_):
+print ("Hello \(studentNameAndClass.0) welcome to class \(studentNameAndClass.1)")
+}
+
+
+//10.
+let (x,y)
+switch (x,y) {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where x == y*3:
+print ("Y is triple the value of X")
+case let (x,y):
+print("Nothing is special about this tuple")
+}
+
+
+
 # Conditionals
 
 ### Question 1.
