@@ -1,5 +1,198 @@
 # Conditionals
 
+// Question 1.
+//What are some reasons to use a switch instead of an if?
+
+//when you have a more complex data that you need to compare... In Swtich its more specific when come to comparing things//
+
+
+
+
+//Question 2.
+
+//What's missing from the switch statement below?
+
+
+//c. The below code will not compile because switch statements need case statements for all expected values or a default statement.
+
+
+//Question 3.
+
+//let tempatureInFahrenheit = 72
+//
+//switch tempatureInFahrenheit {
+//    case 0..<40
+//    print
+//}
+//    
+//}
+
+//Question 4.
+//
+
+let cardNum = 12
+
+switch cardNum{
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+
+//Question 5.
+
+let grade = 77
+
+switch grade{
+
+case 65...69:
+print ("D")
+case 70...79:
+print ("C")
+case 80...89:
+print ("B")
+case 90...99:
+print("A")
+case 100:
+print("A+")
+default:
+print("F")  
+}
+
+
+
+
+//Question 6.
+
+let number = 42
+
+switch number {
+case 365:
+print("Days in year")
+case 1024:
+print("Bytes in a Kilobyte")
+case 0:
+print("Where arrays start")
+case 42:
+print("The answer to life, the universe and everything")
+default:
+print("Some uninteresting number")
+}
+
+//What should your system currently print?
+//some uninteresting number
+
+//What happens when you change number to 365? 1024? 65?
+//day in year/ bytes in kilobyte/ some uninteresitng number
+
+//What happens when you remove the default clause?
+// system crashes all options aren't being exauhsted
+
+
+
+
+
+//Question 7.
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+}
+else if population < 10000 && population > 5000{
+message = "\(population) is a medium size town."
+}
+else{
+message = "\(population) is a mid-size town."
+}
+
+
+//swtitch statment//
+
+
+var pop: Int = 10000
+var msg = "This Town"
+
+switch pop {
+
+case 0..<5000:
+print ("\(msg) is  mid-size")
+case 5000...10000:
+print ("\(msg) is  medium size")
+default:
+print ("\(msg) is huge")
+
+
+//Question 8.
+let myTuple = (5,10)
+
+switch myTuple{
+case 1:
+if myTuple.0 + myTuple.1{
+print ("the sum of your tuple is 15")
+}
+default:
+print("your numbers dont add to 15")
+
+}
+
+
+
+//Question 9.
+
+//Complete the switch statement below. We want it to output a personalized greeting to the student based on their name and class.
+
+let studentNameAndClass = ("Ben", 3.2)
+switch myTupleTwo{
+
+}
+
+
+
+
+
+//Question 10.
+
+//Add a case for when y is double the value of x//
+//Add a case for when y is triple the value of x//
+
+var myTuuple = (x:4, y:8)
+
+switch myTuuple {
+
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where y==2*x:
+print("y is double the value of x")
+case let (x,y) where y==3*x:
+print("y is triple the value of x")
+default:
+print("Nothing is special about this tuple")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?
 
