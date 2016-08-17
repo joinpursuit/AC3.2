@@ -1,4 +1,126 @@
 # Conditionals
+//: Playground - noun: a place where people can play
+
+import Cocoa
+
+var str = "Tom and Emily's Conditional Exercise 8.17"
+
+
+//1.    Use a switch if you have many conditions
+//2.    C
+//3.
+var temperatureInFahrenheit = 72
+
+switch temperatureInFahrenheit {
+case _ where temperatureInFahrenheit <= 40:
+print("It's cold out.")
+case _ where temperatureInFahrenheit >= 85:
+print("It's really warm.")
+default:
+print("Weather is moderate.")
+}
+
+//4.
+let cardNum = 12
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+//5.
+let score = 78
+let grade: String
+switch score {
+case 100:
+grade = "A+"
+case 90...99:
+grade = "A"
+case 80...89:
+grade = "B"
+case 70...79:
+grade = "C"
+case 65...69:
+grade = "D"
+case 0...64:
+grade = "F"
+default:
+grade = "Invalid"
+}
+
+//6.
+//a. The answer to life, the universe and everything.
+//b. Days in year
+//c. Bytes in a Kilobyte
+//d. Will no longer be exhaustive and will not run.
+
+//7. 
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+}else if population < 10000 && population > 5000{
+message = "\(population) is a medium sized town"
+
+}else{
+message = "\(population)its a mid-sized town"
+}
+
+switch population {
+case _ where population > 10000:
+message = "\(population) is a large town"
+case 5000...10000:
+message = "\(population) is a medium sized town"
+default:
+message = "\(population)its a mid-sized town"
+}
+
+//8.
+let myTuple: (Int, Int) = (5, 10)
+var sum = myTuple.0 + myTuple.1
+if sum >= 15  {
+print(sum)
+}
+
+switch sum {
+case _ where sum >= 15:
+print(sum)
+default:
+break
+}
+
+//9.
+let studentNameAndClass = ("Ben", 3.2)
+let myTupleTwo = studentNameAndClass
+
+switch myTupleTwo{
+case (studentNameAndClass.0, studentNameAndClass.1):
+print("\(studentNameAndClass.0) is a student and is in class \(studentNameAndClass.1)")
+default:
+break
+}
+
+//10.
+var thisTuple = (x: 4, y: 8)
+switch thisTuple {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where y == 2*x:
+print ("y is double the value of x")
+case let (x,y) where y == 3*x:
+print ("y is triple the value of x")
+default:
+print("Nothing is special about this tuple")
+}
+
+
+
 
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?
