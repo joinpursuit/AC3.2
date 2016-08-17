@@ -1,12 +1,14 @@
 # Access Code 3.2: Mobile Development with iOS
+<<<<<<< HEAD
 Eashir Arafat - Hi
 ## Welcome to Access Code!
+=======
 
-We've prepared some [homework](lessons/prework). Hooray! Please 
-complete it before class begins on Monday, August 15.
+Happy Wednesday.
+>>>>>>> upstream/master
 
-## A peek at what's coming
+Today's lesson is [Conditionals](/lessons/conditionals)
 
-The first week or so has objectives for each subject. Later lessons will be added as we go.
+## Schedule
 
 - [Lesson Schedule](schedule.md)
