@@ -11,4 +11,5 @@ The first week or so has objectives for each subject. Later lessons will be adde
 
 - [Lesson Schedule](schedule.md)
 
-Hello I'm Sophia
+Hello I'm Pika
+
