@@ -3,6 +3,8 @@
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?
 
+It is often easier to read, especially with discrete set of cases
+
 ### Question 2.
 What's missing from the switch statement below?
 - a. The case statement needs to say month == 1
