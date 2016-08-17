@@ -1,3 +1,5 @@
+```swift
+
 //EXCERCISES
 //1.switch statements are primarily useful for comparing a value against a number of potentially matching cases. if/else statements, on the other hand, are better used for checking against a single condition. switches also offer a number of powerful features that allow you to match against ranges, bind values to local constants or variables, and match patterns in tuples 
 
@@ -278,6 +280,7 @@ pqMessage += " no logical operators that can make that into a true statement."
 }
 
 ### End of pair work.
+```
 
 # Conditionals
 
