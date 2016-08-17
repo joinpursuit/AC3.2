@@ -1,5 +1,197 @@
 # Conditionals
+//: Playground - noun: a place where people can play
 
+import UIKit
+
+//Question 1.
+//
+//What are some reasons to use a switch instead of an if?
+// SWith switch, you compare known values usually, and it's more concise vs. if statements.
+
+//Question 2.
+// no default
+let monthNum = 3
+switch monthNum {
+case 1:
+print("january")
+default:
+print("something")
+}
+
+//Question 3.***
+let temperatureInFahrenheit = 100
+
+switch temperatureInFahrenheit {
+case let x where x < 40://if no neg values
+print("It's cold out.")
+case _ where temperatureInFahrenheit > 84: //more numbers?
+print("It\'s really warm")
+default:
+print("Weather is moderate")
+}
+
+//Question 4.
+
+let cardNum = 12
+switch cardNum {
+case 11:
+print("jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+//Question 5.
+
+let numberGrade = 69
+
+switch numberGrade {
+case _ where numberGrade > 99:
+print("A+")
+case 90...99:
+print("A")
+case 80...89:
+print("B")
+case 70...79:
+print("C")
+case 65...69:
+print("D")
+case let x where x < 65:
+print("F")
+default:
+print("Where\'s you\'re homework!")
+}
+
+//Question 6.
+// >>prints first case
+// >> prints second case
+// >>prints default
+// >> w.o default does not work
+
+//Question 7.
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+} else if (population < 10000 && population > 5000) {
+message = "\(population) is a medium size town"
+} else {
+message = "\(population) is a mid-size town"
+}
+
+switch population {
+case _ where population > 10000:
+print("large")
+case 5000...10000:
+print("medium")
+case let x where x < 5000:
+print("small")
+default:
+break
+}
+
+
+//Question 8.
+
+let myTuple: (Int, Int) = (5, 10)
+var sum = myTuple.0 + myTuple.1
+
+switch sum {
+case 15:
+print("They add up to 15")
+default:
+print("it doesnt")
+}
+
+//Question 9.
+
+let studentNameAndClass = ("Ben", 3.2)
+var myTupleTwo = studentNameAndClass
+switch myTupleTwo {
+case (_,3.2):
+print("Welcome \(myTupleTwo.0), to class \(myTupleTwo.1)")
+default:
+break
+}
+
+
+//Question 10.
+
+var x = 4
+var y = 8
+var double = x*2
+
+switch (x,y) {
+
+case let (x,y) where y == (x*2) :
+print("y is double x")
+case let (x,y) where y == (x*3):
+print("y is triple x")
+case let (x,y):
+print("Nothing is special about this tuple")
+
+}
+
+//Question 11.
+
+let myPoint: (Double, Double) = (-3,3)
+
+if myPoint.0 > 0 && myPoint.1 > 0 {
+print("Quad1")
+} else if (myPoint.0 < 0 && myPoint.1 > 0) {
+print("Quad2")
+} else if (myPoint.0 < 0 && myPoint.1 < 0) {
+print("Quad3")
+}
+else {
+print("Quad4")
+}
+
+//swithc myPoint {
+//    case _ where myPoint.0 >0, >0
+//      prints("Quadrant 1")
+//    case (<0, >0):
+//      prints("Quadrant 2")
+//    case (<0, <0):
+//      prints("Quadrant 3")
+//    case (>0, <0):
+//      prints("Quadrant 4")
+//    default:
+//      break
+//}
+
+//Question 12.
+//Write an if statement that prints out what decade of life someone is in (e.g "You are in your twenties). Then write it as a switch statement
+let nameAndBirthDate: (String, Int) = ("James", 1970)
+var tuple = nameAndBirthDate
+switch tuple.1{
+case 1969...1989:
+print("\(tuple.0) was born in the 70s")
+default:
+break
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* my answers above
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?
 
@@ -165,4 +357,4 @@ Write a conditional statement that prints out whether a number is a whole number
  Write a switch using fallthrough to tell you you're getting warmer or colder
  based on "direction" again. It should also report if you're going
  "uptown" or "downtown" (but shouldn't report about east or west).
- 
+ */
