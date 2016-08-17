@@ -1,3 +1,78 @@
+//Question 1
+//If there is a lot of data to compare.
+//If there might be more than one pattern that it fits.
+
+//Question 2
+// C
+
+//Question 3
+let temperatureInFahrenheit = 72
+
+switch true {
+case (temperatureInFahrenheit<=40):
+    print("It's cold out.")
+case (temperatureInFahrenheit>=85):
+    print("It's really warm.")
+default:
+    print("Weather is moderate.")
+}
+
+//Question 4
+let cardNum = 13
+switch cardNum {
+    case 11:
+    print("Jack")
+    case 12:
+    print("Queen")
+    case 13:
+    print("King")
+default:
+    print(cardNum)
+}
+
+//Question 5
+let grade = 92
+
+switch grade {
+    case 100:
+        print("A+")
+    case 90...99:
+        print("A")
+    case 80...89:
+        print("B")
+    case 70...79:
+        print("C")
+    case 65...69:
+        print("D")
+    default:
+        print("F")
+}
+
+//Question 6
+//Error message Exhaustive
+
+//Question 7
+var population: Int = 5376
+var message = String()
+
+if population >= 10000 {
+    message = "\(population) is a large town"
+} else if population > 5000 {
+    print("a medium size town")
+} else {
+    print("mid-size town")
+}
+
+switch true {
+
+case (population >= 10000):
+    message = "\(population) is a large town"
+case (population > 5000):
+    print("a medium size town")
+    default:
+    print("mid-size town")
+}
+
 # Conditionals
 
 ### Question 1.
