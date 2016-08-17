@@ -1,3 +1,8 @@
+
+
+
+
+
 # Conditionals
 
 ### Question 1.
@@ -165,4 +170,234 @@ Write a conditional statement that prints out whether a number is a whole number
  Write a switch using fallthrough to tell you you're getting warmer or colder
  based on "direction" again. It should also report if you're going
  "uptown" or "downtown" (but shouldn't report about east or west).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Question 1: To make the code look cleaner when you have too many conditions.
+
+
+
+//Question 2: C
+
+// Question 3
+
+var temperatureInFahrenheit = 72
+
+switch temperatureInFahrenheit {
+case let temp where temperatureInFahrenheit <= 40 :
+print("It's cold out!")
+case let temp where temperatureInFahrenheit >= 85 :
+print("It's really warm")
+default:
+print("weather is moderate")
+}
+
+
+//Question 4
+let cardNum = 12
+
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print ("King")
+default:
+print(cardNum)
+}
+
+//Question 5
+let grade = 88
+
+switch grade {
+case 100:
+print("A+")
+case 90..<100:
+print("A")
+case 80..<90:
+print("B")
+case 70..<80:
+print("C")
+case 65..<70:
+print("D")
+default:
+print("F")
+}
+
+// Question 6
+// 42 - "The answer to life the universe...."
+// 365 - days in year
+// 1024 bytes in a kilobyte
+// 65 some uninteresting number
+// the code breaks because there the options arent exhaustive
+
+//Question 7
+
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+} else if (population < 10000 && population > 5000) {
+message = ("\(population) It's a medium size town")
+}
+
+print(message)
+
+switch population {
+case 5000...10000:
+message = "\(population) It's a medium size town"
+case let pop where population > 10000:
+message = "\(pop) is a large town"
+default:
+message = "\(population) It's a small town."
+}
+print(message)
+
+//Question 8 
+
+let myTuple: (Int, Int) = (5, 10)
+
+if myTuple.0 + myTuple.1 >= 15{
+print("It's at least 15!")
+} else{
+print("It's less than 15!")
+}
+
+
+let sum = myTuple.0 + myTuple.1
+
+switch sum {
+case 0..<15:
+print("It's less than 15!")
+default:
+print("It's at least 15!")
+}
+
+//Question 9
+
+
+let studentNameAndClass = ("Ben", 3.2)
+
+
+var myTupleTwo = studentNameAndClass
+
+var message45 = "Hi, \(myTupleTwo.0), welcome to Access Code "
+
+
+switch myTupleTwo{
+case (_,3.1):
+message45 += "3.1"
+case (_, 3.2):
+message45 += "3.2"
+case (_, 3.3):
+message45 += "3.3"
+default:
+print("You're in the wrong place!")
+
+}
+
+print(message45)
+
+
+
+
+
+
+//Question 10
+var myTuple16 = (3, 1)
+
+
+switch myTuple16 {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where x == 2 * y :
+print("x is double the amount of y")
+case let (x,y) where x == 3 * y :
+print("x is triple the amount of y")
+case let (x,y):
+print("Nothing is special about this tuple")
+}
+
+//Question 11
+
+var myPoint = (x: -1.0, y: 2.0)
+
+if myPoint.0 > 0 && myPoint.1 > 0 {
+print("q1")
+}
+else if myPoint.0 < 0 && myPoint.1 > 0 {
+print("q2")
+}
+else if myPoint.0 < 0 && myPoint.1 < 0 {
+print("q3")
+}
+else if myPoint.0 > 0 && myPoint.1 < 0 {
+print("q4")
+
+} else {
+print("Not in a quadrant")
+}
+
+switch myPoint {
+case let (x,y) where x > 0 && y > 0:
+print("q1")
+case let (x,y) where x < 0 && y > 0:
+print("q2")
+case let (x,y) where x < 0 && y < 0:
+print("q3")
+case let (x,y) where x > 0 && y < 0:
+print("q4")
+default:
+print("Not in a quadrant")
+}
+
+//Question 12
+
+let nameAndBirthDate = ("Liam", 23)
+switch nameAndBirthDate {
+case (_, 0...9):
+print ("1st decade!")
+case (_, 10...19):
+print ("2nd decade!")
+case (_, 20...29):
+print ("3rd decade!")
+case (_, 30...39):
+print ("4th decade!")
+case (_, 40...49):
+print ("5th decade!")
+case (_, 50...59):
+print ("6th decade!")
+case (_, 60...69):
+print ("7th decade!")
+case (_, 70...79):
+print ("8th decade!")
+default:
+print ("If you're still alive, stop counting your age at this point.")
+}
+
  
