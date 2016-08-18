@@ -1,7 +1,86 @@
 ## Numbers
 
 #### Question 1.
-What is true about __Integers__ in computers?
+What is true about __Integers__ in computers?//: Playground - noun: a place where people can play
+
+import UIKit
+
+//Question 1.
+//
+//What is true about Integers in computers?
+//
+//Answer C
+
+//Question 2.
+//
+//Explain why the maximum value of UInt8 is equals 255. Why is the maximum value of Int8 127?
+//Because half of the memeory belongs to negative numbers Unsigned has memory of both negative and pozitif
+
+//Question 3.
+
+//Consider the constants below. Which code will compile?
+
+//e. All will compile.
+
+//Question 4.
+//
+//Evaluate the following: Given:
+//
+//var a = 20
+//var b = 5
+//var c = 4
+//Compute:
+//
+//1. a += b         25
+//2. b -= c         1
+//3. b * (c + a)    120
+//4. (b * c) + a    40
+//5. b %= a         5
+//6. b %= c         1
+//
+//var b = 5
+//var a = 20
+//var c = 4
+//
+//b %= a  // 5%20
+//b %= c  //5%4
+
+
+
+
+//Question 5.
+//
+//What are the values of div and div2 below? Are they equal?
+//
+//let div = 11 / 3    ===>3
+//let div2 = 11.0 / 3.0 ===> 3.666667
+
+
+
+//Question 7.
+//
+//Without using Playground, will the below code print?
+//
+//let twelve: Double = 12.0
+//let thirteen: Float = 13.0   ====> error
+//
+//print(twelve + thirteen)
+
+
+
+//Question 8.
+
+//Which of the following numbers can't be assigned to an Int8, and why?:
+
+//d. 255
+
+
+
+//Question 9.
+//
+//What integer types could you use for the offending value in Question 8 that would not produce an error?:  ===> & or INt16, Int16, Int32, Int64, UInt8, UInt16, UInt32, UInt64
+
+
 ```
 a. Integers must have a positive or negative sign always.
 b. The maximum value for Integers is +∞.
