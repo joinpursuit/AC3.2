@@ -1,3 +1,61 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+#1
+c. Integer types in computers take up a fixed amount of memory.
+
+#2
+Because of the amount of bytes
+
+#3
+let numberOfPages: Int = 500
+let numberOfChapters = "For Whom The Bell Tolls"
+let nameOfBook: Int = 14
+let yearPublished = "Nineteen-thirty-five"
+
+#4
+var a = 20
+var b = 5
+var c = 4
+
+
+1. a += b  = 25
+2. b -= c  = 1
+3. b * (c + a)  = 120
+4. (b * c) + a  = 40
+5. b %= a  = 5
+6. b %= c  = 1
+
+#5
+let div = 11 / 3
+let div2 = 11.0 / 3.0
+
+div = 3, div2 = 3.6667 - Not the same, div2 will include decimals
+
+#6
+b. number is a double variable
+
+#7
+Can't add double and float
+
+#8
+Which of the following numbers can't be assigned to an Int8, and why?:
+
+a. 25
+b. 100
+c. 65
+d. 255
+
+D. it goes to 127
+
+#9
+UInt8
+
+#10
+One has the precision of demical, one assumes all remainders are null. Int uses less space than double
+
+
 ## Numbers
 
 #### Question 1.
