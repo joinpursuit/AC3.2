@@ -1,18 +1,19 @@
 ## Numbers
 
 #### Question 1.
-What is true about __Integers__ in computers?
+What is true about __Integers__ in computers? Answer: C
 ```
 a. Integers must have a positive or negative sign always.
 b. The maximum value for Integers is +∞.
-c. Integer types in computers take up a fixed amount of memory.
+c. Integer types in computers take up a fixed amount of memory. 
 d. Integers may contain decimals.
 ```
 
 #### Question 2.
 Explain why the maximum value of ```UInt8``` is equals 255. Why is the maximum value of ```Int8``` 127?
+Answer: UInt8 has 64bit memory vs Int8 at 32bit. 
 
-#### Question 3.
+#### Question 3. Answer: E
 Consider the constants below. Which code will compile?
 ```
 a. let numberOfPages: Int = 500
@@ -32,12 +33,12 @@ var c = 4
 ```
 Compute:
 ```
-1. a += b
-2. b -= c
-3. b * (c + a)
-4. (b * c) + a
-5. b %= a
-6. b %= c
+1. a += b   Answer: 25
+2. b -= c   Answer: 1
+3. b * (c + a)  Answer: 120
+4. (b * c) + a  Answer: 40
+5. b %= a   Answer: 5
+6. b %= c   Answer: 1
 ```
 
 #### Question 5.
