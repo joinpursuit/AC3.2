@@ -1,13 +1,15 @@
 # Access Code 3.2: Mobile Development with iOS
 
-## Welcome to Access Code!
+Happy Thursday.
 
-We've prepared some [homework](lessons/prework). Hooray! Please 
-complete it before class begins on Monday, August 15.
+Today's lesson is [Numbers and Operations](/lessons/numbers)
 
-## A peek at what's coming
+This afternoon will be a little different. Liz will lead the first in her series of Professional Development
+sections. 
 
-The first week or so has objectives for each subject. Later lessons will be added as we go.
+[Reading for Friday](/lessons/loops)
+
+## Schedule
 
 My name is Amber.
 
