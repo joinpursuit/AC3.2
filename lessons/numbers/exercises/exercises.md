@@ -2,6 +2,7 @@
 
 #### Question 1.
 What is true about __Integers__ in computers?
+Answer: c.
 ```
 a. Integers must have a positive or negative sign always.
 b. The maximum value for Integers is +∞.
@@ -11,9 +12,11 @@ d. Integers may contain decimals.
 
 #### Question 2.
 Explain why the maximum value of ```UInt8``` is equals 255. Why is the maximum value of ```Int8``` 127?
+The UInt8 has no assigned integers, so it can store twice the amount of values of Int8. 
 
 #### Question 3.
 Consider the constants below. Which code will compile?
+Answer: e.
 ```
 a. let numberOfPages: Int = 500
 b. let numberOfChapters = "For Whom The Bell Tolls"
@@ -33,18 +36,27 @@ var c = 4
 Compute:
 ```
 1. a += b
+= 25
 2. b -= c
+= 1
 3. b * (c + a)
+= 120
 4. (b * c) + a
+= 40
 5. b %= a
+= 5
 6. b %= c
+= 1
 ```
 
 #### Question 5.
 What are the values of ```div``` and ```div2``` below? Are they equal?
 ```
 let div = 11 / 3
+Answer = 3
 let div2 = 11.0 / 3.0
+Answer = 3.66666666
+They are not eqaul.
 ```
 
 #### Question 6.
