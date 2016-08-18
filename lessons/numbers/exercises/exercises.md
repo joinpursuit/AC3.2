@@ -7,10 +7,12 @@ a. Integers must have a positive or negative sign always.
 b. The maximum value for Integers is +∞.
 c. Integer types in computers take up a fixed amount of memory.
 d. Integers may contain decimals.
-```
+```Answer C
 
 #### Question 2.
 Explain why the maximum value of ```UInt8``` is equals 255. Why is the maximum value of ```Int8``` 127?
+UInt8 has 64bit memory vs Int8 which has 32bit memory 
+therefore UInt8 max value is 255 > than Int8 max value which is 127 
 
 #### Question 3.
 Consider the constants below. Which code will compile?
@@ -20,7 +22,7 @@ b. let numberOfChapters = "For Whom The Bell Tolls"
 c. let nameOfBook: Int = 14
 d. let yearPublished = "Nineteen-thirty-five"
 e. All will compile.
-```
+```Answer E
 
 #### Question 4.
 Evaluate the following:
@@ -32,12 +34,12 @@ var c = 4
 ```
 Compute:
 ```
-1. a += b
-2. b -= c
-3. b * (c + a)
-4. (b * c) + a
-5. b %= a
-6. b %= c
+1. a += b = 25
+2. b -= c = 1
+3. b * (c + a) = 120
+4. (b * c) + a = 40
+5. b %= a = 5 
+6. b %= c = 1
 ```
 
 #### Question 5.
