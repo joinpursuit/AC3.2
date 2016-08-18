@@ -35,8 +35,6 @@ let div2 = 11.0 / 3.0
 //7 there will be a error, because these two variables has different data type
 ```
 
-
-
 ## Numbers
 
 #### Question 1.
