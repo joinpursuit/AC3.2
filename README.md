@@ -12,3 +12,5 @@ The first week or so has objectives for each subject. Later lessons will be adde
 My name is Amber.
 
 - [Lesson Schedule](schedule.md)
+
+things change they dont stay the same
