@@ -1,5 +1,103 @@
 ## Numbers
 
+//Question 1.
+
+//What is true about Integers in computers?
+
+
+//c. Integer types in computers take up a fixed amount of memory.
+
+
+
+//Question 2.
+
+//Explain why the maximum value of UInt8 is equals 255. Why is the maximum value of Int8 127?
+
+// Both types of Int have the same amount of space in the computer (256 bits), UInt8 is unsigned so there are no negative Int so it can store numbers from 0 to 255, Int8 can store numbers from -128 to 127 (still 256 values)
+
+
+//Question 3.
+
+//Consider the constants below. Which code will compile?
+
+//e. All will compile.
+
+
+
+//Question 4.
+
+//Evaluate the following: Given:
+
+//var a = 20
+//var b = 5
+//var c = 4
+//Compute:
+//
+//1. a += b = 25
+//2. b -= c = 1
+//3. b * (c + a) = 120
+//4. (b * c) + a = 40
+//5. b %= a = 5
+//6. b %= c = 1
+
+
+
+//Question 5.
+//
+//What are the values of div and div2 below? Are they equal?
+//
+//let div = 11 / 3 = 3
+//let div2 = 11.0 / 3.0 = 3.666666666666667
+
+//They are not equal
+
+
+
+//Question 6.
+//
+//Given var number = 7.5. What can be inferred about number?
+//
+//b. number is a double variable
+
+
+
+//Question 7.
+//
+//Without using Playground, will the below code print?
+//
+//let twelve: Double = 12.0
+//let thirteen: Float = 13.0
+//
+//print(twelve + thirteen)
+
+//No, because twelve and thirteen are different types (Double and Float)
+
+
+
+//Question 8.
+//
+//Write the following numbers in binary representation:
+//
+//a. 25 - 1 1 0 0 1
+//b. 100 - 1 1 0 0 1 0 0
+//c. 65 - 1 0 0 0 0 0 1
+//d. 255 - 1 1 1 1 1 1 1 1
+
+
+
+//Question 8.
+//
+//Which of the following numbers can't be assigned to an Int8, and why?:
+//
+//d. 255
+//Int8 can only hold upto 127 (-128 to 127)
+
+
+//Question 9.
+//
+//What integer types could you use for the offending value in Question 8 that would not produce an error?:
+//Int, UInt8, Int32, Int16, Int64, UInt32, UInt64, UInt16
+
 #### Question 1.
 What is true about __Integers__ in computers?
 ```
