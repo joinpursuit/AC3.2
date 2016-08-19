@@ -71,8 +71,8 @@ print(twelve + thirteen) //No because they are two different types of decimals
 #### Question 8.
 Write the following numbers in binary representation:
 ```
-a. 25 >> 
-b. 100 >>
+a. 25 >> 10011
+b. 100 >> 0010010
 c. 65 >>
 d. 255 >>
 ```
