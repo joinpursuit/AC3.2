@@ -24,7 +24,7 @@ Convert the following decimal numbers to Binary:
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
 
-```
+```swift
 for case let x in 0...1 {
 	if x == 0 {
 		for y in 0..<100 {
@@ -42,7 +42,7 @@ for case let x in 0...1 {
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
-```
+```swift
 var i = 111
 var x = 2
 while i > 1 {
@@ -51,11 +51,11 @@ while i > 1 {
 	i -= 1
 }
 ```
-`
+
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
 
-```
+```swift
 var x = 1
 for i in 1...50 {
 	x+=x
@@ -65,7 +65,7 @@ print(x)
 
 * Using a while loop, print all the odd numbers from 0 to 100.
 
-```
+```swift
 var x = 0
 while x < 100 {
 	if (x % 2 == 1) {
@@ -77,7 +77,7 @@ while x < 100 {
 
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
 
-```
+```swift
 for case let i in 50...500 where i % 10 == 0 {
 	print(i)
 }
@@ -184,7 +184,7 @@ let denominations = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q"
 let suits = ["♠️", "♣️", "♥️", "♦️"]
 ```
 
-```
+```swift
 for case let x in 0...suits.count-1 {
 	for case let y in 0...denominations.count-1 {
 		print(denominations[y], suits[x], separator: "", terminator: " ")
@@ -222,7 +222,7 @@ for i in (1...99).reverse() {
 * For all multiples of 5, print out "Buzz"  instead of the number.
 * For all multiples of 3 and 5, print out "FizzBuzz" instead of the number.
 
-```
+```swift
 var fizzy = true
 for i in 0...100 {
 	switch fizzy {
@@ -244,7 +244,7 @@ Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in
 ```
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 ```
-```
+```swift
 var x = [0, 1]
 print("\(x[0])\n\(x[1])")
 for i in 2...9 {
