@@ -1,3 +1,103 @@
+ANSWERS:
+A -
+1)
+for i in 1...150 {
+print(i)
+}
+
+2)
+for i in 143..<159 {
+print(i)
+}
+
+3) 
+for i in 15...80 {
+if i % 2 == 0 {
+print(i)
+}
+}
+
+4)
+for i in 19...51 {
+if i % 2 != 0 {
+print(i)
+}
+}
+
+5)
+var i = 0
+while i < 100 {
+i += 5
+print(i)
+}
+
+6)
+var i = 7
+while i < 40 {
+print(i)
+i += 10
+}
+
+B - 
+1)
+for i in 20...150 {
+if i % 3 == 0 {
+print(i)
+}
+}
+
+2)
+for i in 20...150 {
+if (i % 2 == 0) && (i % 3 == 0) {
+print(i)
+}
+}
+
+3)
+var i = 24
+while i <= 150 {
+print(i)
+i += 10
+}
+
+4)
+for i in 20...150 {
+if i == 31 || i == 35 {
+print(i)
+}
+if i >=  40 && i <= 60{
+print(i)
+}
+}
+
+C - 
+1) Inifinite loop
+
+2)
+var i = 5
+while (i > 3) {
+if i == 9 {
+break
+}else{
+i += 1
+print(i)
+}
+}
+
+3)
+var i = 0
+while (i < 1000) {
+i += 1
+}
+
+4)
+for i in 0...1000 {
+if i % 2 == 0 {
+print(i)
+}
+}
+
+
 ## A) For each prompt below, write a for loop that prints out the specified information.
 
 1) All the numbers from 1 to 150 inclusive
