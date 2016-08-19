@@ -38,6 +38,10 @@ print(i)
 
 6) All the numbers that end in a 7 from 1 to 40 inclusive
 
+for var x in 1..<40 where x % 10 == 0 {
+print(x + 7)
+}
+
 
 ## B) Given a range of numbers from 20 to 150 print out all the numbers that follows these conditions
 
@@ -60,6 +64,15 @@ print(i)
 3) Unit digit ends with 4
 
 4) Print out numbers contain 31, 35, 40 to 60.
+
+for x in 20...150 {
+switch x {
+case 31, 35, 40...60:
+print(x)
+default:
+break
+}
+}
 
 
 ## C) While loop (NO Xcode)
