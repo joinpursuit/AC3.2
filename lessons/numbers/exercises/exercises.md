@@ -3,14 +3,19 @@
 #### Question 1.
 What is true about __Integers__ in computers?
 ```
-a. Integers must have a positive or negative sign always.
+a. Integers must have a positive or negative sign always. Yes
 b. The maximum value for Integers is +∞.
-c. Integer types in computers take up a fixed amount of memory.
+c. Integer types in computers take up a fixed amount of memory. Yes
 d. Integers may contain decimals.
 ```
 
 #### Question 2.
 Explain why the maximum value of ```UInt8``` is equals 255. Why is the maximum value of ```Int8``` 127?
+
+Because unsigned is the sum of 2^7 and 2^8-1. The 
+
+
+
 
 #### Question 3.
 Consider the constants below. Which code will compile?
@@ -19,7 +24,7 @@ a. let numberOfPages: Int = 500
 b. let numberOfChapters = "For Whom The Bell Tolls"
 c. let nameOfBook: Int = 14
 d. let yearPublished = "Nineteen-thirty-five"
-e. All will compile.
+e. All will compile.   Yes 
 ```
 
 #### Question 4.
@@ -32,26 +37,29 @@ var c = 4
 ```
 Compute:
 ```
-1. a += b
-2. b -= c
-3. b * (c + a)
-4. (b * c) + a
-5. b %= a
-6. b %= c
+1. a += b == 25
+2. b -= c == 1
+3. b * (c + a) == 120
+4. (b * c) + a == 40
+5. b %= a == 0
+6. b %= c == 1
 ```
 
 #### Question 5.
 What are the values of ```div``` and ```div2``` below? Are they equal?
 ```
-let div = 11 / 3
-let div2 = 11.0 / 3.0
+let div = 11 / 3 == 3
+let div2 = 11.0 / 3.0  == 3
+
+They would be equal
 ```
+
 
 #### Question 6.
 Given ```var number = 7.5```. What can be inferred about __number__?
 ```
-a. number is a float variable
-b. number is a double variable
+a. number is a float variable 
+b. number is a double variable Yes, since it is not explicitly stated if it's a float or a double. It gets treated as a  double automatically 
 c. number is a 32-bit floating point number
 d. not enough information to infer about number's type
 ```
@@ -64,14 +72,15 @@ let thirteen: Float = 13.0
 
 print(twelve + thirteen)
 ```
+No
 
 #### Question 8.
 Write the following numbers in binary representation:
 ```
-a. 25
-b. 100
-c. 65
-d. 255
+a. 25 == 00011001
+b. 100 == 01100100
+c. 65 == 1000001
+d. 255 == 11111111
 ```
 
 #### Question 8.
@@ -80,7 +89,7 @@ Which of the following numbers can't be assigned to an Int8, and why?:
 a. 25
 b. 100
 c. 65
-d. 255
+d. 255 
 ```
 
 #### Question 9.
