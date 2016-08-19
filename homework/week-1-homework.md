@@ -66,8 +66,12 @@ print(x)
 * Using a while loop, print all the odd numbers from 0 to 100.
 
 ```
-for case let i in 0...100 where i % 2 == 1 {
-	print(i)
+var x = 0
+while x < 100 {
+	if (x % 2 == 1) {
+		print(x)
+	}
+	x += 1
 }
 ```
 
@@ -183,9 +187,11 @@ let suits = ["♠️", "♣️", "♥️", "♦️"]
 ```
 for case let x in 0...suits.count-1 {
 	for case let y in 0...denominations.count-1 {
-		print(denominations[y], suits[x], separator: "", terminator: "\n")
+		print(denominations[y], suits[x], separator: "", terminator: " ")
 	}
+	print("")
 }
+
 
 ```
 
