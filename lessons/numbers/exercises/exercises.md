@@ -65,8 +65,8 @@ no it will not print tow different types
 #### Question 8.
 Write the following numbers in binary representation:
 ```
-a. 25 >>>>
-b. 100 >>>>
+a. 25 >>>> 11001
+b. 100 >>>> 1100100
 c. 65>>>
 d. 255
 ```
