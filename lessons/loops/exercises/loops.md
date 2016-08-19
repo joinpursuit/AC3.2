@@ -1,10 +1,18 @@
+Gabriel Breshears
+
+
 ## A) For each prompt below, write a for loop that prints out the specified information.
 
 1) All the numbers from 1 to 150 inclusive
 
 2) All the numbers from 142 to 159 exclusive
 
+for i 142..<159
+
+
 3) Only the even numbers from 15 to 80 inclusive
+
+
 
 4) Only the odd numbers from 19 to 51 inclusive
 
