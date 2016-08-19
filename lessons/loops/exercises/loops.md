@@ -2,26 +2,87 @@
 
 1) All the numbers from 1 to 150 inclusive
 
+for i in 1...150 {
+print(i)
+}
+
 2) All the numbers from 142 to 159 exclusive
+
+for i in 142..<159 {
+print(i)
+}
 
 3) Only the even numbers from 15 to 80 inclusive
 
+for i in 15...80 {
+if(i % 2 == 0) {
+ print(i)
+}
+}
+
 4) Only the odd numbers from 19 to 51 inclusive
 
+for i in 19...51 {
+if(i % 2 != 0){
+print(i)
+}
+}
+
 5) All the numbers that end in a 5 from 1 to 100 exclusive
+for i in 1..<100 {
+if (i % 5 == 0 && i % 2 != 0) {
+print(i)
+}
+}
+
 
 6) All the numbers that end in a 7 from 1 to 40 inclusive
+for i in 1...40 {
+if (i % 10 == 0)  {
+print(i - 3)
+}
+}
 
 
 ## B) Given a range of numbers from 20 to 150 print out all the numbers that follows these conditions
 
 1) Numbers that are divisible by 3
+for i in 20...150 {
+if (i % 3 == 0)  {
+print(i)
+}
+}
 
 2) Numbers that are divisible by 2 and 3
 
+for i in 20...150 {
+if (i % 3 == 0 && i % 2 == 0)  {
+print(i)
+}
+}
+
 3) Unit digit ends with 4
 
+for i in 20..<150 {
+if (i % 10 == 0)  {
+print(i + 4)
+}
+}
+
 4) Print out numbers contain 31, 35, 40 to 60.
+
+for i in 20...150 {
+if (i == 31) {
+print(i)
+}
+if (i == 35) {
+print(i)
+}
+if (i >= 40 && i <= 60){
+print(i)
+}
+}
+
 
 
 ## C) While loop (NO Xcode)
@@ -31,13 +92,22 @@ while (i > 3) {
   i += 1
 }
 ```
-1) How many times does this while loop execute?
+1) How many times does this while loop execute? This is an endless loop.
 
-2) How do you stop the loop when i reaches 9?
+2) How do you stop the loop when i reaches 9? You can set a statement to break the loop.
+if (i == 9) {
+break
+}
 
-3) How would you fix the while loop so that it only execute 1,000 times.
+3) How would you fix the while loop so that it only execute 1,000 times. while (i <= 1000) {...}
 
 4) Once the loop can run 1,000 times, print out ONLY the event number.
+var i = 5
+while i <= 1000 {
+    if (i % 2 == 0) {
+    print(i)
+}   
+
 
 ```
 var i = 1
@@ -54,13 +124,16 @@ do {
 }while i <= 10
 ```
 5) What's the difference between these two while loop?
+The second example loop will run at least once while the first one will not run at all if it doesn't meet the parameters.
 
 6) If there's a difference, how would you fix it so that both outputs are the same.
 
 
+
+
 ## D) Short Answer Questions (NO Xcode)
 
-1) What's the difference between break vs continue?
+1) What's the difference between break vs continue? Break ends the loop while continue breaks out of a statement while continuing the loop.
 
 2) Without using Xcode explain the result of the following for-in loops.
 * a)
@@ -70,7 +143,7 @@ for i in 1...10 {
         continue
     }
     print(i)
-}
+} If i is greater than/equal to 4 and less than/equal to 7, continue out of the loop and print i.
 ```
 * b)
 ```
@@ -79,7 +152,7 @@ for i in 1...10 {
         break
     }
     print(i)
-}
+} If i is greater than/equal to 4 and less than/equal to 7, break the loop. 
 ```
 * Bonus)
 ```
@@ -90,7 +163,7 @@ outerloop: for x in 1...3 {
         }
         print("x = \(x), y = \(y)")
     }
-}
+} 
 ```
 ##E) Nested loops
 1) Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) where x and y are both integers.
