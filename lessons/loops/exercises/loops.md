@@ -2,26 +2,95 @@
 
 1) All the numbers from 1 to 150 inclusive
 
+for i in 1...150{
+    print(\(i)) 
+}
+
 2) All the numbers from 142 to 159 exclusive
+
+for i in 143..<159{
+    print(\(i))
+}
 
 3) Only the even numbers from 15 to 80 inclusive
 
+
+for i in 15...80 where i%2 == 0  {
+print("\(i)")
+}
+
+
 4) Only the odd numbers from 19 to 51 inclusive
+
+for i in 19...51 where i%2 == 1 {
+    print ("\(i)")
+}
 
 5) All the numbers that end in a 5 from 1 to 100 exclusive
 
+for i in 2..<100 where i%5 == 0{
+if  i%2 == 1{
+    print("\(i)")
+
+    }
+}
+
+
+
 6) All the numbers that end in a 7 from 1 to 40 inclusive
+
+var seven = 7
+for _ in 0...4{
+print(seven)
+seven += 10
+}
+
+
+
 
 
 ## B) Given a range of numbers from 20 to 150 print out all the numbers that follows these conditions
 
 1) Numbers that are divisible by 3
 
+
+for i in 20...150 where i%3 == 0{
+    print(i)
+}
+
+or
+
+for i in 20...150{
+if i%3 == 0{
+print(i)
+}
+}
+
+
 2) Numbers that are divisible by 2 and 3
+
+
+for i in 20...150{
+if i%3 == 0 && i%2 == 0{
+print(i)
+}
+}
+
 
 3) Unit digit ends with 4
 
+var start = 24
+
+while start < 150{
+
+print(start)
+
+start += 10
+}
+
 4) Print out numbers contain 31, 35, 40 to 60.
+
+
 
 
 ## C) While loop (NO Xcode)
@@ -31,9 +100,17 @@ while (i > 3) {
   i += 1
 }
 ```
-1) How many times does this while loop execute?
+1) How many times does this while loop execute? Infinite Loop
 
 2) How do you stop the loop when i reaches 9?
+
+var i = 5
+
+while (i > 3) {
+    if i < 10{
+    i += 1
+}
+}
 
 3) How would you fix the while loop so that it only execute 1,000 times.
 
