@@ -7,4 +7,4 @@ Today's lesson is on [Loops](/lessons/loops)
 ## Schedule
 
 - [Lesson Schedule](schedule.md)
-Hi, my name is Fernando.
+Hi, my name is Ventura.
