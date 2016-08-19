@@ -1,6 +1,6 @@
 ## A) For each prompt below, write a for loop that prints out the specified information.
 
-```swift
+```
 // 1) All the numbers from 1 to 150 inclusive
 
 for i in 1...150 {
@@ -41,7 +41,7 @@ for case let i in 1...40 where i % 10 == 7 {
 
 ## B) Given a range of numbers from 20 to 150 print out all the numbers that follows these conditions
 
-```swift
+```
 // 1) Numbers that are divisible by 3
 
 for case let i in 20...150 where i % 3 == 0 {
