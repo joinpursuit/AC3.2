@@ -77,7 +77,7 @@ Write the following numbers in binary representation:
 a. 25 - 11001
 b. 100 - 1100100
 c. 65 - 1000001
-d. 255
+d. 255 - 11111111
 ```
 
 #### Question 8.
@@ -94,6 +94,8 @@ Answer: 255
 #### Question 9.
 
 What integer types could you use for the offending value in Question 8 that would not produce an error?:
+
+
 
 #### Question 10.
 
