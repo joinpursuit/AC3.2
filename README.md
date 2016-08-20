@@ -1,13 +1,10 @@
 # Access Code 3.2: Mobile Development with iOS
 
-Happy Thursday.
+Have a good weekend!
 
-Today's lesson is [Numbers and Operations](/lessons/numbers)
+Weekend [homework](/homework/week-1-homework.md)
 
-This afternoon will be a little different. Liz will lead the first in her series of Professional Development
-sections. 
-
-[Reading for Friday](/lessons/loops)
+Monday's lesson is on [Strings](/lessons/strings). Note there is a little more reading than usual. 
 
 ## Schedule
 
