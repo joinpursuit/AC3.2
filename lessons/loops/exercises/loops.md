@@ -5,11 +5,11 @@ import UIKit
 ## A) For each prompt below, write a for loop that prints out the specified information.
 
 1) All the numbers from 1 to 150 inclusive
-
+```
 for i in 1...150 {
     print(i)
 }
-
+```
 
 2) All the numbers from 142 to 159 exclusive
 
