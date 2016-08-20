@@ -3,43 +3,43 @@
 1) All the numbers from 1 to 150 inclusive
 
 for i in 1...150 {
-print (i)
+    print (i)
 }
 
 2) All the numbers from 142 to 159 exclusive
 
 for i in 142..<150 { 
-print (i)
+    print (i)
 }
 
 3) Only the even numbers from 15 to 80 inclusive
 
 for i in 15...80 {
-if i%2==0{
-print (i)
-}
+    if i%2==0{
+        print (i)
+    }
 }
 
 4) Only the odd numbers from 19 to 51 inclusive
 
 for i in 19...51 {
-if i%2==1{
-print (i)
-}
+    if i%2==1{
+        print (i)
+    }
 }
 
 5) All the numbers that end in a 5 from 1 to 100 exclusive
 
 for i in 1..<100 {
-if i % 5 == 0 && i % 10 != 0 {
-print (i)
-}
+    if i % 5 == 0 && i % 10 != 0 {
+        print (i)
+    }
 }
 
 6) All the numbers that end in a 7 from 1 to 40 inclusive
 
-ffor i in 1...90 {
- if i % 5 == 2 && i % 2 != 0{
+for i in 1...90 {
+    if i % 5 == 2 && i % 2 != 0{
        print(i)
    }
 }
@@ -50,7 +50,7 @@ ffor i in 1...90 {
 1) Numbers that are divisible by 3
 
 for i in 20...150 {
- if i % 3 == 0 {
+    if i % 3 == 0 {
        print(i)
    }
 }
@@ -58,7 +58,7 @@ for i in 20...150 {
 2) Numbers that are divisible by 2 and 3
 
 for i in 20...150 {
- if i % 2 == 0 && i % 2 == 0 {
+    if i % 2 == 0 && i % 2 == 0 {
        print(i)
    }
 }
@@ -66,13 +66,22 @@ for i in 20...150 {
 3) Unit digit ends with 4
 
 for i in 20...150 {
- if (i - 4) % 10 == 0 {
+    if (i - 4) % 10 == 0 {
        print(i)
    }
 }
 
 4) Print out numbers contain 31, 35, 40 to 60.
 
+
+for i in 20...150 {
+    switch x {
+        case 31, 35, 40...60, 131, 135, 140..150:
+        print (i)
+    befault:
+        break
+    }
+}
 
 
 
@@ -84,7 +93,8 @@ while (i > 3) {
 }
 ```
 1) How many times does this while loop execute?
- infinite
+
+infinite
 
 2) How do you stop the loop when i reaches 9?
 
@@ -112,7 +122,9 @@ do {
    i+=1
 } while i <= 10
 ```
+
 5) What's the difference between these two while loop?
+
 
 The frist one does it ten times and the second 
 
