@@ -100,6 +100,8 @@ for i in 20...150 where i % 100 == 31, 35, 40, 60  {
     print (i)
 }
 
+    //add let and where in switch case if you have conditionals
+
 // come back
 
 
