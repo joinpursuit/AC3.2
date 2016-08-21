@@ -133,7 +133,6 @@ do {
 ```
 
 
-
 5) What's the difference between these two while loop?
 
 6) If there's a difference, how would you fix it so that both outputs are the same.
