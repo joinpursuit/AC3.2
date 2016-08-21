@@ -25,15 +25,15 @@ print(i)
 
 
 5) All the numbers that end in a 5 from 1 to 100 exclusive
-for i in 1...100 where i % 5 == 0 && i % 10 == 5 {
+for i in 1...100 where i % 10 == 5 {
 print(i)
 }
 
 
 6)* All the numbers that end in a 7 from 1 to 40 inclusive
 
-for i in 7...40 {
-
+for i in 1...40 where i%10 == 7{
+print(i)
 }
 
 ## B) Given a range of numbers from 20 to 150 print out all the numbers that follows these conditions
@@ -50,29 +50,20 @@ print (i)
 
 
 3) Unit digit ends with 4
-
-var i = 24
-repeat {
+for i in 20...150 where i%10==4 {
 print(i)
-i+=10
-}while i<150
+}
 
-goal to print 24,34,44
+
 4) Print out numbers contain 31, 35, 40 to 60.
-for i in 20...150 {
-if i == 31 {
-print(i)
+for numbers in 20...150 {
+switch numbers {
+case 31, 35, 40...60:
+print("\(numbers)")
+default:
+break
 }
-if i == 35 {
-print(i)
 }
-
-}
-for i in 40...60 {
-
-print(i)
-}
-
 
 ## C) While loop (NO Xcode)
 ```
@@ -84,13 +75,34 @@ while (i > 3) {
 1) How many times does this while loop execute?
 Infinate number of times
 2) How do you stop the loop when i reaches 9?
+For the loop to stop, you have to set a parameters, as follow:
+var i = 5
 while i>3 && i<10 {
 i+=1
 }
 3) How would you fix the while loop so that it only execute 1,000 times.
-while i>3 && i <1004 && i%2==0{
-print(i)
+var i = 5
+var casecount = 0
+while i>0 {
+print("\(i)")
+if casecount == 1000 {
+break}
+i+=1
+casecount+=1
+}
 4) Once the loop can run 1,000 times, print out ONLY the event number.
+var i = 5
+var casecount = 0
+while i > 0 {
+if i%2==0{
+print("\(i)")
+}
+if casecount == 1000 {
+break
+}
+i+=1
+casecount+=1
+}
 
 ```
 var i = 1
@@ -107,15 +119,29 @@ do {
 }while i <= 10
 ```
 5) What's the difference between these two while loop?
-
+The loop on the top and one on the bottom will not execute at all.
 6) If there's a difference, how would you fix it so that both outputs are the same.
-
+For the top while loop, the codes should be the following.
+var i = 1
+while i <= 10 {
+print ("i=\(i)")
+i+=1
+}
+And for the bottom repeat-while loop, the codes should be the following.
+var i = 1
+repeat {
+print ("i=\(i)"
+i+=1
+}while i<=10
 
 ## D) Short Answer Questions (NO Xcode)
 
 1) What's the difference between break vs continue?
-
+When break statment is used, the loops exits out.
+While continue statement is used, the loop returns execute the code from the beginning fo the code, instead of exiting the loop in break.
 2) Without using Xcode explain the result of the following for-in loops.
+
+
 * a)
 ```
 for i in 1...10 {
@@ -125,6 +151,9 @@ for i in 1...10 {
     print(i)
 }
 ```
+The code above will print numbers 1,2,3,8,9,10. The continue statements affects the numbers 4 to 7. Instead of printing, the code returned to the next variable until it gets to 8. The integer 8 and after does not satisfied the if condition and will be printed.
+```
+
 * b)
 ```
 for i in 1...10 {
@@ -134,6 +163,7 @@ for i in 1...10 {
     print(i)
 }
 ```
+The code above will print numbers 1,2,3. The break statement is reached when the number is 4. The break statement allows the loop to be existed and will no longer print the other numbers. 
 * Bonus)
 ```
 outerloop: for x in 1...3 {
@@ -145,13 +175,56 @@ outerloop: for x in 1...3 {
     }
 }
 ```
+The code above will print
+x=1,y=1
+x=2,y=1
+x=3,y=1
+```
+
 ##E) Nested loops
 1) Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) where x and y are both integers.
 
+outerloop: for x in 0...10 {
+innerloop: for y in 0...10{
+print("(\(x),\(y))")
+}
+}
+
 2) Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) where x and y are both even numbers.
+
+outerloop: for x in 0...10 where x%2==0 {
+innerloop: for y in 0...10 where y%2==0{
+print("(\(x),\(y))")
+}
+}
 
 3) Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) where the difference of x and y is at least 5, and x and y are both integers.
 
+outerloop: for x in 0...10 {
+innerloop: for y in 0...10 {
+if x-y==5 || y-x==5 {
+print("(\(x),\(y))")
+}
+}
+}
+
+
 4) Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) where the product of x and y is less than 6, and x and y are both integers.
 
+outerloop: for x in 0...10 {
+innerloop: for y in 0...10 {
+if x*y<6 {
+print("(\(x),\(y))")
+}
+}
+}
+
 5) Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) where the x is not equal to y and x and y are both integers.
+
+outerloop: for x in 0...10 {
+innerloop: for y in 0...10 {
+if x != y {
+print("(\(x),\(y))")
+}
+}
+}
