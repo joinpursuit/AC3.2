@@ -230,7 +230,34 @@ Question 11
 
 Write an if statement that checks to see what quadrant a point is in, then prints that quadrant. Then write it as a switch statement
 
-let myPoint: (Double, Double)
+let myPoint: (Double, Double) = (1,-10)
+let (x,y) = (myPoint.0, myPoint.1)
+if x>0 && y>0 {
+print("The point is on quadrant I")
+} else if x<0 && y>0 {
+print("The point is on quadrant II")
+} else if x<0 && y<0 {
+print("The point is on quadrant III")
+} else if x>0 && y<0 {
+print("The point is on quadrant IV")
+} else {
+print("The point is on a line")
+}
+
+switch myPoint {
+case let (x,y) where x>0 && y>0:
+print("The point is on quadrant I")
+case let (x,y) where x<0 && y>0 :
+print("The point is on quadrant II")
+case let (x,y) where x<0 && y<0 :
+print("The point is on quadrant III")
+case let (x,y) where x>0 && y<0 :
+print("The point is on quadrant IV")
+default:
+print("The point is on a line")
+
+}
+
 Question 12
 
 Write an if statement that prints out what decade of life someone is in (e.g "You are in your twenties). Then write it as a switch statement
@@ -240,27 +267,87 @@ Question 13
 
 Write a switch statement that switches on a tuple with two Bools and prints what logical operators (&&, ||) could be applied to make a true expression.
 
-let pAndQ: (Bool, Bool)
+let pAndQ: (Bool, Bool) = (p:true, q:true)
+switch pAndQ{
+case let (p,q) where p==true && q==true:
+print("This is true!")
+case let (p,q) where p==false && q==false:
+print("This is false!")
+default:
+print("This is not sure!")
+}
+
 Next, write a switch statement that switches on a tuple with 3 Bools and prints what logical operators (&&, ||) could connect all Bools with to make a true expression.
 
-let pAndQAndR: (Bool, Bool, Bool)
+let pAndQAndR: (Bool, Bool, Bool) = (p:true, q:true, r:true)
+switch pAndQAndR{
+case let (p,q,r) where p==true && q==true && r==true:
+print("This is true!")
+case let (p,q,r) where p==false && q==false && r==false:
+print("This is false!")
+default:
+print("This is not sure!")
+}
+
 Question 14
 
 Write a switch statement that prints out the type of what it's switching on
+
+let somePoint = (1,2)
+switch somePoint {
+case let (x,y) where x>0 && y>0:
+print("The point is on quadrant I. The switch is \(somePoint.dynamicType).")
+case let (x,y) where x<0 && y>0 :
+print("The point is on quadrant II")
+case let (x,y) where x<0 && y<0 :
+print("The point is on quadrant III")
+case let (x,y) where x>0 && y<0 :
+print("The point is on quadrant IV")
+default:
+print("The point is on a line")
+}
 
 Question 15
 
 Write a conditional statement that prints out whether a number is a whole number
 
+let number = 15
+if number is Int {
+print("The number is a whole number")
+}
+
 Question 16
 
 You're walking in Manhattan. Write a switch statement that switches on a variable named "direction" having one of the values "North", "East", "West", or "South" and tells you if you're on a street or avenue
+
+var direction = "North"
+switch direction {
+case "North", "South":
+print ("You're travelling \(direction) and on an avenue.")
+case "East", "West":
+print ("You're travelling \(direction) and on an street.")
+default:
+print("You might be on Broadway")
+}
 
 Question 17
 
 You're in the Battery and you're heading for C4Q AND you can walk on water. Write a switch using fallthrough to tell you you're getting warmer or colder based on "direction" again. It should also report if you're going "uptown" or "downtown" (but shouldn't report about east or west).
 
-
+switch direction {
+case "North":
+print ("You're and going uptown.")
+fallthrough
+case "East":
+print ("You're getting warmer")
+case "South":
+print ("You're going downtown.")
+fallthrough
+case "West":
+print ("You're getting colder")
+default:
+print("You might be on Broadway")
+}
 
 # Conditionals
 
