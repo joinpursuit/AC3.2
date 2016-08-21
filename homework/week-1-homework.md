@@ -16,8 +16,8 @@ Provide the following constants/variable names with the most appropriate type an
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
-* 55 -
-* 122 - 
+* 55 - 00110111
+* 122- 01111010 
 * -1 - 11111111
 * 15 - 00001111
 
@@ -116,6 +116,33 @@ for person in professionals {
 }
 ```
 
+for person in professionals {
+	switch person {
+		case (_,_,_,_): 
+			if person.age > 19 && person.age < 30 {
+				print("\(person.firstName) \(person.lastName) is in their twenties.")
+			} else if person.age > 29 && person.age < 40 {
+				print("\(person.firstName) \(person.lastName) is in their thirties.")
+			} 
+			fallthrough
+		case (_,_,_,_): 
+			if person.job == "developer" {
+				print("\(person.firstName) \(person.lastName) is a developer.")
+			} else {
+				print("\(person.firstName) \(person.lastName) is not a developer.")
+			}
+			fallthrough
+		case (_,_,_,_):
+			if person.lastName == "Smith" {
+			print("\(person.firstName) \(person.lastName) is a Smith.")
+			}
+		default:
+			break
+	}
+}
+
+The above code is really ugly and I know there has to be a better, simpler way I'm just not grasping
+
 #### Question 7.
 Given the arrays below, use nested loops to print out every possible card in the deck.
 
@@ -132,8 +159,6 @@ for suit in suits {
 
 #### Question 8.
 Print out the lyrics to the song ["99 Bottles of Beer"](http://www.99-bottles-of-beer.net/lyrics.html)
-* Hint 1: Use a for-loop and a switch statement
-* Hint 2: Below is an example of reversing a range in Swift
 
 var beer = 99
 
