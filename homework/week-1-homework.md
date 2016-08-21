@@ -7,9 +7,6 @@
 #### Question 1.
 Provide the following constants/variable names with the most appropriate type annotations.
 ```
-let num = -1
-let str = String(num, radix: 2)
-print(str)
 1. let _firstName_: String
 2. let _middleInitial_: Character
 3. var _age_: Int
@@ -23,10 +20,10 @@ print(str)
 #### Question 2.
 Convert the following decimal numbers to Binary:
 ```
-* 55 = 00110111
-* 122 = 01111010
-* -1 = 10000001 (?)
-* 15 = 00001111
+55 = 00110111
+122 = 01111010
+-1 = 10000001 (?)
+15 = 00001111
 ```
 
 #### Question 3.
