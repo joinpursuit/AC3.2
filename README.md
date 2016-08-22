@@ -1,8 +1,9 @@
 # Access Code 3.2: Mobile Development with iOS
 
-Happy Wednesday.
+Welcome back.
 
-Today's lesson is [Conditionals](/lessons/conditionals)
+Today's lesson is on [Strings](/lessons/strings). 
+Tomorrow's lesson is on [Optionals](/lessons/optionals). 
 
 ## Schedule
 
