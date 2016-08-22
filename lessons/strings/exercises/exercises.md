@@ -98,7 +98,8 @@ S8.
 Write code that switches on a string. If the string's length is even, print out every character. If the string's length is odd, print out every other character
 
 Class Example
-``swift
+
+```swift
 var myString = "abcdefg"
 
 switch myString {
