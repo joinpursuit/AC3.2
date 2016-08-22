@@ -16,6 +16,7 @@ Provide the following constants/variable names with the most appropriate type an
 
 ANSWER:
 
+```swift
 let firstName: String = "Annie"
 let middleInitial: Character = "M"
 var age: Int = 23
@@ -24,6 +25,7 @@ var longitue: Double = 73.23345
 var isRainingCurrently: Bool = false
 let completeAddress: String = "2 Court Sq"
 let π: Double = 3.14159265359
+```
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
