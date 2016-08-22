@@ -185,7 +185,7 @@ ANSWER
 
 //* Print out the professionals with lastName "Smith". 
 
-``swift
+```swift
 for person in professionals {
 switch person { case (_, "Smith", _, _):
 print("\(person.0)'s last name is \(person.1)")
