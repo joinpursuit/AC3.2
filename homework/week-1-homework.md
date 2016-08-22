@@ -258,12 +258,11 @@ Or without arrays:
 ```swift
 var first = 0
 var second = 1
-var next = 0
 print (first)
 print (second)
 for i in 0...7 {
-	next = first + second
-	print (next)
+	var next = first + second
+	print(next)
 	first = second
 	second = next
 }
