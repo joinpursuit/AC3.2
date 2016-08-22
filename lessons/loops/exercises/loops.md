@@ -33,9 +33,23 @@ while (i > 3) {
 ```
 1) How many times does this while loop execute?
 
+- infinite
+
 2) How do you stop the loop when i reaches 9?
 
+- Put an if/else statement that will break out of the loop when i == 9  
+var i = 5
+while (i > 3) {
+i += 1
+if i ==9 {
+break
+}
+}
+
 3) How would you fix the while loop so that it only execute 1,000 times.
+
+
+
 
 4) Once the loop can run 1,000 times, print out ONLY the event number.
 
@@ -49,7 +63,7 @@ while i <= 10 {
 ```
 var i = 1
 do {
-   print("i = \(i)")
+    print("i = \(i)")
    i+=
 }while i <= 10
 ```
@@ -60,7 +74,7 @@ do {
 
 ## D) Short Answer Questions (NO Xcode)
 
-1) What's the difference between break vs continue?
+ 1) What's the difference between break vs continue?
 
 2) Without using Xcode explain the result of the following for-in loops.
 * a)
