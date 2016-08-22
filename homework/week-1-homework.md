@@ -25,7 +25,7 @@ Convert the following decimal numbers to Binary:
 Using nested loops, print the numbers from 0 to 100, then back to 0.
 
 
-for i in 0...1{
+/*for i in 0...1{
 
     switch (i){
 
@@ -52,7 +52,22 @@ for i in 0...1{
 
 
 
+}*/
+
+
+for i in 0...1{
+    for j in 0...100{
+
+        if (i == 1){
+            print("\(100 - j)",separator:"", terminator: " " )
+        }else{
+            print("\(j)",separator:"", terminator: " " )
+        }
+    }
+
+    print("")
 }
+
 
 
 #### Question 4.
