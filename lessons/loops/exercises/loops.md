@@ -90,7 +90,11 @@ start += 10
 
 4) Print out numbers contain 31, 35, 40 to 60.
 
-
+for i in 20...150{
+switch i{
+case let i in 
+}
+}
 
 
 ## C) While loop (NO Xcode)
