@@ -7,7 +7,7 @@ Without using string interpolation, print out a string that combines myGreeting 
 let myGreeting = "Hello, "
 let myName = "Ben"
 
-myGreeting + myName
+myGreeting + myName 
 
 ```
 #### S2.
@@ -82,6 +82,7 @@ count+=2
 default:
 break
 }
+
 
 #### S9.
 Initialize a String with a character. Show that it is a Character, and not another String, you're using
