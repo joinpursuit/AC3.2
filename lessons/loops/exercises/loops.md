@@ -100,6 +100,11 @@ for i in 20...150 where i % 100 == 31, 35, 40, 60  {
 
 // come back
 
+for i in 20...150 {
+switch x {
+case let x where x % 100 == (31 || )
+}
+}
 
 
 ## C) While loop (NO Xcode)
