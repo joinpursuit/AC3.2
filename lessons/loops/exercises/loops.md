@@ -92,6 +92,15 @@ start += 10
 
 
 
+for x in 20...150{
+    switch x {
+        case 31,35, 40...60,131,135, 140...150 :
+            print(x)
+        default:
+            break
+}
+}
+
 
 ## C) While loop (NO Xcode)
 ```
