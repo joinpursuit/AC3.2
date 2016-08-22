@@ -15,14 +15,15 @@ Provide the following constants/variable names with the most appropriate type an
 8. let _π_:
 
 ANSWER:
-<!--let firstName: String = "Annie"-->
-<!--let middleInitial: Character = "M"-->
-<!--var age: Int = 23-->
-<!--var latitude: Double = 62.34222-->
-<!--var longitue: Double = 73.23345-->
-<!--var isRainingCurrently: Bool = false-->
-<!--let completeAddress: String = "2 Court Sq"-->
-<!--let π: Double = 3.14159265359-->
+
+let firstName: String = "Annie"
+let middleInitial: Character = "M"
+var age: Int = 23
+var latitude: Double = 62.34222
+var longitue: Double = 73.23345
+var isRainingCurrently: Bool = false
+let completeAddress: String = "2 Court Sq"
+let π: Double = 3.14159265359
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
@@ -32,38 +33,41 @@ Convert the following decimal numbers to Binary:
 * 15
 
 ANSWER:
-<!--55 = 00110111-->
-<!--122 = 01111010-->
-<!---1 = 11111111-->
-<!--15 = 00001111-->
+
+55 = 00110111
+122 = 01111010
+-1 = 11111111
+15 = 00001111
 
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
 
 ANSWER:
-<!--for x in 0...1 {-->
-<!--if x == 0 {-->
-<!--for y in 0..<100 {-->
-<!--print(y)-->
-<!--}-->
-<!--} else {-->
-<!--for y in (0...100).reverse() {-->
-<!--print(y)-->
-<!--}-->
-<!--}-->
-<!--}-->
+
+for x in 0...1 {
+if x == 0 {
+for y in 0..<100 {
+print(y)
+}
+} else {
+for y in (0...100).reverse() {
+print(y)
+}
+}
+}
 
 #### Question 4.
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
 ANSWER:
-<!--for i in 2...220 {-->
-<!--if i % 2 == 0 {-->
-<!--print(i)-->
-<!--}-->
-<!--}-->
+
+for i in 2...220 {
+if i % 2 == 0 {
+print(i)
+}
+}
 
 
 #### Question 5.
@@ -73,27 +77,26 @@ ANSWER:
 
 ANSWER:
 a)
-<!--var sum = 0-->
-<!--for i in 0...50 {-->
-<!--sum += i-->
-<!--}-->
-<!--print(sum)-->
+var sum = 0
+for i in 0...50 {
+sum += i
+}
+print(sum)
 
 
 b)
-<!--var i = 0-->
-<!--while i < 100 {-->
-<!--i += 1-->
-<!--if i % 2 != 0 {-->
-<!--print(i)-->
-<!--}-->
-<!--}-->
+var i = 0
+while i < 100 {
+i += 1
+if i % 2 != 0 {
+print(i)
+}
+}
 
 c)
-<!--for case let i in 50...500 where i % 10 == 0 {-->
-<!--print(i)-->
-<!--}-->
-
+for case let i in 50...500 where i % 10 == 0 {
+print(i)
+}
 
 #### Question 6.
 Consider the code below. Loop through the ```professionals``` array and using a switch statement:
@@ -127,55 +130,57 @@ for person in professionals {
 ```
 
 ANSWER:
+
 a)
-<!--for person in professionals {-->
-<!--switch person {-->
-<!--case (_, "Smith", _, _):-->
-<!--print(person)-->
-<!--default:-->
-<!--break-->
-<!--}-->
-<!--}-->
+for person in professionals {
+switch person {
+case (_, "Smith", _, _):
+print(person)
+default:
+break
+
+}
+}
 
 b)
-<!--for person in professionals {-->
-<!--switch person {-->
-<!--case (_, _, "developer", _):-->
-<!--print(person)-->
-<!--default:-->
-<!--break-->
-<!--}-->
-<!--}-->
+for person in professionals {
+switch person {
+case (_, _, "developer", _):
+print(person)
+default:
+break
+}
+}
 
 c)
-<!--for person in professionals {-->
-<!--switch person {-->
-<!--case(_, _, "developer", _):-->
-<!--break-->
-<!--default:-->
-<!--print(person)-->
-<!--}-->
-<!--}-->
+for person in professionals {
+switch person {
+case(_, _, "developer", _):
+break
+default:
+print(person)
+}
+}
 
 d)
-<!--for person in professionals {-->
-<!--switch person {-->
-<!--case(_, _, _, 20...29):-->
-<!--print(person)-->
-<!--default:-->
-<!--break-->
-<!--}-->
-<!--}-->
+for person in professionals {
+switch person {
+case(_, _, _, 20...29):
+print(person)
+default:
+break
+}
+}
 
 e)
-<!--for person in professionals {-->
-<!--switch person {-->
-<!--case(_, _, _, 30...39):-->
-<!--print(person)-->
-<!--default:-->
-<!--break-->
-<!--}-->
-<!--}-->
+for person in professionals {
+switch person {
+case(_, _, _, 30...39):
+print(person)
+default:
+break
+}
+}
 
 
 #### Question 7.
@@ -187,12 +192,12 @@ let suits = ["♠️", "♣️", "♥️", "♦️"]
 ```
 
 ANSWER:
-<!--for i in denominations {-->
-<!--for j in suits {-->
-<!--print([i], [j])-->
-<!--}-->
-<!--}-->
 
+for i in denominations {
+for j in suits {
+print([i], [j])
+}
+}
 
 #### Question 8.
 Print out the lyrics to the song ["99 Bottles of Beer"](http://www.99-bottles-of-beer.net/lyrics.html)
@@ -206,18 +211,19 @@ for i in (1...5).reverse() {
 ```
 
 ANSWER:
-<!--var lyrics = true-->
-<!--for i in (1...99).reverse() {-->
-<!--switch lyrics {-->
-<!--case i > 1:-->
-<!--print("\(i) bottles of beer on the wall, \(i) bottles of beer. Take one down and pass it around, \(i-1) bottles of beer on the wall.")-->
-<!--case i == 1:-->
-<!--print("\(i) bottle of beer on the wall, \(i) bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.")-->
-<!--fallthrough-->
-<!--default:-->
-<!--print("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, \(i) bottles of beer on the wall.")-->
-<!--}-->
-<!--}-->
+
+var lyrics = true
+for i in (1...99).reverse() {
+switch lyrics {
+case i > 1:
+print("\(i) bottles of beer on the wall, \(i) bottles of beer. Take one down and pass it around, \(i-1) bottles of beer on the wall.")
+case i == 1:
+print("\(i) bottle of beer on the wall, \(i) bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.")
+fallthrough
+default:
+print("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, \(i) bottles of beer on the wall.")
+}
+}
 
 
 #### Question 9.
@@ -228,19 +234,20 @@ ANSWER:
 * For all multiples of 3 and 5, print out "FizzBuzz" instead of the number.
 
 ANSWER:
-<!--var FizzBuzz = true;-->
-<!--for i in 0...100 {-->
-<!--switch FizzBuzz {-->
-<!--case (i % 3 == 0) && (i % 5 == 0):-->
-<!--print("Fizzbuzz")-->
-<!--case (i % 3 == 0):-->
-<!--print("Fizz")-->
-<!--case (i % 5 == 0):-->
-<!--print("Buzz")-->
-<!--default:-->
-<!--print(i)-->
-<!--}-->
-<!--}-->
+
+var FizzBuzz = true;
+for i in 0...100 {
+switch FizzBuzz {
+case (i % 3 == 0) && (i % 5 == 0):
+print("Fizzbuzz")
+case (i % 3 == 0):
+print("Fizz")
+case (i % 5 == 0):
+print("Buzz")
+default:
+print(i)
+}
+}
 
 #### Question 10.
 Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in/2015/06/fibonacci-series-in-c-program.html) numbers:
@@ -250,14 +257,15 @@ Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in
 ```
 
 ANSWER:
-<!--var a = 0-->
-<!--var b = 1-->
-<!--var x = 10-->
-<!---->
-<!---->
-<!--for _ in 1...x {-->
-<!--print(a)-->
-<!--var c = a + b-->
-<!--a = b-->
-<!--b = c-->
-<!--}-->
+
+var a = 0
+var b = 1
+var x = 10
+
+
+for _ in 1...x {
+print(a)
+var c = a + b
+a = b
+b = c
+}
