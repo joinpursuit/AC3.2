@@ -252,5 +252,19 @@ for i in 2...9 {
 	print(x[i])
 }
 ```
+Or without arrays:
 
+```swift
+var first = 0
+var second = 1
+var next = 0
+print (first)
+print (second)
+for i in 0...7 {
+	next = first + second
+	print (next)
+	first = second
+	second = next
+}
+```
 
