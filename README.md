@@ -1,13 +1,11 @@
 # Access Code 3.2: Mobile Development with iOS
 
-## Welcome to Access Code!
+Welcome back.
 
-We've prepared some [homework](lessons/prework). Hooray! Please 
-complete it before class begins on Monday, August 15.
+Today's lesson is on [Strings](/lessons/strings). 
+Tomorrow's lesson is on [Optionals](/lessons/optionals). 
 
-## A peek at what's coming
-
-The first week or so has objectives for each subject. Later lessons will be added as we go.
+## Schedule
 
 - [Lesson Schedule](schedule.md)
 
