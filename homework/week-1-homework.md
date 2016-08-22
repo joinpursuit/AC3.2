@@ -6,7 +6,7 @@
 
 #### Question 1.
 Provide the following constants/variable names with the most appropriate type annotations.
-```
+```swift
 1. let _firstName_: String
 2. let _middleInitial_: Character
 3. var _age_: Int
@@ -19,7 +19,7 @@ Provide the following constants/variable names with the most appropriate type an
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
-```
+```swift
 55 = 00110111
 122 = 01111010
 -1 = 10000001 (?)
@@ -28,7 +28,7 @@ Convert the following decimal numbers to Binary:
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
-```
+```swift
 for i in 0...100 {
     switch i {
         case 0...99:
@@ -45,7 +45,7 @@ for i in 0...100 {
 #### Question 4.
 While i is greater than 1, print only all positive even numbers and break
 out of the loop when you've reached 220.
-```
+```swift
 var i = 221
 
 while i > 1 {
@@ -58,7 +58,7 @@ while i > 1 {
 
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
-```
+```swift
 var sum = 0
 
 for i in 0...50 {
@@ -68,7 +68,7 @@ for i in 0...50 {
 print(sum)
 ```
 * Using a while loop, print all the odd numbers from 0 to 100.
-```
+```swift
 var i = 0
 
 while i <= 100 {
@@ -79,7 +79,7 @@ while i <= 100 {
 }
 ```
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
-```
+```swift
 for i in 50...500 where i % 10 == 0 {
     print(i)
 }
@@ -93,7 +93,7 @@ Consider the code below. Loop through the ```professionals``` array and using a 
 * Print out the professionals in their 20s.
 * Print out the professionals in their 30s.
 
-```
+```swift
 let sarah = (firstName: "Sarah", lastName: "Palardo", job: "teacher", age: 32)
 let beth = (firstName: "Beth", lastName: "Newell", job: "developer", age: 29)
 let jana = (firstName: "Jana", lastName: "Smith", job: "developer", age: 33)
@@ -144,7 +144,7 @@ var age = person.3
 #### Question 7.
 Given the arrays below, use nested loops to print out every possible card in the deck.
 
-```
+```swift
 let denominations = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 let suits = ["♠️", "♣️", "♥️", "♦️"]
 
@@ -161,7 +161,7 @@ Print out the lyrics to the song ["99 Bottles of Beer"](http://www.99-bottles-of
 * Hint 1: Use a for-loop and a switch statement
 * Hint 2: Below is an example of reversing a range in Swift
 
-```
+```swift
 for i in (0...99).reverse() {
 
 switch i {
@@ -185,7 +185,7 @@ switch i {
 * For all multiples of 3, print out "Fizz" instead of the number.
 * For all multiples of 5, print out "Buzz"  instead of the number.
 * For all multiples of 3 and 5, print out "FizzBuzz" instead of the number.
-```
+```swift
 for i in 0...100 {
     if i % 3 == 0 {
         print("Fizz")
@@ -202,7 +202,7 @@ for i in 0...100 {
 #### Question 10.
 Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in/2015/06/fibonacci-series-in-c-program.html) numbers:
 
-```
+```swift
 //Expected Output: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
 var fibNum = 10
