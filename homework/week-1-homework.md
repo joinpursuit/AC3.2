@@ -26,13 +26,10 @@ Convert the following decimal numbers to Binary:
 Using nested loops, print the numbers from 0 to 100, then back to 0.
 
 ```swift
-for case let x in 0...1 {
-	if x == 0 {
-		for y in 0..<100 {
-			print(y)
-		}
-	} else {
-		for y in (0...100).reverse() {
+for x in 0...100 {
+	print(x)
+	if x == 100 {
+		for y in (0..<100).reverse() {
 			print(y)
 		}
 	}
