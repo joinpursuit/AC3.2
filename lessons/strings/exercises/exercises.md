@@ -1,68 +1,157 @@
-### Strings Exercises
+//: Playground - noun: a place where people can play
 
-#### S1.
+import UIKit
+
+Strings Exercises
+
+S1.
+
 Without using string interpolation, print out a string that combines myGreeting and myName.
 
-```
 let myGreeting = "Hello, "
 let myName = "Ben"
+
+```swift
+print(myGreeting + myName)
 ```
-#### S2.
+
+S2.
+
 Write code that prints out myArray as a single string separated by spaces.
 
 ```swift
 let myArray = ["Hi", "there,", "how","is","it","going?"]
-```
-#### S3.
-Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
 
-#### S4.
+for i in 0..<myArray.count {
+    print(myArray[i], terminator: " ")
+}
+```
+
+S3.
+
+Write code that prints out all the numbers from 1 to 10 as a single string. (Hint: the String() function can convert an int to a string)
+
+```swift
+for i in 1...10 {
+    var j = " "
+    j += String(i)
+    print(j, terminator: " ")
+}
+```
+
+S4.
+
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
-#### S5.
+```swift
+for i in 5...51 {
+    var j = " "
+    if i % 2 == 0 {
+        j += String(i)
+        print(j, terminator: " ")
+    }
+}
+```
+
+S5.
+
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
-#### S6.
-Print each character in the string ```Hello world!```
+```swift
+for i in 1...60 {
+    var j = " "
+    if i % 10 == 4 {
+        j += String(i)
+        print(j, terminator: " ")
+    }
+}
+```
 
-#### S7.
+S6.
+
+Print each character in the string Hello world!
+
+```swift
+let hw = "Hello world!".characters
+for character in hw {
+    print(character)
+}
+```
+
+S7.
+
 Using '.characters' and loop, print the last character in the string below
+
 ```swift
 let myStringSeven = "Hello world!"
+let last = myStringSeven.endIndex.advancedBy(-1)
+
+for character in myStringSeven.characters {
+    if character == myStringSeven[last] {
+        print(character)
+    }
+}
 ```
 
-#### S8.
-Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
+S8.
 
-#### S9.
-Initialize a String with a character. Show that it is a Character, and not another String, you're using
-to initialize it.
+Write code that switches on a string. If the string's length is even, print out every character. If the string's length is odd, print out every other character
 
-### Unicode exercises
+Class Example
+``swift
+var myString = "abcdefg"
 
-#### U1.
-Build five pairs of canonically equivalent strings, the first of each being a pre-composed character and
-the second being one that uses combinable unicode scalars. Show that they are equivalent.
+switch myString {
+    case _ where myString.characters.count % 2 == 0:
+        for i in myString.characters {
+            print(i)
+        }
+    default:
+        var j = 0
+        for k in myString.characters {
+            if j % 2 == 0 {
+                print(k)
+            }
+            j += 1
+        }
+    }
 
-Refer to this [Unicode Table](http://unicode-table.com/en/).
+for (j, k) in myString.characters.enumerate() {
+    if j % 2 == 0 {
+        print(k)
+    }
+}
+```
 
-#### U2.
-* Using only Unicode, print out "HELLO WORLD!"
+S9.
 
-#### U3.
-* Using only Unicode, print out your name.
+Initialize a String with a character. Show that it is a Character, and not another String, you're using to initialize it.
 
-#### U4
-* (Bonus) Using only Unicode, print "Hello World" in another language.
+Unicode exercises
 
-#### U5.
+U1.
+
+Build five pairs of canonically equivalent strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
+
+Refer to this Unicode Table.
+
+U2.
+
+Using only Unicode, print out "HELLO WORLD!"
+U3.
+
+Using only Unicode, print out your name.
+U4
+
+(Bonus) Using only Unicode, print "Hello World" in another language.
+U5.
+
 Print the below flower box using the following information.
-* The unicode number for ⚘ is U-2698
-* The top and bottom of the box are represented by dashes and the rows are ```|```
-* Use the __terminator__ argument in your print statements to print on the same line.
-* Hint: It may be useful to try printing out a box of just one character to start then work your way from there.
 
-```
+The unicode number for ⚘ is U-2698
+The top and bottom of the box are represented by dashes and the rows are |
+Use the terminator argument in your print statements to print on the same line.
+Hint: It may be useful to try printing out a box of just one character to start then work your way from there.
 - - - - - - - - - - -
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
@@ -73,5 +162,3 @@ Print the below flower box using the following information.
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
-
-```
