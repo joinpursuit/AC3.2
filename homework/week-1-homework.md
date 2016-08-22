@@ -202,5 +202,14 @@ print(i)
 //
 //0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
-0 + 1 , 1 + 1 , 1 + 2 , 2 + 3 , 3 + 5
-x = 0 0 + 1, print x x + x print x x + x print x
+
+var num1 = 0
+var num2 = 1 
+
+for _ in 0...8 {
+let sum = num1
+num1 = num2
+num2 = sum + num2
+print(num1)
+}
+
