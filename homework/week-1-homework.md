@@ -15,7 +15,6 @@ Provide the following constants/variable names with the most appropriate type an
 8. let _π_:
 
 ANSWER:
-
 ```swift
 let firstName: String = "Annie"
 let middleInitial: Character = "M"
@@ -35,18 +34,19 @@ Convert the following decimal numbers to Binary:
 * 15
 
 ANSWER:
-
+```swift
 55 = 00110111
 122 = 01111010
 -1 = 11111111
 15 = 00001111
+```
 
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
 
 ANSWER:
-
+```swift
 for x in 0...1 {
 if x == 0 {
 for y in 0..<100 {
@@ -58,19 +58,20 @@ print(y)
 }
 }
 }
+```
 
 #### Question 4.
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
 ANSWER:
-
+```swift
 for i in 2...220 {
 if i % 2 == 0 {
 print(i)
 }
 }
-
+```
 
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
@@ -78,14 +79,15 @@ print(i)
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
 
 ANSWER:
+```swift
 a)
 var sum = 0
 for i in 0...50 {
 sum += i
 }
 print(sum)
-
-
+```
+```swift
 b)
 var i = 0
 while i < 100 {
@@ -94,12 +96,13 @@ if i % 2 != 0 {
 print(i)
 }
 }
-
+```
+```swift
 c)
 for case let i in 50...500 where i % 10 == 0 {
 print(i)
 }
-
+```
 #### Question 6.
 Consider the code below. Loop through the ```professionals``` array and using a switch statement:
 * Print out the professionals with _lastName_ "Smith".
@@ -132,7 +135,7 @@ for person in professionals {
 ```
 
 ANSWER:
-
+```swift
 a)
 for person in professionals {
 switch person {
@@ -140,10 +143,10 @@ case (_, "Smith", _, _):
 print(person)
 default:
 break
-
 }
 }
-
+```
+```swift
 b)
 for person in professionals {
 switch person {
@@ -153,7 +156,8 @@ default:
 break
 }
 }
-
+```
+```swift
 c)
 for person in professionals {
 switch person {
@@ -163,7 +167,8 @@ default:
 print(person)
 }
 }
-
+```
+```swift
 d)
 for person in professionals {
 switch person {
@@ -173,7 +178,8 @@ default:
 break
 }
 }
-
+```
+```swift
 e)
 for person in professionals {
 switch person {
@@ -183,8 +189,7 @@ default:
 break
 }
 }
-
-
+```
 #### Question 7.
 Given the arrays below, use nested loops to print out every possible card in the deck.
 
@@ -194,13 +199,13 @@ let suits = ["♠️", "♣️", "♥️", "♦️"]
 ```
 
 ANSWER:
-
+```swift
 for i in denominations {
 for j in suits {
 print([i], [j])
 }
 }
-
+```
 #### Question 8.
 Print out the lyrics to the song ["99 Bottles of Beer"](http://www.99-bottles-of-beer.net/lyrics.html)
 * Hint 1: Use a for-loop and a switch statement
@@ -213,7 +218,7 @@ for i in (1...5).reverse() {
 ```
 
 ANSWER:
-
+```swift
 var lyrics = true
 for i in (1...99).reverse() {
 switch lyrics {
@@ -226,8 +231,7 @@ default:
 print("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, \(i) bottles of beer on the wall.")
 }
 }
-
-
+```
 #### Question 9.
 ##### "FizzBuzz"
 * Create a loop that prints all integers from 0 to 100.
@@ -236,7 +240,7 @@ print("No more bottles of beer on the wall, no more bottles of beer. Go to the s
 * For all multiples of 3 and 5, print out "FizzBuzz" instead of the number.
 
 ANSWER:
-
+```swift
 var FizzBuzz = true;
 for i in 0...100 {
 switch FizzBuzz {
@@ -250,7 +254,7 @@ default:
 print(i)
 }
 }
-
+```
 #### Question 10.
 Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in/2015/06/fibonacci-series-in-c-program.html) numbers:
 
@@ -259,11 +263,10 @@ Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in
 ```
 
 ANSWER:
-
+```swift
 var a = 0
 var b = 1
 var x = 10
-
 
 for _ in 1...x {
 print(a)
@@ -271,3 +274,4 @@ var c = a + b
 a = b
 b = c
 }
+```
