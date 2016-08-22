@@ -233,3 +233,15 @@ Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in
 ```
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 ```
+
+var a = 0
+var b = 1
+var c = 0
+for _ in 0..<10 {
+    if c == a + b {
+        print(c)
+        a = b
+        b = c
+    }
+    c = a + b
+}
