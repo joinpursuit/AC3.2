@@ -5,22 +5,22 @@
 #### Question 1.
 Provide the following constants/variable names with the most appropriate type annotations.
 
-``1. let _firstName_: String
+1. let _firstName_: String
 2. let _middleInitial_: Character
 3. var _age_: Int
 4. var _latitude_: Double
 5. var _longitude_: Double
 6. var _isRainingCurrently_: Bool
 7. let _completeAddress_: String
-8. let _π_: Double``
+8. let _π_: Double
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
 
-``* 55 : 00110111
+* 55 : 00110111
 * 122 : 01111010
 * -1 : 11111111
-* 15 : 00001111``
+* 15 : 00001111
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
