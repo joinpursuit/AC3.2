@@ -7,17 +7,52 @@ Without using string interpolation, print out a string that combines myGreeting 
 let myGreeting = "Hello, "
 let myName = "Ben"
 ```
+
+print(myGreeting + myName)
+
+
 #### S2.
 Write code that prints out myArray as a single string separated by spaces.
 
 ```swift
 let myArray = ["Hi", "there,", "how","is","it","going?"]
 ```
+
+var newString = ""
+
+for i in myArray {
+    newString += i + " "
+}
+
+print(newString)
+
+
 #### S3.
 Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
 
+
+var newString = ""
+
+for i in 1...10 {
+    newString += i + " "
+}
+
+print(newString)
+
+
 #### S4.
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+
+
+
+var newString = ""
+
+for i in 5...51 {
+    if i % 2 == 0 {
+        newString += i
+    }
+}
+
 
 #### S5.
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
