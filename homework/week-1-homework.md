@@ -82,6 +82,8 @@ Convert the following decimal numbers to Binary:
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
 
+```swift
+
 for i in 0...100 {
 for j in (0...100).reverse() {
 print("\(i),\(j)", separator: "", terminator: " ")
@@ -89,13 +91,14 @@ print("\(i),\(j)", separator: "", terminator: " ")
 print("")
 }
 
-
+```
 
 
 #### Question 4.
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
+``` swift
 var i = 2
 while i > 1 {
 if i%2==0 {
@@ -105,21 +108,25 @@ break}
 i+=1
 }
 
+```
 
 
 
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
 
+``` swift
+
 for i in 1...50{
 print (i + (i+1))
 }
 
-
+```
 
 
 * Using a while loop, print all the odd numbers from 0 to 100.
 
+``` swift
 var i = 0
 
 while (i<=100){
@@ -128,14 +135,17 @@ print(i)}
 i+=1
 }
 
-
+```
 
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
+
+``` swift
 
 for case let i in 50...100 where i%10 == 0 {
 print (i)
 }
 
+```
 
 
 #### Question 6.
@@ -173,31 +183,30 @@ ANSWER
 
 
 
-
-let sarah = (firstName: "Sarah", lastName: "Palardo", job: "teacher", age: 32)
-let beth = (firstName: "Beth", lastName: "Newell", job: "developer", age: 29)
-let jana = (firstName: "Jana", lastName: "Smith", job: "developer", age: 33)
-let lauren = (firstName: "Lauren", lastName: "Olson", job: "doctor", age: 27)
-let charles = (firstName: "Charles", lastName: "Wong", job: "developer" , age: 24)
-let steve = (firstName: "Steve", lastName: "Smith", job: "writer", age: 28)
-let jamal = (firstName: "Jamal", lastName: "Smith", job: "developer", age: 25)
-let navindra = (firstName: "Navindra", lastName: "Chowdhurry", job: "actuary", age: 29)
-
-let professionals = [sarah, beth, jana, lauren, charles, steve, jamal, navindra]
-
 //* Print out the professionals with lastName "Smith". 
+
+``swift
 for person in professionals {
 switch person { case (_, "Smith", _, _):
 print("\(person.0)'s last name is \(person.1)")
 default: print("\(person.0)'s last name is not Smith") } }
 
-//* Print out all the developers. 
+```
+
+//* Print out all the developers.
+
+```swift 
 for person in professionals {
 switch person { case (_, _, "developer", _):
 print("\(person.0) is a professional developer")
 default: print("\(person.0) is not a developer") } }
 
+```
+
 //* Print out all the non-developers. 
+
+
+```swift
 for person in professionals {
 switch person {
 case (_, _, "teacher", _):
@@ -211,21 +220,27 @@ print("\(person.0) is actuary")
 default:
 print("Not Available") }
 }
+```
 
-//* Print out the professionals in their 20s. 
+//* Print out the professionals in their 20s.
+
+```swift
 for person in professionals {
 switch person { case (_, _, _, 20..<30):
 print("\(person.0) is in there 20s")
 default: print("\(person.0) is not in there 20s") } }
+```
 
 //* Print out the professionals in their 30s.
+
+```swift
 for person in professionals {
 switch person { case (_, _, _, 30..<40):
 print("\(person.0) is in there 30s")
 default:
 print("\(person.0) is not in there 30s") } }
 
-
+```
 
 
 
@@ -240,17 +255,14 @@ let denominations = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q"
 let suits = ["♠️", "♣️", "♥️", "♦️"]
 
 
-
-
-let denominations = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-let suits = ["♠️", "♣️", "♥️", "♦️"]
-
 for i in denominations {
 for j in suits {
 print("\(i),\(j)", separator: "", terminator: " ")
 }
 print("")
 }
+```
+
 
 
 
@@ -268,7 +280,7 @@ for i in (1...5).reverse() {
 ```
 
 
-
+```swift 
 for i in (1...99).reverse() {
 print("\(i) bottles of beer on the wall, \(i) bottles of beer.")
 print("Take one down and pass it around, \(i-1) bottles of beer on the wall.")
@@ -277,7 +289,7 @@ print(" ") }
 print("No more bottles of beer on the wall, no more bottles of beer.")
 print("Go to the store and buy some more, 99 bottles of beer on the wall.")
 
-
+```
 
 
 
@@ -291,7 +303,7 @@ print("Go to the store and buy some more, 99 bottles of beer on the wall.")
 * For all multiples of 5, print out "Buzz"  instead of the number.
 * For all multiples of 3 and 5, print out "FizzBuzz" instead of the number.
 
-
+```swift
 var i = 0
 
 while i<=100{
@@ -309,7 +321,7 @@ print(i)
 i+=1
 }
 
-
+```
 
 
 
@@ -321,6 +333,7 @@ Write code that will print out the first 10 [Fibonacci](http://www.codeforwin.in
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
 ```
+```swift 
 
 var x = 10
 
@@ -333,6 +346,8 @@ var tmp = a + b
 b = a
 a = tmp
 }
+
+```
 
 
 
