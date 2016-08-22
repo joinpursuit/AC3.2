@@ -42,11 +42,11 @@ out of the loop when you've reached 220.
 
 var i = 2
 while i > 1 {
-if i > 220 {
-break
-}
-print(i)
-i += 2
+    if i > 220 {
+        break
+    }
+    print(i)
+    i += 2
 }
 
 #### Question 5.
