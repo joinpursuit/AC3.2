@@ -1,5 +1,94 @@
 ### Strings Exercises
 
+```
+//#### S1.
+//Without using string interpolation, print out a string that combines myGreeting and myName.
+
+let myGreeting = "Hello, "
+let myName = "Ben"
+print(myGreeting + myName)
+
+
+//#### S2.
+//Write code that prints out myArray as a single string separated by spaces.
+
+let myArray = ["Hi", "there,", "how","is","it","going?"]
+
+for a in myArray{
+print(a, terminator: " ")
+}
+
+
+//#### S3.
+//Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
+
+var str = ""
+for i in 1...10{
+str += String(i)
+}
+print(str)
+
+
+//#### S4.
+//Write code that prints out all the even numbers from 5 to 51 as a single string.
+
+var str = ""
+for var i in 5...51 where i%2 == 0{
+str += String(i)
+}
+print(str)
+
+//#### S5.
+//Write code that prints out every number ending in 4 between 1 and 60 as a single string.
+
+var str = ""
+for var i in 1...60 where i%10 == 4{
+str += String(i)
+}
+print(str)
+
+//#### S6.
+//Print each character in the string ```Hello world!```
+
+let string = "Hello world"
+
+for i in string.characters{
+print(i, terminator: "")
+}
+
+//#### S7.
+//Using '.characters' and loop, print the last character in the string below
+
+
+let end = str.characters.count - 1
+let lastIndex = str.startIndex.advancedBy(end)
+let endCharacter = str[lastIndex]
+for i in str.characters {
+if i == endCharacter {
+print(i)
+}
+}
+
+//#### S8.
+//Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
+
+let str = "Hello World!"
+let end = str.characters.count - 1
+switch str.characters.count{
+case :
+break
+default:
+break
+}
+
+//#### S9.
+//Initialize a String with a character. Show that it is a Character, and not another String, you're using to initialize it.
+
+var a = "A"
+print(Character(a).dynamicType)
+```
+
+
 #### S1.
 Without using string interpolation, print out a string that combines myGreeting and myName.
 
