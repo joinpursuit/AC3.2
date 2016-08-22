@@ -7,6 +7,7 @@ Eashir Arafat - Hi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Happy Wednesday.
 >>>>>>> upstream/master
 =======
@@ -18,10 +19,12 @@ Happy Friday -- truly something to be happy about.
 =======
 Have a good weekend!
 >>>>>>> 2587506cb1897821718b8e46449051c50fe1fdb2
+=======
+Welcome back.
+>>>>>>> 7e888753a8b70e86c39cc77b1ae34590b9d5b909
 
-Weekend [homework](/homework/week-1-homework.md)
-
-Monday's lesson is on [Strings](/lessons/strings). Note there is a little more reading than usual. 
+Today's lesson is on [Strings](/lessons/strings). 
+Tomorrow's lesson is on [Optionals](/lessons/optionals). 
 
 ## Schedule
 
