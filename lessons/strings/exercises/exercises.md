@@ -77,9 +77,27 @@ let myStringSeven = "Hello world!"
 #### S8.
 Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
 
+let myString = "abcdefgh"
+
+switch myString {
+    case let _ where myString.characters.count %2 == 0:
+        for i in myString.characters{
+    print(i)
+}
+    default:
+    var j = 1
+for k in myString.characters {
+        if j % 2 ==0 {
+        print(k)
+}
+    }
+}
+
 #### S9.
 Initialize a String with a character. Show that it is a Character, and not another String, you're using
 to initialize it.
+
+
 
 ### Unicode exercises
 
@@ -91,7 +109,7 @@ Refer to this [Unicode Table](http://unicode-table.com/en/).
 
 #### U2.
 * Using only Unicode, print out "HELLO WORLD!"
-
+var first = "\u{0048}\u{0045}\u{004C}\u{004C}\u{004F}\u{0020}\u{0057}\u{4F}\u{52}\u{4C}\u{44}"
 #### U3.
 * Using only Unicode, print out your name.
 

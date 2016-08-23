@@ -59,32 +59,44 @@ if randNum() {
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
-
+if let (a,b) = tuple {
+    print(a,b)
+} else {
+    print("Not a Tuple")
+}
 
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
-
+//if var newInt = myInt {
+//        print( newInt * 2)
+//} else {
+//    print("myInt is nil")
+//}
 
 
 
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
+if let  firstString = myString {
+    print(firstString + stringTwo  )
+} else {
+    print("Broken")
+}
 
 
 
@@ -92,16 +104,18 @@ if randNum() {
 
 
 //D)
-let myDouble: Double?
+var myDouble: Double?
 let doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
-
-
-
+if let nextDouble = myDouble {
+    print( Int(nextDouble) * doubleTwo)
+} else {
+        print("myDouble is nil")
+}
 
 
 
@@ -115,7 +129,11 @@ if randNum() {
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
 
-
+if let newBool = isTheGreatest {
+    print(isTheGreatest)
+} else {
+    isTheGreatest = false
+}
 
 
 
@@ -137,7 +155,15 @@ if !randNum() {
 }
 //Print the sum of each non-nil element in myTuple.
 
-
+if let oneTup = myTuple.0, twoTup = myTuple.2, threeTup = myTuple.1, fourTup = myTuple.3  {
+    print(oneTup + twoTup + threeTup + fourTup)
+} else if let oneTup = myTuple.0, twoTup = myTuple.2{
+        print(oneTup + twoTup)
+} else if let threeTup = myTuple.1, fourTup = myTuple.3 {
+         print(threeTup + fourTup)
+} else{
+    print("All nil")
+}
 
 
 
