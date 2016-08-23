@@ -58,18 +58,25 @@ if randNum() {
     tuple = (5, 3)
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
-
+if var tuple1 = tuple {
+	print(tuple1)
+}
 
 
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
-//Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
+//Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
+if var myInt1 = myInt {
+	print(myInt1 * 2)
+} else {
+	print("Error")
+}
 
 
 
@@ -77,14 +84,18 @@ if randNum() {
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
+if var firstName = myString {
+	print(firstName + stringTwo)
+} else {
+	print("Error")
+}
 
 
 
@@ -92,14 +103,18 @@ if randNum() {
 
 
 //D)
-let myDouble: Double?
+var myDouble: Double?
 let doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
-
+if var firstDub = myDouble {
+	print(firstDub * Double(doubleTwo))
+} else {
+	print("Error")
+}
 
 
 
@@ -113,7 +128,11 @@ if randNum() {
     isTheGreatest = true
 }
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
-
+if var _ = isTheGreatest {
+	
+} else {
+	isTheGreatest = false
+}
 
 
 
@@ -137,9 +156,40 @@ if !randNum() {
 }
 //Print the sum of each non-nil element in myTuple.
 
+var sum: Int?
+if var a = myTuple.0 {
+	sum = a
+}
 
+if var b = myTuple.1 {
+	if sum != nil {
+		sum! += b
+	} else {
+		sum = b
+	}
+}
 
+if var c = myTuple.2 {
+	if sum != nil {
+		sum! += c
+	} else {
+		sum = c
+	}
+}
 
+if var d = myTuple.3 {
+	if sum != nil {
+		sum! += d
+	} else {
+		sum = d
+	}
+}
+
+if sum != nil {
+print(sum!)
+} else {
+	print("sum is nil")
+}
 
 
 
@@ -149,9 +199,11 @@ if !randNum() {
 
 
 //G)
-let myIntString = "35"
+var myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
-
+if var i = Int(myIntString) {
+	print(i + 15)
+}
 
 
 
@@ -165,11 +217,18 @@ let myIntString = "35"
 
 
 //H)
-let pokemon: String?
+var pokemon: String?
 var evolutionaryStone: String?
 pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
+if var poke = pokemon, var stone = evolutionaryStone {
+	if poke == "Pikachu" && stone == "Electric" { print("Raichu") }
+	else if poke == "Bulbasaur" && stone == "Grass" { print("Ivysaur") }
+	else if poke == "Charmander" && stone == "Fire" { print("Charmeleon") }
+	else if poke == "Squirtle" && stone == "Water" {print("Warturtle") }
+	else { print("No evolution") }
+}
 
 
 
@@ -184,7 +243,9 @@ lvl = lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
 
-
+if var level = lvl {
+	if level > 7 { exp += 150 }
+}
 
 
 
