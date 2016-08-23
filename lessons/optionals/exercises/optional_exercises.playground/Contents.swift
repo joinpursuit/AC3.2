@@ -156,43 +156,6 @@ if let numThree = myTuple.3{
 }
 print(sum)
 
-
-//if let i = myTuple{
-//    for i in sum {
-//        
-//    }
-//}
-//
-//for x in 0...3{
-//    if let i = myTuple.x{
-//        print(i)
-//        
-//    }
-//    x+=1
-//}
-//if let i = myTuple.0 {
-//    var x = i
-//}
-//if let i = myTuple.1 {
-//    var y = i
-//}
-//if let i = myTuple.2 {
-//    var z = i
-//}
-//if let i = myTuple.3 {
-//    var a = i
-//}
-//print(a + x + y + z)
-//
-//
-//
-//
-
-
-
-
-
-
 //G)
 let myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
@@ -206,12 +169,6 @@ if let i = xzs{
 
 
 
-
-
-
-
-
-
 //H)
 let pokemon: String?
 var evolutionaryStone: String?
@@ -219,11 +176,9 @@ pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
 
-
-
-
-
-
+if let i = pokemon, let j = evolutionaryStone {
+    print("\(i) can be evolved with \(j) stone! ")
+}
 
 
 //I)
@@ -232,6 +187,12 @@ lvl = lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
 
+if let i = lvl {
+    if i > 7 {
+        var newExp = exp + 150
+        print(newExp)
+    }
+}
 
 
 
