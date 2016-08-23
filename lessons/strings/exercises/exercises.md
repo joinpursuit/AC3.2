@@ -126,6 +126,18 @@ to initialize it.
 Build five pairs of canonically equivalent strings, the first of each being a pre-composed character and
 the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+let name = "Tom"
+let nameU = "\u{0054}\u{006F}\u{006d}"
+let town = "Grays"
+let townU = "\u{0047}\u{0072}\u{0061}\u{0079}\u{0073}"
+let initials = "T.S."
+let initialsU = "\u{0054}\u{002E}\u{0053}\u{002E}"
+let shirtSize = "L"
+let shirtSizeU = "\u{004C}"
+let grade = "A"
+let gradeU = "\u{0041}"
+
+
 Refer to this [Unicode Table](http://unicode-table.com/en/).
 
 #### U2.

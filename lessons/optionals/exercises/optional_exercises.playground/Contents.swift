@@ -56,35 +56,45 @@ func starterPokemon() -> String {
 var tuple: (Int, Int)?
 if randNum() {
     tuple = (5, 3)
+
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
 
-
+if let tupleUnWrap = tuple {
+    print(tupleUnWrap)
+}
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
-
+if let myIntD = myInt {
+    print(myIntD * 2)
+} else {
+    print("Error")
+}
 
 
 
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
+
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
+if let myString2 = myString {
+    print(myString2 + stringTwo)
+}
 
 
 
@@ -92,10 +102,15 @@ if randNum() {
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5.0
 if randNum() {
     myDouble = 12
+    if let myDouble2 = myDouble {
+        print(myDouble2 * doubleTwo)
+    } else {
+        print("ERROR")
+    }
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
@@ -111,7 +126,15 @@ if randNum() {
 var isTheGreatest: Bool?
 if randNum() {
     isTheGreatest = true
+    if let _ = isTheGreatest {
+        
+    } else {
+        isTheGreatest = false
+    }
 }
+
+
+
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
 
@@ -138,9 +161,20 @@ if !randNum() {
 //Print the sum of each non-nil element in myTuple.
 
 
-
-
-
+var sum = 0
+if let a = myTuple.0 {
+    sum += a
+}
+if let b = myTuple.1 {
+    sum += b
+}
+if let c = myTuple.2 {
+    sum += c
+}
+if let d = myTuple.3 {
+    sum += d
+}
+print(sum)
 
 
 
@@ -154,6 +188,7 @@ let myIntString = "35"
 
 
 
+//print(Int(myIntString) + 15)
 
 
 
