@@ -95,6 +95,19 @@ Using '.characters' and loop, print the last character in the string below
 let myStringSeven = "Hello world!"
 ```
 
+let myStringSeven = "Hello world!"
+
+var amount = myStringSeven.characters.count
+
+var counter = 1
+
+for c: Character in myStringSeven.characters{
+    if counter == amount{
+        print(c)
+    }
+    counter += 1
+}
+
 
 
 
@@ -130,8 +143,7 @@ default:
 ```
 
 #### S9.
-Initialize a String with a character. Show that it is a Character, and not another String, you're using
-to initialize it.
+Initialize a String with a character. Show that it is a Character, and not another String, you're using to initialize it.
 
 
 
