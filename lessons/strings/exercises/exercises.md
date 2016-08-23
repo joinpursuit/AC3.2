@@ -63,6 +63,7 @@ for i in string.characters{
     print(i)
 }
 
+```
 
 #### S7.
 Using '.characters' and loop, print the last character in the string below
