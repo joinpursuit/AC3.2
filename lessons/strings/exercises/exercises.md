@@ -62,6 +62,27 @@ print(myStringSeven[end])
 
 #### S8.
 Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
+```swift
+let stringTo = "How are you??"
+let beginning = stringTo.startIndex
+let ending = stringTo.endIndex
+let theOne = beginning.advancedBy(10)
+print(stringTo[theOne])
+let count = stringTo.characters.count
+
+switch count{
+case _ where stringTo.characters.count % 2 == 0:
+    for character in stringTo.characters {
+        print(character)
+}
+default:
+    var i = 0
+    while i <= string.characters.count{
+        print (stringTo[stringTo.startIndex.advancedBy(i)])
+        i += 2
+    }
+}
+```
 
 #### S9.
 Initialize a String with a character. Show that it is a Character, and not another String, you're using
@@ -75,14 +96,48 @@ the second being one that uses combinable unicode scalars. Show that they are eq
 
 Refer to this [Unicode Table](http://unicode-table.com/en/).
 
+```swift
+var cPlusCedilla = "\u{0063}\u{0327}"
+var cWithCedilla = "\u{00E7}"
+cPlusCedilla == cWithCedilla
+
+var ePlusDiaeresis = "\u{0065}\u{0308}"
+var eWithDiaeresis = "\u{00EB}"
+ePlusDiaeresis == ePlusDiaeresis
+
+var oPlusAcute = "\u{006F}\u{0301}"
+var oWithAcute = "\u{00F3}"
+oPlusAcute == oPlusAcute
+
+var nPlusCaron = "\u{006E}\u{030C}"
+var nWithCaron = "\u{0148}"
+nPlusCaron == nWithCaron
+
+var aPlusTilda = "\u{0041}\u{0303}"
+var aWithTilda = "\u{00C3}"
+aPlusTilda == aWithTilda
+```
+
 #### U2.
 * Using only Unicode, print out "HELLO WORLD!"
-
+```swift
+var helloWorld = "\u{0048}\u{0065}\u{006c}\u{006c}\u{006F}\u{0020}\u{0057}\u{006F}\u{0072}\u{006c}\u{0064}\u{0021}"
+print(helloWorld)
+```
 #### U3.
 * Using only Unicode, print out your name.
+```swift
+var myName
+var name = "\u{0041}\u{006E}\u{0061}"
+print(name)
+
+```
 
 #### U4
 * (Bonus) Using only Unicode, print "Hello World" in another language.
+```swift
+var helloWorldInChinese = "\u{4F60}\u{597D}\u{FF0C}\u{4E16}\u{754C}\u{0021}"
+```
 
 #### U5.
 Print the below flower box using the following information.
@@ -91,7 +146,7 @@ Print the below flower box using the following information.
 * Use the __terminator__ argument in your print statements to print on the same line.
 * Hint: It may be useful to try printing out a box of just one character to start then work your way from there.
 
-```
+```swift
 - - - - - - - - - - -
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
@@ -102,5 +157,28 @@ Print the below flower box using the following information.
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
+
+var dash: Character = "\u{2013}"
+var flower = "\u{007c}\u{0020}\u{2698}"
+
+var i = 1
+while i <= 10 {
+    if i == 1 || i == 10{
+        var dashCount = 1
+        while dashCount <= 11 {
+            print(dash, terminator: " ")
+            dashCount += 1
+        }
+        print()
+    }else{
+        var flowerCount = 1
+        while flowerCount <= 5 {
+            print(flower, terminator: " ")
+            flowerCount += 1
+        }
+        print("\u{007c}")
+    }
+    i += 1
+}
 
 ```
