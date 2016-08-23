@@ -60,39 +60,48 @@ if randNum() {
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
 
-
+if let x = tuple {
+    print(x)
+}
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
 
+if var x = myInt {
+    print(2 * x)
+} else {
+    print("Error")
+}
 
 
 
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
-
-
+if let i = myString {
+    print(i + stringTwo)
+} else {
+    print("Error")
+}
 
 
 
 
 //D)
-let myDouble: Double?
+var myDouble: Double?
 let doubleTwo = 5
 if randNum() {
     myDouble = 12
@@ -100,7 +109,11 @@ if randNum() {
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
 
-
+if let i = myDouble {
+    print(i * Double(doubleTwo))
+} else {
+    print("Error")
+}
 
 
 
@@ -117,7 +130,11 @@ if randNum() {
 
 
 
-
+if let i = isTheGreatest {
+    i
+} else {
+    isTheGreatest = false
+}
 
 
 
@@ -137,26 +154,22 @@ if !randNum() {
 }
 //Print the sum of each non-nil element in myTuple.
 
-
-
-
-
-
-
-
-
-
+if let a = myTuple.0, b = myTuple.2, c = myTuple.1, d = myTuple.3 {
+    print (a + b + c + d)
+} else if let c = myTuple.1, d = myTuple.3 {
+    print(c + d)
+} else if let a = myTuple.0, b = myTuple.2 {
+    print(a + b)
+}
 
 
 //G)
-let myIntString = "35"
+var myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
 
-
-
-
-
-
+if let i = Int(myIntString)  {
+    print(i + 15)
+}
 
 
 
