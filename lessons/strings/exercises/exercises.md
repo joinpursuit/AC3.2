@@ -182,31 +182,31 @@ let verticalDash = "\u{7c}"
 let flower = "\u{2698}"
 
 for barCount in 0..<10 {
-print(horizontalDash, terminator: " ")
-if barCount == 9 {
-print(horizontalDash)
-}
+    print(horizontalDash, terminator: " ")
+        if barCount == 9 {
+            print(horizontalDash)
+        }
 }
 
 var counter = 0
 
 repeat {
-for i in 0..<5 {
-print(verticalDash, flower, separator: " ", terminator: " ")
-if i == 4 {
-print(verticalDash, terminator: "")
-}
-}
-counter += 1
-print("")
+    for i in 0..<5 {
+        print(verticalDash, flower, separator: " ", terminator: " ")
+            if i == 4 {
+                print(verticalDash, terminator: "")
+            }
+    }
+    counter += 1
+    print("")
 } while counter < 7
 
 
 for barCount in 0..<10 {
-print(horizontalDash, terminator: " ")
-if barCount == 9 {
-print(horizontalDash)
-}
+    print(horizontalDash, terminator: " ")
+        if barCount == 9 {
+            print(horizontalDash)
+        }
 }
 ```
 
