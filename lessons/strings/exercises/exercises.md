@@ -88,6 +88,12 @@ default:
 Initialize a String with a character. Show that it is a Character, and not another String, you're using
 to initialize it.
 
+```swift
+let someString: Character = "A"
+print(someString.dynamicType)
+
+```
+
 ### Unicode exercises
 
 #### U1.
