@@ -1,47 +1,132 @@
 ## AC3.2 - Week 1 - Homework
 
-### I. Variables
+//: Playground - noun: a place where people can play
 
-#### Question 1.
-Provide the following constants/variable names with the most appropriate type annotations.
+import UIKit
 
-1. let _firstName_: (type?)
-2. let _middleInitial_:
-3. var _age_:
-4. var _latitude_:
-5. var _longitude_:
-6. var _isRainingCurrently_:
-7. let _completeAddress_:
-8. let _π_:
+//Question 1.
 
-#### Question 2.
-Convert the following decimal numbers to Binary:
-* 55
-* 122
-* -1
-* 15
+//Provide the following constants/variable names with the most appropriate type annotations.
+//
+//let firstName: String = "Rukiye"
+//let middleInitial: String = " MK "
+//var age: Int = 2
+//var latitude: Double = 1258.3
+//var longitude: Double = 239823.4
+//var isRainingCurrently: Bool = true
+//let completeAddress: String = "20 30th avenue Astoria,NY, 11103 "
+//let π: Double = 3.14159
+////
 
-#### Question 3.
-Using nested loops, print the numbers from 0 to 100, then back to 0.
 
-#### Question 4.
-While ```i``` is greater than 1, print only all positive even numbers and break 
-out of the loop when you've reached 220.
+//Question 2.
 
-#### Question 5.
-* Using any kind of loop, print the sum of all numbers between 0 to 50.
-* Using a while loop, print all the odd numbers from 0 to 100.
-* Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
+//Convert the following decimal numbers to Binary:
 
-#### Question 6.
-Consider the code below. Loop through the ```professionals``` array and using a switch statement:
-* Print out the professionals with _lastName_ "Smith".
-* Print out all the developers.
-* Print out all the non-developers.
-* Print out the professionals in their 20s.
-* Print out the professionals in their 30s.
+//55  111011
+//122 0101111
+//-1 11111111
+//15  1111
 
-```swift
+//Question 3.
+
+//Using nested loops, print the numbers from 0 to 100, then back to 0.
+
+
+//var range = 0...100
+//
+//for i in range{
+//
+//    print(i, terminator: "-")
+//
+//    if i == 100{
+//        var count2 = 99
+//
+//        for j in range{
+//
+//            print(count2, terminator: "-")
+//            if count2 == 0
+//
+//                {
+//                break
+//                }
+//            count2 -= 1  // you could also do i-j
+//
+//
+//        } //for loop p
+//
+//
+//    }//if p
+
+
+//}
+
+
+
+//Question 4.
+//
+//While i is greater than 1, print only all positive even numbers and break out of the loop when you've reached 220.
+
+//var i : Int = 0
+//
+//
+//while i < 220 {
+//
+//    if i == 220 {
+//
+//        break
+//
+//    }
+//
+//    else if i % 2 == 0{
+//
+//        print(i)
+//    }
+//
+//i+=1
+//
+//}
+
+//Question 5.
+//
+//Using any kind of loop, print the sum of all numbers between 0 to 50.
+
+//var total = 0
+//for i in 0...50{
+//
+//    total += i
+//}
+//
+//print(total)
+
+//Using a while loop, print all the odd numbers from 0 to 100.
+//var i = 0
+//while(i < 100){
+//
+//    if (i % 2 == 1){
+//        print(i)
+//
+//    }
+//    i += 1
+//
+//}
+
+
+
+//Using a for case loop, print all the multiples of 10 from 50 to 500.
+//
+//let range = 50...500
+//for i in range {
+//
+//    if i % 10 == 0{
+//
+//        print(i)
+//
+//    }
+//
+//}
+
+
 let sarah = (firstName: "Sarah", lastName: "Palardo", job: "teacher", age: 32)
 let beth = (firstName: "Beth", lastName: "Newell", job: "developer", age: 29)
 let jana = (firstName: "Jana", lastName: "Smith", job: "developer", age: 33)
@@ -52,17 +137,43 @@ let jamal = (firstName: "Jamal", lastName: "Smith", job: "developer", age: 25)
 let navindra = (firstName: "Navindra", lastName: "Chowdhurry", job: "actuary", age: 29)
 
 let professionals = [sarah, beth, jana, lauren, charles, steve, jamal, navindra]
-```
 
-* Hint: Use the framework below for your code
 
-```swift
-for person in professionals {
-	switch person {
- 
-	}
+//Print out the professionals with lastName "Smith".
+//Print out all the developers.
+//Print out all the non-developers.
+//Print out the professionals in their 20s.
+//Print out the professionals in their 30s.
+
+
+
+for i in professionals{
+
+switch i {
+
+case (_,"Smith",_,_):
+print (i.firstName )
+
+
+//    case (_,_,"developer",_):
+//    print(i.firstName)
+//
+//    case (_,_,_,let age )where age < 30 && age > 19 :
+//        print (i.firstName )
+//
+
+
+default:
+break
+//       print(i.firstName)
+
 }
-```
+
+
+
+
+}
+
 
 #### Question 7.
 Given the arrays below, use nested loops to print out every possible card in the deck.
