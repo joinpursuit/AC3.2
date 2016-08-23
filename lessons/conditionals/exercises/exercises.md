@@ -1,4 +1,4 @@
-# Conditionals
+# Conditionals -- 8/23/2016
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -7,6 +7,7 @@ import UIKit
 //
 //What are some reasons to use a switch instead of an if?
 // SWith switch, you compare known values usually, and it's more concise vs. if statements.
+
 
 //Question 2.
 // no default
