@@ -59,68 +59,79 @@ if randNum() {
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
-
+if let (t,v) = tuple {
+    print (t,v)
+}
 
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
+
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
+if let x = myInt{
+    print (2*x)
+}
+else
+{
+    print("error")
+    }
 
 
 
-
-
-
-//C)
-let myString: String?
+////C)
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
-//Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
+////Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
-
-
-
-
+if let first = myString {
+    print(first + stringTwo)
+} else {
+    print("ERROR!!!!")
+}
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+let doubleTwo = 5.0
 if randNum() {
-    myDouble = 12
+    myDouble = 12.0
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
 
-
-
-
+if let x = myDouble {
+    print ( x * (doubleTwo))
+}
+else {
+    print ("error")
+}
 
 
 
 
 //E)
+
 var isTheGreatest: Bool?
 if randNum() {
     isTheGreatest = true
 }
+
+
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
-
-
-
-
-
-
-
+if let x = isTheGreatest{
+    print ("true")
+}else{
+    print("false")
+}
 
 
 //F)
@@ -129,17 +140,32 @@ var myTuple: (Int?, Int?, Int?, Int?)
 if randNum() {
     myTuple.0 = 5
     myTuple.2 = 14
+    
+    print(myTuple)
 }
 
 if !randNum() {
     myTuple.1 = 9
     myTuple.3 = 10
+    
+    
 }
 //Print the sum of each non-nil element in myTuple.
 
+var sum = 0
 
-
-
+if let numZero = myTuple.0{
+    sum += numZero
+}
+if let numberOne = myTuple.1{
+    sum += numberOne
+}
+if let numTwo = myTuple.2{
+    sum += numTwo
+}
+if let numthree = myTuple.3{
+    sum += numthree
+}
 
 
 
@@ -157,38 +183,31 @@ let myIntString = "35"
 
 
 
-
-
-
-
-
-
-
-//H)
-let pokemon: String?
-var evolutionaryStone: String?
-pokemon = starterPokemon()
-evolutionaryStone = eStone()
-// evolve your pokemon with appropriate stone
-
-
-
-
-
-
-
-
-//I)
-var lvl: Int?
-lvl = lvlGenerator()
-var exp = 21
-// add 150 exp if lvl is above 7
-
-
-
-
-
-
-
-
-
+////H)
+//let pokemon: String?
+//var evolutionaryStone: String?
+//pokemon = starterPokemon()
+//evolutionaryStone = eStone()
+//// evolve your pokemon with appropriate stone
+//
+//
+//
+//
+//
+//
+//
+//
+////I)
+//var lvl: Int?
+//lvl = lvlGenerator()
+//var exp = 21
+//// add 150 exp if lvl is above 7
+//
+//
+//
+//
+//
+//
+//
+//
+//
