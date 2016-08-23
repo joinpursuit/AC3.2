@@ -57,14 +57,20 @@ var tuple: (Int, Int)?
 if randNum() {
     tuple = (5, 3)
 }
+
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
+
+
+if let (x, y) = tuple {
+    print(x, y)
+}
 
 
 
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
@@ -72,28 +78,35 @@ if randNum() {
 
 
 
-
+if let n = myInt {
+    print (n*2)
+    } else {
+        print("Error")
+    }
 
 
 
 //C)
-let myString: String?
-let stringTwo = ", LastName"
+var myString: String?
+var stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
 
-
-
+if let firstName = myString {
+    print(firstName + stringTwo)
+} else {
+    print("Error")
+}
 
 
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
@@ -101,7 +114,11 @@ if randNum() {
 
 
 
-
+if let d = myDouble {
+    print("\(d) + \(doubleTwo)")
+} else {
+    print("Error")
+}
 
 
 
@@ -116,8 +133,11 @@ if randNum() {
 
 
 
-
-
+if let bool = isTheGreatest {
+    print(bool)
+} else {
+    print(false)
+}
 
 
 
