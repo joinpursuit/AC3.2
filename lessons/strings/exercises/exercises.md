@@ -98,10 +98,22 @@ print(stringA[start.advancedBy(count + i)])
 }
 }
 
+let myString = "abcdefg"
 
-
-
-
+switch myString {
+case let _ where myString.characters.count % 2 == 0:
+for i in myString.characters {
+print(i)
+}
+default:
+var j = 0
+for k in myString.characters {
+if j % 2 == 0 {
+print(k)
+}
+j+=1
+}
+}
 
 //
 //#### S9.
