@@ -8,6 +8,7 @@ Eashir Arafat - Hi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Happy Wednesday.
 >>>>>>> upstream/master
 =======
@@ -22,9 +23,12 @@ Have a good weekend!
 =======
 Welcome back.
 >>>>>>> 7e888753a8b70e86c39cc77b1ae34590b9d5b909
+=======
+Welcome to C4Q Headquarters!
+>>>>>>> 378b97e4bd821c6d03c9ffcc7520cb42ba0ae0d3
 
-Today's lesson is on [Strings](/lessons/strings). 
-Tomorrow's lesson is on [Optionals](/lessons/optionals). 
+Today's lesson is on [Optionals](/lessons/optionals). 
+Tomorrow's lesson is on [Arrays](/lessons/arrays). 
 
 ## Schedule
 
