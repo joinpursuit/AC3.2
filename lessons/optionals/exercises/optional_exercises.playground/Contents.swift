@@ -2,6 +2,9 @@
 
 import UIKit
 
+
+//Amber Spadafora & Kareem
+
 //---------------------------------------------
 // Helper Function
 func randNum() -> Bool {
@@ -59,48 +62,59 @@ if randNum() {
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
+if let t = tuple {
+    print(t)
+}
 
 
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
-
-
+if let myInt = myInt {
+    print(myInt * 2)
+}
+else {
+    print("MyInt is nil")
+}
 
 
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
-
-
-
-
-
+if let myString = myString {
+    print(myString + stringTwo)
+}
+else {
+    print("myString is nil")
+}
 
 //D)
-let myDouble: Double?
+var myDouble: Double?
 let doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
-
-
+if let myDouble = myDouble {
+    print(myDouble * Double(doubleTwo))
+}
+else {
+    print("myDouble is nil")
+}
 
 
 
@@ -112,10 +126,14 @@ var isTheGreatest: Bool?
 if randNum() {
     isTheGreatest = true
 }
-//  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
+//  Determine if the variable contains a Boolean or nil value. If nil set the variable to false, else keep it true
 
 
-
+if let x = isTheGreatest { //ask during lecture how to check if a option is nil, oppose to checking if it has value
+    isTheGreatest = true
+} else {
+    isTheGreatest = false
+}
 
 
 
@@ -125,6 +143,7 @@ if randNum() {
 
 //F)
 var myTuple: (Int?, Int?, Int?, Int?)
+
 
 if randNum() {
     myTuple.0 = 5
@@ -139,9 +158,19 @@ if !randNum() {
 
 
 
-
-
-
+var sum = 0
+if let numZero = myTuple.0 {
+    sum += numZero
+}
+if let numOne = myTuple.1 {
+    sum += numOne
+}
+if let numTwo = myTuple.2 {
+    sum += numTwo
+}
+if let numThree = myTuple.3 {
+    sum += numThree
+}
 
 
 
@@ -153,8 +182,9 @@ let myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
 
 
-
-
+if var integ = Int(myIntString) {
+    var sum = integ + 15
+    print(sum)
 
 
 
