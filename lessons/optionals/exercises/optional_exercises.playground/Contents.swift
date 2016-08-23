@@ -60,24 +60,28 @@ if randNum() {
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
 
-
+if let x = tuple {
+    print(x)
+}
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
 
-
-
-
+if let x = myInt {
+    print(2 * x)
+} else {
+    print("Error!")
+}
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
@@ -85,14 +89,15 @@ if randNum() {
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
 
-
-
-
-
+if let fn = myString {
+    print(fn + stringTwo)
+} else {
+    print("Error!!!!!!!!!")
+}
 
 
 //D)
-let myDouble: Double?
+var myDouble: Double?
 let doubleTwo = 5
 if randNum() {
     myDouble = 12
@@ -100,11 +105,11 @@ if randNum() {
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
 
-
-
-
-
-
+if let d = myDouble {
+    print(d * Double(doubleTwo))
+} else {
+    print("ERROR")
+}
 
 
 //E)
@@ -115,12 +120,11 @@ if randNum() {
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
 
-
-
-
-
-
-
+if let b = isTheGreatest {
+    b
+} else {
+    isTheGreatest = false
+}
 
 
 //F)
@@ -138,30 +142,31 @@ if !randNum() {
 //Print the sum of each non-nil element in myTuple.
 
 
+//if let a = myTuple.0, b = myTuple.2 {
+//    if let c = myTuple.1, d = myTuple.3 {
+//        print(c + d)
+//    }
+//    print(a + b)
+//}
 
 
-
-
-
-
-
-
+if let a = myTuple.0, b = myTuple.2, c = myTuple.1, d = myTuple.3 {
+    print (a + b + c + d)
+} else if let c = myTuple.1, d = myTuple.3 {
+    print(c + d)
+} else if let a = myTuple.0, b = myTuple.2 {
+    print(a + b)
+}
 
 
 //G)
-let myIntString = "35"
+var myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
 
 
-
-
-
-
-
-
-
-
-
+if let i = Int(myIntString) {
+    print(i + 15)
+}
 
 
 //H)
