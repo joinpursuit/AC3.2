@@ -56,34 +56,54 @@ func starterPokemon() -> String {
 var tuple: (Int, Int)?
 if randNum() {
     tuple = (5, 3)
+    
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
+
+if let tupleBool = tuple{
+    print(tupleBool)
+}
 
 
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
-}
+    
+  }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
 
-
+if let doubleMyInt = myInt {
+    print(doubleMyInt * 2)
+}
+    
+else {
+    print("Error")
+}
 
 
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
-}
+    
+  }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
+
+if let f_name = myString{
+    print(f_name + stringTwo)
+}
+else {
+    print("No name")
+}
 
 
 
@@ -92,13 +112,21 @@ if randNum() {
 
 
 //D)
-let myDouble: Double?
+var myDouble: Double?
 let doubleTwo = 5
 if randNum() {
     myDouble = 12
+    
+    
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
+if let product = myDouble {
+    print(product * Double(doubleTwo))
+}
+else {
+    print("Error - myDouble is nil")
+}
 
 
 
@@ -111,11 +139,23 @@ if randNum() {
 var isTheGreatest: Bool?
 if randNum() {
     isTheGreatest = true
+    
+    
+    
 }
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
 
-
+if let varBool = isTheGreatest {
+    
+    isTheGreatest = true
+    isTheGreatest
+    
+} else{
+    
+    isTheGreatest = false
+   
+}
 
 
 
@@ -125,6 +165,7 @@ if randNum() {
 
 //F)
 var myTuple: (Int?, Int?, Int?, Int?)
+var mtuple: (Int, String)?
 
 if randNum() {
     myTuple.0 = 5
@@ -145,16 +186,12 @@ if !randNum() {
 
 
 
-
-
-
 //G)
-let myIntString = "35"
+var myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
 
 
-
-
+print(Int(myIntString)! + 15)
 
 
 
@@ -165,12 +202,13 @@ let myIntString = "35"
 
 
 //H)
-let pokemon: String?
+var pokemon: String?
 var evolutionaryStone: String?
 pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
 
+//if pokemon == "Pikachu" && estone == "Electric
 
 
 
