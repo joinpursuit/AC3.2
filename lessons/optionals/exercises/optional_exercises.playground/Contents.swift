@@ -214,8 +214,11 @@ lvl = lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
 
-
-
+    if lvl > 7 {
+        exp += 150
+}
+let theMatrix = [[1,2,3], [4,5,6], [7,8,9]]
+print(theMatrix[2][0])
 
 
 

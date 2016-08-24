@@ -4,12 +4,21 @@
 
 //Write all your code below:
 
+var colors = ["orange", "red", "yellow", "turqoise", "lavender"]
+var string = " \(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors"
+print(string)
+
+
 
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+
+westernStates.removeAtIndex(4)
+westernStates.removeAtIndex(4)
+print(westernStates)
 
 
 //Write all your code below:
@@ -21,6 +30,14 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 
 //Write all your code below:
 
+for states in moreStates {
+    switch states {
+        case "Hawaii", "Alaska":
+            print("\(states) is not a part of the continental U.S")
+    default:
+    }
+}
+
 
 //4)
 //a) print out how many non-whitespace characters are in myString
@@ -29,11 +46,14 @@ let myString = "This is practice for the next problem!"
 //Write all your code below:
 
 
+
+
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
 
 
 
