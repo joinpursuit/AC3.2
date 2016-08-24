@@ -4,6 +4,10 @@
 
 //Write all your code below:
 
+var colors = ["orange", "red", "yellow", "turquoise","lavender"]
+
+print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
+
 
 
 //2)
@@ -14,6 +18,9 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 
 //Write all your code below:
 
+westernStates.removeAtIndex(4)
+westernStates.removeLast()
+
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
 
@@ -21,6 +28,14 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 
 //Write all your code below:
 
+for i in moreStates{
+    if (i == "Hawaii" || i == "Alaska"){
+        print("\(i), is not part of the continental US")
+    }
+    else {
+    print("\(i) , is part of the continental US")
+    }
+}
 
 //4)
 //a) print out how many non-whitespace characters are in myString
@@ -28,12 +43,37 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+var start = myString.startIndex
+var count = 0
+for i in 0..<myString.characters.count{
+    var eachChar = start.advancedBy(i)
+    if myString[eachChar] != " "{
+        count += 1}
+}
+print("there are \(count) non white blank spaces")
+    
+    
+    
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
+//
+//for i in 0..<myFavoriteQuotes.count{
+//var newStart = myFavoriteQuotes[i].startIndex
+//    for j  in 0..<myFavoriteQuotes[i].characters.count{
+//        
+//    var eachCharArr = newStart.advancedBy(j)
+//        if myFavoriteQuotes[j]in [eachCharArr[i]] != " "
+//        {
+//            count += 1}
+//    }
+//
+//
+//
 
 
 
@@ -47,6 +87,16 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
 
 //Write all your code below:
+    
+battingLineup.append("Suzuki")
+battingLineup [1] = "Tejada"
+print(battingLineup)
+battingLineup [5] = "Guerrero"
+print(battingLineup)
+battingLineup.removeAtIndex(0)
+battingLineup.insert("Reyes", atIndex: 8)
+print(battingLineup)
+
 
 
 //6)
@@ -56,24 +106,66 @@ var basket = [String]()
 
 //Write all your code below:
 
+
+for i in 0..<garden.count{
+    if garden[i] == "🌷"{
+        basket.append(garden[i])
+        garden[i] = "dirt"}
+        
+}
+print("\(basket.count), flowers in the basket")
+
+
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
 
+var largest = 0
+var small = 0
+
+for i in 0 ..< listOfNumbers.count{
+    
+    if listOfNumbers[i] > largest{
+        largest = listOfNumbers[i]
+    }
+  
+}
+print("\(largest) is the largest number")
+
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
+
 //Write all your code below:
+
+for i in 0..<secondListOfNumbers.count{
+    if (secondListOfNumbers[i]%2 == 1){
+        print(secondListOfNumbers[i])
+    }
+}
+
+//for i in secondListOfNumbers where i%2==1{
+//    print(i)
+//}
+
+
 
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+
+var sum = 0
+for i in 0..<thirdListOfNumbers.count{
+    sum += thirdListOfNumbers[i]
+}
+print(sum)
 
 
 //10)
@@ -85,15 +177,48 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 //Write all your code below:
 
+//for i in 0..<fourthListOfNumbers.count{
+//    
+//    if fourthListOfNumbers[i]==84{
+//        print ("yes")
+//    }
+//    else{
+//        print("no")
+//    }
+//    
+//    
+//}
+
+var foundNum = false
+for i in fourthListOfNumbers where i == 84{
+    foundNum = true
+}
+if foundNum {
+    print("yes")
+}else{
+    print("no")
+}
+
+
+
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.
+
 var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
 var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
-
-
 //Write all your code below:
+
+
+for i in listOne{
+    for j in listTwo {
+        if i == j {
+            sharedElements.append(i)
+        }
+    }
+}
+print (sharedElements)
 
 
 
@@ -101,16 +226,37 @@ var sharedElements = [Int]()
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+var tempNumb = 0
+
+//for i in dupeFriendlyList{
+//    if dupeFriendlyList[i] != i  {
+//        noDupeList.append(dupeFriendlyList[i])
+//    }
+//}
+
+
+
+
 
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
 
 
+
 //14)
 //Print out the sum of the diagonals of myMatrix
 
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+
+
+//
+//
+//0,0 0,2
+//1,1 1,1
+//2,2 2,0
+
+
 
 
 //15)
@@ -139,5 +285,3 @@ var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,3
 //If there are multiple triplets, print all possible triplets.
 
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
-
-
