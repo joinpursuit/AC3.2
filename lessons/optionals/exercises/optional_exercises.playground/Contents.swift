@@ -160,21 +160,22 @@ pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
 
-if let pokemon = pokemon, evolutionaryStone = evolutionaryStone {
-    switch:
-}
+//if let pokemon = pokemon, evolutionaryStone = evolutionaryStone {
+//    switch:
+//}
 
 
 
 
 //I)
 var lvl: Int?
-lvl = lvlGenerator()
+lvl = 8
+    //lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
 
-if var level = lvl where level > 7{
-    level += 150
+if var level = lvl where level > 7 {
+    exp += 150
 }
 
 
