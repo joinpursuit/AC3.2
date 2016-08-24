@@ -1,3 +1,9 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+
 1)
 Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
@@ -19,7 +25,7 @@ for i in westernStates {
     if i == "Illinois" {
         print(westernStates.removeAtIndex(4))
     }
-        if i == "Kansas" {
+    if i == "Kansas" {
         print(westernStates.removeAtIndex(4))
     }
     print(westernStates)
@@ -46,12 +52,12 @@ for i in 0..<moreStates.count {
     if "Alaska" == moreStates[1] {
         moreStates.removeAtIndex(1)
         outUSA.append("Alaska")
-    print(moreStates)
+        print(moreStates)
     }else{
-       inUSA += moreStates
+        inUSA += moreStates
         break
-        }
     }
+}
 print("\(inUSA) are in the USA")
 ```
 //Write all your code below:
