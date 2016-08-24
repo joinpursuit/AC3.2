@@ -1,9 +1,21 @@
+Gabriel 3214
+Kadell Gregory 3215
+
 //1)
+
+
+
+
+
+
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
 
 //Write all your code below:
 
+var colors = [ "orange", "red", "yellow", "turquoise", "lavender"]
+
+print("\(colors[0]) \(colors[1]) \(colors[2]) \(colors[3]) \(colors[4])are some of my favorite colors")
 
 
 //2)
@@ -14,6 +26,9 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 
 //Write all your code below:
 
+westernStates.removeLast(2)
+
+
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
 
@@ -21,12 +36,34 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 
 //Write all your code below:
 
+var continentalStates = ["New Mexico", "Montana", "Texas", "New York", "Florida"]
+
+
+for lessStates in 0..<moreStates.count {
+    if continentalStates.indexOf(moreStates[lessStates]) == nil {
+    print("\(moreStates[lessStates]) not part of the continental states")
+
+}else{
+    print("\(moreStates[lessStates]) is a part of the continental states")
+}
+
+}
+
+
+
+
 
 //4)
 //a) print out how many non-whitespace characters are in myString
 let myString = "This is practice for the next problem!"
 
 //Write all your code below:
+
+//for i in myString.startIndex..<myString.characters.endIndex {
+//    if i != " "
+//}
+
+
 
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
@@ -47,6 +84,14 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
 
 //Write all your code below:
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.removeAtIndex(0)
+battingLineup.insert("Reyes", atIndex: 8)
+
+
+print(battingLineup)
 
 
 //6)
@@ -56,16 +101,40 @@ var basket = [String]()
 
 //Write all your code below:
 
+for i in 0..<garden.count {
+    print(garden[i])
+    if garden[i] == "🌷" {
+        basket.append(garden[i])
+        garden[i] = "dirt"
+      
+            
+        }
+    }
+print(basket.count)
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
+var largest = 0
 
+for i in 0..<listOfNumbers.count {
+    if listOfNumbers[i] > largest {
+        largest = listOfNumbers[i]
+    }
+}
+ print(largest)
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+
+for i in 0..<secondListOfNumbers.count {
+    if secondListOfNumbers[i]%2 == 1 {
+        print(secondListOfNumbers[i])
+    }
+}
 
 //Write all your code below:
 
@@ -74,6 +143,15 @@ var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+
+var sum = 0
+
+for i in 0..<thirdListOfNumbers.count {
+    sum += thirdListOfNumbers[i]
+    
+}
+print(sum)
+
 
 
 //10)
@@ -85,6 +163,13 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 //Write all your code below:
 
+for i in 0..<fourthListOfNumbers.count {
+    if target == fourthListOfNumbers[i]{
+        print("YES")
+    }else{
+        print("NO")
+    }
+}
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.
@@ -95,7 +180,14 @@ var sharedElements = [Int]()
 
 //Write all your code below:
 
-
+for i in 0..<listOne.count{
+    if
+    
+    
+    if listOne[i] == listTwo {
+        listTwo = sharedElements.append
+    }
+}
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
