@@ -5,21 +5,38 @@
 //Write all your code below:
 
 
+var colors: [String] = ["orange", "red", "yellow", "turquoise", "lavender"]
+
+print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors", terminator: "")
+print(" ") //for formatting the Debug Area
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
 
-
 //Write all your code below:
 
+
+westernStates.removeAtIndex(4)
+westernStates.removeLast()
+
+
 //3)
-//Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
+//Iterate through the array below.  For each state, print out whether or not it is in the continental United States.
 
 let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
 
 //Write all your code below:
+
+
+for i in moreStates {
+    if i == "Hawaii" || i == "Alaska" {
+        print("\(i) IS NOT IN THE CONTINENTAL UNITED STATES")
+    } else {
+        print("\(i) is located in the continental United States!")
+    }
+}
 
 
 //4)
@@ -29,12 +46,32 @@ let myString = "This is practice for the next problem!"
 //Write all your code below:
 
 
+var sum = 0
+
+for i in myString.characters {
+    if i != " " {
+        sum += 1
+    }
+}
+print("There are \(sum) non-whitespace characters in myString.")
+
+
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
 
+
+for i in myFavoriteQuotes {
+    var sum2 = 0
+    for j in i.characters {
+        if j != " " {
+            sum2 += 1
+        }
+    }
+    print(sum2)
+}
 
 
 //5)
@@ -49,12 +86,29 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 //Write all your code below:
 
 
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.insert("Reyes", atIndex: 7)
+
+
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
 
 //Write all your code below:
+
+
+for i in 0..<garden.count {
+    if garden[i] == "🌷" {
+        garden[i] = "dirt"
+        basket.append("🌷")
+    }
+}
+
+print(basket.count)
+
 
 //7)
 //Iterating through listOfNumbers and print out the largest element.
@@ -63,17 +117,43 @@ var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 //Write all your code below:
 
 
+var largest = listOfNumbers[0]
+
+for i in listOfNumbers {
+    if i > largest {
+        largest = i
+    }
+}
+print(largest)
+
+
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 //Write all your code below:
 
+
+for i in secondListOfNumbers {
+    if i % 2 != 0 {
+        print(i)
+    }
+}
+
+
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+
+
+var sum3 = 0
+
+for i in thirdListOfNumbers {
+    sum3 += i
+}
+print(sum3)
 
 
 //10)
@@ -86,6 +166,15 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 //Write all your code below:
 
 
+for i in fourthListOfNumbers {
+    if i == target {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
+
+
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.
 var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
@@ -96,27 +185,107 @@ var sharedElements = [Int]()
 //Write all your code below:
 
 
+for i in listOne {
+    for j in listTwo {
+        if i == j {
+            sharedElements.append(j)
+        }
+    }
+}
+print("There are \(sharedElements.count) shared integers between listOne and listTwo.")
+
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
 
+
+//Write all your code below:
+
+
+for i in dupeFriendlyList {
+    if noDupeList.contains(i) {
+        continue
+    } else {
+        noDupeList.append(i)
+    }
+}
+
+
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
 
 
+//Write all your code below:
+
+
+var smallest = ages[0] //15
+var secondSmallest = ages[0] //18
+
+
+for i in ages {
+    if i < smallest {
+        smallest = i
+    }
+}
+
+for i in ages {
+    if i != smallest && i < secondSmallest {
+        secondSmallest = i
+    }
+}
+print(secondSmallest)
+
+
 //14)
 //Print out the sum of the diagonals of myMatrix
 
-var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var myMatrix = [[10, 14, 12],
+                [91, 1, 9],
+                [31, 3, 21]]
+
+
+//Write all your code below:
+
+
+var sum4 = 0
+var repeatValue = 1
+
+for i in 0..<myMatrix.count {
+    for j in  0..<myMatrix[i].count {
+        if i == j {
+            sum4 += myMatrix[i][j]
+        }
+        else if i == 0 && j == 2 {
+            sum4 += myMatrix[i][j]
+        }
+        else if i == 2 && j == 0 {
+            sum4 += myMatrix[i][j]
+        }
+    }
+}
+print(sum4 + repeatValue)
 
 
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
-var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+var toRotate = [[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]]
+
+
+//Write all your code below:
+
+
+//for i in 0..<toRotate.count{
+//    for j in 0..<toRotate[i].count {
+//        print(toRotate[j][i])
+//    }
+//}
+
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23

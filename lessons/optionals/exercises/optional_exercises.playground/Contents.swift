@@ -165,8 +165,12 @@ var myIntString = "35"
 
 
 if let i = Int(myIntString) {
-    print(i + 15)
+    print(i + 15, terminator: " ")
 }
+
+//if let i = myIntString {
+//    print(Int(i) + 15)
+//}
 
 
 //H)
