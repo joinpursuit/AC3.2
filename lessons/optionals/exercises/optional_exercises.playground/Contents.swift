@@ -190,6 +190,21 @@ var evolutionaryStone: String?
 pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
+if var myPokemon = pokemon, stone = evolutionaryStone {
+
+   if  (myPokemon == "Pikachu" && stone == "Electric") || (myPokemon == "Bulbasaur" && stone == "Grass") || (myPokemon == "Charmander" && stone == "Fire") || (myPokemon == "Squirtle" && stone == "Water") {
+    
+        print("Evolve Your pokemon \(myPokemon) with \(stone)")
+   }
+
+   else {
+        print ("Your pokemon \(pokemon!) didn't match with the correct stone. You got \(stone)!")
+    }
+}
+else {
+    print("Empty!!!")
+}
+
 
 
 //I)
