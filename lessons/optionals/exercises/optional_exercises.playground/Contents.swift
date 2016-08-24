@@ -55,30 +55,37 @@ func starterPokemon() -> String {
 //A)
 var tuple: (Int, Int)?
 if randNum() {
-    tuple = (5, 3)
+     tuple = (5, 3)
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
-
-
+//if let (x, y) = tuple {
+//    print (x, y)
+//}
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
 
+if let x = myInt {
+    
+    print(x)
+}else{
+        print("Error")
+    }
 
 
 
 
 
 //C)
-let myString: String?
-let stringTwo = ", LastName"
+var myString: String?
+var stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
@@ -86,14 +93,19 @@ if randNum() {
 
 
 
+if let firstName = myString {
+    print(firstName + stringTwo)
+}else{
+    print("error")
+}
 
 
 
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
@@ -101,6 +113,12 @@ if randNum() {
 
 
 
+if let y = myDouble {
+    
+    print(doubleTwo + y)
+}else{
+    print("error")
+}
 
 
 
@@ -117,6 +135,13 @@ if randNum() {
 
 
 
+if let z = isTheGreatest {
+    
+    print(z)
+}else{
+    z = false
+    print(z)
+}
 
 
 
@@ -186,7 +211,8 @@ var exp = 21
 
 
 
-
+if lvl > 7
+exp += 150
 
 
 
