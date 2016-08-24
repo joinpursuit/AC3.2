@@ -132,14 +132,70 @@ var xzs = Int(myIntString)
 if let i = xzs{
     print(i + 15)
 }
+
+
+
+
+
+
 //H)
 let pokemon: String?
 var evolutionaryStone: String?
 pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
+
+
+
+
+
+
+
+
 //I)
 var lvl: Int?
 lvl = lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
+
+if let currentLevel = lvl where lvl > 7 {
+    exp += 150
+}
+
+if lvl! > 7{
+    exp += 150
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
