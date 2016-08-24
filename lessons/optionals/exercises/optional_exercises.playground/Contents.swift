@@ -188,26 +188,29 @@ let myIntString = "35"
 //var evolutionaryStone: String?
 //pokemon = starterPokemon()
 //evolutionaryStone = eStone()
-//// evolve your pokemon with appropriate stone
 //
-//
-//
-//
-//
-//
-//
-//
-////I)
-//var lvl: Int?
-//lvl = lvlGenerator()
-//var exp = 21
-//// add 150 exp if lvl is above 7
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// evolve your pokemon with appropriate stone
+
+
+
+
+
+
+
+
+
+//I)
+
+var lvl: Int?
+lvl = lvlGenerator()
+var exp = 21
+// add 150 exp if lvl is above 7
+
+if lvl > 7{
+    exp+=150
+}
+
+
+
+
+
