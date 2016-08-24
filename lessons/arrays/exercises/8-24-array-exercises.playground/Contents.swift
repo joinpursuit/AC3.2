@@ -5,14 +5,27 @@
 //Write all your code below:
 
 
+//var colors = ["orange", "red", "yellow", "turquoise", "lavander"]
+//
+//print("\(colors[0]), \(colors[2]), \(colors[4]) are some of my favorite colors")
+
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
-var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+//var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
 
 
 //Write all your code below:
+
+
+
+//westernStates.removeAtIndex(4)
+//westernStates.removeAtIndex(4)
+//print(westernStates)
+
+
+
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
@@ -21,6 +34,20 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 
 //Write all your code below:
 
+//var allStates = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+//
+//for x in moreStates {
+//    for i in allStates {
+//        if x == i {
+//            print("\(x) part of the continent of United States")
+//        } else {
+////            print(false)
+//            continue
+//        }
+//    }
+//}
+
+
 
 //4)
 //a) print out how many non-whitespace characters are in myString
@@ -28,12 +55,40 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+//var count = 0
+//
+//for c: Character in myString.characters{
+//    if c != "\u{0020}" {
+//        count += 1
+//    }
+//}
+//print(count)
+
+
+
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
+
+
+//var count1 = 0
+//for i in 0..<myFavoriteQuotes.count {
+//    for c: Character in myFavoriteQuotes[i].characters{
+//        if c == "\u{0020}" {
+//            count1 += 1
+//            
+//        }
+//    }
+//    print(count1)
+//    count1 = 0
+//}
+
+
+
 
 
 
@@ -49,12 +104,51 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 //Write all your code below:
 
 
+
+//battingLineup.append("Suzuki")
+//print(battingLineup)
+//battingLineup[1] = "Tejada"
+//print(battingLineup)
+//battingLineup[5] = "Guerrero"
+//print(battingLineup)
+//battingLineup[7] = "Reyes"
+//print(battingLineup)
+
+
+
+
+
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
 
 //Write all your code below:
+
+
+//var flowerCount = 0
+//
+//
+//for flowers in garden {
+//    if flowers == "🌷" {
+//        basket.append("🌷")
+//        flowerCount += 1
+//        
+//    }
+//}
+//
+//
+//for i in 0..<garden.count where garden[i] == "🌷" {
+//    garden[i] = "dirt"
+//}
+//
+//
+//print(garden)
+//print(flowerCount)
+//print(basket)
+
+
+
 
 //7)
 //Iterating through listOfNumbers and print out the largest element.
@@ -63,17 +157,48 @@ var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 //Write all your code below:
 
 
+//var largestNum = 0
+//for i in listOfNumbers {
+//    if i > largestNum {
+//       largestNum = i
+//    }
+//}
+//
+//print(largestNum)
+
+
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 //Write all your code below:
 
+
+
+//for i in secondListOfNumbers {
+//    if i % 2 == 1 {
+//        print(i)
+//    }
+//}
+
+
+
+
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+
+
+
+//var sum = 0
+//for i in thirdListOfNumbers{
+//    sum += i
+//}
+//print(sum)
+
+
 
 
 //10)
@@ -84,6 +209,18 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
+
+
+//for i in fourthListOfNumbers{
+//    if i == target{
+//        print("YES")
+//    } else {
+//        print("NO")
+//        break
+//    }
+//}
+
+
 
 
 //11)

@@ -161,6 +161,19 @@ if !randNum() {
 
 
 
+var sum = 0
+if let numZero =  myTuple.0 {
+    sum += numZero
+}
+if let numOne =  myTuple.1 {
+    sum += numOne
+}
+if let numTwo =  myTuple.2 {
+    sum += numTwo
+}
+if let numThree =  myTuple.3 {
+    sum += numThree
+}
 
 
 
