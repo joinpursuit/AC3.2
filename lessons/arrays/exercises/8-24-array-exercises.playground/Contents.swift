@@ -34,7 +34,8 @@ for states in moreStates {
     switch states {
         case "Hawaii", "Alaska":
             print("\(states) is not a part of the continental U.S")
-    default:
+        default:
+            print("\(states) is a part of the continental U.S")
     }
 }
 
@@ -45,7 +46,13 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
-
+var charCount = 0
+for character in myString.characters {
+    if character == " " {
+        charCount += 1
+    }
+}
+print("There are \(charCount) whitespaces")
 
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
@@ -53,6 +60,11 @@ let myString = "This is practice for the next problem!"
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
+var nonWhiteSpaces = 0
+for i in myFavoriteQuotes {
+    
+}
 
 
 
@@ -68,6 +80,12 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 
 //Write all your code below:
 
+battingLineup.append("Suzuki")
+battingLineup.indexOf("Jeter")
+battingLineup[1] = "Tejada"
+battingLineup.indexOf("Thomas")
+battingLineup[5] = "Guerrero"
+
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
@@ -76,12 +94,27 @@ var basket = [String]()
 
 //Write all your code below:
 
+for i in 0..<garden.count where garden[i] == "🌷"  {
+    basket.append(garden[i])
+    garden.removeAtIndex(i)
+    garden.insert("dirt", atIndex: i)
+    }
+print(basket)
+
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
 
+var max = 0
+for number in listOfNumbers {
+    if number > max {
+        max = number
+    }
+}
+print(max)
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
@@ -89,12 +122,21 @@ var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 //Write all your code below:
 
+for number in secondListOfNumbers where number % 2 != 0 {
+    print(number)
+}
+
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
 
+var sumOfList = 0
+for numbers in thirdListOfNumbers {
+    sumOfList += numbers
+}
+print(sumOfList)
 
 //10)
 //Iterate through the array and check to see if there is at least one integer that equals target.  Then, print "YES" if you found a match, and "NO" if you didn't
@@ -104,6 +146,8 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
+
+
 
 
 //11)
