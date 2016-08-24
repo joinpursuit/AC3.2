@@ -206,10 +206,9 @@ print(intString!)
 //H)
 let pokemon: String?
 var evolutionaryStone: String?
-pokemon = starterPokemon()
+pokemon = starterPokemon() // parenthesis point to the helper functions above, returns a string ()this on its own means void
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
-
 
 
 
@@ -224,8 +223,13 @@ var exp = 21
 // add 150 exp if lvl is above 7
 
 
+if lvl > 7 {
+    exp = 150
+}
 
-
+if let currentlvl = lvl where currentlvl > 7 {
+    exp = 150
+}
 
 
 

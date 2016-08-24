@@ -4,6 +4,8 @@
 
 //Write all your code below:
 
+var arrColor = ["orange", "red", "yellow", "turquoise", "lavender"]
+print(" \(arrColor[0]), \(arrColor[2]), and \(arrColor[4]) are some of my favorite colors")
 
 
 //2)
@@ -11,8 +13,10 @@
 
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
 
-
 //Write all your code below:
+
+westernStates.removeAtIndex(4)
+westernStates.removeAtIndex(4)
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
@@ -21,6 +25,14 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 
 //Write all your code below:
 
+for i in 0..<moreStates.count {
+    if (moreStates[i] != "Hawaii" && moreStates[i] != "Alaska") {
+        print("\(moreStates[i]) is in the continental United States")
+    } else {
+        print("\(moreStates[i]) is not in the continental United States")
+    }
+}
+
 
 //4)
 //a) print out how many non-whitespace characters are in myString
@@ -28,12 +40,30 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+var charCount = 0
+for character in myString.characters where character == " " {
+        charCount += 1
+}
+print("There are \(charCount) whitespaces.")
+
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
+var charSpaces = 0
+
+//
+//for j in myFavoriteQuotes {
+//    for char in j.characters {
+//        if myFavoriteQuotes != " " {
+//        charSpaces += 1
+//        }
+//}
+//}
+
 
 
 
@@ -48,6 +78,12 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 
 //Write all your code below:
 
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.removeAtIndex(0)
+battingLineup.insert("Reyes", atIndex: 8)
+print(battingLineup)
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
@@ -56,11 +92,37 @@ var basket = [String]()
 
 //Write all your code below:
 
+
+for i in 0..<garden.count where garden[i] == "🌷" {
+    basket.append(garden[i])
+
+    garden.removeAtIndex(i)
+    garden.insert("dirt", atIndex: i)
+               }
+
+print(garden)
+print(basket)
+
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
+
+let maxNum = listOfNumbers.maxElement()
+
+for i in 0..<listOfNumbers.count where i == maxNum {
+        print(i)
+    }
+
+var max = 0
+for number in listOfNumbers {
+    if number > max {
+    max = number
+}
+}
+print(max)
 
 
 //8)
@@ -69,11 +131,23 @@ var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 //Write all your code below:
 
+for i in 0..<secondListOfNumbers.count where secondListOfNumbers[i] % 2 != 0 {
+    print(secondListOfNumbers[i])
+}
+
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+
+var sumOfList = 0
+
+for numbers in thirdListOfNumbers {
+    sumOfList += numbers
+}
+
+print(sumOfList)
 
 
 //10)
