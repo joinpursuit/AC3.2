@@ -194,8 +194,12 @@ if let i = lvl {
     }
 }
 
+//or 
+if let i = lvl where i>7 {
+    exp += 150
+}
 
-
+print(exp)
 
 
 

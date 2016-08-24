@@ -1,8 +1,10 @@
-//1)
+//1) Ana and Luz
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
 
 //Write all your code below:
+var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
+print("\(colors[0]), \(colors[2]), \(colors[4]) are some of my favorite colors" )
 
 
 
@@ -13,6 +15,9 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 
 
 //Write all your code below:
+westernStates.removeAtIndex(4)
+westernStates.removeAtIndex(4)
+
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
@@ -20,20 +25,41 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
 
 //Write all your code below:
-
+var nonContinental = ["Hawaii", "New Mexico"]
+for i in moreStates {
+    if i == nonContinental[0]{
+        print ("\(i) not in the continental United States")
+    }else if i == nonContinental[1] {
+         print ("\(i) not in the continental United States")
+    }else{
+        print ("\(i)in the continental!")
+    }
+}
 
 //4)
 //a) print out how many non-whitespace characters are in myString
 let myString = "This is practice for the next problem!"
 
-//Write all your code below:
-
+var count = 0
+for c in myString.chracters {
+    if c != " "{
+        count += 1
+}
+print(count)
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+var countB = 0
+    for quote in myFavoriteQuotes {
+        for c in quote.characters{
+            if c! = " " {
+                tempCount += 1
+            }
+        }
+    }
 
 
 
@@ -47,6 +73,17 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
 
 //Write all your code below:
+//Add "Suzuki" to the end of your lineup.
+battingLineup.append("Suzuki")
+//Change "Jeter" to "Tejada".
+battingLineup[1] = "Tejada"
+//Change "Thomas" for "Guerrero"
+battingLineup[5] = "Guerrero"
+//Put "Reyes" to bat 8th instead.
+battingLineup.removeAtIndex(0)
+battingLineup.insert("Reyes", atIndex: 7)
+print(battingLineup)
+
 
 
 //6)
@@ -56,24 +93,55 @@ var basket = [String]()
 
 //Write all your code below:
 
+for i in 0..<garden.count {
+    if garden[i] == "🌷" {
+        basket.append("🌷")
+        garden[i] = "dirt"
+        
+    }
+}
+print(basket)
+print(garden)
+
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
+var largestNum = 0
+for i in 0..<listOfNumbers.count{
+    if (listOfNumbers[i] > largestNum) {
+        largestNum = listOfNumbers[i]
+    }
+}
+print(largestNum)
 
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
+//Write all your code below:
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
-//Write all your code below:
+for i in 0..<secondListOfNumbers.count {
+    if secondListOfNumbers[i] % 2 == 1 {
+        print(secondListOfNumbers[i])
+    }
+}
 
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+//var sum = multiples.reduce(0, combine: +)
+var sum = 0
+
+for i in 0..<thirdListOfNumbers.count {
+    sum += thirdListOfNumbers[i]
+}
+print(sum)
+
 
 
 //10)
@@ -83,8 +151,19 @@ let target = 84
 var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
-//Write all your code below:
 
+//Write all your code below:
+var found = false
+for i in 0..<fourthListOfNumbers.count {
+    if fourthListOfNumbers[i] == target {
+        found = true
+        print("YES")
+        break
+    }
+}
+if !found {
+    print("NO")
+}
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.
@@ -94,7 +173,11 @@ var sharedElements = [Int]()
 
 
 //Write all your code below:
-
+for (i in 0..<listOne.count) && (j in 0..<listTwo.count) {
+    if listOne[i] == listTwo[j]{
+        sharedElements.append(listOne[i])
+    }
+}
 
 
 //12)
@@ -117,6 +200,22 @@ var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    var arrOne = [Int]()
+    var arrTwo = [Int]()
+    var arrThree = [Int]()
+    
+    for x in 0..<toRotate.count{
+        for y in (0..<toRotate[x].count).reverse(){
+            if x==0{
+                arrOne.append(toRotate[y][x])
+            } else if x == 1 {
+                arrTwo.append(toRotate[y][x])
+            }else if x == 2 {
+                arrThree.append(toRotate[y][x])
+            }
+        }
+    }
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
