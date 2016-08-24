@@ -4,7 +4,9 @@
 
 //Write all your code below:
 
+var colours = ["orange", "red", "yellow", "turquoise", "lavender"]
 
+print("\(colours[0]), \(colours[1]), and \(colours[3]) are some of my favourite colours")
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
@@ -14,6 +16,17 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 
 //Write all your code below:
 
+westernStates.removeRange(4...5)
+
+
+for i in 0..<westernStates.count {
+    if westernStates[i] == "Illinois" || westernStates[i] == "Kansas" {
+        westernStates.removeAtIndex(i)
+    }
+}
+
+//for i in 0..<
+
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
 
@@ -22,20 +35,55 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 //Write all your code below:
 
 
+for i in 0..<moreStates.count {
+    if moreStates[i] != "Hawaii" || moreStates[i] != "Alaska" {
+        print("\(moreStates[i]) is in the continental US")
+    } else {
+        print("\(moreStates[i]) isn't in the continental US")
+    }
+}
+
+
+
 //4)
 //a) print out how many non-whitespace characters are in myString
 let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+var sum = 0
+
+for i in 0..<myString.characters.count {
+    if myString[myString.startIndex.advancedBy(i)] != " " {
+        sum += 1
+    }
+}
+myString.characters.count
+print(sum)
+
+
+
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
+
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
 
 
+var sum1 = 0
+
+
+for i in 0..<myFavoriteQuotes.count {
+    for j in 0..<myFavoriteQuotes[i].characters.count {
+        if myFavoriteQuotes[myFavoriteQuotes.startIndex.advancedBy(i)] != " " {
+            sum1 += 1
+        }
+    }
+    print("There are \(sum1) non-whitespace characters in sentence \(i)")
+    sum1 = 0
+}
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -48,6 +96,14 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 
 //Write all your code below:
 
+battingLineup.append("Suzuki")
+battingLineup[2] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.removeFirst()
+battingLineup.append("Reyes")
+battingLineup
+
+
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
@@ -56,6 +112,14 @@ var basket = [String]()
 
 //Write all your code below:
 
+for i in 0..<garden.count {
+    if garden[i] == "🌷" {
+        basket.append(garden[i])
+        garden[i] = "dirt"
+    }
+}
+print(basket.count)
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
@@ -63,17 +127,44 @@ var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 //Write all your code below:
 
 
+
+var currentLargest: Int?
+
+for i in listOfNumbers {
+    if i > currentLargest {
+        currentLargest = i
+    }
+}
+print(currentLargest!)
+
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 //Write all your code below:
 
+
+
+for i in secondListOfNumbers {
+    if i % 2 == 1 {
+        print(i)
+    }
+}
+
+
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+var sumOfThirdListOfNumbers = 0
+
+for i in thirdListOfNumbers {
+    sumOfThirdListOfNumbers += i
+}
+print(sumOfThirdListOfNumbers)
+
+
 
 
 //10)
@@ -84,6 +175,14 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
+var found = false
+for i in fourthListOfNumbers where i == 84{
+    print("YES")
+    found = true
+}
+if !found {
+    print("NO")
+}
 
 
 //11)
@@ -96,15 +195,46 @@ var sharedElements = [Int]()
 //Write all your code below:
 
 
+for i in listOne {
+    for j in listTwo where i == j{
+        sharedElements.append(j)
+    }
+}
+print(sharedElements.count)
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+var checkerArray = [Bool] (count:dupeFriendlyList.count, repeatedValue: false)
+
+
+
+for val in dupeFriendlyList  {
+    // each Int in arr change each Index of "check" to true
+    checkerArray[val - 1] = true
+}
+var noDupleList: [Int] = []
+for i in 0..<checkerArray.count {
+    if (checkerArray[i]) {
+        noDupeList.append(i + 1)
+    }
+}
+print(noDupeList)
+
 
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
+
+var smallest = ages[0]
+
+for i in ages {
+    if i < smallest {
+        smallest = i
+    }
+}
+print(smallest)
 
 
 //14)
@@ -112,11 +242,31 @@ var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 
 
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 
+var diagonal1 = myMatrix[0][0] + myMatrix [1][1] + myMatrix [2][2]
+var diagonal2 = myMatrix[0][2] + myMatrix [1][1] + myMatrix[2][0]
+
+print(diagonal1 + diagonal2)
+
 
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+
+[7, 4, 1]
+[8, 5, 2]
+[9, 6, 3]
+
+
+
+
+
+
+for
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
@@ -139,5 +289,4 @@ var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,3
 //If there are multiple triplets, print all possible triplets.
 
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
-
 
