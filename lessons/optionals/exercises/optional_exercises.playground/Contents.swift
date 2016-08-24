@@ -211,6 +211,17 @@ var exp = 21
 // add 150 exp if lvl is above 7
 
 
+if lvl > 7 {
+    exp += 150
+}
+
+//or
+
+if let currentLvl = lvl where currentLvl > 7 {
+    exp += 150
+}
+
+
 
 
 
