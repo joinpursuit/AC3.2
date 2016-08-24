@@ -211,6 +211,10 @@ if lvl > 7{
 }
 
 
+//
+//if let currentLvl = lvl where currentLvl > 7{
+//    exp += 150
+//}
 
 
 
