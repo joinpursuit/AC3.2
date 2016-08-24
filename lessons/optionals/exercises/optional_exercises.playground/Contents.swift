@@ -135,29 +135,27 @@ if !randNum() {
     myTuple.3 = 10
 }
 //Print the sum of each non-nil element in myTuple.
-//var sum = 0
-//if let myTupleOne = myTuple {
-//    print(sum += myTuple)
-//}
+var sum = 0
 
-
-
-
+if let numZero = myTuple.0 {
+    sum += numZero
+}
+if let numOne = myTuple.1 {
+    sum += numOne
+}
+if let numTwo = myTuple.2 {
+    sum += numTwo
+}
+if let numThree = myTuple.3 {
+    sum += numThree
+}
 
 
 //G)
 var myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
-
-
-
-
-
-
-
-
-
-
+//ANSWER:
+print(Int(myIntString)! + 15)
 
 
 
@@ -168,24 +166,38 @@ pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
 
-
-
-
-
-
-
-
-//I)
-var lvl: Int?
-lvl = lvlGenerator()
-var exp = 21
-// add 150 exp if lvl is above 7
-
-
-
-
-
-
-
-
-
+//ANSWER:
+//let pokemon: String?
+//var evolutionaryStone: String?
+//pokemon = starterPokemon()
+//evolutionaryStone = eStone()
+//// evolve your pokemon with appropriate stone
+//if var myPokemon = pokemon, stone = evolutionaryStone {
+//    if  myPokemon == "Pikachu" && stone == "Electric" || myPokemon == "Bulbasaur" && stone == "Grass" || myPokemon == "Charmander" && stone == "Fire" || myPokemon == "Squirtle" && stone == "Water" {
+//        
+//        print("Evolve Your pokemon \(myPokemon) with \(stone)")
+//    }
+//    else {
+//        print ("Your pokemon \(pokemon!) didn't match with the correct stone. You got \(stone)!")
+//    }
+//}
+//else {
+//    print("Empty!!!")
+//}
+////I)
+//var lvl: Int?
+//lvl = lvlGenerator()
+//var exp = 21
+//// add 150 exp if lvl is above 7
+//if var level = lvl where level > 7 {
+//    exp += 150
+//    print("Your new XP is \(exp)")
+//}
+//else {
+//    print("You are not above level 7 yet!")
+//}
+//
+//
+//
+//
+//
