@@ -7,9 +7,19 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var cititesDict = ["United States": "Washington D.C", "Afghanistan": "Kabul", "Albania": "Tirana"]
+
 //b) Add two more countries to your dictionary
 
+cititesDict["Bahamas"] = "Nassau"
+cititesDict["Barbados"] = "Bridgetown"
+
 //c) Translate at least 3 of the capital names into another language
+cititesDict["United States"] = "واشنطن العاصمة"
+cititesDict.updateValue("كابول", forKey: "Afghanistan")
+cititesDict.updateValue("تيرانا", forKey: "Albania")
+
+print(cititesDict)
 
 //2)
 
@@ -17,15 +27,44 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+var sum = someDict["Three"]! + someDict["Five"]!
+print(sum)
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
 
+someDict.updateValue(13, forKey: "Six")
+someDict["Seven"] = 21
+
+print(someDict)
+
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
+var product = 1
+
+for i in someDict.values{
+    product *= i
+}
+
+someDict["productUpToSeven"] = product
+print(someDict)
 
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
 
+someDict["sumUpToSix"] = someDict["One"]! + someDict["Two"]! + someDict["Three"]! + someDict["Four"]! + someDict["Five"]! + someDict["Six"]!
+print(someDict["sumUpToSix"]!)
+
 //e) Remove the new keys made for parts c and d
 
+someDict.removeValueForKey("productUpToSeven")
+someDict["sumUpToSix"] = nil
+print(someDict)
+
 //f) Add 2 to every value inside of someDict
+
+for i in someDict.keys {
+     someDict[i]! += 2
+    
+}
+print(someDict)
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
