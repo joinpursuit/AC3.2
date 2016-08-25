@@ -11,6 +11,16 @@ import UIKit
 
 //c) Translate at least 3 of the capital names into another language
 
+var citiesDict = ["Moldova": "Chidinau", "France": "Paris", "Germany": "Berlin"]
+
+citiesDict["Russia"] = "Moscow"
+citiesDict["Japan"] = "Tokyo"
+
+citiesDict["Russia"] = "Noskva"
+citiesDict["France"] = "Paris"
+citiesDict["Moldova"] = "Kishinev"
+
+
 //2)
 
 var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
@@ -27,6 +37,43 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //f) Add 2 to every value inside of someDict
 
+for (key,value) in someDict{
+    if key == "Three" && key == "Five" {
+        print()
+    }
+}
+
+someDict["six"] = 30
+someDict["Seven"] = 40
+
+var productUpToSeven = 1
+
+var arr = Array(someDict.values)
+for i in arr {
+    productUpToSeven *= i
+    print(productUpToSeven)}
+
+var sumUpToSix = 0
+for (key,value) in someDict {
+    if key != "Seven" {
+        sumUpToSix += value
+    }
+}
+
+
+
+
+//var myDict = [1: 1, 2:1, 3:2, 4:3, 5:5]
+//var sum = 0
+//for (key, value) in myDict where key != 4 {
+//    sum += value
+//}
+//
+//print(sum)
+
+
+
+
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
@@ -42,6 +89,7 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
+var dict:[String:Double] = ["Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakaur": 6.1]
 
 
 
