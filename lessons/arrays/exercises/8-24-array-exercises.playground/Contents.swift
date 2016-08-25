@@ -14,8 +14,11 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 
 //Write all your code below:
 
-westernStates.removeAtIndex(4)
-westernStates.removeAtIndex(4)
+while westernStates.count > 4 {
+    westernStates.removeAtIndex(4)
+}
+
+print(westernStates) // checking to see if we got it
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
@@ -39,7 +42,7 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
-var nonspaces:Int = 0
+var nonspaces = 0
 
 for char in myString.characters {
     if char != " " {
@@ -47,7 +50,7 @@ for char in myString.characters {
     }
 }
 
-print(nonspaces)
+print("There are \(nonspaces) characters that aren't just spaces in myString.")
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
@@ -55,7 +58,7 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 
 //Write all your code below:
 
-var nonspaces2:Int = 0
+var nonspaces2 = 0
 
 for sentence in myFavoriteQuotes {
     nonspaces2 = 0
@@ -64,7 +67,7 @@ for sentence in myFavoriteQuotes {
             nonspaces2 += 1
         }
     }
-    print("There are \(nonspaces2) characters in this quote (\(sentence))")
+    print("There are \(nonspaces2) characters in this quote: \"\(sentence)\"")
 }
 
 //5)
@@ -90,13 +93,13 @@ print(battingLineup)
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
 
-for i in 0..<garden.count {
-    if garden[i] != "dirt" {
-        basket.append(garden[i])
-        garden[i] = "dirt"
+for index in 0..<garden.count {
+    if garden[index] != "dirt" {
+        basket.append(garden[index])
+        garden[index] = "dirt"
     }
 }
-print("There are \(basket.count) flowers in my basket.")
+print("There are \(basket.count) \u{1F337}flowers in my basket.")
 
 //Write all your code below:
 
@@ -119,8 +122,9 @@ for num in listOfNumbers {
         }
     }
 }
-
-print("The biggest number is \(largestSoFar!)")
+if let largestSoFar = largestSoFar {
+    print("The biggest number is \(largestSoFar)")
+}
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
@@ -179,12 +183,46 @@ var sharedElements = [Int]()
 
 //Write all your code below:
 
+var shared: Int?
+for numOne in listOne {
+    for numToo in listTwo {
+        if numOne == numToo {
+            shared = numOne
+            sharedElements.append(shared!)
+        }
+    }
+}
 
+print("There are \(sharedElements.count) shared elements.")
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+
+var sortedFriend = dupeFriendlyList.sort()
+var lastOne: Int?
+var current: Int
+
+for index in 0..<sortedFriend.count {
+    if index == 0 && sortedFriend.count > 1 {
+        lastOne = sortedFriend[index]
+    } else if sortedFriend.count > 1 && index != 0 {
+        current = sortedFriend[index]
+        if current == lastOne {
+            lastOne = current
+            continue
+        } else {
+            noDupeList.append(current)
+            lastOne = current
+        }
+    } else {
+        noDupeList.append(sortedFriend[index])
+        break
+    }
+}
+
+print(noDupeList)
 
 //13)
 //Find the second smallest Int in ages
