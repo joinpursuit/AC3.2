@@ -196,21 +196,36 @@ print(noDupeList)
 
 //13)
 //Find the second smallest Int in ages
-var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
+var elements = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
 
-var smallestInt = ages[0]
-var secondSmallest = smallestInt
-for num in ages {
-    if  smallestInt > num {
-          smallestInt = num
+var smallest = Int.max
+var secondSmallest = Int.max
+//
+//for i in 0..<elements.count { //Goes through each element from start to end
+//    
+//    if (elements[i] < smallest) { //If 53 < max If an element is less than the smallest
+//        secondSmallest = smallest; //secondSmallest = max The secondSmallest will obtain the value of the smallest
+//        smallest = elements[i];     //smallest becomes 53 Smallest will become that element
+//    }
+//    else if (elements[i] < secondSmallest) {//53 < max If the element is less than the max
+//        secondSmallest = elements[i];       //max becomes that number
+//    }
+//    
+//}
+for i in 0..<elements.count {
+    
+    if elements[i] < smallest {
+        secondSmallest = smallest
+        smallest = elements[i]
     }
+        
+    else if elements[i] < secondSmallest {
+        secondSmallest = elements[i]
+    }
+    
 }
-for num in ages {
-    if smallestInt < secondSmallest && secondSmallest < num {
-        secondSmallest = num
-    }
-print(secondSmallest)
-
+smallest
+secondSmallest
 //14)
 //Print out the sum of the diagonals of myMatrix
 
