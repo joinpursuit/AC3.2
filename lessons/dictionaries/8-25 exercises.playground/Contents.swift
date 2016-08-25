@@ -6,27 +6,60 @@ import UIKit
 //1)
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
+var citiesDict = ["China": "Beijing", "America": "Washington D.C.", "Japan": "Tokyo"]
 
 //b) Add two more countries to your dictionary
+citiesDict["Afghanistan"] = "Kabul"
+citiesDict["Bangladesh"] = "Dhaka"
 
 //c) Translate at least 3 of the capital names into another language
+citiesDict["Japan"] = "東京"
+citiesDict["China"] = "北京市"
+citiesDict["Afghanistan"] = "کابل"
+
+// ["Afghanistan": "کابل", "America": "Washington D.C.", "Japan": "東京", "Bangladesh": "Dhaka", "China": "北京市"]
 
 //2)
 
 var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
+print(someDict["Three"]! + someDict["Five"]!) // Prints: 34
 
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+someDict["Six"] = 6
+someDict["Seven"] = 7
+print(someDict)
+
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
+var productUpToSeven = 1
+for all in someDict.values {
+	productUpToSeven *= all
+}
+someDict["productUpToSeven"] = productUpToSeven // Value is 604800
+print(someDict)
 
-//d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+//d) Make a key called "sumUpToSix" and set its value equal to the sum of the values of keys "One", "Two", "Three", "Four", "Five" and "Six"
+var sumUpToSix = 0
+for all in someDict.values where all != productUpToSeven {
+	sumUpToSix += all
+}
+someDict["sumUpToSix"] = sumUpToSix // Value is 68
+print(someDict)
 
 //e) Remove the new keys made for parts c and d
+someDict.removeValueForKey("sumUpToSix")
+someDict["productUpToSeven"] = nil
+print(someDict)
+
 
 //f) Add 2 to every value inside of someDict
-
+for var (x, y) in someDict {
+	someDict[x] = y + 2
+}
+print(someDict)
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
@@ -38,12 +71,37 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “Jon Krakaur” - 6.1
 */
 
+//var explicitDict = [String:Float]()
+//explicitDict["Mark Twain"] = 8.9
+//explicitDict["Nathaniel Hawthorne"] = 5.1
+//explicitDict["John Steinbeck"] = 2.3
+//explicitDict["C.S. Lewis"] = 9.9
+//explicitDict["Jon Krakaur"] = 6.1
+
+var bookRatings:[String: Float] = ["Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakaur": 6.1]
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+print(bookRatings["John Steinback"])
+bookRatings["Eric Larson"] = 9.2
+if bookRatings["John Krakaur"] > bookRatings["Mark Twain"] {
+	print("Jon Krakaur's score is higher at \(bookRatings["Jon Krakaur"]!)")
+} else {
+	print("Mark Twain's score is higher at \(bookRatings["Mark Twain"]!)")
+}
+// Prints "Mark Twain's score is higher at 8.9"
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
-
-
-
+for x in bookRatings.keys {
+	print("\(x): \(bookRatings[x]!)")
+}
+/* Prints:
+Eric Larson: 9.2
+Jon Krakaur: 6.1
+C.S. Lewis: 9.9
+Nathaniel Hawthorne: 5.1
+John Steinbeck: 2.3
+Mark Twain: 8.9
+*/
 
 
 //4 -7 source :  https://www.weheartswift.com/dictionaries/)
@@ -80,6 +138,20 @@ var code = [
 ]
 
 var message = "hello world"
+
+for i in message.characters {
+	for j in code.values {
+		if String(i) == j {
+			print(code[String(i)]!, terminator: "")
+		}
+		if i == " " {
+			print(" ", terminator: "")
+			break
+		}
+	}
+}
+// Prints "ifmmp xpsme"
+
 
 
 //4b)
