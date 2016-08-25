@@ -53,19 +53,25 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 
 //Write all your code below:
 
-var charSpaces = 0
-
+//var charSpaces = 0
+//
 //
 //for j in myFavoriteQuotes {
 //    for char in j.characters {
-//        if myFavoriteQuotes != " " {
+//        if char != " " {
 //        charSpaces += 1
 //        }
 //}
 //}
 
-
-
+var countB = 0
+for quote in myFavoriteQuotes {
+    for c in quote.characters {
+        if c != " " {
+            countB += 1
+        }
+    }
+}
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -191,6 +197,26 @@ var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+var arrOne = [Int]()
+var arrTwo = [Int]()
+var arrThree = [Int]()
+
+for x in 0..<toRotate.count {
+    for y in (0..<toRotate[x].count).reverse() {
+        if x == 0 {
+            arrOne.append(toRotate[y][x])
+        
+        } else if x == 1 {
+            arrTwo.append(toRotate[y][x])
+
+        } else if x == 3 {
+            arrThree.append(toRotate[y][x])
+        }
+    }
+}
+
+print(toRotate)
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23

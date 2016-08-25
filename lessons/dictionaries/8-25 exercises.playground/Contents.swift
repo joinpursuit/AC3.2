@@ -7,9 +7,19 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var citiesDict = ["United States": "Washington D.C.", "Afganistan": "Kabul", "Albania": "Tirana"]
+
 //b) Add two more countries to your dictionary
 
+citiesDict["Barbados"] = "Bridgetown"
+citiesDict["Bahamas"] = "Nassau"
+
 //c) Translate at least 3 of the capital names into another language
+
+citiesDict["United States"] = "واشنطن العاصمة"
+citiesDict["Afganistan"] = "كابول "
+citiesDict["Albania"] = "تيرانا "
+
 
 //2)
 
@@ -17,15 +27,65 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+
+var numThree = someDict["Three"]
+var numFive = someDict["Five"]
+var sum = numThree! + numFive!
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict["Six"] = 13
+someDict["Seven"] = 21
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+
+var sumOne = 1
+
+for (key, i) in someDict {
+    sumOne = sumOne * i
+}
+
+someDict["productUpToSeven"] = sumOne
+
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+var sumNum = 0
+
+sumNum = someDict["One"]! + someDict["Two"]! + someDict["Three"]! + someDict["Four"]! + someDict["Five"]! + someDict["Six"]!
+
+someDict["sumUpToSix"] = sumNum
+
+print(someDict["sumUpToSix"])
+
+
+var sumUpToSix = 0
+
+for (key, value) in someDict {
+    if key != "Seven" {
+        sumUpToSix == value
+    }
+}
+
+print(sumUpToSix)
 
 //e) Remove the new keys made for parts c and d
 
+someDict["sumUpToSix"] = nil
+someDict["productUpToSeven"] = nil
+
 //f) Add 2 to every value inside of someDict
+
+//UpdateValue
+
+for (key, value) in someDict {
+    someDict.updateValue(value+2, forKey: key)
+}
+
+for (key, value) in someDict {
+    someDict[key] = value + 2
+}
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
@@ -113,6 +173,15 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+var firstName = [String]()
+
+for dict in people {
+    if let first = dict["firstName"] {
+    firstName.append(first)
+    }
+}
+print(firstName)
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
