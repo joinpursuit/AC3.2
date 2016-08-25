@@ -1,6 +1,6 @@
 
 import UIKit
-
+//Leandro and Eashir
 //1)
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
