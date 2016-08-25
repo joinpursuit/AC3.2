@@ -1,3 +1,4 @@
+/*
 //1)
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
@@ -36,8 +37,8 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 var sum = 0
-for i in 0..<myString.characters.count {
-    if myString[myString.startIndex.advancedBy(i)] !=  " " {
+for i in myString.characters {
+    if i !=  " " {
         sum += 1
     }
 }
@@ -164,33 +165,57 @@ print(sharedElements.count)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
-var num = [Bool](count: 9, repeatedValue: false)
+var greatest = dupeFriendlyList[0]
+for i in dupeFriendlyList {
+    if i > greatest {
+        greatest = i
+    }
+}
+var num = [Bool](count: greatest, repeatedValue: false)
+print(num)
 
-for val in dupeFriendlyList  {
-    // each Int in arr change each Index of "check" to true
+for val in dupeFriendlyList  {//n
     num[val - 1] = true
 }
-var noDupleList: [Int] = []
-for i in 0..<num.count {
+print(num)
+
+for i in 0..<num.count {//n
     if (num[i]) {
         noDupeList.append(i + 1)
     }
 }
-print(noDupeList)
+print(noDupeList)//O(n) 2n
 
+//--------------OR----------------//
 
+outer: for i in dupeFriendlyList {//n
+    for j in noDupeList {//n
+        if i == j {
+            continue outer
+        }
+    }
+    noDupeList.append(i)
+}
+print(noDupeList)//n^2 O(n^2)
+*/
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
 
 var smallest = ages[0]
+var secondSmallest = ages[1]
 
+if secondSmallest < smallest {
+    secondSmallest = ages[0]
+    smallest = ages[1]
+}
 for i in ages {
     if i < smallest {
+        secondSmallest = smallest
         smallest = i
     }
 }
-print(smallest)
+print(secondSmallest)
 
 //14)
 //Print out the sum of the diagonals of myMatrix
@@ -205,14 +230,36 @@ print(diagonal1 + diagonal2)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-[1, 2, 3] 
+[1, 2, 3]
 [4, 5, 6]
 [7, 8, 9]
+
+var arrOne = [Int]()
+var arrTwo = [Int]()
+var arrThree = [Int]()
+
+for x in 0..<toRotate.count {
+    for y in (0..<toRotate[x].count).reverse() {
+        if x == 0 {
+            arrOne.append(toRotate[y][x])
+        } else if x == 1 {
+            arrTwo.append(toRotate[y][x])
+        } else if x == 2 {
+            arrThree.append(toRotate[y][x])
+        }
+    }
+}
+let newArray = [arrOne, arrTwo, arrThree]
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
 //Find the sum of all the multiples of 3 or 5 below 1000
 //https://projecteuler.net/problem=1
+var sumToThousand = 0
+for i in 1..<1000 where i % 3 == 0 || i % 5 == 0{
+    sumToThousand += i
+}
+print(sumToThousand)
 
 
 //17)
@@ -220,11 +267,41 @@ var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 var someRepeats = [25, 11, 30, 31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15, 25]
 
+var check: [Int] = []
+
+outer: for i in someRepeats {
+    for j in check {
+        if i == j {
+            print(j)
+            break outer
+        }
+    }
+    check.append(i)
+}
+/*
+first appends i[0]
+then compares i[1] to j which is i[0]
+then appends i[1]
+then compares i[2] to j which is i[0], i[1]
+then appends i[2]
+then compares i[3] to j which is i[0], i[1], i[2]
+*/
+
 //18)
 //Make an array that contains all elements that appear more than twice in someRepeatsAgain
 
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15,25]
 
+var repeatCheck: [Int] = []
+var thirdRepeat: [Int] = []
+for i in someRepeatsAgain {
+    for j in repeatCheck {
+        if i == j {
+
+            }
+        }
+    repeatCheck.append(i)
+}
 //19)
 //Identify if there are 3 integers in the following array that sum to 10.  If so, print them.
 //If there are multiple triplets, print all possible triplets.
