@@ -1,3 +1,4 @@
+/*
 //1)
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
@@ -84,6 +85,21 @@ for i in 0..<myFavoriteQuotes.count {
     print("There are \(sum1) non-whitespace characters in sentence \(i)")
     sum1 = 0
 }
+
+
+//this is horribly wrong
+
+for i in myFavoriteQuotes {
+    sum1 = 0
+    for j in i.characters {
+        if j != " " {
+            sum1 += 1
+        }
+    }
+    print("There are \(sum1) non-whitespace characters in sentence \(i)")
+}
+
+
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -261,32 +277,130 @@ var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 [8, 5, 2]
 [9, 6, 3]
 
+var newArr: [[Int]] = []
 
+for i in 0..<toRotate.count {
+    newArr.append([])
+}
 
+for (index, row) in toRotate.reverse().enumerate() {
+    for (index2, value) in row.enumerate() {
+        newArr[index2].append(value)
+    }
+}
 
+newArr
 
-
-for
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
 //Find the sum of all the multiples of 3 or 5 below 1000
 //https://projecteuler.net/problem=1
 
+var sum55 = 0
+
+for i in 0..<1000 {
+    if i % 5 == 0 || i % 3 == 0 {
+        sum55 += i
+    }
+}
+
+print(sum55)
 
 //17)
 //Print the first element that repeats in someRepeats
 
 var someRepeats = [25, 11, 30, 31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15, 25]
+var firstRepeat = [Int]()
+someRepeats.count
+
+for i in someRepeats {
+    for j in firstRepeat where i == j {
+        print(j)
+        break
+        
+    }
+    firstRepeat.append(i)
+}
+
+
 
 //18)
 //Make an array that contains all elements that appear more than twice in someRepeatsAgain
 
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15,25]
 
+
+var firstRepeatAgain = [Int]()
+var firstRepeatAgain2 = [Int]()
+var numsThreeTimes = [Int]()
+
+for i in someRepeatsAgain {
+var found1 = false //we are setting bools to make sure we don't repeat a number (if a number is repeated, it will turn true in the next loop
+    for j in firstRepeatAgain where i == j {
+        var found2 = false
+        for k in firstRepeatAgain2 where k == j {
+            if !numsThreeTimes.contains(k)  { //there isn't much of a way to keep from adding instances of numbers more without convoluted loops farther in, so just give up and use contain.
+                numsThreeTimes.append(k)
+            }
+            found2 = true
+        }
+        if !found2{
+            firstRepeatAgain2.append(j)
+        }
+        
+        found1 = true
+    }
+    if !found1 {
+    firstRepeatAgain.append(i)
+    }
+}
+
+
+
+
+var repeatedNumbers = Set<Int>()
+var repeatedTwiceNumbers = Set<Int>()
+var repeatedThriceNumbers = Set<Int>()
+for number in someRepeatsAgain {
+    if repeatedNumbers.contains(number) {
+        if repeatedTwiceNumbers.contains(number) {
+            repeatedThriceNumbers.insert(number)
+        } else {
+            repeatedTwiceNumbers.insert(number)
+        }
+    } else {
+        repeatedNumbers.insert(number)
+    }
+}
+
+print(repeatedThriceNumbers)
+*/
+
 //19)
 //Identify if there are 3 integers in the following array that sum to 10.  If so, print them.
 //If there are multiple triplets, print all possible triplets.
 
-var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
+
+var tripleSumArr = [-20,-14, -8, -5,-3,-2,1,2,3,4,9,15,20,30]
+
+
+
+let sum = 10
+
+for (i, value1) in tripleSumArr.enumerate() {
+    for (k, value2) in tripleSumArr.enumerate() where i != k {
+        for (j, value3) in tripleSumArr.enumerate() where j != k && j != i {
+            var sumOfThree = value1 + value2 + value3
+            if sumOfThree == sum {
+                print(value1, value2, value3)
+            }
+        }
+    }
+}
+
+
+
+
+
 
