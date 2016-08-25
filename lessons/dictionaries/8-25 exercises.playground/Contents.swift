@@ -3,13 +3,21 @@
 import UIKit
 
 
+
 //1)
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var citiesDict = ["USA": "Washington DC", "Japan": "Tokyo", "England": "London"]
+
 //b) Add two more countries to your dictionary
 
+citiesDict["China"] = "BeiJing"
+citiesDict["France"] = "Paris"
+
 //c) Translate at least 3 of the capital names into another language
+
+
 
 //2)
 
@@ -17,37 +25,72 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+print(someDict["Three"]! + someDict["Five"]!)
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict["Six"] = 36
+someDict["Seven"] = 49
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+someDict["productUpToSeven"] = 1
+for (i, j) in someDict{
+    someDict["productUpToSeven"] = j * someDict["productUpToSeven"]!
+}
+print(someDict["productUpToSeven"]!)
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+someDict["sumUpToSix"] = 0
+for (i, j) in someDict where i != "Seven" && i != "productUpToSeven"{
+    someDict["sumUpToSix"]! += j
+}
+print(someDict["sumUpToSix"]!)
 
 //e) Remove the new keys made for parts c and d
 
-//f) Add 2 to every value inside of someDict
+someDict.removeValueForKey("productUpToSeven")
+someDict["sumUpToSix"] = nil
+print(someDict)
 
+//f) Add 2 to every value inside of someDict
+for var i in someDict.keys{
+    someDict[i]! += 2
+}
+print(someDict)
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
 /*
-“Mark Twain” - 8.9
-“Nathaniel Hawthorne” - 5.1
-“John Steinbeck” - 2.3
-“C.S. Lewis” - 9.9
-“Jon Krakaur” - 6.1
-*/
+ “Mark Twain” - 8.9
+ “Nathaniel Hawthorne” - 5.1
+ “John Steinbeck” - 2.3
+ “C.S. Lewis” - 9.9
+ “Jon Krakaur” - 6.1
+ */
+var someDic: Dictionary<String, Float> = ["Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakaur": 6.1]
 
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+print(someDic["John Steinbeck"]!)
+someDic["Erik Larson"] = 9.2
+if someDic["Jon Krakaur"]! > someDic["Mark Twain"]!{
+    print("Jon Krakaur has highest score: \(someDic["Jon Krakaur"]!)!")
+}else{
+    print("Mark Twain has highest score: \(someDic["Mark Twain"]!)!")
+}
+
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
-
+for (i, j) in someDic{
+    print(i, someDic[i]!)
+}
 
 
 
 //4 -7 source :  https://www.weheartswift.com/dictionaries/)
-//4)  
+//4)
 //4a)You are given a dictionary code of type [String:String] which has values for all lowercase letters. The code dictionary represents a way to encode a message. For example if code["a"] = "z" and code["b"] = "x" the encoded version if "ababa" will be "zxzxz". You are also given a message which contains only lowercase letters and spaces. Use the code dictionary to encode the message and print it.
 
 var code = [
@@ -81,12 +124,33 @@ var code = [
 
 var message = "hello world"
 
+for i in message.characters{
+    for j in code.keys{
+        if i == Character(j){
+            print(code[j]!, separator: "", terminator: "")
+        }
+    }
+    if i == Character(" "){
+        print(" ", terminator: " ")
+    }
+}
+print(" ")
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
+for i in encodedMessage.characters{
+    for (j, k) in code{
+        if i == Character(k){
+            print(j, separator: "", terminator: "")
+        }
+    }
+    if i == Character(" "){
+        print(" ", terminator: "")
+    }
+}
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
@@ -149,9 +213,9 @@ var peopleWithScores: [[String: String]] = [
 ]
 
 /*6b) Print out the dictionary above in the following format:
-full name - score
-...
-*/
+ full name - score
+ ...
+ */
 
 //7)
 //You are given an array of integers. Find out the frequency of each one.
