@@ -140,7 +140,7 @@ var code = [
 var message = "hello world"
 
 for i in message.characters {
-	for j in code.values {
+	for j in code.keys {
 		if String(i) == j {
 			print(code[String(i)]!, terminator: "")
 		}
