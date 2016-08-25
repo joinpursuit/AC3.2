@@ -1,3 +1,4 @@
+/*
 //1)
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
@@ -127,7 +128,7 @@ var sum = 0
 for i in thirdListOfNumbers {
     sum += i
 }
-print(sum)
+print("The sum is \(sum)")
 
 //10)
 //Iterate through the array and check to see if there is at least one integer that equals target.  Then, print "YES" if you found a match, and "NO" if you didn't
@@ -170,32 +171,33 @@ for i in listOne {
         }
     }
 }
-print(sharedElements.count)
-
+print("There are \(sharedElements.count) Ints shared")
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
 
+var greatest = dupeFriendlyList[0]
+for i in dupeFriendlyList {
+    if i > greatest {
+        greatest = i
+    }
+}
 
-/****** Come back to this
-noDupeList.append(dupeFriendlyList[0])
-
-
+var check = [Bool](count: greatest+1, repeatedValue: false)
 
 for i in dupeFriendlyList {
-    for j in 0..<noDupeList.count {
-        if i == j {
-            continue
-        } else {
-            noDupeList.append(i)
-        }
+    check[i] = true
+}
+
+for j in 0..<check.count {
+    if check[j] {
+        noDupeList.append(j)
     }
 }
 
 print(noDupeList)
-*******/
 
 //13)
 //Find the second smallest Int in ages
@@ -217,7 +219,7 @@ for i in ages {
 }
 
 print("SecondSmallest is \(secondSmallest)")
-
+*/
 //14)
 //Print out the sum of the diagonals of myMatrix
 
@@ -269,37 +271,77 @@ print("This sum is \(summ)")
 //Print the first element that repeats in someRepeats
 
 var someRepeats = [25, 11, 30, 31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15, 25]
-/***** FIX THIS
-var noRepeat = someRepeats
+
+var noRepeat: [Int] = [someRepeats[0]]
 
 var j: Int
 
 wholeLoop: for i in 1..<someRepeats.count {
-    noRepeat.append(i)
     j = i - 1
     while j >= 0 {
         if someRepeats[i] == someRepeats[j] {
-            print("This is repeated \(someRepeats[j])")
             break wholeLoop
         } else {
             j -= 1
         }
     }
-    noRepeat.removeLast(2)
+    noRepeat.append(someRepeats[i])
 }
 
 print(noRepeat)
-*******/
+
+
+//var emptyOne :[Int] = []
+//
+//for i in 0..<someRepeats.count{
+//    var found = false
+//    for j in 0..<emptyOne.count{
+//        if someRepeats[i] != emptyOne[j]{
+//        } else {
+//            found = true
+//            print("\(someRepeats[i]) is the first Repeat")
+//        }
+//    }
+//    if found == false {
+//        emptyOne.append(someRepeats[i])
+//    } else {
+//        break
+//    }
+//}
+
+
 
 //18)
 //Make an array that contains all elements that appear more than twice in someRepeatsAgain
 
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15,25]
 
+/*******
+var arraySoFar: [Int] = []
+var TheRepeats: [Int] = []
+
+var k: Int
+
+wholeLoop: for i in 1..<someRepeatsAgain.count {
+    k = i - 1
+    while k >= 0 {
+        if someRepeatsAgain[i] == someRepeatsAgain[k] {
+            repeatAgain.append(someRepeatsAgain[i])
+            print("This is repeated: \(someRepeats[k])")
+            break wholeLoop
+        } else {
+            k -= 1
+        }
+    }
+    someRepeatsAgain.append(someRepeatsAgain[i])
+}
+
+print(noRepeat)
+*******/
+
 //19)
 //Identify if there are 3 integers in the following array that sum to 10.  If so, print them.
 //If there are multiple triplets, print all possible triplets.
 
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
-
 
