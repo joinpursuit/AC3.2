@@ -7,9 +7,25 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+
+var citiesDict = ["Japan" : "Toyko", "USA" : "Washington DC", "Mongolia" : "Ulaanbaatar"]
+
+
+
 //b) Add two more countries to your dictionary
 
+
+citiesDict["Spain"] = "Madrid"
+citiesDict.updateValue("Santiago", forKey: "Chile")
+citiesDict
+
 //c) Translate at least 3 of the capital names into another language
+
+
+citiesDict["Japan"] = "Tokio"
+citiesDict.updateValue("Вашингтон, округ Колумбия", forKey: "USA")
+citiesDict.updateValue("马德里", forKey: "Spain")
+citiesDict
 
 //2)
 
@@ -17,15 +33,55 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+if let i = someDict["Three"], k = someDict["Five"] {
+    print(i + k)
+}
+
+
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict.updateValue(6, forKey: "Six")
+someDict["Seven"] = 55
+
+
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+var sumOfSomeDict = 0
+
+for value in someDict.values {
+    sumOfSomeDict += value
+}
+
+someDict["productUpToSeven"] = sumOfSomeDict
+
+someDict
+
+
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+var sumUpToSix = 0
+
+for (key, value) in someDict where key != "Seven" && key != "productUpToSeven" {
+    sumUpToSix += value
+}
+
+someDict["sumUpToSix"] = sumUpToSix
 
 //e) Remove the new keys made for parts c and d
 
+someDict["Seven"] = nil
+someDict.removeValueForKey("productUpToSeven")
+
 //f) Add 2 to every value inside of someDict
+
+for (key, value) in someDict {
+        someDict.updateValue(value + 2, forKey: key)
+}
+
+someDict
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
@@ -38,10 +94,29 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “Jon Krakaur” - 6.1
 */
 
+
+var authorDifficulty: [String : Float ] = ["Mark Twain" : 8.9, "Nathaniel Hawthorne" : 5.1, "John Steinbeck" : 2.3, "C. S. Lewis" : 9.9, "Jon Kraukaur" : 6.1]
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+
+if let i = authorDifficulty["John Steinbeck"] {
+        print(i)
+}
+authorDifficulty["Erik Larson"] = 9.2
+
+if authorDifficulty["John Kraukaur"] > authorDifficulty["Mark Twain"] {
+    print("John Kraukaur")
+} else {
+    print("Mark Twain")
+}
+
+
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
+for (key, value) in authorDifficulty {
+    print("\(key): \(value)")
+}
 
 
 
