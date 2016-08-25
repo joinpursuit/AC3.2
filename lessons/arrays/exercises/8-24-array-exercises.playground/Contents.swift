@@ -150,7 +150,15 @@ var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
-var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+//var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+//var arrOne = [Int]()
+//var arrTwo = [Int]()
+//var arrThree = [Int]()
+//
+//for x in 0..<toRotate.count {
+//    for y in (0..<)
+//}
+
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
 //Find the sum of all the multiples of 3 or 5 below 1000
