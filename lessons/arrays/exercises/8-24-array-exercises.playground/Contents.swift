@@ -40,10 +40,12 @@ for i in moreStates {
 //a) print out how many non-whitespace characters are in myString
 let myString = "This is practice for the next problem!"
 
+
 var count = 0
-for c in myString.chracters {
+for c in myString.characters {
     if c != " "{
         count += 1
+    }
 }
 print(count)
 
@@ -55,13 +57,13 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 var countB = 0
     for quote in myFavoriteQuotes {
         for c in quote.characters{
-            if c! = " " {
-                tempCount += 1
+            if c != " " {
+                countB += 1
             }
         }
     }
 
-
+print(countB)
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -173,12 +175,15 @@ var sharedElements = [Int]()
 
 
 //Write all your code below:
-for (i in 0..<listOne.count) && (j in 0..<listTwo.count) {
-    if listOne[i] == listTwo[j]{
-        sharedElements.append(listOne[i])
+
+for i in 0..<listOne.count {
+    for j in 0..<listTwo.count{
+        if listOne[i] == listTwo[j]{
+            sharedElements.append(listOne[i])
+        }
     }
 }
-
+print(sharedElements)
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
@@ -188,13 +193,35 @@ var noDupeList: [Int] = []
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
-
+var smallest = ages[0]
+var secondSmallest = ages[0]
+for i in 0..<ages.count {
+    if (ages[i] < smallest) {
+        smallest = ages[i]
+    }
+}
+for j in 0..<ages.count {
+    if (ages[j] < secondSmallest) && (ages[j] != smallest) {
+        secondSmallest = ages[j]
+    }
+}
+print("\(secondSmallest) is the second smallest")
 
 //14)
 //Print out the sum of the diagonals of myMatrix
 
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 
+var sum14 = 0
+for i in 0..<myMatrix.count {
+    for j in 0..<myMatrix[i].count{
+        if i == j{
+            myMatrix[i][j]
+            sum14 += myMatrix[i][j]
+        }
+    }
+}
+print(sum14)
 
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
@@ -222,16 +249,70 @@ var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 //Find the sum of all the multiples of 3 or 5 below 1000
 //https://projecteuler.net/problem=1
 
+var sum16 = 0
+for i in 0...1000{
+    if i % 3 == 0 {
+        sum16 += i
+    }
+    if i % 5 == 0 {
+        sum16 += i
+    }
+}
+print(sum16)
 
 //17)
 //Print the first element that repeats in someRepeats
-
+print("question16")
 var someRepeats = [25, 11, 30, 31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15, 25]
+
+var emptyOne :[Int] = []
+
+for i in 0..<someRepeats.count{
+    var found = false
+    for j in 0..<emptyOne.count{
+        if someRepeats[i] != emptyOne[j]{
+        } else {
+            found = true
+            print("\(someRepeats[i]) is the first Repeat")
+        }
+    }
+    if found == false {
+        emptyOne.append(someRepeats[i])
+    } else {
+        break
+    }
+}
+print(emptyOne)
+
 
 //18)
 //Make an array that contains all elements that appear more than twice in someRepeatsAgain
 
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15,25]
+
+
+var emptyThree: [(Int, Int)] = []
+print (emptyThree)
+for i in 0..<someRepeatsAgain.count{
+    var unique = false
+    for j in 0..<emptyThree.count{
+        if someRepeatsAgain[i] == (emptyThree[j]).0{
+            unique = false
+        } else {
+            unique = true
+            (emptyThree[j]).1 += 1
+        }
+    }
+    if found == false {
+        var h :Int = someRepeatsAgain[i]
+        emptyThree.append([(h, 0)])
+    }
+    if emptyThree[i].1 > 2 {
+        print("\(emptyThree[i].0) repeated \(emptyThree[i].1) times")
+    }
+}
+
+
 
 //19)
 //Identify if there are 3 integers in the following array that sum to 10.  If so, print them.
@@ -239,4 +320,14 @@ var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,3
 
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
 
-
+for i in 0..<tripleSumArr.count{
+    for j in 0..<tripleSumArr.count {
+        for k in 0..<tripleSumArr.count{
+            if i != j && i != k && j != k {
+                if tripleSumArr[i] + tripleSumArr [j] + tripleSumArr [k] == 10 {
+                    print (tripleSumArr[i], tripleSumArr[j], tripleSumArr[k])
+                }
+            }
+        }
+    }
+}
