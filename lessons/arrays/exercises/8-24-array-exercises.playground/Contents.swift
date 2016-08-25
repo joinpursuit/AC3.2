@@ -197,17 +197,26 @@ noDupeList
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
-var small1 = ages[0]
-var small2 = ages[0]
+
+var smallest = ages[0]
+var small2 = ages[1]
+
+if small2 < smallest {
+    small2 = ages[0]
+    smallest = ages[1]
+}
 for i in ages {
-    if i < small1 {
-        small1 = i
-    } else if i < small2 {
-        small2 = i
+    if i < small2 {
+        if i < smallest {
+            small2 = smallest
+            smallest = i
+        } else  {
+            small2 = i
+        }
     }
 }
-small1
-small2
+print(small2) // prints 18
+print(smallest) // prints 15
 
 //14)
 //Print out the sum of the diagonals of myMatrix
