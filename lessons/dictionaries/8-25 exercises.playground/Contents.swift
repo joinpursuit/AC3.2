@@ -135,9 +135,6 @@ var message = "hello world"
 
 for character in message.characters {
     if message.characters.startIndex.advancedBy(7) == character
-    {
-    
-}
 }
 
 //4b)
