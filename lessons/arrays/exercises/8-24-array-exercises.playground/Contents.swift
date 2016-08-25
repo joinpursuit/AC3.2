@@ -181,16 +181,27 @@ noDupeList
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
 
-var small1 = ages[0]
-var small2 = ages[0]
-for i in ages {
-	if i < small1 {
-		small1 = i
-	} else if i < small2 {
-		small2 = i
+
+var smallest = ages[0]
+var secondSmallest = ages[1]
+if secondSmallest < smallest {
+	secondSmallest = ages[0]
+	smallest = ages[1]
+}
+
+for age in ages {
+	if age < secondSmallest {
+		if age < smallest {
+			secondSmallest = smallest
+			smallest = age
+		} else {
+			secondSmallest = age
+		}
 	}
 }
-print(small2)
+
+print(secondSmallest)
+
 
 
 //14)
@@ -234,6 +245,7 @@ for x in (0..<toRotate.count) {
 }
 var rotatedArray = [array1, array2, array3]
 print(rotatedArray)
+
 
 
 //16)
