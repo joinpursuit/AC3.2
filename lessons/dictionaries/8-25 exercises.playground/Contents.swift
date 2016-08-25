@@ -7,9 +7,24 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+
+var citiesDict: [String : String] = ["India" : "New Delhi", "US" : "Washington, DC", "England" : "London"]
+
+
 //b) Add two more countries to your dictionary
 
+
+citiesDict["France"] = "Paris"
+citiesDict["Germany"] = "Berlin"
+
+
 //c) Translate at least 3 of the capital names into another language
+
+
+citiesDict.updateValue("Parijs", forKey: "France")
+citiesDict.updateValue("Berlijn", forKey: "Germany")
+citiesDict.updateValue("Londen", forKey: "England")
+
 
 //2)
 
@@ -17,15 +32,58 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+
+print(someDict["Three"]! + someDict["Five"]!, terminator: "")
+print("") //formatting purposes
+
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+
+someDict["Six"] = 36
+someDict["Seven"] = 49
+
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+
+var sum = 0
+
+for (key, value) in someDict {
+    sum += value
+}
+someDict["productUpToSeven"] = sum
+
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+
+var sumOfKeys = 0
+
+for (key, value) in someDict {
+    if key == "Seven" || key == "productUpToSeven" {
+        continue
+    } else {
+        sumOfKeys += value
+    }
+}
+someDict["sumUpToSix"] = sumOfKeys
+
 
 //e) Remove the new keys made for parts c and d
 
+
+someDict.removeValueForKey("productUpToSeven")
+someDict.removeValueForKey("sumUpToSix")
+
+
 //f) Add 2 to every value inside of someDict
+
+
+for (key, value) in someDict {
+    var sum = value + 2
+    someDict[key] = sum
+}
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
@@ -38,12 +96,30 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “Jon Krakaur” - 6.1
 */
 
+
+var bookDict: [String : Float] = ["Mark Twain" : 8.9, "Nathaniel Hawthorne" : 5.1, "John Steinbeck" : 2.3, "C.S. Lewis" : 9.9, "Jon Krakaur" : 6.1]
+
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+
+
+print(bookDict["John Steinbeck"]!, terminator: "")
+print("") //formatting purposes
+bookDict["Erik Larson"] = 9.2
+
+if bookDict["John Krakaur"] > bookDict["Mark Twain"] {
+    print("John Krakaur has a higher comprehensibility score than Mark Twain.")
+} else {
+    print("Mark Twain has a higher comprehensibility score than John Krakaur")
+}
+
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
 
-
+for (key, value) in bookDict {
+    print("\(key): \(value)")
+}
 
 
 //4 -7 source :  https://www.weheartswift.com/dictionaries/)
@@ -82,11 +158,28 @@ var code = [
 var message = "hello world"
 
 
+if let h = code["g"], e = code["d"], l = code["k"], o = code["n"], w = code["v"], r = code["q"], d = code["c"] {
+    print("\(h)\(e)\(l)\(l)\(o)", "\(w)\(o)\(r)\(l)\(d)", terminator: "")
+}
+print("") //formatting purposes
+
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
+
+for i in encodedMessage.characters {
+    if String(i) == " " {
+        print(" ", separator: "", terminator: "")
+    }
+    for (k, v) in code {
+        if String(i) == v {
+            print(k, terminator: "")
+        }
+    }
+}
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
