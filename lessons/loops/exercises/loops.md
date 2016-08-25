@@ -9,7 +9,7 @@ for i in 1...150{
 2) All the numbers from 142 to 159 exclusive
 
 for i in 143..<159{
-   print(\(i))
+   print(i)
 }
 
 3) Only the even numbers from 15 to 80 inclusive
@@ -107,17 +107,23 @@ while (i > 3) {
 
 2) How do you stop the loop when i reaches 9?
 
-var i = 5
+while (i > 3) {
+    i += 1
+    if i == 9{
+    print(i)
+    i = 0
+    }
+}
+
+// or
 
 while (i > 3) {
-   if i < 10{
-   i += 1
+    i += 1
+    if i == 9{
+    print(i)
+    break
+    }
 }
-}
-
-
-
-
 
 
 
@@ -125,6 +131,17 @@ while (i > 3) {
 
 
 3) How would you fix the while loop so that it only execute 1,000 times.
+
+var i = 5
+
+while (i > 3) {
+i += 1
+if i == 1005{
+print(i - 5)
+i = 0
+}
+}
+
 
 4) Once the loop can run 1,000 times, print out ONLY the event number.
 
@@ -139,7 +156,10 @@ do {
   print("i = \(i)")
   i+=
 }while i <= 10
+
+
 ```
+
 5) What's the difference between these two while loop?
 
 6) If there's a difference, how would you fix it so that both outputs are the same.

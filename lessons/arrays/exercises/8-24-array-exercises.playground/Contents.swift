@@ -18,7 +18,7 @@ print(westernStates)
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
-let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida", "uh"]
 //Write all your code below:
 var allStates = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
@@ -28,10 +28,15 @@ for x in moreStates {
             print("\(x) part of the continent of United States")
         } else {
 //            print(false)
-            continue
+            
         }
     }
 }
+
+
+
+
+
 //4)
 //a) print out how many non-whitespace characters are in myString
 let myString = "This is practice for the next problem!"
@@ -110,6 +115,17 @@ print(flowerCount)
 print(basket)
 
 
+for (index, item) in garden.enumerate(){
+    if item == "🌷"{
+        basket.append("🌷")
+       garden[index] = "dirt"
+}
+}
+print(basket.count)
+
+
+
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
@@ -166,6 +182,19 @@ for i in fourthListOfNumbers{
         break
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
 //11)
