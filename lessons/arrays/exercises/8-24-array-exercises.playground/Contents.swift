@@ -51,6 +51,13 @@ let myString = "This is practice for the next problem!"
 //}
 //}
 
+var count = 0
+for c in myString.characters {
+    if c != " "{
+    count += 1
+    }
+}
+print(count)
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
@@ -58,7 +65,15 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 
 //Write all your code below:
 
-
+var countB = 0
+for quote in myFavoriteQuotes {
+    for c in quote.characters {
+        if c != " " {
+        countB += 1
+        }
+    }
+}
+print(countB)
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -145,8 +160,8 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
-for x in 0..<fourthListOfNumbers.count {
-    if target == fourthListOfNumbers[x]{
+for x in fourthListOfNumbers {
+    if target == x {
         print("Yes")
     } else {
         print("No")
@@ -162,34 +177,92 @@ var sharedElements = [Int]()
 
 
 //Write all your code below:
-var first = [Int]()
 
-//for i in 0..<listOne.count {
-//        first += listOne[i]
-//}
-//for x in 0..<listTwo.count
+for i in listOne {
+    for x in listTwo where i == x{
+        sharedElements.append(x)
+    }
+}
+print(sharedElements.count)
 
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+var newCount = [Bool](count: 10, repeatedValue: false)
+
+
+noDupeList = dupeFriendlyList
+noDupeList.removeAtIndex(3)
+noDupeList.removeAtIndex(3)
+noDupeList.removeAtIndex(3)
+noDupeList.removeAtIndex(3)
+noDupeList.removeAtIndex(4)
+print(noDupeList)
+
+
+
+//for i in dupeFriendlyList {
+//    newCount[i - 1] = true
+//    print (newCount)
+//    
+//}
+//for x in 0..<newCount.count{
+//    print(newCount[x])
+//}
 
 //13)
 //Find the second smallest Int in ages
+
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
+var adjust = ages.sort()
+print (adjust[1])
+
+
+
 
 
 //14)
 //Print out the sum of the diagonals of myMatrix
 
-var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var myMatrix = [[10, 14, 12],
+                [91, 1, 9],
+                [31, 3, 21]]
+
+
+for i in 0..<myMatrix.count {
+    for x in 0..<myMatrix[i].count{
+            print(myMatrix[i][x])
+    }
+    
+}
 
 
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+var arrOne = [Int]()
+var arrTwo = [Int]()
+var arrThree = [Int]()
+
+for x in 0..<toRotate.count {
+    for y in (0..<toRotate.count).reverse() {
+        if x == 0 {
+        arrOne.append(toRotate[y][x])
+        } else if x == 1 {
+        arrTwo.append(toRotate[y][x])
+        } else if x == 2 {
+            arrThree.append(toRotate[y][x])
+        }
+    }
+}
+
+
+
+
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
