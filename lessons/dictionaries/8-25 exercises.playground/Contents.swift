@@ -72,6 +72,10 @@ for key in someDict.keys {
 }
 print(someDict)
 
+//for (key, value) in someDict {
+//someDict[key] = value + 2
+//}
+
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
 /*
@@ -133,14 +137,21 @@ var code = [
 
 var message = "hello world"
 
-for character in message.characters {
-    if message.characters.startIndex.advancedBy(7) == character
+var codedMsg = ""
+for char in message.characters {
+    for key in code.keys {
+        if String(char) == key {
+            print(char, separator: "", terminator: " ")
+            codedMsg += code[key]!
+        }
+    }
 }
+print(codedMsg)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
-var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+//var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
 
 //5)
@@ -168,6 +179,9 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+//ANSWER:
+
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
