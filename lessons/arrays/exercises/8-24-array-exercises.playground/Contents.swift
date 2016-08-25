@@ -291,24 +291,24 @@ print(emptyOne)
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11 ,5 ,39, 13 ,17,43,1,1,15,25]
 
 
-var emptyThree: [(Int, Int)] = []
+var emptyThree: [(Int, Int)] = ()
 print (emptyThree)
 for i in 0..<someRepeatsAgain.count{
     var unique = false
     for j in 0..<emptyThree.count{
-        if someRepeatsAgain[i] == (emptyThree[j]).0{
+        if someRepeatsAgain[i] == [emptyThree[j]][0]{
             unique = false
         } else {
             unique = true
-            (emptyThree[j]).1 += 1
+            [emptyThree[j]][1] += 1
         }
     }
     if found == false {
         var h :Int = someRepeatsAgain[i]
-        emptyThree.append([(h, 0)])
+        emptyThree.append([h, 0])
     }
     if emptyThree[i].1 > 2 {
-        print("\(emptyThree[i].0) repeated \(emptyThree[i].1) times")
+        print("\([emptyThree[i]][0]) repeated \([emptyThree[i]][1]) times")
     }
 }
 

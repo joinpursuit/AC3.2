@@ -1,15 +1,22 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
+//Ana And Marty
 
 //1)
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
+var citiesDict : [String:String] = ["USA": "Washington DC", "Japan": "Tokyo", "Mexico": "Mexico City"]
 
 //b) Add two more countries to your dictionary
 
+citiesDict["China"] = "Beijing"
+citiesDict["UK"] = "London"
+
 //c) Translate at least 3 of the capital names into another language
+citiesDict["Japan"] = "東京"
+citiesDict["China"] = "北京"
+citiesDict["UK"] = "倫敦"
 
 //2)
 
@@ -17,16 +24,57 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+print(someDict["Three"]! + someDict["Five"]!)
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict["Six"] = 36
+someDict["Seven"] = 49
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+someDict["productOfSeven"] = 0
+var sum = 0
+
+
+for (x, y) in someDict {
+    sum += y
+    someDict["productOfSeven"] = sum
+}
+print(someDict["productOfSeven"]!)
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
 
+someDict["sumUpToSix"] = 0
+var sumUp = 0
+var count = 6
+
+for x in someDict.values.sort() {
+    if count >= 0 {
+        sumUp += x
+        count -= 1
+    } else {
+        break
+    }
+}
+
+someDict["sumUpToSix"] = sumUp
+
+print(someDict["sumUpToSix"]!)
+
 //e) Remove the new keys made for parts c and d
+someDict.removeValueForKey("productOfSeven")
+someDict.removeValueForKey("sumUpToSix")
+print(someDict)
+
 
 //f) Add 2 to every value inside of someDict
 
+for i in someDict.keys {
+    someDict[i]! += 2
+}
+
+print(someDict)
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
@@ -38,12 +86,27 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “Jon Krakaur” - 6.1
 */
 
+var comp = [String:Float]()
+comp = ["Mark Twain":8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakaur": 6.1]
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
 
+print(comp["John Steinbeck"]!)
+
+comp["Eric Larson"] = 9.2
+
+if comp["Mark Twain"] > comp["John Krakaur"] {
+    print("Mark Twain")
+} else if comp["Mark Twain"] < comp["John Krakaur"]{
+    print("John Krakaur")
+} else {
+    print("They are the same.")
+}
+
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
-
-
-
+for (key, value) in comp {
+    print(key,value)
+}
 
 
 //4 -7 source :  https://www.weheartswift.com/dictionaries/)
@@ -80,8 +143,20 @@ var code = [
 ]
 
 var message = "hello world"
+var array: [Character] = []
 
+for i in message.characters {
+    array.append(i)
+}
+print(array)
 
+for key in code.keys.sort() {
+    for j in array {
+        if Character(key) == j {
+            print(code[key]!, terminator: "")
+        }
+    }
+}
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
