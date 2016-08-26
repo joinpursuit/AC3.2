@@ -149,7 +149,7 @@ if let numTwo = myTuple.2 {
 if let numThree = myTuple.3 {
     sum += numThree
 }
-
+print(sum)
 
 //G)
 var myIntString = "35"
