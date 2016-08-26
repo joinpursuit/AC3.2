@@ -101,7 +101,7 @@ if randNum() {
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
-if var doubleThree = myDouble {
+if let doubleThree = myDouble {
     print(doubleThree * doubleTwo)
 }   else {
     print("error message")
