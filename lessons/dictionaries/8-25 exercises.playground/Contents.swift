@@ -137,16 +137,24 @@ var code = [
 
 var message = "hello world"
 
-var codedMsg = ""
+//var codedMsg = ""
+//for char in message.characters {
+//    for key in code.keys {
+//        if String(char) == key {
+//            print(char, separator: "", terminator: " ")
+//            codedMsg += code[key]!
+//        }
+//    }
+//}
+//print(codedMsg)
+
+var codedMessage = ""
 for char in message.characters {
     for key in code.keys {
-        if String(char) == key {
-            print(char, separator: "", terminator: " ")
-            codedMsg += code[key]!
-        }
+        if
     }
 }
-print(codedMsg)
+
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
@@ -181,6 +189,13 @@ var people: [[String:String]] = [
 ]
 
 //ANSWER:
+var firstNames = [String]()
+for dict in people {
+    if let first = dict["firstName"] {
+        firstNames.append(first)
+    }
+}
+print(firstNames)
 
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.

@@ -167,37 +167,33 @@ evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
 
 //ANSWER:
-//let pokemon: String?
-//var evolutionaryStone: String?
-//pokemon = starterPokemon()
-//evolutionaryStone = eStone()
-//// evolve your pokemon with appropriate stone
-//if var myPokemon = pokemon, stone = evolutionaryStone {
-//    if  myPokemon == "Pikachu" && stone == "Electric" || myPokemon == "Bulbasaur" && stone == "Grass" || myPokemon == "Charmander" && stone == "Fire" || myPokemon == "Squirtle" && stone == "Water" {
-//        
-//        print("Evolve Your pokemon \(myPokemon) with \(stone)")
-//    }
-//    else {
-//        print ("Your pokemon \(pokemon!) didn't match with the correct stone. You got \(stone)!")
-//    }
-//}
-//else {
-//    print("Empty!!!")
-//}
-////I)
-//var lvl: Int?
-//lvl = lvlGenerator()
-//var exp = 21
-//// add 150 exp if lvl is above 7
-//if var level = lvl where level > 7 {
-//    exp += 150
-//    print("Your new XP is \(exp)")
-//}
-//else {
-//    print("You are not above level 7 yet!")
-//}
-//
-//
-//
-//
-//
+
+if var myPokemon = pokemon, stone = evolutionaryStone {
+    if  myPokemon == "Pikachu" && stone == "Electric" || myPokemon == "Bulbasaur" && stone == "Grass" || myPokemon == "Charmander" && stone == "Fire" || myPokemon == "Squirtle" && stone == "Water" {
+        
+        print("Evolve Your pokemon \(myPokemon) with \(stone)")
+    }
+    else {
+        print ("Your pokemon \(pokemon!) didn't match with the correct stone. You got \(stone)!")
+    }
+}
+else {
+    print("Empty!!!")
+}
+//I)
+var lvl: Int?
+lvl = lvlGenerator()
+var exp = 21
+// add 150 exp if lvl is above 7
+if var level = lvl where level > 7 {
+    exp += 150
+    print("Your new XP is \(exp)")
+}
+else {
+    print("You are not above level 7 yet!")
+}
+
+
+
+
+
