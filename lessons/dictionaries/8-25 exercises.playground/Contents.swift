@@ -20,10 +20,10 @@ someDict["Six"] = 36
 someDict["Seven"] = 49
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 someDict["productOfSeven"] = 0
-var sum = 0
+var prod = 0
 for (x, y) in someDict {
-    sum += y
-    someDict["productOfSeven"] = sum
+    prod *= y
+    someDict["productOfSeven"] = prod
 }
 print(someDict["productOfSeven"]!)
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
@@ -111,13 +111,19 @@ for i in message.characters {
     array.append(i)
 }
 print(array)
+
+var decodedArray: [String] = []
+
 for key in code.keys.sort() {
     for j in array {
         if Character(key) == j {
-            print(code[key]!, terminator: "")
+            decodedArray.append(code[key]!)
         }
     }
 }
+
+print(decodedArray)
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
