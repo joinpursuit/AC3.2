@@ -224,6 +224,13 @@ var peopleWithScores: [[String: String]] = [
 full name - score
 ...
 */
+var firstName = [String]()
+for dict in people {
+	if let first = dict["firstName"] {
+		firstName.append(first)
+	}
+}
+print(firstName)
 
 //7)
 //You are given an array of integers. Find out the frequency of each one.

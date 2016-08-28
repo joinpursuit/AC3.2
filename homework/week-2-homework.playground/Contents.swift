@@ -114,7 +114,15 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // WARM UPS
 // 1. Print the name of the first movie.
 
+print(movies[0]["name"]!)
+
 // 2. Print a list of all movie names, preferably on one line.
+
+for x in 0..<movies.count {
+	for (key, _) in movies[x] where key == "name" {
+		print("\(movies[x][key]!)   ", terminator:"")
+	}
+}
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -123,15 +131,97 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 
+for x in 0..<movies.count {
+	for (key, _) in movies[x] where key == "name" {
+		print("\(movies[x]["year"]!): \(movies[x][key]!)")
+	}
+}
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+
+for x in 0..<movies.count {
+	for (key, value) in movies[x] where key == "genre" {
+		switch movies[x][key] as! String {
+		case "animation":
+			print("\(movies[x]["name"]!): \u{1f600}")
+		case "action":
+			print("\(movies[x]["name"]!): \u{1f632}")
+		default:
+			print("\(movies[x]["name"]!): \u{1f634}")
+			
+		}
+	}
+}
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+var tempDictName = [String:Any]()
+var moviesByNameUnsorted = [String:[String:Any]]()
+
+for x in 0..<movies.count {
+	for (key,_) in movies[x] where key != "name" {
+		tempDictName[key] = movies[x][key]
+	}
+	for (key,_) in movies[x] where key == "name" {
+		moviesByNameUnsorted[movies[x][key] as! String] = tempDictName
+	}
+}
+
+var moviesByName = moviesByNameUnsorted.sort({$0.0 < $1.0})
+print(moviesByName)
+
+
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
+
+// Sort by year
+var tempDictYear = [String:Any]()
+var moviesByYearUnsorted = [Int:[String:Any]]()
+
+for x in 0..<movies.count {
+	for (key,_) in movies[x] where key != "year" {
+		tempDictYear[key] = movies[x][key]
+	}
+	for (key,_) in movies[x] where key == "year" {
+		moviesByYearUnsorted[movies[x][key] as! Int] = tempDictYear
+	}
+}
+
+var moviesByYear = moviesByYearUnsorted.sort({$0.0 < $1.0})
+print(moviesByYear)
+
+// Sort by genre
+var tempDict = [String:Any]()
+var tempDictAction = [String:[String:Any]]()
+var tempDictAnimation = [String:[String:Any]]()
+var tempDictDrama = [String:[String:Any]]()
+var moviesByGenreUnsorted = [String:[String:[String:Any]]]()
+
+for x in 0..<movies.count {
+	for (key,_) in movies[x] where key != "genre" && key != "name" {
+		tempDict[key] = movies[x][key]
+	}
+	for (key,_) in movies[x] where key == "name" {
+		if movies[x]["genre"] as! String == "action" { tempDictAction[movies[x][key] as! String] = tempDict }
+		if movies[x]["genre"] as! String == "animation" { tempDictAnimation[movies[x][key] as! String] = tempDict }
+		if movies[x]["genre"] as! String == "drama" { tempDictDrama[movies[x][key] as! String] = tempDict }
+	}
+}
+
+moviesByGenreUnsorted["Action"] = tempDictAction
+moviesByGenreUnsorted["Animation"] = tempDictAnimation
+moviesByGenreUnsorted["Drama"] = tempDictDrama
+
+var moviesByGenre = moviesByGenreUnsorted.sort({$0.0 < $1.0})
+print(moviesByGenre)
+
+/*
+It seems that one would need to change the format of the Dictionaries to get them to fit to the new criteria: Year will require an [Int:[String:Any]] format, whereas Genre would necessitate a [String:[String:[String:Any]]] format to allow for multiple entries under one key.
+*/
+
 
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
@@ -146,3 +236,19 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+for x in 0..<movies.count {
+	var blurb = "\n"
+	if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String {
+		blurb += "\(name) came out in \(year). It was a"
+		if (genre  == "drama") { blurb += " \(genre) starring " }
+		else if (genre  == "action") { blurb += "n \(genre) film starring " }
+		else { blurb += "n \(genre) starring " }
+		for x in 0..<cast.count {
+			if x > 1 { blurb += "and \(cast[x]).\n" }
+			else { blurb += "\(cast[x]), " }
+		}
+		if let pYear = presidentsByYear[year] { blurb += "\(pYear) was President that year." }
+	}
+	print(blurb)
+}
