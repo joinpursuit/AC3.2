@@ -38,7 +38,7 @@ var movies: [[String:Any]] = [
         "name": "The Dark Knight",
         "year": 2008,
         "genre": "action",
-        "cast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+        "cast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Garry Oldman", "Michael Cain", "Maggie Gyllenhal"],
         "description": "With the help of allies Lt. Jim Gordon and DA Harvey Dent, Batman has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism."
     ],
     [
@@ -103,7 +103,7 @@ let aMovie: [String:Any] = [
     "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
 ]
 
-if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
+if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String], genre = aMovie["genre"] as? [String] {
     print("\(year): \(name)")
     
     for actor in cast {
@@ -114,7 +114,23 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // WARM UPS
 // 1. Print the name of the first movie.
 
+print(movies[0]["name"])
+
+if let movieName = (movies[0]["name"]) {
+    print(movieName)
+    
+}
+
+
 // 2. Print a list of all movie names, preferably on one line.
+
+for x in 0..<movies.count {
+    if let movieName = (movies[x]["name"]) {
+        print("\(movieName),", terminator: " ")
+        }
+}
+
+
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -123,15 +139,95 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 
+for x in 0..<movies.count {
+    if let filmName = (movies[x]["name"]), filmYear = (movies[x]["year"]) {
+        print("\(filmYear): \(filmName)")
+    }
+}
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+
+for x in 0..<movies.count {
+    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String {
+        
+        switch genre {
+        case "action":
+            print("\(name) \u{1F52B}")
+        case "drama":
+            print("\(name) \u{1F622}")
+        case "animation":
+            print("\(name) \u{1F430}")
+        default:
+            break
+        }
+    }
+}
+
+
+//        for actor in cast {
+//            print(actor)
+//        }
+
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+
+var moviesByName: [String: [String: Any]] = [:]
+
+
+for x in 0..<movies.count {
+    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String {
+        moviesByName[name] = movies[x]
+        
+    }
+}
+
+//var movies: [[String:Any]] = [
+//    [
+//        "name": "Minions",
+//        "year": 2015,
+//
+
+
+//var sortedMoviesByName: [[String:Any]] = [Array(moviesByName.keys).sort(<): moviesByName["Avatar"]!]
+
+print(moviesByName.keys.sort(<))
+
+
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
+
+var moviesByGenre: [String: [String: Any]] = [:]
+
+
+for x in 0..<movies.count {
+    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String {
+        moviesByGenre[genre] = movies[x]
+        
+    }
+}
+
+print(moviesByGenre.keys.sort(<))
+
+
+var moviesByYear: [Int: [String: Any]] = [:]
+
+
+for x in 0..<movies.count {
+    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String {
+        moviesByYear[year] = movies[x]
+        
+    }
+}
+
+print(moviesByYear.keys.sort(<))
+
+
+
+
 
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
@@ -146,3 +242,51 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+
+
+
+//for x in 0..<movies.count {
+//    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String, presi = presidentsByYear[year] {
+//        
+//        if genre == "animation" || genre == "action" {
+//            print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]) and \(cast[2]).")
+//        } else {
+//            print("\(name) came out in \(year). It was a \(genre) staring \(cast[0]), \(cast[1]) and \(cast[2]).")
+//        }
+//        print("\(presi) was president that year.")
+//        
+//    }
+//}
+//
+
+
+for x in 0..<movies.count {
+    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String, presi = presidentsByYear[year] {
+        
+        var actors = ""
+        for a in 0..<(cast.count - 2) {
+            actors += "\(cast[a]), "
+        }
+        actors += "\(cast[cast.count - 2]) and \(cast[cast.count - 1])"
+        
+        var genreLetter = genre[genre.startIndex.advancedBy(0)]
+        
+        if genreLetter == "a" || genreLetter == "e" || genreLetter == "i" || genreLetter == "o" || genreLetter == "u" {
+            print("\(name) came out in \(year). It was an \(genre) staring \(actors).")
+        } else {
+            print("\(name) came out in \(year). It was a \(genre) staring \(actors).")
+        }
+        print("\(presi) was president that year.")
+        
+    }
+}
+
+
+
+
+
+
+
+
+
