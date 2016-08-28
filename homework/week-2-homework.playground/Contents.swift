@@ -195,12 +195,20 @@ print(" ")
 var moviesByName: [String:[String:Any]] = [:]
 
 for i in 0..<movies.count{
-    let movieArray = movies[i]
-    if let movieName = movieArray["name"] as? String{
+    var movieArray = movies[i]
+    if var movieName = movieArray["name"] as? String{
         moviesByName[movieName] = movieArray
         }
     }
-print(moviesByName)
+moviesByName
+
+//print(moviesByName)
+
+for keys in moviesByName.keys.sort(){
+  var values = moviesByName[keys]
+    print("\(keys) : \(values)")
+    print(" ")
+}
 
 
 
@@ -213,7 +221,8 @@ print(moviesByName)
 
 
 
-
+print(" ")
+print(" ")
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
 
@@ -222,12 +231,16 @@ var moviesByGenre: [String:[String:Any]] = [:]
 
 for i in 0..<movies.count{
     let movieArray = movies[i]
-    if let movieGenre = movieArray["genre"] as? String{
+    if var movieGenre = movieArray["genre"] as? String{
+        movieGenre += "\(i)"
         moviesByGenre[movieGenre] = movieArray
     }
 }
 print(moviesByGenre)
+// A dictionary can not have more than one of the same key. Therefore I added a number next to each genre to make them unique by using the i in the iteration and adding that to the respective genre.
 
+print(" ")
+print(" ")
 
 var moviesByYear: [String:[String:Any]] = [:]
 
@@ -240,6 +253,10 @@ for i in 0..<movies.count{
     }
 }
 print(moviesByYear)
+
+
+print(" ")
+print(" ")
 
 // When it came time to assign the year as a key, we received a compile error. This happened because we assigned moviesByYear to take keys as String and the year is assigned as an Int. 
 // What I did was create a var called movieYearString and assign it a string interpolating the year.
