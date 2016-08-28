@@ -94,7 +94,7 @@ var presidentsByYear = [1997 : "Bill Clinton",
 
 
 // ONE NOTE before you start consider this one movie element
-
+/*
 let aMovie: [String:Any] = [
     "name": "Minions",
     "year": 2015,
@@ -225,7 +225,7 @@ print(genreSorted.sort())
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
-    
+    */
 
 for i in 0..<movies.count {
     if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
@@ -237,15 +237,21 @@ for i in 0..<movies.count {
                 castMembers.appendContentsOf("\(actor), ")
             }
         }
-        if genre == "drama" {
-            for k in presidentsByYear where year == k.0{
-            print("\(name) came out in \(year). It was a \(genre) staring \(castMembers).\n\(k.1) was president that year.")
-            }
+    let vowels: [Character] = ["a", "e", "i", "o", "u"]
+    var genreGrammar = ""
+    for m in vowels {
+        if m == genre[genre.startIndex] {
+            genreGrammar = "an \(genre)"
+            break
         } else {
-            for k in presidentsByYear where year == k.0{
-            print("\(name) came out in \(year). It was a \(genre) staring \(castMembers).\n\(k.1) was president that year.")
-            }
+            genreGrammar = "a \(genre)"
+            
         }
+    }
+    for k in presidentsByYear where year == k.0{
+            print("\(name) came out in \(year). It was \(genreGrammar) staring \(castMembers).\n\(k.1) was president that year.")
+            }
+        
     }
 }
 
