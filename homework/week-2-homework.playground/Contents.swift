@@ -172,7 +172,7 @@ for movie in movies {
         genre = movie["genre"],
         cast = movie["cast"],
         description = movie["description"] {
-            moviesByName[name] = ["year": year, "genre":genre, "cast": cast, "desription": description]
+            moviesByName[name] = ["year": year, "genre":genre, "cast": cast, "description": description]
         }
 }
 
@@ -191,7 +191,7 @@ for movie in movies {
         year = movie["year"],
         cast = movie["cast"],
         description = movie["description"] {
-        moviesByGenre[genre] = ["name": name, "year": year, "cast": cast, "desription": description]
+        moviesByGenre[genre] = ["name": name, "year": year, "cast": cast, "description": description]
     }
 }
 moviesByGenre.count
@@ -205,7 +205,7 @@ for movie in movies {
         name = movie["name"],
         cast = movie["cast"],
         description = movie["description"] {
-        moviesByYear[year] = ["name": name, "genre": genre, "cast": cast, "desription": description]
+        moviesByYear[year] = ["name": name, "genre": genre, "cast": cast, "description": description]
     }
 }
 moviesByYear.count
