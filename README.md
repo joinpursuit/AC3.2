@@ -1,13 +1,15 @@
 # Access Code 3.2: Mobile Development with iOS
 
-## Welcome to Access Code!
+Great work everybody on the assessment!
 
-We've prepared some [homework](lessons/prework). Hooray! Please 
-complete it before class begins on Monday, August 15.
+Have a great weekend. To cut into that a bit 
+I've prepared this [homework](/homework/week-2-playground). I do hope
+it's at least a little fun. 
 
-## A peek at what's coming
+Also don't forget to read up on [functions](/lessons/functions-one), the
+subject of Monday's lesson.
 
-The first week or so has objectives for each subject. Later lessons will be added as we go.
+## Schedule
 
 My name is Amber, this is my edit.
 
