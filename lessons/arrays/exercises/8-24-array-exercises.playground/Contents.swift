@@ -1,4 +1,4 @@
-/*
+
 //1)
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
@@ -178,14 +178,14 @@ print("There are \(sharedElements.count) Ints shared")
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
 
-var greatest = dupeFriendlyList[0]
+var greatest1 = dupeFriendlyList[0]
 for i in dupeFriendlyList {
-    if i > greatest {
-        greatest = i
+    if i > greatest1 {
+        greatest1 = i
     }
 }
 
-var check = [Bool](count: greatest+1, repeatedValue: false)
+var check = [Bool](count: greatest1+1, repeatedValue: false)
 
 for i in dupeFriendlyList {
     check[i] = true
@@ -219,7 +219,7 @@ for i in ages {
 }
 
 print("SecondSmallest is \(secondSmallest)")
-*/
+
 //14)
 //Print out the sum of the diagonals of myMatrix
 

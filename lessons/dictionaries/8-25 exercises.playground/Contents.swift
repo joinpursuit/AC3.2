@@ -76,6 +76,12 @@ for i in someDict.keys {
     someDict[i]! += 2
 }
 
+/* Another way
+for(key, value) in someDict{
+    someDict[key] = someDict[key]! + 2
+}
+*/
+
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
 /*
@@ -153,16 +159,48 @@ for chars in message.characters {
 }
 print()
 
+
+/* Class Code Example
+ 
+ var message = "helElo wo@$#rld"
+ var encodedString = ""
+ for c in message.characters {
+ if let encodedCharacter = code[String(c)] {
+ encodedString += encodedCharacter
+ } else {
+ encodedString += String(c)
+ }
+ }
+ 
+ print(encodedString)
+ 
+ */
+
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
-
-for (t, chars) in code where chars == "chars"  {
-        print(t)
-    }
-
+/* Make a new dictionary
+ 
+ var deCode = [String: String]()
+ 
+ for (key, value) in code {
+ deCode[value] = key
+ }
+ 
+ var decodedString = ""
+ for c in encodedMessage.characters {
+ if let encodedCharacter = deCode[String(c)] {
+ decodedString += encodedCharacter
+ } else {
+ decodedString += String(c)
+ }
+ }
+ 
+ print(decodedString)
+ */
 
 for chars in encodedMessage.characters {
     if chars == " " {
@@ -173,6 +211,7 @@ for chars in encodedMessage.characters {
         }
     }
 }
+print()
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
@@ -199,6 +238,15 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+var firstNames = [String]()
+for dict in people {
+    if let first = dict["firstName"] {
+        firstNames.append(first)
+    }
+}
+
+print(firstNames)
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
