@@ -105,10 +105,6 @@ someDict["productUpToSix"] = totalSum2
 
 
 
-
-
-
-
 //e) Remove the new keys made for parts c and d
 
 
@@ -162,6 +158,7 @@ if key == "John Steinbeck"{
 }
 
 
+ratings["Erik Larson"] = 9.2
 
 
 
@@ -212,10 +209,55 @@ var code = [
 var message = "hello world"
 
 
+for char in message.characters {
+    for var (i,j) in code {
+        if char == Character(i) {
+            print("\(j)", terminator: "")
+        }
+    }
+    if char == Character(" "){
+        print(" ", terminator: " ")
+    }
+}
+
+// or
+
+print("")
+
+var message2 = "helElo wo@$#rld"
+var encodedString = ""
+for c in message2.characters {
+    if let encodedCharacter = code[String(c)] {
+        encodedString += encodedCharacter
+    } else {
+        encodedString += String(c)
+    }
+}
+
+print(encodedString)
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+
+
+var deCode = [String: String]()
+
+for (key, value) in code {
+    deCode[value] = key
+}
+
+var decodedString = ""
+for c in encodedMessage.characters {
+    if let encodedCharacter = deCode[String(c)] {
+        decodedString += encodedCharacter
+    } else {
+        decodedString += String(c)
+    }
+}
+
+print(decodedString)
 
 
 //5)
@@ -243,6 +285,14 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+
+var firstNames = [String]()
+
+
+
+
+
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
