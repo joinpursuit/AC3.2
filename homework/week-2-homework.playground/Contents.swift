@@ -92,7 +92,6 @@ var presidentsByYear = [1997 : "Bill Clinton",
                         2016 : "Barack Obama"
 ]
 
-
 // ONE NOTE before you start consider this one movie element
 
 let aMovie: [String:Any] = [
@@ -114,7 +113,19 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // WARM UPS
 // 1. Print the name of the first movie.
 
+
+if let titleOne = movies[0]["name"] as? String {
+    print(titleOne) //Always remember to use the local variable, not the original you're unwrapping!!!
+}
+
 // 2. Print a list of all movie names, preferably on one line.
+
+for index in 0..<movies.count {
+    if let title = movies[index]["name"] as? String {
+        print("'\(title)'", terminator: " ")
+    }
+}
+print("\n")
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -123,21 +134,123 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 
+for index in 0..<movies.count {
+    if let title = movies[index]["name"] as? String, year = movies[index]["year"] as? Int {
+        print("\(year): \(title)")
+    }
+}
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+
+for index in 0..<movies.count {
+    if let emotion = movies[index]["genre"] as? String, title = movies[index]["name"] as? String {
+        switch emotion {
+            case "animation":
+                print("\(title): \u{1F63C}") // Dreamworks face
+            case "action":
+                print("\(title): \u{1F4A5}")
+            case "drama":
+                print("\(title): \u{1F3AD}")
+            default:
+                break
+        }
+    }
+}
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+var movieTitles: [String] = []
+var moviesByName: [String:Any] = [:]
+
+for index in 0..<movies.count {
+    if let title = movies[index]["name"] as? String {
+        movieTitles.append(title)
+    }
+}
+
+
+for jindex in 0..<movieTitles.count {
+    moviesByName.updateValue(movies[jindex], forKey: movieTitles[jindex])
+}
+
+movieTitles = movieTitles.sort(<) // Thanks StackOverflow -- http://stackoverflow.com/questions/25377177/sort-dictionary-by-keys
+
+var ktitle = ""
+
+for kindex in 0..<moviesByName.count {
+    ktitle = movieTitles[kindex]
+    print(ktitle, moviesByName[ktitle]!)
+}
+
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
+
+var movieYears: [Int] = []
+var moviesByYear: [Int:Any] = [:]
+
+for index in 0..<movies.count {
+    if let year = movies[index]["year"] as? Int {
+        movieYears.append(year)
+    }
+}
+
+for jindex in 0..<movieYears.count {
+    moviesByYear.updateValue(movies[jindex], forKey: movieYears[jindex])
+}
+
+var movieGenres: [String] = []
+var moviesByGenre: [String:Any] = [:]
+
+for index in 0..<movies.count {
+    if let genre = movies[index]["genre"] as? String {
+        movieGenres.append(genre)
+    }
+}
+
+for jindex in 0..<movieGenres.count {
+    moviesByGenre.updateValue(movies[jindex], forKey: movieGenres[jindex])
+}
+
+var kyear: Int = 0
+
+movieYears = movieYears.sort(<)
+
+for kindex in 0..<moviesByYear.count {
+    kyear = movieYears[kindex]
+    print(kyear, moviesByYear[kyear]!)
+}
+
+movieGenres = movieGenres.sort(<)
+
+var kgenre = ""
+
+for kindex in 0..<moviesByGenre.count {
+    kgenre = movieGenres[kindex]
+    print(kgenre, moviesByGenre[kgenre]!)
+}
+
+/* 
+  We can't sort or call particular genres here because the genre is not unique. Purely by
+  coincidence, we were given all unique years, but that's not going to scale. We're going to
+  eventually get movies that were made in the same year, and that'll mess us up. What we could do
+  is, instead of settting up a dictionary with the genre or year as keywords, is create an array
+  of values to hold films of each genre or year. Then we loop through movies and populate the
+  arrays based on the value inside the genre key and year key of each film. For example, all
+  action movies in one array, all 1997 movies in another. We could also write a function to 
+  search for keys and values that we're interested in, when we're interested in them. It would
+  return an array like the ones just described, based on our search terms. This would be lighter
+  than storing all these big arrays by year or genre. Storing these arrays like that would make
+  for big filesizes, although it would also make finding movies of a particular genre/year faster.
+*/
 
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 // first movie as a guide:
 
-// Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
+// Minions came out in 2015. It was an animation starring Sandra Bullock, Jon Hamm, and Michael Keaton.
 // Barack Obama was president that year.
 
 
@@ -146,3 +259,26 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+for index in 0..<movies.count {
+    if let title = movies[index]["name"] as? String,
+        year = movies[index]["year"] as? Int,
+        genre = movies[index]["genre"] as? String,
+        description = movies[index]["description"] as? String,
+        cast = movies[index]["cast"] as? Array<String>,
+        prez = presidentsByYear[year] {
+        var blurb = ""
+        var prezInfo = "\(prez) was president that year.\n"
+        switch genre {
+            case "animation":
+                blurb = "\(title) came out in \(year). It was an \(genre) starring \(cast[0]), \(cast[1]), and \(cast[2]).\n"
+            case "drama":
+                blurb = "\(title) came out in \(year). It was a \(genre) starring \(cast[0]), \(cast[1]), and \(cast[2]).\n"
+            case "action":
+                blurb = "\(title) came out in \(year). It was an \(genre) movie starring \(cast[0]), \(cast[1]), and \(cast[2]).\n"
+            default:
+                break
+        }
+        print(blurb + prezInfo)
+    }
+}
