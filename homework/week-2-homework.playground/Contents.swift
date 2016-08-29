@@ -115,30 +115,30 @@ let aMovie: [String:Any] = [
 //
 // WARM UPS
 // 1. Print the name of the first movie.
-//let movies1 = movies[0]
-//let name = movies1["name"] as! String;
-//print(name)
+let movies1 = movies[0]
+let name = movies1["name"] as! String;
+print(name)
 
 
 
 
 // 2. Print a list of all movie names, preferably on one line.
-//var index = 0
-//for i in movies {
-  // var movies2 = movies[index]
-//    var name1 = movies2["name"] as! String;
-//    print(name1, terminator: " ", separator: "")
-//    index += 1
-//}
+var index = 0
+for i in movies {
+   var movies2 = movies[index]
+    var name1 = movies2["name"] as! String;
+    print(name1, terminator: " ", separator: "")
+    index += 1
+}
 
 // 3. Print a list of all movie years and names as follows:
-//var index = 0
-//for i in movies {
-//    var movies2 = movies[index]
-//    let name = movies2["name"] as! String, year = movies2["year"] as! Int;
-//    print("\(year): \(name)")
-//    index += 1
-//}
+var index = 0
+for i in movies {
+    var movies2 = movies[index]
+    let name = movies2["name"] as! String, year = movies2["year"] as! Int;
+    print("\(year): \(name)")
+    index += 1
+}
 
 
 // 2015: Minions
@@ -152,22 +152,22 @@ let aMovie: [String:Any] = [
 //print("\u{1f632}")
 
 var index = 0
-//for i in movies {
-//    var movies2 = movies[index]
-//    var name1 = movies2["name"] as! String, genre = movies2["genre"] as! String;
-//    switch genre {
-//        case "animation":
-//            print("\(name1) \u{1f604}")
-//        case "action":
-//            print("\(name1) \u{1f601}")
-//        case "drama":
-//            print("\(name1) \u{1f61f}")
-//    default:
-//        break
-//    }
-//    
-//    index += 1
-//}
+for i in movies {
+    var movies2 = movies[index]
+    var name1 = movies2["name"] as! String, genre = movies2["genre"] as! String;
+    switch genre {
+        case "animation":
+            print("\(name1) \u{1f604}")
+        case "action":
+            print("\(name1) \u{1f601}")
+        case "drama":
+            print("\(name1) \u{1f61f}")
+    default:
+        break
+    }
+    
+    index += 1
+}
 
 
 
@@ -176,18 +176,18 @@ var index = 0
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
-//
-//var movies2 = movies[index]
-//for i in movies {
-//    movies2 = movies[index]
-//    var name1 = movies2["name"] as! String;
-//    var moviesByName = [name1:[movies2]]
-//    [moviesByName].sort
-//    }
-//    print(moviesByName)
-//    index += 1
-//}
-//
+
+var movies2 = movies[index]
+for i in movies {
+    movies2 = movies[index]
+    var name1 = movies2["name"] as! String;
+    var moviesByName = [name1:[movies2]]
+    [moviesByName].sort
+    }
+    print(moviesByName)
+    index += 1
+}
+
 
 
 
@@ -196,17 +196,17 @@ var index = 0
 // What happens, and why? How might you change your approach?
 
 var movies2 = movies[index]
-//for i in movies {
-//    movies2 = movies[index]
-//    var year = movies2["year"] as! Int, genre = movies2["genre"] as! String, name1 = movies2["name"] as! String;
-//    var moviesByGenre = [genre:[name1]]
-//    var moviesByYear = [year:[name1]]
-//    [moviesByYear].sort
-//    [moviesByGenre].sort
-////    print(moviesByGenre)
-////    print(moviesByYear)
-//    index += 1
-//}
+for i in movies {
+    movies2 = movies[index]
+    var year = movies2["year"] as! Int, genre = movies2["genre"] as! String, name1 = movies2["name"] as! String;
+    var moviesByGenre = [genre:[name1]]
+    var moviesByYear = [year:[name1]]
+    [moviesByYear].sort
+    [moviesByGenre].sort
+//    print(moviesByGenre)
+//    print(moviesByYear)
+    index += 1
+}
 
 
 
