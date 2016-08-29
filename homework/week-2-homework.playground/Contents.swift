@@ -291,6 +291,8 @@ for movie in movies {
         president = presidentsByYear[year] {
         
             var genreStatement = ""
+            var castStatement = ""
+        
             switch genre[genre.startIndex] {
             case "a", "e", "i", "o", "u":
                 genreStatement = "n \(genre)"
@@ -298,12 +300,17 @@ for movie in movies {
                 genreStatement = " \(genre)"
             }
 
-            var castStatement = ""
-            for person in cast {
-                if person == cast[cast.count-1] {
-                    castStatement += "and \(person)"
-                } else {
-                    castStatement += "\(person), "
+            if cast.count == 1 {
+                castStatement = cast[0]
+            } else if cast.count == 2 {
+                castStatement = "\(cast[0]) and \(cast[1])"
+            } else if cast.count > 2 {
+                for person in cast {
+                    if person == cast[cast.count-1] {
+                        castStatement += "and \(person)"
+                    } else {
+                        castStatement += "\(person), "
+                    }
                 }
             }
         
