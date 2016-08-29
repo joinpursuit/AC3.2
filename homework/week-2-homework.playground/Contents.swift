@@ -211,7 +211,7 @@ for i in 0..<movies.count {
 }
 movieByGenreDict = ["animation": animations, "action": actions, "drama": dramas]
 
-//// THE PROJECT 
+//// THE PROJECT
 //// Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 //// first movie as a guide:
 ////
@@ -232,8 +232,31 @@ for i in 0..<movies.count {
     description = movies[i]["description"] as? String,
     president = presidentsByYear[year] {
         if genre == "animation" || genre == "action" || genre == "drama" {
-print("\(name) came out in \(year). It was a \(genre) starring \(cast[0]), \(cast[1]) and \(cast[2])")
+            var casts = ""
+            for (counter,i) in cast.enumerate(){
+                
+                if counter == (cast.count - 1) { //so we can add more casts
+                    casts += " and"
+                }
+                casts += " \(i)"
+            }
+print("\(name) came out in \(year). It was a \(genre) starring \(cast)")
 print("\(president) was president that year.")
         }
     }
 }
+
+//for i in 0..<movies.count {
+//    if let
+//        name = movies[i]["name"] as? String,
+//        year = movies[i]["year"] as? Int,
+//        cast = movies[i]["cast"] as? [String],
+//        genre = movies[i]["genre"] as? String,
+//        description = movies[i]["description"] as? String,
+//        president = presidentsByYear[year] {
+//        if genre == "animation" || genre == "action" || genre == "drama" {
+//                       print("\(name) came out in \(year). It was a \(genre) starring \(cast[0]), \(cast[1]) and \(cast[2])")
+//            print("\(president) was president that year.")
+//        }
+//    }
+//}
