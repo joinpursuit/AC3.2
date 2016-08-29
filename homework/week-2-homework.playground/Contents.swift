@@ -163,26 +163,25 @@ for i in 0..<movies.count {
 //ANSWER:
 var moviesByName = [String:[String:Any]]() //we can set up an array so it can copy the elements of movies, adding each to moviesByName later on
 
-for i in 0..<movies.count {
-    if let
-    name = movies[i]["name"] as? String,
-    year = movies[i]["year"] as? Int,
-    genre = movies[i]["genre"] as? [String],
-    cast = movies[i]["cast"] as? String,
-    description = movies[i]["description"] as? String {
-        moviesByName[name] = ["year": year, "genre": genre, "cast": cast, "description": description]
-    }
-}
-print(moviesByName.sort({$0.0 < $1.0}))//jay's method of sorting
-
-//var moviesByName = [String:[String:Any]]()
 //for i in 0..<movies.count {
-//    if let name = movies[i]["name"] as? String {
-//        moviesByName[name] = movies[i]
+//    if let
+//    name = movies[i]["name"] as? String,
+//    year = movies[i]["year"] as? Int,
+//    genre = movies[i]["genre"] as? [String],
+//    cast = movies[i]["cast"] as? String,
+//    description = movies[i]["description"] as? String {
+//        moviesByName[name] = ["year": year, "genre": genre, "cast": cast, "description": description]
 //    }
 //}
-//let sortedArray = Array(moviesByName.keys.sort(<))
-//print(sortedArray)
+//print(moviesByName.sort({$0.0 < $1.0}))//jay's method of sorting
+
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String {
+        moviesByName[name] = movies[i]
+    }
+}
+let sortedArray = Array(moviesByName.keys.sort())
+print(sortedArray)
 
 //// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 //// What happens, and why? How might you change your approach? Creating a dictionary with an array of values to hold each genre as keys for each movie.
