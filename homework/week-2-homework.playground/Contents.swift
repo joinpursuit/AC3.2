@@ -210,9 +210,8 @@ for i in 0..<movies.count {
 }
 }
 movieByGenreDict = ["animation": animations, "action": actions, "drama": dramas]
-print(movieByGenreDict.sort({$0.0 < $1.0}))
 
-//// THE PROJECT
+//// THE PROJECT 
 //// Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 //// first movie as a guide:
 ////
