@@ -175,6 +175,15 @@ for i in 0..<movies.count {
 }
 print(moviesByName.sort({$0.0 < $1.0}))//jay's method of sorting
 
+//var moviesByName = [String:[String:Any]]()
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String {
+//        moviesByName[name] = movies[i]
+//    }
+//}
+//let sortedArray = Array(moviesByName.keys.sort(<))
+//print(sortedArray)
+
 //// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 //// What happens, and why? How might you change your approach? Creating a dictionary with an array of values to hold each genre as keys for each movie.
 var movieByGenreDict: [String:[[String:Any]]]
@@ -225,7 +234,7 @@ for i in 0..<movies.count {
     description = movies[i]["description"] as? String,
     president = presidentsByYear[year] {
         if genre == "animation" || genre == "action" || genre == "drama" {
-print("\(name) came out in \(year). It was a \(genre) staring \(cast)")
+print("\(name) came out in \(year). It was a \(genre) starring \(cast[0]), \(cast[1]) and \(cast[2])")
 print("\(president) was president that year.")
         }
     }
