@@ -113,8 +113,18 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 
 // WARM UPS
 // 1. Print the name of the first movie.
+//ANSWER:
+if let firstMovie = movies[0]["name"] as? String {
+print("\(firstMovie)")
+}
 
 // 2. Print a list of all movie names, preferably on one line.
+//ANSWER:
+for i in 0..<movies.count {
+    if let movieList = movies[i]["name"] as? String {
+        print("\(movieList),", terminator: " ")
+    }
+}
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -122,27 +132,101 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 // .
+//ANSWER:
+for i in 0..<movies.count {
+if let year = movies[i]["year"] as? Int, name = movies[i]["name"] as? String {
+print("\(year): \(name)")
+        }
+}
 
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+//ANSWER:
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, genre = movies[i]["genre"] as? String {
+        switch genre {
+            case "animation":
+                print("\(name)"+"\u{1F63A}")
+            case "action":
+                print("\(name)"+"\u{1F525}")
+            case "drama":
+                print("\(name)"+"\u{1F62D}")
+        default:
+            print("This doesn't belong in any genre")
+        }
+    }
+}
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
-// [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
+
 // with the name as key. Sort by name.
+//ANSWER:
+var moviesByName = [String:[String:Any]]() //we can set up an array so it can copy the elements of movies, adding each to moviesByName later on
 
-// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
-// What happens, and why? How might you change your approach?
+for i in 0..<movies.count {
+    if let
+    name = movies[i]["name"] as? String,
+    year = movies[i]["year"] as? Int,
+    genre = movies[i]["genre"] as? [String],
+    cast = movies[i]["cast"] as? String,
+    description = movies[i]["description"] as? String {
+        moviesByName[name] = ["year": year, "genre": genre, "cast": cast, "description": description]
+    }
+}
+print(moviesByName.sort({$0.0 < $1.0}))//jay's method of sorting
 
-// THE PROJECT
-// Iterate over all movies and print a formatted blurb about each one. Use this out put of the
-// first movie as a guide:
+//// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
+//// What happens, and why? How might you change your approach? Creating a dictionary with an array of values to hold each genre as keys for each movie.
+var movieByGenreDict: [String:[[String:Any]]]
+var animations = [[String: Any]]()
+var actions = [[String: Any]]()
+var dramas = [[String: Any]]()
 
-// Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
-// Barack Obama was president that year.
+for i in 0..<movies.count {
+    if var
+        name = movies[i]["name"] as? String,
+        year = movies[i]["year"] as? Int,
+        cast = movies[i]["cast"] as? [String],
+        genre = movies[i]["genre"] as? String,
+        description = movies[i]["description"]{
+        switch genre {
+            case "animation":
+            animations.append(["year": year, "genre": genre, "cast": cast, "description": description])
+            case "action":
+            actions.append(["year": year, "genre": genre, "cast": cast, "description": description])
+            case "dramas":
+            dramas.append(["year": year, "genre": genre, "cast": cast, "description": description])
+        default:
+            break
+        }
+}
+}
+movieByGenreDict = ["animation": animations, "action": actions, "drama": dramas]
+print(movieByGenreDict.sort({$0.0 < $1.0}))
 
+//// THE PROJECT
+//// Iterate over all movies and print a formatted blurb about each one. Use this out put of the
+//// first movie as a guide:
+////
+//// Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
+//// Barack Obama was president that year.
 
-// Note how it should generate "an animation" in contrast to "a drama"
-// Similarly notice the "and" before the last member of the cast listed.
-// Get it to work any which way you can but try your best to follow these guidelines
-//   * Don't use forced unwrapping
-//   * Use multiple bindings in one "if let" (no pyramid of doom)
+//// Note how it should generate "an animation" in contrast to "a drama"
+//// Similarly notice the "and" before the last member of the cast listed.
+//// Get it to work any which way you can but try your best to follow these guidelines
+////   * Don't use forced unwrapping
+////   * Use multiple bindings in one "if let" (no pyramid of doom)
+for i in 0..<movies.count {
+    if let
+    name = movies[i]["name"] as? String,
+    year = movies[i]["year"] as? Int,
+    cast = movies[i]["cast"] as? [String],
+    genre = movies[i]["genre"] as? String,
+    description = movies[i]["description"] as? String,
+    president = presidentsByYear[year] {
+        if genre == "animation" || genre == "action" || genre == "drama" {
+print("\(name) came out in \(year). It was a \(genre) staring \(cast)")
+print("\(president) was president that year.")
+        }
+    }
+}
