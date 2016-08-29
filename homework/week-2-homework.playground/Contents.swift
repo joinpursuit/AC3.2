@@ -189,7 +189,9 @@ for movieInfo in movies{
     
 }
 
-sortArray = moviesByName.keys.sort()
+print(moviesByName.keys.sort())
+
+//sortArray = moviesByName.keys.sort()
 
 //moviesByName[String(sortArray[5])]
 //
