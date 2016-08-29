@@ -98,11 +98,25 @@ for (key, value) in someDict {
 “Jon Krakaur” - 6.1
 */
 
+var numDict = [String : Float]()
+numDict = ["Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "John Krakaur": 6.1]
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+
+print(numDict["John Steinbeck"])
+numDict["Erik Larson"] = 9.2
+
+if numDict["Erik Larson"]! > numDict["John Steinbeck"]! {
+    print("Erik Larson")
+} else {
+    print("John Steinbeck")
+}
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
-
+for (key, value) in numDict {
+    print("\(key): \(value) \n")
+}
 
 
 
@@ -139,14 +153,40 @@ var code = [
     "z" : "a"
 ]
 
-var message = "hello world"
+//var message = "hello world"
 
+print("\(code["g"]!)\(code["d"]!)\(code["k"]!)\(code["k"]!)\(code["n"]!) \(code["v"]!)\(code["n"]!)\(code["q"]!)\(code["k"]!)\(code["c"]!)", terminator: "")
+
+
+//var encodedString = ""
+//for c in message.characters {
+//    if let encodedCharacter = code[String(c)] {
+//    encodedString += encodedCharacter
+//} else {
+//    encodedString += " "
+//}
+//}
+//
+//print(encodedString)
+
+var message = "helElo wo@$#rld"
+var encodedString = ""
+for c in message.characters {
+    if let encodedCharacter = code[String(c)] {
+        encodedString += encodedCharacter
+    } else {
+        encodedString += String(c)
+    }
+}
+
+print(encodedString)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
+//print("\(code["t"]!)\(code["h"]!)\(code["i"]!)\(code["s"]!) \(code["m"]!)\(code["e"]!)\(code["s"]!)\(code["s"]!)\(code["a"]!)\(code["g"]!)\(code["e"]!) \(code["i"]!)\(code["s"]!) \(code["h"]!)\(code["a"]!)\(code["r"]!)\(code["d"]!) \(code["t"]!)\(code["o"]!) \(code["r"]!)\(code["e"]!)\(code["a"]!)\(code["d"]!)", terminator: "")
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
@@ -185,6 +225,15 @@ print(firstName)
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
+//for (key, value) in people {
+//    let fullNames
+//}
+
+var fullpeople = Array(people)
+
+
+
+
 //6)
 //You are given an array of dictionaries. Each dictionary in the array describes the score of a person. Find the person with the best score and print his full name.
 
@@ -217,6 +266,21 @@ var peopleWithScores: [[String: String]] = [
     ]
 ]
 
+var bestScore = 0
+var bestStudent = ""
+
+for person in peopleWithScores {
+//    print("Person:\(person)")
+    if let score = Int(person["score"]!) { //accessing and unwrapping each person's score and casting it as Int
+        if score > bestScore {              // check if this score is greater than current best score
+            bestScore = score
+            bestStudent = person["firstName"]!
+        }
+    }
+}
+print(bestScore)
+print(bestStudent)
+
 /*6b) Print out the dictionary above in the following format:
 full name - score
 ...
@@ -227,7 +291,7 @@ full name - score
 //The frequency of a number is the number of times it appears in the array.
 //Print the numbers in ascending order followed by their frequency.
 
-var numbers = [1, 2, 3, 2, 3, 5, 2, 1, 3, 4, 2, 2, 2]
+//var numbers = [1, 2, 3, 2, 3, 5, 2, 1, 3, 4, 2, 2, 2]
 
 
 
