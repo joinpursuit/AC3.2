@@ -14,6 +14,7 @@ var cititesDict = ["United States": "Washington D.C", "Afghanistan": "Kabul", "A
 cititesDict["Bahamas"] = "Nassau"
 cititesDict["Barbados"] = "Bridgetown"
 
+
 //c) Translate at least 3 of the capital names into another language
 cititesDict["United States"] = "واشنطن العاصمة"
 cititesDict.updateValue("كابول", forKey: "Afghanistan")
@@ -66,6 +67,11 @@ for i in someDict.keys {
 }
 print(someDict)
 
+for(key, value) in someDict{
+    someDict[key] = value + 2
+}
+print(someDict)
+
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
@@ -77,7 +83,10 @@ print(someDict)
 “Jon Krakaur” - 6.1
 */
 
+var authors = ["Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "C.S. Lewis": 9.9, "Jon Krakaur": 6.1]
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
@@ -119,13 +128,40 @@ var code = [
 ]
 
 var message = "hello world"
+var encoded = ""
 
+for c in message.characters {
+    if let encodedChar = code[String(c)]{
+        encoded += encodedChar
+    } else {
+    encoded += " "
+    }
+}
+print(encoded)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
+
+var deCode = [String: String]()
+
+for (key, value) in code {
+    deCode[value] = key
+}
+
+var decodedString = ""
+
+for c in encodedMessage.characters {
+    if let encodedCharacter = deCode[String(c)] {
+        decodedString += encodedCharacter
+    } else {
+        decodedString += String(c)
+    }
+}
+
+print(decodedString)
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
@@ -217,3 +253,6 @@ let statePop = ["Alabama": 4.8, "Alaska": 0.7, "Arizona": 6.7, "Arkansas": 3.0]
 let testStates = ["California","Arizona", "Alabama", "New Mexico"]
 
 //Write code below that iterates through testStates and prints out whether or not that key is in statePop
+
+
+
