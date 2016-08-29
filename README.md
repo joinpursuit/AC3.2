@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Have a good weekend!
 
 Weekend [homework](/homework/week-1-homework.md)
@@ -41,6 +42,14 @@ aware of the tightness of this schedule and are preparing the assessment with it
 Also don't forget to read up on [functions](/lessons/functions-one), the
 subject of Monday's lesson.
 >>>>>>> de7a90190de53238650aefe72fad5b5366559402
+=======
+Welcome back, and welcome to Hunters Point Plaza at 
+47-40 21st St, Long Island City, NY 11101, top floor.
+
+The reading is basically the same for [tomorrow](/lessons/functions-two), in terms
+of what to read but we'll cover more of it and it'll probably mean more to you another
+time around.
+>>>>>>> b552f77d39d6b48817dbf570aa6ada0b40f49e31
 
 ## Schedule
 
