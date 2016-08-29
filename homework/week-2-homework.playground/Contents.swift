@@ -110,6 +110,7 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
         print(actor)
     }
 }
+    //can print diff types as optional as? while optional binding
 
 // WARM UPS
 // 1. Print the name of the first movie.
@@ -128,6 +129,14 @@ for array in movies{
 
 for movie in movies {
     print("\(movie["year"]!): \(movie["name"]!)")
+}
+
+//or
+
+for i in 0..<movies.count {
+    if let movieYear = movies[i]["year"], movieTitle = movies[i]["name"] {
+        print("\(movieYear): \(movieTitle)", terminator: " ")
+    }
 }
 
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
@@ -149,20 +158,25 @@ for movie in movies {
 }
 
 
-// 5. In code, not by literal initialization, create a new dictionary called moviesByName of type //NEED HELP WITH THESE
+// 5. In code, not by literal initialization, create a new dictionary called moviesByName of type           ///////NEED HELP WITH THESE
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
-    //var moviesByName: [String:[String:Any]] = [
-    //    "Title":
-    //    ["year": 1999, "genre": "action"],
-    //    "Title2":
-    //    ["year": 2000, "genre": "drama"]
-    //]
+    //var moviesByName: [String: [String:Any]];() //the ;???
+    //var sortedMovies = [String]()
+    //var sortM = [String]()
     //
-    //for movie in movies {
-    //    
+    //for i in 0..<movies.count {
+    //    if let name = movies[i]["name"] as? String {
+    //        movies[i]["name"] = nil
+    //        moviesByName[name] = movies[i]
+    //        sortedMovies.append(name)
+    //    }
     //}
+    //sortM = moviesByName.sort()
+    //print(sortM)
+    ////print(sortedMovies)
+
 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
@@ -185,8 +199,46 @@ for movie in movies {
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
-for movie in movies {
-    if let name = movie["name"], year = movie["year"], cast = movies[] {
-        print(name, year)
+    for movie in movies {
+        if let name = movie["name"], year = movie["year"], genre = movie["genre"], cast = movie["cast"] {
+            for actor in cast {
+            print("\(name) came out in \(year).  It was an \(genre) staring \(actor)")
+            }
+        }
+    }
+
+
+
+
+//******EDWARD'S CODE -- BETTER WAY TO WRITE THIS? --REF MADUSHANI'S CODE & GERMAIN
+/*
+for i in movies {
+    if let name = i["name"] as? String, year = i["year"] as? Int, genre = i["genre"] as? String, cast = i["cast"] as? [String], presidents = presidentsByYear[year] {
+        if genre == "drama" {
+            print("\(name) came out in \(year). It was a \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).\n\(presidents) was president that year.")
+        } else if genre == "action" {
+            print("\(name) came out in \(year). It was an \(genre) film staring \(cast[0]), \(cast[1]), and \(cast[2]).\n\(presidents) was president that year.")
+        } else {
+            print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).\n\(presidents) was president that year.")
+        }
     }
 }
+*/
+//or
+
+/* --> cast loop
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, var cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String, pres = presidentsByYear[year] {
+        var castString = ""
+            for (i, actor) in cast.enumerate() {
+                if i == cast.count - 1 {
+                    castString += "and \(actor)"
+                }
+                else {
+                    castString += "\(actor), "
+                }
+        }
+        
+    }
+}
+*/
