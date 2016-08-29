@@ -114,7 +114,21 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // WARM UPS
 // 1. Print the name of the first movie.
 
+if let moviename = movies[0]["name"]{
+    print("The first movie is \(moviename)")
+}
+
+print("")
 // 2. Print a list of all movie names, preferably on one line.
+
+for (counter, i) in movies.enumerate(){
+    if let moviename = i["name"]{
+        print ("\(counter + 1): \(moviename)", terminator: " ")
+    }
+}
+
+print("")
+print("")
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -123,16 +137,104 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 
+
+for (counter, i) in movies.enumerate(){
+    if let moviename = i["name"], movieyear = i["year"]{
+        print ("\(movieyear): \(moviename)")
+    }
+}
+
+print("")
+
+
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+
+for i in movies{
+    if let moviename = i["name"], moviegenre = i["genre"]{
+        
+       
+        switch String(moviegenre){
+        case "animation" :
+            print("\(moviename) 😬")
+        case "action" :
+             print("\(moviename) 😎")
+        case "drama" :
+             print("\(moviename) 😱")
+       
+        default:
+            break
+        }
+        //print ("\(counter + 1): \(moviename)", terminator: " ")
+    }
+}
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+
+
+var moviesByName = [String:[String:Any]]()
+var newDict = [String:[String:Any]]()
+var sortArray = []
+
+for movieInfo in movies{
+
+    if let moviename = movieInfo["name"] as? String{
+       moviesByName[moviename] = movieInfo
+       //print(moviename)
+    }
+    
+}
+
+sortArray = moviesByName.keys.sort()
+
+//moviesByName[String(sortArray[5])]
+//
+//for sortDict in moviesByName.keys.sort(){
+//    
+//        
+//    moviesByName[sortDict] = moviesByName[sortDict]
+//    
+// print(moviesByName)
+//    
+//
+//}
+//
+
+
+
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
 
+var moviesByYear = [Int:[String:Any]]()
+
+for movieInfo in movies{
+    
+    if let movieyear = movieInfo["year"] as? Int{
+        moviesByYear[movieyear] = movieInfo
+        //print(moviename)
+    }
+    
+}
+
+
+
+
+var moviesByGenre = [String:[String:Any]]()
+
+for movieInfo in movies{
+    
+    if let movieGenre = movieInfo["genre"] as? String{
+        moviesByGenre[movieGenre] = movieInfo
+        //print(mename)
+    }
+    
+}
+
+//print(moviesByGenre)
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 // first movie as a guide:
@@ -140,6 +242,31 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
 // Barack Obama was president that year.
 
+var casts = String()
+for movieName in moviesByName{
+    
+    
+    if let name = movieName.1["name"],year = movieName.1["year"] as? Int, genre = movieName.1["genre"], cast = movieName.1["cast"] as? [String]{
+        
+        for (counter,i) in cast.enumerate(){
+            
+            if counter == (cast.count - 1) {
+                casts += " and"
+            }
+            casts += " \(i)"
+        }
+        print ("\(name) came out in \(year). It was a \(genre) staring\(casts).")
+        casts.removeAll()
+        
+        if let pres = presidentsByYear[year]{
+            print("\(pres) was president that year")
+        }
+        
+    }
+    
+    
+    
+}
 
 // Note how it should generate "an animation" in contrast to "a drama"
 // Similarly notice the "and" before the last member of the cast listed.
