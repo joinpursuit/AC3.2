@@ -116,21 +116,24 @@ let aMovie: [String:Any] = [
 // WARM UPS
 // 1. Print the name of the first movie.
 
-//for i in movies {
-//    if let name = i["name"] as? String {
-//        print("\(name)")
-//    }
-//    break
-//}
+```swift
+for i in movies {
+    if let name = i["name"] as? String {
+        print("\(name)")
+    }
+    break
+}
+```
 
 // 2. Print a list of all movie names, preferably on one line.
 
-//for i in movies {
-//    if let name = i["name"] as? String {
-//        print("\(name),", terminator: " ")
-//    }
-//}
-
+```swift
+for i in movies {
+    if let name = i["name"] as? String {
+        print("\(name),", terminator: " ")
+    }
+}
+```
 
 
 // 3. Print a list of all movie years and names as follows:
@@ -140,19 +143,20 @@ let aMovie: [String:Any] = [
 // .
 // .
 
-
-//for i in movies {
-//    if let name = i["name"] as? String, year = i["year"] as? Int {
-//        print("\(year): \(name)")
-//    }
-//}
-
+```swift
+for i in movies {
+    if let name = i["name"] as? String, year = i["year"] as? Int {
+        print("\(year): \(name)")
+    }
+}
+```
 
 
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
 
 
+```swift
 for i in movies {
     if let name = i["name"] as? String, genre = i["genre"] as? String {
         switch genre {
@@ -167,7 +171,7 @@ for i in movies {
         }
     }
 }
-
+```
 
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
@@ -175,6 +179,8 @@ for i in movies {
 // with the name as key. Sort by name.
 
 var moviesByName: [String: [String: Any]]
+
+
 
 //for i in movies {
 //    if let name = i["name"] as? String, year = i["year"] as? Int, genre = i["genre"] as? String, cast = i["cast"] as? String, description = i["description"] as? String {
@@ -204,6 +210,7 @@ var moviesByName: [String: [String: Any]]
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
 
+```swift
 for i in movies {
     if let name = i["name"] as? String, year = i["year"] as? Int, genre = i["genre"] as? String, cast = i["cast"] as? [String], presidents = presidentsByYear[year] {
         if genre == "drama" {
@@ -215,7 +222,7 @@ for i in movies {
         }
     }
 }
-
+```
 
 
 
