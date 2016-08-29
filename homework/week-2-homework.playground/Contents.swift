@@ -211,12 +211,41 @@ for movie in movies {
 moviesByYear.count
 
 /*
- Creating a dictionary using genre as the key does not work, because keys in dictionaries are unique. Since there are multiple movies with the same genre, the key's value is overwritten when a movie with an existing genre is added.
+ Creating a dictionary using genre as the key does not work in the method above, because keys in dictionaries are unique. Since there are multiple movies with the same genre, the key's value is overwritten when a movie with an existing genre is added.
  
  In this example, using year as a key does work, because the movies listed all came out during a different year. However, if movies are to be added to this list, or if we cannot be certain that each movie on this list came out during a different year, this approach would not work well.
  
- I would not create a dictionary of movies with year or genre as keys, because these are not unique properties of individual movies. Instead, I could use the sort function after I've created the dictionary based on movie names. Alternatively, if I wanted to group together based on a certain property or condition, I could iterate through movies and create an array based on the conditions I was looking for.
+ A better way to create a dictionary using genre as key, is to allow the values to be an array of arrays. Thus, when a movie with the same genre is encountered, it can be appended to the array, instead of replacing the value. See the code below (written with helpful hints from Jason Wang, class TA).
  */
+
+var movieByGenreDict: [String: [[String: Any]]]
+var animations = [[String: Any]]()
+var actions = [[String: Any]]()
+var dramas = [[String: Any]]()
+
+for movie in movies {
+    if var
+        genre = movie["genre"] as? String,
+        name = movie["name"],
+        year = movie["year"],
+        cast = movie["cast"],
+        description = movie["description"] {
+        switch genre {
+        case "animation" :
+            animations.append(["name": name, "year": year, "cast": cast, "desription": description])
+        case "action" :
+            actions.append(["name": name, "year": year, "cast": cast, "desription": description])
+        case "drama" :
+            dramas.append(["name": name, "year": year, "cast": cast, "desription": description])
+        default:
+            break
+        }
+    }
+}
+
+movieByGenreDict = ["animation": animations, "action": actions, "drama": dramas]
+
+print(movieByGenreDict)
 
 
 // THE PROJECT
