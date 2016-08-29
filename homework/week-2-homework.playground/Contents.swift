@@ -175,6 +175,7 @@ for i in movies {
     }
 }
 
+print(moviesByName)
 let sortedMoviesByName = Array(moviesByName.keys).sort()
 print(sortedMoviesByName)
 
@@ -229,10 +230,21 @@ print(sortedMoviesByGenre)
 
 for movie in movies {
     if let name = movie["name"] as? String, year = movie["year"] as? Int, genre = movie["genre"] as? String, cast = movie["cast"] as? [String], description = movie["description"] as? String, president = presidentsByYear[year] {
+        var casts = ""
+        for (counter, i) in cast.enumerate() {
+            casts += "\(i)"
+            if counter == (cast.count - 2) {
+                casts += ", and "
+            } else if counter == cast.count - 1 {
+                continue
+            } else {
+                casts += ", "
+            }
+        }
         if genre == "animation" || genre == "action" {
-            print("\(name) came out in \(year). It was an \(genre) starring \(cast[0]), \(cast[1]), and \(cast[2]). \(president) was president that year.")
+            print("\(name) came out in \(year). It was an \(genre) starring \(casts). \(president) was president that year.")
         } else {
-            print("\(name) came out in \(year). It was a \(genre) starring \(cast[0]), \(cast[1]), and \(cast[2]). \(president) was president that year.")
+            print("\(name) came out in \(year). It was a \(genre) starring \(casts). \(president) was president that year.")
         }
     }
 }
