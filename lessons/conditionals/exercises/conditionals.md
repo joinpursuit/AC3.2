@@ -33,6 +33,7 @@ else {
 
 3) Complete the following code so that "You win!" is printed
 ```swift
+var 
 if {
    print("You win!")
 } 

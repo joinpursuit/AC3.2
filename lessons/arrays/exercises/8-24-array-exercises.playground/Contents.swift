@@ -110,7 +110,13 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
-
+var wasFound = false
+for number in fourthListOfNumbers where number == target {
+    wasFound = true
+    break
+} else {
+    print("No")
+}
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.

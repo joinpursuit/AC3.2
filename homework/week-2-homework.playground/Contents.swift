@@ -113,9 +113,14 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 
 // WARM UPS
 // 1. Print the name of the first movie.
+print(movies[0]["name"])
 
 // 2. Print a list of all movie names, preferably on one line.
-
+//for names in movies{
+//    if (movies[names]["name"] <= 9) {
+//    print(movies[]["name"])
+//    }
+//}
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
 // 2001: Shrek

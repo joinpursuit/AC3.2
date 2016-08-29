@@ -8,6 +8,7 @@ import UIKit
 //Question 1.
 //
 //What are some reasons to use a switch instead of an if?
+Using switch instead
 
 //Answer: Switch statements are more elegant and readable in situations where you have a lot of conditions/cases.
 

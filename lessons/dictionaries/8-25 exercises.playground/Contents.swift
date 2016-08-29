@@ -46,12 +46,16 @@ for value in someDict.values{
 print(productUpToSeven)
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
 someDict.updateValue( productUpToSeven, forKey: "productUpToSix")
-for sum in Array(someDict.keys) where someDict[sum]! != "Seven" {
-    
-}
+//for sum in Array(someDict.keys) where someDict[sum]! != "Seven" {
+
+//}
 //e) Remove the new keys made for parts c and d
 
 //f) Add 2 to every value inside of someDict
+for (key, value) in someDict {
+    someDict.updateValue(value+2, forKey: key)
+}
+
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
@@ -64,11 +68,26 @@ for sum in Array(someDict.keys) where someDict[sum]! != "Seven" {
 “Jon Krakaur” - 6.1
 */
 
-//b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+var comprehensibilityScore: [String:Float] = ["Mark Twain" : 8.9, "Nathaniel Hawthorne" : 5.1, "John Steinbeck" : 2.3, "C.S. Lewis" : 9.9, "Jon Krakaur" : 6.1]
 
+//b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+let steinbeckRating = comprehensibilityScore["John Steinbeck"]
+print(steinbeckRating)
+comprehensibilityScore["Erik Larson"] = 9.2
+let twainRating = comprehensibilityScore["Mark Twain"]
+let krakaurRating = comprehensibilityScore["Jon Krakaur"]
+if twainRating > krakaurRating {
+    print("Mark Twain")
+}else if twainRating < krakaurRating{
+    print("Jon Krakaur")
+}else{
+    print("They are equal")
+}
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
-
+for (authorName, rating) in comprehensibilityScore {
+    print("\(authorName): \(rating)", terminator: "")
+}
 
 
 
@@ -105,8 +124,14 @@ var code = [
     "z" : "a"
 ]
 
-var message = "hello world"
+var message = "helloworld"
 
+var endcodedString = ""
+for c in message.characters {
+    let a = code[String(c)]
+        print (a)
+    }
+print(endcodedString)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
@@ -139,6 +164,9 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+let firstName = Array(people.keys)
+print("\(firstName)")   
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
@@ -174,6 +202,13 @@ var peopleWithScores: [[String: String]] = [
     ]
 ]
 
+var firstNames = [String]()
+for dict in people{
+    if let first = dict["firstName"] {
+    firstNames.append("first")
+}
+ }
+print(firstNames)
 /*6b) Print out the dictionary above in the following format:
 full name - score
 ...
