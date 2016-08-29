@@ -127,6 +127,12 @@ for i in 0..<movies.count {
     }
 }
 
+for movie in movies {
+    if let name = movie["name"] {
+        print(name, terminator: " ")
+    }
+}
+
 //// 3. Print a list of all movie years and names as follows:
 //// 2015: Minions
 //// 2001: Shrek
@@ -134,6 +140,7 @@ for i in 0..<movies.count {
 //// .
 //// .
 //
+
 for i in 0..<movies.count {
     if let movieName = (movies[i]["name"]), movieYear = (movies[i]["year"]) {
         print("\(movieYear): \(movieName)")
@@ -163,6 +170,7 @@ for i in 0..<movies.count {
 //// [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 //// with the name as key. Sort by name.
 //
+
 var moviesByName = [String:[String:Any]]()
 
 for i in 0..<movies.count {
@@ -172,16 +180,28 @@ for i in 0..<movies.count {
 }
 print(moviesByName.keys.sort(<))
 
+let sortedMovies = Array(moviesByName.keys).sort(<)
+print(sortedMovies)
+
+for k in moviesByName.keys.sort() {
+    print([k])
+}
+
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String {
+//        
+//    }
+//}
 
 
-//let sortedMovies = Array(moviesByName.keys).sort(<)
-//print(sortedMovies)
 
 
 
 //// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 //// What happens, and why? How might you change your approach?
 //var moviesByYear = [Int:[String:Any]]()
+
+var moviesByYear = [Int:[String:Any]]()
 
 for i in 0..<movies.count {
     if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
@@ -208,11 +228,12 @@ print(moviesByGenre.keys.sort(<))
 // Barack Obama was president that year.
 
 for i in 0..<movies.count {
-    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String, pres = presidentsByYear[year] {
         
         switch genre {
         case "animation":
             print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
+            
         case "action":
             print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
         case "drama":
@@ -221,15 +242,11 @@ for i in 0..<movies.count {
             break
             
         }
+        print("\(pres) was president that year.")
+        print("")
     }
 }
-var year = 2014
-for (year, pres) in presidentsByYear {
-    if year == year {
-        var president = pres
-        print(pres)
-    }
-}
+
 
 // Note how it should generate "an animation" in contrast to "a drama"
 // Similarly notice the "and" before the last member of the cast listed.
