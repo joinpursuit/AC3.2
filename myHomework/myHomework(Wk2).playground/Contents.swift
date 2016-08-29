@@ -1,5 +1,3 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
 
 // movies is an Array of Dictionaries
@@ -105,7 +103,7 @@ var presidentsByYear = [1997 : "Bill Clinton",
 
 //if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
 //    print("\(year): \(name)")
-//    
+//
 //    for actor in cast {
 //        print(actor)
 //    }
@@ -203,15 +201,8 @@ for i in 0..<movies.count {
                 blurb += "\(movieCast[i]), "
             }
         }
-//        for i in 0..<movieCast.count {
-//            text3 += movieCast[i] + ", "
-//        }
-//        
-       //print(text3)
-        
-        //print("\(movieName) came out in \("\(movieYear)"). It was a \("\(movieGenre)") staring \(movieCast) ")
     }
-    print(blurb)
+    print(blurb) 
 }
 
 
