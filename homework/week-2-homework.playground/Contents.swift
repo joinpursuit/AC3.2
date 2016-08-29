@@ -159,6 +159,26 @@ for movie in movies {
 }
 
 
+// alternative method
+
+//for movie in movies {
+//    var genreEmoji = ""
+//    if var genre = movie["genre"] as? String, name = movie["name"] {
+//        switch genre {
+//        case "animation":
+//            genreEmoji = "\u{1F984}"
+//        case "action":
+//            genreEmoji = "\u{1F4A5}"
+//        case "drama":
+//            genreEmoji = "\u{1F498}"
+//        default:
+//            break
+//        }
+//        print("\(genreEmoji) \t \(name)")
+//    }
+//}
+
+
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
@@ -267,11 +287,10 @@ for movie in movies {
         name = movie["name"] as? String,
         year = movie["year"] as? Int,
         genre = movie["genre"] as? String,
-        cast = movie["cast"] as? [String] {
+        cast = movie["cast"] as? [String],
+        president = presidentsByYear[year] {
+        
             var genreStatement = ""
-            var castStatement = ""
-            var president = ""
-
             switch genre[genre.startIndex] {
             case "a", "e", "i", "o", "u":
                 genreStatement = "n \(genre)"
@@ -279,17 +298,12 @@ for movie in movies {
                 genreStatement = " \(genre)"
             }
 
+            var castStatement = ""
             for person in cast {
                 if person == cast[cast.count-1] {
                     castStatement += "and \(person)"
                 } else {
                     castStatement += "\(person), "
-                }
-            }
-
-            for (y, p) in presidentsByYear {
-                if year == y {
-                    president = p
                 }
             }
         
