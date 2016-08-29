@@ -103,35 +103,102 @@ let aMovie: [String:Any] = [
     "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
 ]
 
-if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
-    print("\(year): \(name)")
-    
-    for actor in cast {
-        print(actor)
-    }
-}
+//if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String], genre = aMovie["genre"] as? String{
+//    print("\(year): \(name)")
+//    
+//    for actor in cast {
+//        print(actor)
+//    }
+//}
+//
+//// WARM UPS
+//// 1. Print the name of the first movie.
+//
+//if let movieName = (movies[0]["name"]) {
+//    print(movieName)
+//}
+//
+//
+//// 2. Print a list of all movie names, preferably on one line.
+//
+//for i in 0..<movies.count {
+//    if let movieName = (movies[i]["name"]) {
+//        print("\(movieName),",  terminator: " ")
+//    }
+//}
+//
+//// 3. Print a list of all movie years and names as follows:
+//// 2015: Minions
+//// 2001: Shrek
+//// .
+//// .
+//// .
+//
+//for i in 0..<movies.count {
+//    if let movieName = (movies[i]["name"]), movieYear = (movies[i]["year"]) {
+//        print("\(movieYear): \(movieName)")
+//    }
+//}
+//
+//
+//// 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
+//// and add an appropriate emoji to represent its genre
+//
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+//        switch genre {
+//        case "animation":
+//            print("\(name): \u{1F3A8}")
+//        case "action":
+//            print("\(name): \u{1F52B}")
+//        case "drama":
+//            print("\(name): \u{1F622}")
+//        default:
+//            break
+//        }
+//    }
+//}
+//
+//// 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
+//// [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
+//// with the name as key. Sort by name.
+//
+//var moviesByName = [String:[String:Any]]()
+//
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+//        moviesByName[name] = movies[i]
+//    }
+//}
+//print(moviesByName.keys.sort(<))
+//
+//
+//
+////let sortedMovies = Array(moviesByName.keys).sort(<)
+////print(sortedMovies)
+//
+//
+//
+//// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
+//// What happens, and why? How might you change your approach?
+//var moviesByYear = [Int:[String:Any]]()
+//
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+//        moviesByYear[year] = movies[i]
+//    }
+//}
+//print(moviesByYear.keys.sort(<))
+//
+//var moviesByGenre = [String:[String:Any]]()
+//
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+//        moviesByGenre[genre] = movies[i]
+//    }
+//}
+//print(moviesByGenre.keys.sort(<))
 
-// WARM UPS
-// 1. Print the name of the first movie.
-
-// 2. Print a list of all movie names, preferably on one line.
-
-// 3. Print a list of all movie years and names as follows:
-// 2015: Minions
-// 2001: Shrek
-// .
-// .
-// .
-
-// 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
-// and add an appropriate emoji to represent its genre
-
-// 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
-// [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
-// with the name as key. Sort by name.
-
-// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
-// What happens, and why? How might you change your approach?
 
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
@@ -140,6 +207,29 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
 // Barack Obama was president that year.
 
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+        
+        switch genre {
+        case "animation":
+            print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
+        case "action":
+            print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
+        case "drama":
+            print("\(name) came out in \(year). It was a \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
+        default:
+            break
+            
+        }
+    }
+}
+var year = 2014
+for (year, pres) in presidentsByYear {
+    if year == year {
+        var president = pres
+        print(pres)
+    }
+}
 
 // Note how it should generate "an animation" in contrast to "a drama"
 // Similarly notice the "and" before the last member of the cast listed.
