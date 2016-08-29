@@ -70,7 +70,7 @@ var movies: [[String:Any]] = [
         "description": "Navy S.E.A.L. sniper Chris Kyle\"s pinpoint accuracy saves countless lives on the battlefield and turns him into a legend. Back home to his wife and kids after four tours of duty, however, Chris finds that it is the war he can\"t leave behind."
     ]
 ]
-
+/*
 var presidentsByYear = [1997 : "Bill Clinton",
                         1998 : "Bill Clinton",
                         1999 : "Bill Clinton",
@@ -113,8 +113,18 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 
 // WARM UPS
 // 1. Print the name of the first movie.
+if let firstMovieName = movies[0]["name"] {
+    print(firstMovieName)
+}
 
 // 2. Print a list of all movie names, preferably on one line.
+for i in 0..<movies.count {
+    if var movieName = movies[i]["name"] where i != movies.count - 1 {
+        print(movieName, terminator: ", ")
+    } else {
+        print(movies[movies.count - 1 ]["name"]!)
+    }
+}
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -123,12 +133,46 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 
+for i in 0..<movies.count {
+    if let movieYear = movies[i]["year"] {
+        if let movieName = movies[i]["name"] {
+            print("\(movieYear): \(movieName)")
+        }
+    }
+}
+
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
-
+//animation action drama
+for i in 0..<movies.count {
+    if let genre = movies[i]["genre"] as? String {
+        switch genre {
+        case "animation":
+            print("\(movies[i]["name"]!) \u{1F643}")
+        case "action":
+            print("\(movies[i]["name"]!) \u{1F62F}")
+        case "drama":
+            print("\(movies[i]["name"]!) \u{1F914}")
+        default:
+            print("")
+        }
+    }
+}
+*/
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
+var moviesByName = [String: [String:Any]]()
+
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], description = movies[i]["description"] as? String {
+        moviesByName.updateValue(["year":year, "cast":cast, "description": description], forKey: name)
+    }
+}
+
+print(moviesByName.sort{ $0.0 < $1.0})
+
 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
