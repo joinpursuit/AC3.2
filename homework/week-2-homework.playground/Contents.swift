@@ -103,18 +103,34 @@ let aMovie: [String:Any] = [
     "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
 ]
 
-if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
-    print("\(year): \(name)")
-    
-    for actor in cast {
-        print(actor)
-    }
-}
+//if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
+//    print("\(year): \(name)")
+//    
+//    for actor in cast {
+//        print(actor)
+//    }
+//}
 
 // WARM UPS
 // 1. Print the name of the first movie.
 
+var firstElement = movies[0]
+
+if let firstMovieName = firstElement["name"] {
+    print(firstMovieName)
+}
+
+
 // 2. Print a list of all movie names, preferably on one line.
+
+
+for i in 0..<movies.count {
+    var elements = movies[i]
+    if let movieName = elements["name"] {
+        print("\(movieName), ",  terminator: " ")
+    }
+}
+print(" ")
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
@@ -122,19 +138,117 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // .
 // .
 // .
+//
+for j in 0..<movies.count {
+    var elements = movies[j]
+    if let movieName = elements["name"], movieYear = elements["year"] {
+        print("\(movieYear) : \(movieName) ")
+    }
+    
+}
+
 
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+
+
+for k in 0..<movies.count {
+    var elements = movies[k]
+    if let movieGenre = elements["genre"], movieName = elements["name"] {
+        
+        switch String(movieGenre) {
+            
+            case "animation":
+                print("\(movieName) : \(movieGenre) : \u{1F916}")
+            case "action":
+                print("\(movieName) : \(movieGenre) : \u{1F4AA}\u{1F3FD}")
+            case "drama":
+                print("\(movieName) : \(movieGenre) : \u{1F48F}")
+            default:
+                print("\(movieName) is an unknown genre : \(movieGenre) :\u{1F446}\u{1F3FC}")
+            
+        }
+        
+    }
+    
+}
+
+
 
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+var moviesByName = [String: [String:Any]]()
+
+for h in 0..<movies.count {
+    
+    var elementsDict = movies[h]
+    
+    for var (key, value) in elementsDict {
+    if var movieName = elementsDict["name"] as? String , movieYear = elementsDict["year"] as? Int, movieGenre = elementsDict["genre"], movieCast = elementsDict["cast"], movieDescription = elementsDict["description"] {
+
+        moviesByName[movieName] = elementsDict
+        
+        }
+        
+    }
+    
+}
+
+
+
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
+
+//movies by year
+
+var moviesByYear = [Int: [String:Any]]()
+
+for n in 0..<movies.count {
+    
+    var elementsDict = movies[n]
+    
+    
+    for var (key, value) in elementsDict {
+        if var movieName = elementsDict["name"] as? String, movieYear = elementsDict["year"] as? Int, movieGenre = elementsDict["genre"] as? String, movieCast = elementsDict["cast"], movieDescription = elementsDict["description"] {
+            
+            moviesByYear[movieYear] = elementsDict
+            
+        }
+        
+    }
+    
+}
+
+
+//movies by genre
+
+var moviesByGenre = [String: [String:Any]]()
+var h = 0
+
+for h in 0..<movies.count {
+    
+    var elementsDict = movies[h]
+    
+    for var (key, value) in elementsDict {
+        if var movieName = elementsDict["name"] as? String, movieYear = elementsDict["year"] as? Int, movieGenre = elementsDict["genre"] as? String, movieCast = elementsDict["cast"], movieDescription = elementsDict["description"] {
+
+            moviesByGenre[movieGenre] = elementsDict
+            
+        }
+        
+    }
+    
+}
+
+
+
 // What happens, and why? How might you change your approach?
 
+//movie year is an Int. So It can't map to [String: [String:Any]](), We can change it to [Int: [String:Any]]()
+
 // THE PROJECT
-// Iterate over all movies and print a formatted blurb about each one. Use this out put of the
+// Iterate over all movies and print a formatted blurb about each one. Use this output of the
 // first movie as a guide:
 
 // Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
@@ -146,3 +260,56 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+
+
+
+for i in 0..<movies.count {
+    var elementsDict = movies[i]
+    for x in elementsDict {
+        if let movieName = elementsDict["name"] as? String , movieYear = elementsDict["year"] as? Int, movieGenre = elementsDict["genre"] as? String, movieCast = elementsDict["cast"] as? [String], movieDescription = elementsDict["description"] as? String {
+            
+            var char = Array(movieGenre.characters)
+            var firstChar = char[0]
+            var movieCastArray = movieCast
+            var count = movieCastArray.count
+            var cast = " "
+            var mCast = " "
+            var article = " "
+            var presidentName = " "
+            
+            switch String(firstChar) {
+                case  "a", "e", "i", "o", "u":
+                article = "an"
+                default:
+                article = "a"
+                
+            }
+            
+            for (year, president) in presidentsByYear {
+                if year == movieYear {
+                    presidentName = president
+                }
+            }
+            
+            for i in 0..<count {
+                switch i {
+                case count-1:
+                    cast = "and " + movieCastArray[i]
+                    mCast += cast
+                default:
+                    cast =  movieCastArray[i] + ", "
+                    mCast += cast
+                }
+            }
+            
+            
+            print("\(movieName) came out in \(movieYear). It was \(article) \(movieGenre) starring\(mCast). \(presidentName) was the president that year.")
+            break
+            
+        }
+    }
+}
+print(" ")
+
+
