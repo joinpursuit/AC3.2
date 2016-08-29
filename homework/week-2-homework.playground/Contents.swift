@@ -213,13 +213,15 @@ var conTwo = "an"
 
 for movie in movies {
     if let name = movie["name"], year = movie["year"], genre = movie["genre"], cast = movie["cast"] {
+        var string = String(cast)
+        var string2 = string.stringByReplacingOccurrencesOfString("[", withString: "").stringByReplacingOccurrencesOfString("]", withString: "").stringByReplacingOccurrencesOfString("\"", withString: "")
         for (key, president) in presidentsByYear {
             if key == year as? Int {
                 if genre as? String == "drama" || genre as? String == "action" {
-            print("\(name) came out in \(year). It was \(con) \(genre) starring \(cast).")
+                    print("\(name) came out in \(year). It was \(con) \(genre) starring \(string2).")
             print("\(president) was president that year.")
                 } else {
-                    print("\(name) came out in \(year). It was \(conTwo) \(genre) starring \(cast).")
+                    print("\(name) came out in \(year). It was \(conTwo) \(genre) starring \(string2).")
                     print("\(president) was president that year.")
                 }
             }
