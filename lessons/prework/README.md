@@ -37,41 +37,57 @@ print(c4qHQ)
 
 
 // Problem 1. Declare a variable string called "str" that holds the string "Hello, Playground"
+var str = "Hello, Playground"
 
 // Problem 2. Declare a variable integer called "one" that holds the value 1
+var one = 1
 
 // Problem 3. Change "one" value to 4
+one = 4
 
 // Problem 4. Change "one" value to 1.2 (hint: you might need to change "one"'s declaration first)
+one : Double = 1.2
 
 // Problem 5. Declare a let constant string called "name" that holds your full name.
+let name = "Ana Ma"
 
 // Problem 6. Create a let constant called "age" and give it the value of your age.
+let age = "25"
 
 // Problem 7. Using the code below, create a variable 'aboutMe' that contains your name and age.
 
 let aboutMe = "My name is \() and I'm \() years old."
+var aboutMe2 = "My name is \(name) and I'm \(age) years old."
 
 // Problem 8. Using the code below, Create variables called "myBestFriendsName"
 // and "myBestFriendsAge" and give them both appropriate values.
 // Insert the correct variables inside the (). Print "bestFriend".
 
 let bestFriend = "My best friend is \() years old and her name is \()."
+var myBestFriendsName = "Ella"
+var myBestFriendsAge = 25
+var BestFriend2 = "My best friend is \(myBestFriendsAge) years old and her name is \(myBestFriendsName)." 
 
 // Problem 9. Create a Bool variable called "aliensAreReal", give it a value and print it.
+var aliensAreReal = true
 
 // Problem 10. Describe your hometown.
 // a. Create a string called "townName" which holds your town's name.
+var townName = "Mineral Town"
 
 // b. Create an integer variable called "population" and give it a value.
+var population = 12345
 
 // c. (Why should "population" be a variable instead of a constant?)
-// Answer (not code):
+// Answer (not code): Because the population is always changing.
 
 // d. Create a constant called "numberOfSchools" and give it a value.
+let numberOfSchools = 50
 
 // e. Using the code below, create a variable called "townDescription" below and
 //    insert the correct constant or variable, then print.
 
 let townDescription = "My hometown is \() and has a population of \(). There are \() schools in town."
+var townDescription2 = "Myhometown is \(townName) and has a population of \(population). There are \(numberOfSchools) schools in town."
+
 ```

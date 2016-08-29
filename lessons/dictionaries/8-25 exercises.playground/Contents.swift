@@ -143,25 +143,48 @@ var code = [
 ]
 
 var message = "hello world"
-var array: [Character] = []
-
-for i in message.characters {
-    array.append(i)
+//var array: [Character] = []
+//
+//for i in message.characters {
+//    array.append(i)
+//}
+//print(array)
+//
+//for key in code.keys.sort() {
+//    for j in array {
+//        if Character(key) == j {
+//            print(code[key]!, terminator: "")
+//        }
+//    }
+//}
+var deCode: [String: String] = [:]
+for (key,value) in code {
+    deCode[value] = key
 }
-print(array)
+var encodedString: String = ""
 
-for key in code.keys.sort() {
-    for j in array {
-        if Character(key) == j {
-            print(code[key]!, terminator: "")
-        }
+for c in message.characters{
+    if let encodedOne = deCode[String(c)]{
+        encodedString += encodedOne
+    } else {
+        encodedString += String(c)
     }
 }
+print(encodedString)
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
-
+var decodedMessage = ""
+for c in encodedMessage.characters {
+    if let encodedTwo = deCode[String(c)]{
+        decodedMessage += encodedTwo
+    }else {
+        decodedMessage += String(c)
+    }
+}
+print(decodedMessage)
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
@@ -189,7 +212,22 @@ var people: [[String:String]] = [
     ]
 ]
 
+for dictionary in people {
+    if let firstname = dictionary["firstName"] {
+        print(firstname, terminator: " ")
+    }
+    print()
+}
+
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
+var fullname : [ String ] = []
+for array in people {
+    if let firstName = array["firstName"], lastName = array["lastName"]{
+        var combined = "\(firstName) \(lastName)"
+        fullname.append(combined)
+    }
+}
+print(fullname)
 
 //6)
 //You are given an array of dictionaries. Each dictionary in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -223,33 +261,94 @@ var peopleWithScores: [[String: String]] = [
     ]
 ]
 
+var highestScore = 0
+for people in peopleWithScores {
+    if let score = people["score"] where Int(score)! > highestScore{
+            highestScore = Int(score)!
+    }
+    if highestScore == Int(people["score"]!){
+        if let firstName = people["firstName"], let lastName = people["lastName"]{
+            print("\(firstName) \(lastName)")
+        }
+    }
+}
+
+
 /*6b) Print out the dictionary above in the following format:
 full name - score
 ...
 */
 
+var scoreBoard: [String:String] = [:]
+for people in peopleWithScores{
+    if let firstName = people["firstName"], let lastName = people["lastName"], let score = people["score"]{
+        var fullname = "\(firstName) \(lastName)"
+        scoreBoard[fullname] = score
+    }
+}
+print(scoreBoard)
+
 //7)
 //You are given an array of integers. Find out the frequency of each one.
 //The frequency of a number is the number of times it appears in the array.
 //Print the numbers in ascending order followed by their frequency.
-
 var numbers = [1, 2, 3, 2, 3, 5, 2, 1, 3, 4, 2, 2, 2]
 
+var dictOfNums : [Int:Int] = [:]
 
+for num in numbers{
+    if dictOfNums[num] == nil{
+        dictOfNums[num] = 1
+    }else{
+        dictOfNums.updateValue(dictOfNums[num]!+1, forKey: num)
+    }
+}
+print(dictOfNums)
 
 //8)
 //Print the most common letter in the string below:
 
 var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 
+var dictOfMyString : [Character:Int] = [:]
+var mostCommonLetterCount = 0
+
+for c in myString.characters{
+    if dictOfMyString[c] == nil{
+        dictOfMyString[c] = 1
+    }else{
+        dictOfMyString.updateValue(dictOfMyString[c]!+1, forKey: c)
+    }
+    
+}
+print(dictOfMyString)
+
+for (x,y) in dictOfMyString {
+    if let j = dictOfMyString[x] where j > mostCommonLetterCount && x != " " {
+        mostCommonLetterCount = j
+        print("The most common letter in \"myString\" is the letter \(x) for repeating \(j) times")
+    }
+}
+
 
 //9)
 //Write code below that creates a dictionary where the keys are Ints in between 0 and 20 inclusive, and each key's value is its cube.
 
-
+var numInCubes : [Int: Int] = [:]
+for i in 0...20{
+    numInCubes[i] = i*i*i
+}
+print(numInCubes)
 
 //10)
 let statePop = ["Alabama": 4.8, "Alaska": 0.7, "Arizona": 6.7, "Arkansas": 3.0]
 let testStates = ["California","Arizona", "Alabama", "New Mexico"]
 
 //Write code below that iterates through testStates and prints out whether or not that key is in statePop
+for test in testStates{
+    if statePop[test] == nil {
+        print("There's not a value for the state of \(test).")
+    } else {
+        print("\(test) is in statePop")
+    }
+}

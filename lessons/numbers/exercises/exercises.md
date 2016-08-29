@@ -34,29 +34,29 @@ var b = 5
 var c = 4
 ```
 Compute:
-```
+```swift
 1. a += b
-= 25
+//= 25
 2. b -= c
-= 1
+//= 1
 3. b * (c + a)
-= 120
+//= 120
 4. (b * c) + a
-= 40
+//= 40
 5. b %= a
-= 5
+//= 5
 6. b %= c
-= 1
+//= 1
 ```
 
 #### Question 5.
 What are the values of ```div``` and ```div2``` below? Are they equal?
 ```
 let div = 11 / 3
-Answer = 3
+//Answer = 3
 let div2 = 11.0 / 3.0
-Answer = 3.66666666
-They are not eqaul.
+//Answer = 3.66666666
+//They are not eqaul.
 ```
 
 #### Question 6.
@@ -72,7 +72,7 @@ d. not enough information to infer about number's type
 #### Question 7.
 Without using Playground, will the below code print?
 Answer: error because the type of the two constants are not the same
-```
+```swift
 let twelve: Double = 12.0
 let thirteen: Float = 13.0
 
@@ -81,7 +81,7 @@ print(twelve + thirteen)
 
 #### Question 8.
 Write the following numbers in binary representation:
-```
+```swift
 a. 25
 11001
 b. 100
@@ -95,7 +95,7 @@ d. 255
 #### Question 8.
 Which of the following numbers can't be assigned to an Int8, and why?:
 Answer = d because it exceeds the bit size limit
-```
+```swift
 a. 25
 b. 100
 c. 65
@@ -106,6 +106,7 @@ d. 255
 
 What integer types could you use for the offending value in Question 8 that would not produce an error?:
 Answer = UInt8
+
 #### Question 10.
 
 What are the differences between ```Double``` and ```Int``` in the numbers they can represent and how they store them?
@@ -130,7 +131,9 @@ let totalWidth = width + extraWidth
 #### Question 13.
 
 Alter the code in Question 12 to do what we want it to.
+```swift
 var width: Double = 48.8
 var extraWidth: Float = 10.5
 
 let totalWidth = width + Double(extraWidth)
+```
