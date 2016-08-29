@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Have a good weekend!
 
 Weekend [homework](/homework/week-1-homework.md)
@@ -22,14 +23,24 @@ Tomorrow's lesson is on [Arrays](/lessons/arrays).
 >>>>>>> 378b97e4bd821c6d03c9ffcc7520cb42ba0ae0d3
 =======
 Today's lesson is on [Dictionaries](/lessons/dictionaries). 
+=======
+Great work everybody on the assessment!
+>>>>>>> de7a90190de53238650aefe72fad5b5366559402
 
-This afternoon Liz will lead you in Industry Readiness stuff.
+Have a great weekend. To cut into that a bit 
+I've prepared this [homework](/homework/week-2-playground). I do hope
+it's at least a little fun. 
 
+<<<<<<< HEAD
 This evening is your Meetup.
 
 And tomorrow (Friday), we'll review and have an assessment and a short day (!). We're
 aware of the tightness of this schedule and are preparing the assessment with it in mind.
 >>>>>>> e8a0b7c78e9ee5ab381fd8a834f58f81034b23a3
+=======
+Also don't forget to read up on [functions](/lessons/functions-one), the
+subject of Monday's lesson.
+>>>>>>> de7a90190de53238650aefe72fad5b5366559402
 
 ## Schedule
 
