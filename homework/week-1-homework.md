@@ -18,7 +18,7 @@ Provide the following constants/variable names with the most appropriate type an
 Convert the following decimal numbers to Binary:
 * 55 >> 110111
 * 122 >> 1111010
-* -1 >> 10000001
+* -1 >> 11111111
 * 15 >> 1111
 
 ```swift

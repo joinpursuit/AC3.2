@@ -7,9 +7,21 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var citiesDict = ["China":"Beijing", "Philippines": "Manilla", "Korea": "Seoul"]
+
 //b) Add two more countries to your dictionary
 
-//c) Translate at least 3 of the capital names into another language
+citiesDict["US"] = "DC"
+citiesDict["Japan"] = "Tokyo"
+citiesDict
+
+//c) Translate at least 3 of the capital names (values) into another language
+
+citiesDict["China"] = "Not Beijing"
+citiesDict["Philippines"] = "Vanilla"
+citiesDict["Korea"] = "Not North Korea"
+print(citiesDict)
+
 
 //2)
 
@@ -17,16 +29,56 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+var sum = someDict["Three"]! + someDict["Five"]!
+
+var sum2 = 0
+
+for key in someDict.keys {
+    if key == "Three" || key == "Five" {
+        sum2 += someDict[key]!
+    }
+}
+print(sum2)
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
 
-//c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
+someDict["Six"] = 2
+someDict["Seven"] = 11
+print(someDict)
 
-//d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+//c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
+var product = 1
+for value in someDict.values {
+    product *= value
+}
+print(product)
+someDict["productUpToSeven"] = product
+
+
+//d) Make a key called "sumUpToSix" and set its value equal to the sum of the values "One", "Two", "Three", "Four", "Five" and "Six"
+
+var sumThree = 0
+for keys in someDict.keys {
+    if keys != "Seven" && keys != "productUpToSeven" {
+        sumThree += someDict[keys]!
+    }
+}
+print(sumThree)
+
+someDict["sumUpToSix"] = sumThree
 
 //e) Remove the new keys made for parts c and d
 
+someDict["productUpToSeven"] = nil
+someDict.removeValueForKey("sumUpToSix")
+someDict
+
 //f) Add 2 to every value inside of someDict
 
+for key in someDict.keys {
+    someDict[key]!+=2
+}
+someDict
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
@@ -38,12 +90,25 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “Jon Krakaur” - 6.1
 */
 
+var americanLit: [String: Float] = ["Mark Twain": 8.9, "Nathaniel Hawthorne" : 5.1, "John Steinbeck" : 2.3, "C.S. Lewis" : 9.9, "Jon Krakaur" : 6.1]
+
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+
+print(americanLit["John Steinbeck"]!)
+americanLit["Erik Larson"] = 9.2
+americanLit
+//**
+if americanLit["John Krakaur"] > americanLit["Mark Twain"] {
+    print("John is better")
+} else {
+    print("Mark is better")
+}
 
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
-
-
+for (key, value) in americanLit {
+    print("\(key): \(value)")
+}
 
 
 //4 -7 source :  https://www.weheartswift.com/dictionaries/)
@@ -81,11 +146,32 @@ var code = [
 
 var message = "hello world"
 
+//var codedMsg = ""
+//for char in message.characters {
+//    for key in code.keys {
+//        if String(char) == key {
+//            codedMsg += code[key]!
+//        }
+//    }
+//}
+//print(codedMsg)
+
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+
+var codedMsg = ""
+for char in encodedMessage.characters {
+    for key in code.keys {
+        if String(char) == key {
+            print(char, separator: "", terminator: " ")
+            codedMsg += code[key]!
+        }
+    }
+}
+print(codedMsg)
 
 
 //5)
@@ -114,7 +200,23 @@ var people: [[String:String]] = [
     ]
 ]
 
+var firstNames = [String]()
+
+for dict in people {
+    if let first = dict["firstName"]{
+    firstNames.append(first)
+    }
+}
+print(firstNames)
+
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
+
+var fullNames = [String]()
+for dict in people {
+    if (first, last) in  dict {
+        print(\(first), \(last))
+    }
+}
 
 //6)
 //You are given an array of dictionaries. Each dictionary in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -178,3 +280,8 @@ let statePop = ["Alabama": 4.8, "Alaska": 0.7, "Arizona": 6.7, "Arkansas": 3.0]
 let testStates = ["California","Arizona", "Alabama", "New Mexico"]
 
 //Write code below that iterates through testStates and prints out whether or not that key is in statePop
+
+
+
+
+

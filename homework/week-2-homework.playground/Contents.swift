@@ -114,24 +114,62 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // WARM UPS
 // 1. Print the name of the first movie.
 
+print(movies[0]["name"])
+
 // 2. Print a list of all movie names, preferably on one line.
+
+for array in movies{
+    print(array["name"]!, separator: " ", terminator: ", ")
+}
 
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
 // 2001: Shrek
-// .
-// .
-// .
+
+for movie in movies {
+    print("\(movie["year"]!): \(movie["name"]!)")
+}
 
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
 
-// 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
+for movie in movies {
+    if let genre = movie["genre"] {
+            switch String(genre) {
+                case "animation":
+                    print("\(movie["name"]!):\u{270F}")
+                case "drama":
+                    print("\(movie["name"]!):\u{1F3AD}")
+                case "action":
+                    print("\(movie["name"]!):\u{1F3C3}")
+            default:
+                break
+        }
+    }
+}
+
+
+// 5. In code, not by literal initialization, create a new dictionary called moviesByName of type //NEED HELP WITH THESE
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+    //var moviesByName: [String:[String:Any]] = [
+    //    "Title":
+    //    ["year": 1999, "genre": "action"],
+    //    "Title2":
+    //    ["year": 2000, "genre": "drama"]
+    //]
+    //
+    //for movie in movies {
+    //    
+    //}
+
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
+
+
+
+
 
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
@@ -146,3 +184,9 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+for movie in movies {
+    if let name = movie["name"], year = movie["year"], cast = movies[] {
+        print(name, year)
+    }
+}

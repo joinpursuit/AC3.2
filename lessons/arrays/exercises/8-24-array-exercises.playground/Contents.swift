@@ -246,7 +246,12 @@ print(sum3)
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
-var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+var toRotate = [[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]]
+//    [7, 4, 1],
+//    [8, 5, 2],
+//    [9, 6, 3]]
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
