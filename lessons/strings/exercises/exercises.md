@@ -113,8 +113,12 @@ Initialize a String with a character. Show that it is a Character, and not anoth
 to initialize it.
 
 ```
-var c: Character = "c"
-var str9 = String(c)
+var str9 = "c"
+var c = Character(str9)
+
+if c is Character {
+    print("it is a character")
+}
 ```
 
 ### Unicode exercises
@@ -153,4 +157,21 @@ Print the below flower box using the following information.
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
 
+```
+
+```
+
+for row in 1...10 {
+    if row == 1 || row == 10 {
+        for _ in 1...11 {
+            print("-", terminator: " ")
+        }
+        print()
+    } else {
+        for _ in 1...5 {
+            print("| \u{2698}", terminator: " ")
+        }
+        print("|")
+    }
+}
 ```
