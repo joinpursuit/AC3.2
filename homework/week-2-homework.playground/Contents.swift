@@ -22,7 +22,7 @@ var movies: [[String:Any]] = [
         "name": "Zootopia",
         "year": 2016,
         "genre": "animation",
-        "cast": ["Ginnifer Goodwin", "Jason Bateman", "Idris Elba"],
+        "cast": ["Ginnifer Goodwin", "Jason Bateman", "Idris Elba", "BLAHHH"],
         "description": "From the largest elephant to the smallest shrew, the city of Zootopia is a mammal metropolis where various animals live and thrive. When Judy Hopps becomes the first rabbit to join the police force, she quickly learns how tough it is to enforce the law."
     ],
     [
@@ -105,9 +105,15 @@ var presidentsByYear = [1997 : "Bill Clinton",
 
 //// WARM UPS
 //// 1. Print the name of the first movie.
-//
+//THIS IS OPTIONAL BINDING
+if let name = (movies[0]["name"]) {
+    print(name)
+}
+//If you try to force unwrap something thats not there, it will break which is why we use optional binding as compared to force unwrapping
+
+
 //for aMovie in movies {
-//    
+//
 //    if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
 //        if String(name) == "Minions"{
 //            print(" \(name)")
@@ -125,24 +131,23 @@ var presidentsByYear = [1997 : "Bill Clinton",
 
 
 //// 2. Print a list of all movie names, preferably on one line.
-//for aMovie in movies { if let name = aMovie["name"] { print(" \(name)") } }
+for aMovie in movies { if let name = aMovie["name"] { print(" \(name)") } }
 
 
-//// 3. Print a list of all movie years and names as follows:
-//// 2015: Minions
-//// 2001: Shrek
-//for eachDictionary in movies {//
-//    for names in eachDictionary.values {
-//        if String(names) == "Minions"{
-//            print(names)
-//        }
-//        if String(names) == "Shrek"{
-//            print(names)
-//        }
-//    }
-//}
+// 3. Print a list of all movie years and names as follows:
+// 2015: Minions
+// 2001: Shrek
+for aMovie in movies {
+
+    if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
+        
+        print("\(year): \(name)")
+        
+    }
+}
 //// 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 //// and add an appropriate emoji to represent its genre
+
 //for aMovie in movies {
 //    
 //    if let name = aMovie["name"] as? String, genre = aMovie["genre"] as? String {
@@ -175,7 +180,9 @@ for var aMovie in movies {
         moviesByName[name] = aMovie
         }
 }
-print(moviesByName, terminator: " ")
+
+let sortedArray = Array(moviesByName.keys.sort(<))
+print(sortedArray)
 
 
 //
@@ -233,16 +240,28 @@ for var aMovie in movies {
     for (year,president) in presidentsByYear {
         
         if let genre = aMovie["genre"] as? String, name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as?[String], president = presidentsByYear[year] {
-            
-           aMovie.removeValueForKey("genre")
+            var casts = ""
+            for (counter,actor) in cast.enumerate() {
+                casts += "\(actor)"
+                if counter == (cast.count - 2) {
+                    casts += ", and "
+                }
+                else if counter == cast.count - 1 {
+                    continue
+                }
+                else {
+                    casts += ", "
+                }
+            }
+            aMovie.removeValueForKey("genre")
            moviesByGenre[genre] = aMovie
             
             if genre == "drama"{
-                print("\(name) came out in \(year). It was a \(genre) starring \(cast[0]), \(cast[1]), and \(cast[cast.count-1]). \(president) was president that year.")
+                print("\(name) came out in \(year). It was a \(genre) starring \(casts).\n\(president) was president that year.\n")
             }
                 
             else {
-                print("\(name) came out in \(year). It was an \(genre) starring \(cast[0]), \(cast[1]), and \(cast[cast.count-1]). \(president) was president that year.")
+                print("\(name) came out in \(year). It was an \(genre) starring \(casts).\n\(president) was president that year.\n")
 
             }
         }
