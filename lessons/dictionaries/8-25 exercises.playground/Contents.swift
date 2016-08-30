@@ -37,6 +37,12 @@ print(product)
 someDict["productUpToSeven"] = (product)
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
 var sum = 0
+//
+//for (key, value) in someDict {
+//    if key != "Seven" && key != "ProductUpToSeven" {
+//        sum += value
+//    }
+//}
 for i in someDict.values {
     sum += i
     
@@ -48,10 +54,16 @@ someDict.removeValueForKey("productUpToSeven")
 someDict.removeValueForKey("Seven")
 print(someDict)
 //f) Add 2 to every value inside of someDict
-for addTwo  in someDict.values {
-    addTwo + 2
+for (key, value) in someDict {
+    someDict.updateValue(value+2, forKey: key)
+    print(someDict)
 }
-print(someDict)
+
+//for addTwo  in someDict.values {
+//    addTwo + 2
+//    print(someDict)
+//}
+
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
 var scoresDict: [String:Float] = [
@@ -104,9 +116,28 @@ var code = [
     "z" : "a"
 ]
 var message = "hello world"
+
+var encodedString = ""
+for c in message.characters {
+    if let encodedCharacters = code[String(c)] {
+    encodedString += encodedCharacters
+    } else {
+        encodedString += ""
+    }
+}
+print(encodedString)
+
+
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+
+var deCode = [String: String]()
+
+for (key, value) in code {
+    deCode[value] = key
+}
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
 var people: [[String:String]] = [
@@ -131,6 +162,13 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+var FirstNames = [String]()
+for dict in people {
+    if let first = dict["firstName"]{
+        firstNames.append(first)
+    }
+}
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 //6)
 //You are given an array of dictionaries. Each dictionary in the array describes the score of a person. Find the person with the best score and print his full name.

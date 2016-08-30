@@ -109,7 +109,18 @@
 //let target = 84
 //var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 //
-//
+//var wasFound = false
+//for number in fourthListOfNumbers where number == target {
+//    wasFound = true
+//}
+//if wasFound {
+//    print("yes")
+//} else {
+//    print("no")
+//}
+
+
+
 ////Write all your code below:
 //
 //
