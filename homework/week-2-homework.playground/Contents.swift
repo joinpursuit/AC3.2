@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -235,5 +235,4 @@ for i in 0..<movies.count {
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
-=======
->>>>>>> 9cc5679c92519db1993fda2dc0b2f87aac434d33
+

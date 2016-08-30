@@ -9,9 +9,12 @@ let tipPercentage = 0.15
 
 //Write your code below
 
+func totalWithTip(cost: Double, tipPercent tip: Double) {
+    let total = cost + (cost * tip)
+    print(total)
+}
 
-
-let myFinalCost = totalWithTip() //Fill in the arguments
+let myFinalCost = totalWithTip(<#T##cost: Double##Double#>, tipPercent: <#T##Double#>) //Fill in the arguments
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
