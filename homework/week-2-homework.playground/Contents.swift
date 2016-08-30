@@ -236,33 +236,58 @@ print(sortedBYear.sort())
 
 //var actorOn = String()
 
-for i in 0..<movies.count {
-    if let allNames = movies[i]["name"] as? String, allYears = movies[i]["year"] as? Int, allGenre = movies[i]["genre"] as? String, var wholeCast = movies[i]["cast"] as? [String], descript = movies[i]["description"] as? String {
-        
-//        for x in 0..<wholeCast.count{
-//            actorOn = wholeCast[x]
+//for i in 0..<movies.count {
+//    if let allNames = movies[i]["name"] as? String, allYears = movies[i]["year"] as? Int, allGenre = movies[i]["genre"] as? String, var wholeCast = movies[i]["cast"] as? [String], descript = movies[i]["description"] as? String {
+//        
+////        for x in 0..<wholeCast.count{
+////            actorOn = wholeCast[x]
+////        }
+//        var actorsString = ""
+//        
+//        for actor in wholeCast {
+//            actorsString += actor + ", "
+//            
 //        }
-        var actorsString = ""
-        
-        for actor in wholeCast {
-            actorsString += actor + ", "
-            
-        }
-        
-    for (key, value) in presidentsByYear {
-        if let allPres = presidentsByYear[key] where allYears == key {
-                if allGenre == "drama" {
-                    print("\(allNames) came out in \(allYears). It was a \(allGenre) movie staring \(actorsString). \(value) was the President that Year.")
-                } else {
-                    print("\(allNames) came out in \(allYears). It was an \(allGenre) movie staring \(actorsString). \(value) was the President that Year.")
-                }
-             //break
-        }
-        
-            
-       }
+//        
+//    for (key, value) in presidentsByYear {
+//        if let allPres = presidentsByYear[key] where allYears == key {
+//                if allGenre == "drama" {
+//                    print("\(allNames) came out in \(allYears). It was a \(allGenre) movie staring \(actorsString). \(value) was the President that Year.")
+//                } else {
+//                    print("\(allNames) came out in \(allYears). It was an \(allGenre) movie staring \(actorsString). \(value) was the President that Year.")
+//                }
+//             //break
+//        }
+//        
+//            
+//       }
+//            }
+//    }
+
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+        var castMembers = ""
+        for (index, actor) in cast.enumerate() {
+            if index == cast.count - 1 {
+                castMembers.appendContentsOf("and \(actor)")
+            } else {
+                castMembers.appendContentsOf("\(actor), ")
             }
+        }
+        let vowels: [Character] = ["a", "e", "i", "o", "u"]
+        var genreGrammar = ""
+        for m in vowels {
+            if m == genre[genre.startIndex] {
+                genreGrammar = "an \(genre)"
+                break
+            } else {
+                genreGrammar = "a \(genre)"
+                
+            }
+        }
+        for k in presidentsByYear where year == k.0{
+            print("\(name) came out in \(year). It was \(genreGrammar) staring \(castMembers).\n\(k.1) was president that year.\n")
+        }
+        
     }
-
-
-
+}
