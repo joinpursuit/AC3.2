@@ -185,6 +185,15 @@ b) Using a switch statement
 
 ```swift
 let myTuple: (Int, Int) = (5, 10)
+
+let myTuple = (5, 10)
+switch myTuple {
+case let (a,b) where a + b >= 15:
+print("it works")
+default:
+print("Again")
+}
+
 ```
 
 ### Question 9.
@@ -196,6 +205,11 @@ switch myTupleTwo{
    
 }
 
+let studentNameAndClass = ("Ben", 3.2)
+switch studentNameAndClass {
+case let (a,b):
+print("Hello \(a) welcome to class \(b)")
+}
 ```
 
 ### Question 10.
@@ -203,12 +217,18 @@ Consider the below switch with a tuple.
 * Add a case for when _y_ is __double__ the value of _x_
 * Add a case for when _y_ is __triple__ the value of _x_
 
-```swift
+var x = 2
+var y = 6
 switch (x,y) {
 case let (x,y) where x==y :
-    print("x is equal to y")
+print("x is equal to y")
+case let (x,y) where y == 2*x:
+print("Ok")
+case let (x,y) where y == 3*x:
+print("I did it.")
 case let (x,y):
-    print("Nothing is special about this tuple")
+print("Nothing is special about this tuple")
+}
 }
 ```
 
