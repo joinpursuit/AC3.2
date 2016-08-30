@@ -176,6 +176,8 @@ var people: [[String:String]] = [
     ]
 ]
 
+
+
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
 //6)
