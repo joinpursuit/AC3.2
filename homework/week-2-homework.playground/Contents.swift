@@ -249,3 +249,8 @@ for movie in movies {
     }
 }
 
+
+func sayHelloC(greeting: String = "Hello!") {
+    print(greeting)
+}
+sayHelloC()
