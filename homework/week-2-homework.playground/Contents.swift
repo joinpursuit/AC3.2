@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import UIKit
 //
 //// movies is an Array of Dictionaries
@@ -269,7 +268,3 @@ for var aMovie in movies {
   
     }
 }
-
-
-=======
->>>>>>> 9cc5679c92519db1993fda2dc0b2f87aac434d33
