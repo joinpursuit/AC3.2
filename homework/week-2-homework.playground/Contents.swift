@@ -102,43 +102,43 @@ let aMovie: [String:Any] = [
     "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
     "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
 ]
-//print(aMovie)
-//if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
-//    print("\(year): \(name)")
-//}
-//    
-//for i in cast {
-//        print(i)
-//    }
-//}
+print(aMovie)
+if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
+    print("\(year): \(name)")
+}
+    
+for i in cast {
+        print(i)
+    }
+}
 
 //
 // WARM UPS
 // 1. Print the name of the first movie.
-let movies1 = movies[0]
-let name = movies1["name"] as! String;
-print(name)
+//let movies1 = movies[0]
+//let name = movies1["name"] as! String;
+//print(name)
 
 
 
 
 // 2. Print a list of all movie names, preferably on one line.
-var index = 0
-for i in movies {
-   var movies2 = movies[index]
-    var name1 = movies2["name"] as! String;
-    print(name1, terminator: " ", separator: "")
-    index += 1
-}
+//var index = 0
+//for i in movies {
+//   var movies2 = movies[index]
+//    var name1 = movies2["name"] as! String;
+//    print(name1, terminator: " ", separator: "")
+//    index += 1
+//}
 
 // 3. Print a list of all movie years and names as follows:
-var index = 0
-for i in movies {
-    var movies2 = movies[index]
-    let name = movies2["name"] as! String, year = movies2["year"] as! Int;
-    print("\(year): \(name)")
-    index += 1
-}
+//var index = 0
+//for i in movies {
+//    var movies2 = movies[index]
+//    let name = movies2["name"] as! String, year = movies2["year"] as! Int;
+//    print("\(year): \(name)")
+//    index += 1
+//}
 
 
 // 2015: Minions
@@ -150,24 +150,24 @@ for i in movies {
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
 //print("\u{1f632}")
-
-var index = 0
-for i in movies {
-    var movies2 = movies[index]
-    var name1 = movies2["name"] as! String, genre = movies2["genre"] as! String;
-    switch genre {
-        case "animation":
-            print("\(name1) \u{1f604}")
-        case "action":
-            print("\(name1) \u{1f601}")
-        case "drama":
-            print("\(name1) \u{1f61f}")
-    default:
-        break
-    }
-    
-    index += 1
-}
+//
+//var index = 0
+//for i in movies {
+//    var movies2 = movies[index]
+//    var name1 = movies2["name"] as! String, genre = movies2["genre"] as! String;
+//    switch genre {
+//        case "animation":
+//            print("\(name1) \u{1f604}")
+//        case "action":
+//            print("\(name1) \u{1f601}")
+//        case "drama":
+//            print("\(name1) \u{1f61f}")
+//    default:
+//        break
+//    }
+//    
+//    index += 1
+//}
 
 
 
@@ -177,37 +177,37 @@ for i in movies {
 // with the name as key. Sort by name.
 
 
-var movies2 = movies[index]
-for i in movies {
-    movies2 = movies[index]
-    var name1 = movies2["name"] as! String;
-    var moviesByName = [name1:[movies2]]
-    [moviesByName].sort
-    }
-    print(moviesByName)
-    index += 1
-}
-
-
+//var movies2 = movies[index]
+//for i in movies {
+//    movies2 = movies[index]
+//    var name1 = movies2["name"] as! String;
+//    var moviesByName = [name1:[movies2]]
+//    [moviesByName].sort
+//    }
+//    print(moviesByName)
+//    index += 1
+//}
+//
+//
 
 
 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
-
-var movies2 = movies[index]
-for i in movies {
-    movies2 = movies[index]
-    var year = movies2["year"] as! Int, genre = movies2["genre"] as! String, name1 = movies2["name"] as! String;
-    var moviesByGenre = [genre:[name1]]
-    var moviesByYear = [year:[name1]]
-    [moviesByYear].sort
-    [moviesByGenre].sort
-//    print(moviesByGenre)
-//    print(moviesByYear)
-    index += 1
-}
-
+//
+//var movies2 = movies[index]
+//for i in movies {
+//    movies2 = movies[index]
+//    var year = movies2["year"] as! Int, genre = movies2["genre"] as! String, name1 = movies2["name"] as! String;
+//    var moviesByGenre = [genre:[name1]]
+//    var moviesByYear = [year:[name1]]
+//    [moviesByYear].sort
+//    [moviesByGenre].sort
+////    print(moviesByGenre)
+////    print(moviesByYear)
+//    index += 1
+//}
+//
 
 
 
@@ -218,15 +218,15 @@ for i in movies {
 // Minions came out in 2015. It was an animation starring Sandra Bullock, Jon Hamm, and Michael Keaton.
 // Barack Obama was president that year.
 
-var year = movies2["year"] as! Int, genre = movies2["genre"] as! String, name1 = movies2["name"] as! String, cast = movies2["cast"] as! String, description = movies2["description"] as! String;
-
-for movie in movies {
-    switch movies2["genre"] {
-        case "animation":
-        print("\(name1) came out in \(year). It was an \(genre) starring \(cast). \(
-    }
-
-
+//var year = movies2["year"] as! Int, genre = movies2["genre"] as! String, name1 = movies2["name"] as! String, cast = movies2["cast"] as! String, description = movies2["description"] as! String;
+//
+//for movie in movies {
+//    switch movies2["genre"] {
+//        case "animation":
+//        print("\(name1) came out in \(year). It was an \(genre) starring \(cast). \(
+//    }
+//
+//
 // Note how it should generate "an animation" in contrast to "a drama"
 // Similarly notice the "and" before the last member of the cast listed.
 // Get it to work any which way you can but try your best to follow these guidelines
