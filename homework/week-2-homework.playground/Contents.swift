@@ -192,7 +192,7 @@ print(" ")
 // with the name as key. Sort by name.
 
 
-var moviesByName: [String:[String:Any]] = [:]
+var moviesByName = [String:[String:Any]]()
 
 for i in 0..<movies.count{
     var movieArray = movies[i]
@@ -204,10 +204,11 @@ moviesByName
 
 //print(moviesByName)
 
-for keys in moviesByName.keys.sort(){
-  var values = moviesByName[keys]
-    print("\(keys) : \(values)")
+for key in moviesByName.keys.sort(){
+    if let movie = moviesByName[key]{
+    print("\(key) : \(movie)")
     print(" ")
+}
 }
 
 
