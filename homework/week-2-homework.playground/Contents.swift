@@ -17,7 +17,7 @@ var movies: [[String:Any]] = [
         "name": "Shrek",
         "year": 2001,
         "genre": "animation",
-        "cast": ["Mike Myers", "Eddie Murphy", "Cameron Diaz"],
+        "cast": ["Mike Myers", "Eddie Murphy"],
         "description": "Once upon a time, in a far away swamp, there lived an ogre named Shrek whose precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were all banished from their kingdom by the evil Lord Farquaad. Determined to save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess Fiona to be Farquaad\"s bride. Rescuing the Princess may be small compared to her deep, dark secret."
     ],
     [
@@ -31,7 +31,7 @@ var movies: [[String:Any]] = [
         "name": "Avatar",
         "year": 2009,
         "genre": "action",
-        "cast": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+        "cast": ["Sam Worthington"],
         "description": "On the lush alien world of Pandora live the Na\"vi, beings who appear primitive but are highly evolved. Because the planet\"s environment is poisonous, human/Na\"vi hybrids, called Avatars, must link to human minds to allow for free movement on Pandora. Jake Sully, a paralyzed former Marine, becomes mobile again through one such Avatar and falls in love with a Na\"vi woman. As a bond with her grows, he is drawn into a battle for the survival of her world."
     ],
     [
@@ -165,11 +165,6 @@ for x in 0..<movies.count {
 }
 
 
-//        for actor in cast {
-//            print(actor)
-//        }
-
-
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
@@ -184,17 +179,11 @@ for x in 0..<movies.count {
         
     }
 }
-
-//var movies: [[String:Any]] = [
-//    [
-//        "name": "Minions",
-//        "year": 2015,
-//
-
-
-//var sortedMoviesByName: [[String:Any]] = [Array(moviesByName.keys).sort(<): moviesByName["Avatar"]!]
-
-print(moviesByName.keys.sort(<))
+for k in moviesByName.keys.sort() {
+    print("\(k): \(moviesByName[k])")
+    print("")
+    
+}
 
 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
@@ -210,7 +199,7 @@ for x in 0..<movies.count {
     }
 }
 
-print(moviesByGenre.keys.sort(<))
+print(moviesByGenre.keys.sort())
 
 
 var moviesByYear: [Int: [String: Any]] = [:]
@@ -223,7 +212,7 @@ for x in 0..<movies.count {
     }
 }
 
-print(moviesByYear.keys.sort(<))
+print(moviesByYear.keys.sort())
 
 
 
@@ -245,7 +234,7 @@ print(moviesByYear.keys.sort(<))
 
 
 
-
+//
 //for x in 0..<movies.count {
 //    if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String, presi = presidentsByYear[year] {
 //        
@@ -258,18 +247,24 @@ print(moviesByYear.keys.sort(<))
 //        
 //    }
 //}
-//
+
 
 
 for x in 0..<movies.count {
     if let name = movies[x]["name"] as? String, year = movies[x]["year"] as? Int, cast = movies[x]["cast"] as? [String], genre = movies[x]["genre"] as? String, presi = presidentsByYear[year] {
         
         var actors = ""
-        for a in 0..<(cast.count - 2) {
-            actors += "\(cast[a]), "
+        if cast.count >= 2 {
+            for a in 0..<(cast.count - 2) {
+                actors += "\(cast[a]), "
+            }
+            actors += "\(cast[cast.count - 2]) and \(cast[cast.count - 1])"
+        } else if cast.count == 2 {
+            actors += "\(cast[0]) and \(cast[1]))"
+        } else {
+            actors += "\(cast[0])"
         }
-        actors += "\(cast[cast.count - 2]) and \(cast[cast.count - 1])"
-        
+    
         var genreLetter = genre[genre.startIndex.advancedBy(0)]
         
         if genreLetter == "a" || genreLetter == "e" || genreLetter == "i" || genreLetter == "o" || genreLetter == "u" {
@@ -278,7 +273,7 @@ for x in 0..<movies.count {
             print("\(name) came out in \(year). It was a \(genre) staring \(actors).")
         }
         print("\(presi) was president that year.")
-        
+    
     }
 }
 
