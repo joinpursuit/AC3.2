@@ -254,6 +254,8 @@ for movieName in moviesByName{
             
             if counter == (cast.count - 1) {
                 casts += " and"
+            }else{
+                casts += ","
             }
             casts += " \(i)"
         }
@@ -265,6 +267,8 @@ for movieName in moviesByName{
         }
         
     }
+    
+    print("")
     
     
     
