@@ -277,11 +277,3 @@ for x in 0..<movies.count {
     }
 }
 
-
-
-
-
-
-
-
-
