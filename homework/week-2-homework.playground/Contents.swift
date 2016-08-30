@@ -8,7 +8,7 @@ import UIKit
 var movies: [[String:Any]] = [
     [
         "name": "Minions",
-        "year": 2015,
+        //"year": 2015,
         "genre": "animation",
         "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
         "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
@@ -227,25 +227,40 @@ print(moviesByGenre.keys.sort(<))
 // Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
 // Barack Obama was president that year.
 
-for i in 0..<movies.count {
-    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String, pres = presidentsByYear[year] {
-        
-        switch genre {
-        case "animation":
-            print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
-            
-        case "action":
-            print("\(name) came out in \(year). It was an \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
-        case "drama":
-            print("\(name) came out in \(year). It was a \(genre) staring \(cast[0]), \(cast[1]), and \(cast[2]).")
-        default:
-            break
-            
-        }
-        print("\(pres) was president that year.")
-        print("")
-    }
-}
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, var cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String, pres = presidentsByYear[year] {
+
+//        if cast.count > 1 {
+//            cast.insert("and", atIndex: cast.count - 1)
+//        }
+//        print(cast)
+//}
+
+//        
+//        
+//        for (index, actor) in cast.enumerate() {
+//            if index == cast.count - 1 && cast.count > 1 {
+//                cast.appendContentsOf("and \(actor)")
+//            } else {
+//                cast.appendContentsOf("\(actor), ")
+//            }
+//        
+//        switch genre {
+//        case "animation":
+//            print("\(name) came out in \(year). It was an \(genre) staring \(casts).")
+//        
+//        case "action":
+//           print("\(name) came out in \(year). It was an \(genre) staring \(casts).")
+//        case "drama":
+//            print("\(name) came out in \(year). It was a \(genre) staring \(casts).")
+//        default:
+//           break
+//        
+//        }
+//        print("\(pres) was president that year.")
+//       print("")
+//    }
+//}
 
 
 // Note how it should generate "an animation" in contrast to "a drama"
@@ -253,3 +268,139 @@ for i in 0..<movies.count {
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+
+func reportOnMovies(movies:[[String:Any]]) -> String? {
+    var output: String?
+    for movie in movies {
+        if let name = movie["name"] as? String, year = movie["year"] as? Int, cast = movie["cast"] as? [String] {
+            if output == nil {
+                output = ""
+            }
+            
+            var castString = ""
+            for (i, actor) in cast.enumerate() {
+                if i == cast.count - 1 {
+                    castString += "and \(actor)"
+                }
+                else {
+                    castString += "\(actor), "
+                }
+            }
+            output?.appendContentsOf("\(name) came out in \(year) starring \(castString).")
+            if let president = presidentsByYear[year] {
+                output?.appendContentsOf("\(president) was president.")
+            }
+            output?.appendContentsOf("\n")
+        }
+    }
+    return output
+}
+
+print(reportOnMovies(movies)!)
+
+let movies2: [[String:Any]] = []
+if let report = reportOnMovies(movies2) {
+    print(report)
+}
+else {
+    print("Can't say anything")
+}
+
+
+
+
+
+func findRangeFromNumbers(numbers: Int...) -> (min: Int, max: Int) {
+    
+    var min = numbers[0]
+    var max = numbers[0]
+    
+    for number in numbers {
+        if number > max {
+            max = number
+        }
+        
+        if number < min {
+            min = number
+        }
+    }
+    
+    return (min, max)
+}
+
+print(findRangeFromNumbers(1, 234, 555, 345, 423))
+
+let x = findRangeFromNumbers(2,5,6,8,12,11)
+print(x.min)
+print("")
+
+func generateMovieReport(movieArray:[[String:Any]]?) -> String? {
+    // we absolutely need movie array
+    guard let movieArray = movieArray else {
+        return nil
+    }
+    
+    var output: String = ""
+    for movie in movieArray {
+        // we can continue execution if one of these is missing but we want to skip it
+        guard let name = movie["name"] as? String, year = movie["year"] as? Int, cast = movie["cast"] as? [String] else {
+            continue
+        }
+        
+        var castString = ""
+        for (i, actor) in cast.enumerate() {
+            if i == cast.count - 1 {
+                castString += "and \(actor)"
+            }
+            else {
+                castString += "\(actor), "
+            }
+        }
+        
+        output += "\(name) came out in \(year) starring \(castString)."
+        
+        if let president = presidentsByYear[year] {
+            output.appendContentsOf(" \(president) was president.")
+        }
+        
+        output += "\n"
+    }
+    
+    return output
+}
+
+if let report = generateMovieReport(movies) {
+    print(report)
+}
+else {
+    print("Nothing to report")
+}
+
+// global Scope
+let i = 2
+func iScopeMadness () {
+    // function scope
+    let i = 3
+    do {
+        // arbitrary block scope
+        let i = 5
+        if true {
+            // if block scope
+            let i = 7
+            // for scope (generate odds in range)
+            for i in 11...13 where i % 2 == 1 {
+                print(i)
+            }
+            print(i)
+        }
+        print(i)
+    }
+    print(i)
+}
+print(i)
+print(iScopeMadness())
+
+
+
+
