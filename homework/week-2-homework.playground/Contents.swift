@@ -103,14 +103,14 @@ let aMovie: [String:Any] = [
     "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
     "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
 ]
-
-if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
-    print("\(year): \(name)")
-    
-    for actor in cast {
-        print(actor)
-    }
-}
+//
+//if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
+//    print("\(year): \(name)")
+//    
+//    for actor in cast {
+//        print(actor)
+//    }
+//}
 
 // WARM UPS
 // 1. Print the name of the first movie.
@@ -143,23 +143,24 @@ if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = a
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
 
-//
-//for x in movies {
-//    
-//        if let allNames = x["name"] as? String, allGenre = x["genre"] as? String{
-//        switch allGenre {
-//            case "drama":
-//            print("\(allNames) is a \(allGenre) movie. Emoji: 😱🎬")
-//            case "animation":
-//            print("\(allNames) is an \(allGenre) movie. Emoji: 👾🎬")
-//            case "action":
-//            print("\(allNames) is an \(allGenre) movie. Emoji: 🎯🎬")
-//            default:
-//            break
-//        
-//        }
-//    }
-//}
+
+for x in movies {
+    
+        if let allNames = x["name"] as? String, allGenre = x["genre"] as? String{
+        switch allGenre {
+            case "drama":
+            print("\(allNames) is a \(allGenre) movie. Emoji: 😱🎬")
+            case "animation":
+            print("\(allNames) is an \(allGenre) movie. Emoji: 👾🎬")
+            case "action":
+            print("\(allNames) is an \(allGenre) movie. Emoji: 🎯🎬")
+            default:
+            break
+        
+        }
+    }
+}
+
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
@@ -175,6 +176,16 @@ for x in 0..<movies.count {
         }
     }
 print(sortedByName.sort())
+
+
+for i in 0..<movies.count{
+    if let name = movies[i]["name"] as? String {
+        moviesByName[name] = movies[i]
+    }
+}
+
+let sortedArray = Array(moviesByName.keys.sort(<))
+print(sortedArray)
 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
@@ -224,31 +235,34 @@ print(sortedBYear.sort())
 
 
 //var actorOn = String()
-//
-//for i in 0..<movies.count {
-//    if let allNames = movies[i]["name"] as? String, allYears = movies[i]["year"] , allGenre = movies[i]["genre"] as? String, wholeCast = movies[i]["cast"] as? [String], descript = movies[i]["description"] as? String {
-//        
+
+for i in 0..<movies.count {
+    if let allNames = movies[i]["name"] as? String, allYears = movies[i]["year"] as? Int, allGenre = movies[i]["genre"] as? String, var wholeCast = movies[i]["cast"] as? [String], descript = movies[i]["description"] as? String {
+        
 //        for x in 0..<wholeCast.count{
 //            actorOn = wholeCast[x]
 //        }
-//        
-//        if allGenre == "drama"{
-//            print("\(allNames) came out in \(allYears). It was a \(allGenre) staring \(actorOn). ")
-//        }
-//    }
-//}
-
-var movieByGenreDict: [String: [[String: Any]]]
-var animations = [[String: Any]]()
-var actions = [[String: Any]]()
-var dramas = [[String: Any]]()
-
-
-for i in movies {
-    if let allNames = i["name"] as? String, allYears = i["year"] , allGenre = i["genre"] as? String, wholeCast = i["cast"] as? [String], descript = i["description"] as? String {
+        var actorsString = ""
         
+        for actor in wholeCast {
+            actorsString += actor + ", "
+            
+        }
+        
+    for (key, value) in presidentsByYear {
+        if let allPres = presidentsByYear[key] where allYears == key {
+                if allGenre == "drama" {
+                    print("\(allNames) came out in \(allYears). It was a \(allGenre) movie staring \(actorsString). \(value) was the President that Year.")
+                } else {
+                    print("\(allNames) came out in \(allYears). It was an \(allGenre) movie staring \(actorsString). \(value) was the President that Year.")
+                }
+             //break
+        }
+        
+            
+       }
+            }
     }
-}
-movieByGenreDict = ["animation": animations, "action": actions, "drama": dramas]
 
-print(movieByGenreDict)
+
+
