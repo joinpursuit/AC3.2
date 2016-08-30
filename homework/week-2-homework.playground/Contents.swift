@@ -70,7 +70,7 @@ var movies: [[String:Any]] = [
         "description": "Navy S.E.A.L. sniper Chris Kyle\"s pinpoint accuracy saves countless lives on the battlefield and turns him into a legend. Back home to his wife and kids after four tours of duty, however, Chris finds that it is the war he can\"t leave behind."
     ]
 ]
-/*
+
 var presidentsByYear = [1997 : "Bill Clinton",
                         1998 : "Bill Clinton",
                         1999 : "Bill Clinton",
@@ -159,7 +159,7 @@ for i in 0..<movies.count {
         }
     }
 }
-*/
+
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
@@ -167,11 +167,39 @@ var moviesByName = [String: [String:Any]]()
 
 for i in 0..<movies.count {
     if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], description = movies[i]["description"] as? String {
-        moviesByName.updateValue(["year":year, "cast":cast, "description": description], forKey: name)
+//        moviesByName.updateValue(["year":year, "cast":cast, "description": description], forKey: name)
+        //Shorter Way vvv
+        moviesByName[name] = movies[i]
     }
 }
 
-print(moviesByName.sort{ $0.0 < $1.0})
+//print(moviesByName.sort{ $0.0 < $1.0 })
+//OR
+let sorted = moviesByName.sort({ $0.0 < $1.0 })
+print(sorted)
+
+
+
+//var sortedMovies = [String]()
+//
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String {
+//        movies[i]["name"] = nil
+//        moviesByName[name] = movies[i]
+//        sortedMovies.append(name)
+//    }
+//}
+//print(sortedMovies.sort())
+//print(moviesByName)
+
+
+
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+//        moviesByName[name] = movies[i]
+//    }
+//}
+//print(moviesByName.keys.sort(<))
 
 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
@@ -190,3 +218,58 @@ print(moviesByName.sort{ $0.0 < $1.0})
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+
+//var sortedMovies = [String]()
+//
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String {
+//        movies[i]["name"] = nil
+//        moviesByName[name] = movies[i]
+//        sortedMovies.append(name)
+//    }
+//}
+//sortedMovies = sortedMovies.sort()
+//for i in 0..<movies.count {
+//    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+//        var first = genre[genre.startIndex]
+//        var genreTest = ""
+//        if first == "a" || first == "e" || first = "i" || first == "o" || first == "u" {
+//            genreTest = "an \(genre)"
+//        } else {
+//            genreTest = "a \(genre)"
+//        }
+//        let format = "\(name) came out in \(year). It was \(genreTest) starting ."
+//        print(format)
+//    }
+//}
+
+//--------------------------------OR-----------------------------//
+
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String, president = presidentsByYear[year] {
+        
+        var castMembers = ""
+        for (index, actor) in cast.enumerate() {
+            if index == cast.count - 1 {
+                castMembers.appendContentsOf("and \(actor)")
+            } else {
+                castMembers.appendContentsOf("\(actor), ")
+            }
+        }
+        
+        let vowels: [Character] = ["a", "e", "i", "o", "u"]
+        var genreGrammar = ""
+        for m in vowels {
+            if m == genre[genre.startIndex] {
+                genreGrammar = "an \(genre)"
+                break
+            } else {
+                genreGrammar = "a \(genre)"
+            }
+        }
+
+        print("\(name) came out in \(year). It was \(genreGrammar) staring \(castMembers).")
+        print("\(president) was president that year.")
+    }
+}
