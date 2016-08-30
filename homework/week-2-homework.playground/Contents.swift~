@@ -184,7 +184,6 @@ print(sorted)
 
 //var sortedMovies = [String]()
 //
-
 //for i in 0..<movies.count {
 //    if let name = movies[i]["name"] as? String {
 //        movies[i]["name"] = nil
@@ -222,6 +221,7 @@ print(sorted)
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
+<<<<<<< 815a19425e0aaac733d99d1e9c76953c9e0cb7e1
 =======
 
 //var sortedMovies = [String]()
@@ -277,3 +277,4 @@ for i in 0..<movies.count {
         print("\(president) was president that year.")
     }
 }
+>>>>>>> repo difference fix
