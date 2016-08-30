@@ -229,7 +229,7 @@ for movie in movies {
     }
 }
 
-
+print("\n")
 
 
 // Note how it should generate "an animation" in contrast to "a drama"
@@ -237,3 +237,45 @@ for movie in movies {
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+
+
+
+//Functions Lecture
+
+
+func reportOnMovies(movies:[[String:Any]]) -> String? {
+    var output: String?
+    for movie in movies {
+        if let name = movie["name"] as? String, year = movie["year"] as? Int, cast = movie["cast"] as? [String] {
+            if output == nil {
+                output = ""
+            }
+            
+            var castString = ""
+            for (i, actor) in cast.enumerate() {
+                if i == cast.count - 1 {
+                    castString += "and \(actor)"
+                }
+                else {
+                    castString += "\(actor), "
+                }
+            }
+            output?.appendContentsOf("\(name) came out in \(year) starring \(castString). ")
+            if let president = presidentsByYear[year] {
+                output?.appendContentsOf("\(president) was president. ")
+            }
+            output?.appendContentsOf("\n")
+        }
+    }
+    return output
+}
+
+print(reportOnMovies(movies)!)
+
+let movies2: [[String:Any]] = []
+if let report = reportOnMovies(movies2) {
+    print(report)
+}
+else {
+    print("Can't say anything")
+}
