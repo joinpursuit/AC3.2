@@ -1,3 +1,6 @@
+//Gabriel
+
+
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -9,27 +12,61 @@ let tipPercentage = 0.15
 
 //Write your code below
 
+func tip(tip: Double, itemCost: Double) {
+    let total = itemCost + (itemCost * tip)
+    print(total)
+    
+}
+tip( 0.15, itemCost: 70)
 
-
-let myFinalCost = totalWithTip() //Fill in the arguments
+//let myFinalCost = totalWithTip() //Fill in the arguments
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
 
 //Write your code below
 
+func tipAndTax(tip: Double, itemCost: Double, tax: Double) {
+    let total = itemCost + (itemCost * tax) + (itemCost * tip)
+    print(total)
+    
+}
+tipAndTax( 0.15, itemCost: 1, tax: 0.10)
 
-let myFinalCostWithTipAndTax = totalWithTipAndTax() //Fill in the arguments
+////let myFinalCostWithTipAndTax = tipAndTax(0.15, itemCost: 45, tax: 0.09) //Fill in the arguments
 
 
 //2a)Write a function takes an Int as input, and returns true if it is even, and false if it is odd
 
 //Write your code below
 
+
+func evenOrOdd( isEven x: Int) -> Bool{
+    if  x % 2 == 0 {
+        return true
+        
+    }else{
+        return false
+    }
+}
+//evenOrOdd(isEven: 5)
+
+
 //2b) Using function above, write code that prints out whether dieRoll is even or odd
 
 let dieRoll = Int(arc4random_uniform(6) + 1)
 
+func evenOrOdd2( isEven x: Int) -> String {
+    if  x % 2 == 0 {
+        return "\(x) is a even number"
+        
+    }else{
+        return "\(x) is a odd number"
+    }
+}
+
+
+print(evenOrOdd2(isEven: dieRoll))
 //3)
 /*
  Write a function that prints the numbers from 1 to x. EXCEPT:
@@ -40,35 +77,78 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
  Your function should take in one parameter: x (the number to count up to)
  */
 
-
-
+func fizzOrBuzz(unknownNumbers x: Int){
+    for i in 1...x {
+        if i % 15 == 0 {
+            print("FizzBuzz")
+        }
+        else if i % 5 == 0 {
+            print("Buzz")
+            
+        }
+        else if i % 3 == 0 {
+            print("Fizz")
+        }
+        else {
+            print(i)
+        }
+    }
+}
+//fizzOrBuzz(unknownNumbers: 30)
 
 //4a) Write a function that takes [Int] as input.  It should return the largest Int in the array.
 
 //Write your code below
 
+func largestIntInArray(array: [Int]) -> Int {
+    var target = array[0]
+    for eachNumber in array {
+        if eachNumber > target {
+            target = eachNumber
+                    }
+    }
+    return target
+}
+
 
 
 //4b)
 let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
+print(largestIntInArray(myArray))
 
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
 
-
+var a = largestIntInArray(myArray)
+print("the largest number in the array is \(a)")
 //4c)
 //Using your solution to 2a), print a sentence that states whether the largest Int in myArray is even or odd
 
+
+var b = evenOrOdd2(isEven: a)
+print("the largest number in the array is \(b)")
 
 //5a) Write a function that takes a String as input and returns the number of characters in the string
 
 //Write your code below
 
+let myString2 = ("Hello")
 
 
+func stringAsInput(string: String) -> Int {
+    var count = 0
+    for eachCharacter in 0...string.characters.count{
+        count = eachCharacter
+    }
+    return count
+}
+print(stringAsInput(myString2))
 //5b) Using your function above, print how many characters are in myString
 
 let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
 
+var stringAs = (stringAsInput(myString))
+
+print(stringAs)
 
 //5c) Write a function that counts how many characters in a String match a specific character.  (e.g: count how many "a"s are in a String, or count how many ","s are in a String.
 
@@ -79,7 +159,21 @@ let myString = "Swift is a new programming language for iOS, OS X, watchOS, and 
 //Sample output:
 //3
 
+let targetCharacter: Character = "A"
+let testSentecne = "Apples Are Awesome"
 
+func findA(sentence : String, targetCharacterA : Character) -> Int {
+    var counter = 0
+    
+    for eachCharacter in sentence.characters {
+        if targetCharacterA == eachCharacter {
+            counter += 1
+        }
+    }
+    return counter
+}
+
+print(findA(testSentecne, targetCharacterA: targetCharacter))
 
 //5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
 
