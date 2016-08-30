@@ -232,6 +232,8 @@ for kindex in 0..<moviesByGenre.count {
     print(kgenre, moviesByGenre[kgenre]!)
 }
 
+print(moviesByName)
+
 /* 
   We can't sort or call particular genres here because the genre is not unique. Purely by
   coincidence, we were given all unique years, but that's not going to scale. We're going to
