@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -279,3 +280,4 @@ if let report = reportOnMovies(movies2) {
 else {
     print("Can't say anything")
 }
+
