@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -255,5 +254,3 @@ func sayHelloC(greeting: String = "Hello!") {
     print(greeting)
 }
 sayHelloC()
-=======
->>>>>>> 9cc5679c92519db1993fda2dc0b2f87aac434d33
