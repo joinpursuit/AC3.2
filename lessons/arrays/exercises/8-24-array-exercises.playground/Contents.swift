@@ -1,4 +1,4 @@
-/*
+
 //1)
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
@@ -191,6 +191,15 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 var found = false
 for i in fourthListOfNumbers where i == 84{
     print("YES")
@@ -375,7 +384,7 @@ for number in someRepeatsAgain {
 }
 
 print(repeatedThriceNumbers)
-*/
+
 
 //19)
 //Identify if there are 3 integers in the following array that sum to 10.  If so, print them.
@@ -386,13 +395,13 @@ var tripleSumArr = [-20,-14, -8, -5,-3,-2,1,2,3,4,9,15,20,30]
 
 
 
-let sum = 10
+let sum66 = 10
 
 for (i, value1) in tripleSumArr.enumerate() {
     for (k, value2) in tripleSumArr.enumerate() where i != k {
         for (j, value3) in tripleSumArr.enumerate() where j != k && j != i {
             var sumOfThree = value1 + value2 + value3
-            if sumOfThree == sum {
+            if sumOfThree == sum66 {
                 print(value1, value2, value3)
             }
         }

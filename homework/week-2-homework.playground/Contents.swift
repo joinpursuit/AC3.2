@@ -1,10 +1,10 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
 // movies is an Array of Dictionaries
 // each element of movies is a Dictionary with the keys
 // 'name','year', 'genre', 'cast' and 'description'
+
 var movies: [[String:Any]] = [
     [
         "name": "Minions",
@@ -95,6 +95,7 @@ var presidentsByYear = [1997 : "Bill Clinton",
 
 // ONE NOTE before you start consider this one movie element
 /*
+
 let aMovie: [String:Any] = [
     "name": "Minions",
     "year": 2015,
@@ -174,6 +175,8 @@ for i in 0..<movies.count {
     }
 }
 print(namesSorted.sort())
+ 
+ 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
 
@@ -225,19 +228,18 @@ print(genreSorted.sort())
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
-    */
-
+*/
 for i in 0..<movies.count {
     if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
         var castMembers = ""
         for (index, actor) in cast.enumerate() {
-            if index == cast.count - 1 {
+            if index == cast.count - 1 && cast.count > 1 {
                 castMembers.appendContentsOf("and \(actor)")
             } else {
                 castMembers.appendContentsOf("\(actor), ")
             }
         }
-    let vowels: [Character] = ["a", "e", "i", "o", "u"]
+    let vowels: [Character] = ["a", "e", "i", "o    ", "u"]
     var genreGrammar = ""
     for m in vowels {
         if m == genre[genre.startIndex] {
@@ -249,7 +251,7 @@ for i in 0..<movies.count {
         }
     }
     for k in presidentsByYear where year == k.0{
-            print("\(name) came out in \(year). It was \(genreGrammar) staring \(castMembers).\n\(k.1) was president that year.")
+            print("\(name) came out in \(year). It was \(genreGrammar) staring \(castMembers).\n\(k.1) was president that year.\n")
             }
         
     }

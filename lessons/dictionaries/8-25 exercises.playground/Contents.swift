@@ -156,11 +156,42 @@ var code = [
 
 var message = "hello world"
 
+var encodedString = ""
+
+for character in message.characters {
+    if let i = code[String(character)] {
+        encodedString += i
+    } else {
+        encodedString += String(character)
+    }
+}
+print(encodedString)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
+
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+var decode = [String:String]()
+
+for (key, value) in code {
+    decode[value] = key
+}
+
+
+decode
+
+var decodedString = ""
+
+for c in encodedMessage.characters {
+    if let i = decode[String(c)] {
+        decodedString += i
+    } else {
+        decodedString += String(c)
+    }
+}
+print(decodedString)
+
 
 
 //5)
@@ -253,3 +284,9 @@ let statePop = ["Alabama": 4.8, "Alaska": 0.7, "Arizona": 6.7, "Arkansas": 3.0]
 let testStates = ["California","Arizona", "Alabama", "New Mexico"]
 
 //Write code below that iterates through testStates and prints out whether or not that key is in statePop
+
+
+
+
+
+
