@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -284,3 +285,5 @@ for index in 0..<movies.count {
         print(blurb + prezInfo)
     }
 }
+=======
+>>>>>>> 9cc5679c92519db1993fda2dc0b2f87aac434d33
