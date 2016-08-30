@@ -9,26 +9,45 @@ let tipPercentage = 0.15
 
 //Write your code below
 
+func totalWithTip(cost: Double, tip: Double = 0.15) -> Double {
+    let totalCost = cost + (cost*tip)
+    return totalCost
+}
 
 
-let myFinalCost = totalWithTip() //Fill in the arguments
+
+let myFinalCost = totalWithTip(45)
+print(myFinalCost)   //Fill in the arguments
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
 
+
 //Write your code below
-
-
-let myFinalCostWithTipAndTax = totalWithTipAndTax() //Fill in the arguments
+func myFinalCostWithTipAndTax(cost: Double, tip: Double = 0.15, tax: Double = 0.09) -> Double {
+    let finalCost = ((cost * tip) + (cost*tax) + cost)
+    return finalCost
+}
+print(myFinalCostWithTipAndTax(45))
 
 
 //2a)Write a function takes an Int as input, and returns true if it is even, and false if it is odd
+func isItAnEven(number: Int) -> Bool {
+    if number % 2 == 0 {
+        return true }
+            else { return false
+            }
+        }
+isItAnEven(3)
+
 
 //Write your code below
 
 //2b) Using function above, write code that prints out whether dieRoll is even or odd
 
 let dieRoll = Int(arc4random_uniform(6) + 1)
+
+isItAnEven(dieRoll)
 
 //3)
 /*
@@ -39,49 +58,85 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
  
  Your function should take in one parameter: x (the number to count up to)
  */
-
-
-
+func countUpTo(x: Int){
+    for i in 1...x {switch i {
+    case _ where i%5==0 && i%3==0:
+        print("FizzBuzz")
+    case _ where i%5 == 0:
+        print("Buzz")
+    case _ where i%3==0:
+        print("Fizz")
+    default:
+        print(i)
+    }
+}
+}
+countUpTo(30)
 
 //4a) Write a function that takes [Int] as input.  It should return the largest Int in the array.
 
 //Write your code below
 
-
+func largestInt(anArray: [Int]) -> Int {
+    var max = 0
+    for i in 0...anArray.count-1{
+    if anArray[i] > max {
+        max = anArray[i]
+    }
+}
+    return max
+}
+largestInt([3,45,4,5])
 
 //4b)
 let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
-
+largestInt(myArray)
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
-
+print("The largest integer in myArray is \(largestInt(myArray)).")
 
 //4c)
 //Using your solution to 2a), print a sentence that states whether the largest Int in myArray is even or odd
-
+if isItAnEven(largestInt(myArray)) {
+    print("The largest integer is even")
+}   else {
+    print("The largest integer is odd")
+}
 
 //5a) Write a function that takes a String as input and returns the number of characters in the string
 
 //Write your code below
 
-
+func howManyChars(thisString: String) -> Int {
+    return thisString.characters.count
+}
 
 //5b) Using your function above, print how many characters are in myString
 
 let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
-
+print(howManyChars(myString))
 
 //5c) Write a function that counts how many characters in a String match a specific character.  (e.g: count how many "a"s are in a String, or count how many ","s are in a String.
 
 //Sample input:
-//let FiveCString = "This is a test string for your code"
+let fiveCString = "This is a test string for your code"
 //let targetCharacter = "i"
 
 //Sample output:
 //3
+func howManyOf (thisChar: Character, inString: String) -> Int {
+    var i = 0
+    for char in inString.characters {
+        if char == thisChar {
+        i += 1
+        }
+    }
+     return i
+}
+howManyOf("i", inString: fiveCString)
 
 
 
-//5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
+//5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a String)
 
 //Sample input:
 //let FiveDString = "This one is a little more complicated"
@@ -92,8 +147,17 @@ let myString = "Swift is a new programming language for iOS, OS X, watchOS, and 
 
 
 //Write your code below
-
-
+func multipleChars ( thatString: String, targetChars: [Character]) -> Int {
+   var counter = 0
+    for i in targetChars  {
+        for j in thatString.characters {
+            if i == j {
+                counter += 1 }
+        }
+    }
+    return counter
+}
+multipleChars(fiveCString, targetChars: ["k", "h", "i"])
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
 //let inputArray = [3,1,4,1,3,2,6,1,9]
