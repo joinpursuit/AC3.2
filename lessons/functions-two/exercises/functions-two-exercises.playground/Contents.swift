@@ -231,20 +231,23 @@ looksForAmountOf(Sentence: FiveDString, SpecificCharcters: ["a", "e", "i", "o", 
 //2, 4, 6, 9 are unique in the array.  Every other number is not unique.
 
 func checkForUniqueNumbers(inArrayOfNumbers array: [Int]) -> Int{
-   var counter = 0
-    for i in array{
-    let numberToCompare = i
-        for j in array{
-            if numberToCompare != j{
+ var unique = 0
+ var counter = 1
+    for i in array {
+        for j in 0..<array.count{
+            if i == array[j]{
                 counter += 1
             }
         }
+        if counter == 1 {
+            unique += 1
+        }
+        counter = 0
     }
-    return counter - array.count
-
+    return unique
 }
 
-checkForUniqueNumbers(inArrayOfNumbers: [3,1,4,1,3,2,6,1,9])
+checkForUniqueNumbers(inArrayOfNumbers: [3,1,4,1,3,2,6,1,9,91])
 
 
 
@@ -262,7 +265,18 @@ checkForUniqueNumbers(inArrayOfNumbers: [3,1,4,1,3,2,6,1,9])
 //Sample output:
 //93
 
+func binaryToDecimal(Binary bin: [Int])-> Int{
+ var counter = 1
+    let bin = bin.reverse()
+    for i in 0..<bin.count{
+        let base = pow(Double(2), Double(i))
+//        print(bin[i], counter)
+            counter += (bin[i] * Int(base))
+      }
+    return counter
+}
 
+binaryToDecimal(Binary: [1,0,1,1,1,0,1])
 
 
 
