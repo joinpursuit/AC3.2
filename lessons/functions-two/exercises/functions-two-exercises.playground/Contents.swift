@@ -194,6 +194,20 @@ multipleTargetCharacters(FiveDString, targetCharacters: ["a", "b"])
 //Explanation:
 //2, 4, 6, 9 are unique in the array.  Every other number is not unique.
 
+func uniqueIntsInArray(arr:[Int]) -> Int {
+    let sortedArray = arr.sort()
+    var placeHolder = 0
+    for i in sortedArray {
+        if i > placeHolder {
+            placeHolder = i
+        }
+        if placeHolder == placeHolder {
+            continue
+        }
+    }
+    
+    }
+}
 
 
 
