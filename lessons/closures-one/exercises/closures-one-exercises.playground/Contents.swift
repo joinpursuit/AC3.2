@@ -1,42 +1,157 @@
-//: Playground - noun: a place where people can play
+////: Playground - noun: a place where people can play
+//
+//import UIKit
+//
+//// Closures-One-Exercises
+//
+////1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
+//
+//var greeting = {() -> String in
+//    return "Hello Closures!"
+//}
+//print(greeting())
+//
+////2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+//var dub = {(a) -> Int in
+//    return a * 2
+//}
+//dub(2)
+//
+//
+////3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
+//
+//var divBy3 = {(a:Int) -> Bool in
+//    if a % 3 == 0{
+//        return true
+//    } else {
+//        return false
+//    }
+//}
+//
+//divBy3(10)
+//
+//
+////4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+//var longest = {(a: String, b: String) -> Int in
+//   
+//    if a.characters.count > b.characters.count{
+//        return a.characters.count
+//    } else {
+//        return b.characters.count
+//    }
+//}
+//longest("hi","Bye")
+//
+//
+////5a. Create a closure that takes an array of Int as input and returns the largest element in the array
+//var largestElement = {(a: [Int]) -> Int in
+//    var max = 0
+//    for i in a {
+//        if i > max {
+//        max = i
+//        }
+//        return max
+//    }
 
-import UIKit
-
-// Closures-One-Exercises
-
-//1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
-
-//2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
-
-//3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
-
-//4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
-
-//5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
 
+    var bigElement = {(a: [Int], x: Int) -> Int in
+        let b = a.sort(>)
+        return b[x-1]
+    }
+        bigElement([5,4,6,8,10,16,12], 5)
+        
+
+
+    
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
 
 //Higher order functions
 
 let myArray = [34,42,42,1,3,4,3,2,49]
 
+var bElement = {(a: [Int], x: Int) -> Int? in
+    let b = a.sort(<)
+    
+    if x >= b.count{
+        return nil
+    }
+    
+    return b[x-1]
+   
+}
+
+
+print(bElement(myArray, 20))
+
+
+
+
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
-//let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
+let ascendingOrder = {(a: Int, b: Int) -> Bool in
+return a < b
+}
+    
+let mySortedArray = myArray.sort(ascendingOrder)
+
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
-//let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
+let descendingOrder = {(a: Int, b: Int) -> Bool in
+    return a > b
+}
+let mySecondSortedArray = myArray.sort(descendingOrder)
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+
+let arrayOfArrays = [[3,65,2, 4],[25,3,1,6],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
 
+var arr = {(arrayOfArrays: [[Int]]) -> [[Int]] in
+    
+    //print(arrayOfArrays.sort { $0[1] < $1[1] })
+    
+    
+    
+    return arrayOfArrays.sort { $0[2] < $1[2] }
+}
+
+arr(arrayOfArrays)
+
+
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
+
+
+//var array = {(a: [[Int]]) -> [[Int]] in
+//    var emptyarr:[[Int]] = []
+//    var emptyarr1: [[Int]] = []
+//    for eacharray in a {
+//        if eacharray.count < 3 {
+//            emptyarr.append(eacharray)
+//        } else {
+//            emptyarr1.append(eacharray)
+//        }
+//        
+//    }
+//    return emptyarr1 + emptyarr
+//}
+
+var array7B = {(arrOfArr: [[Int]])-> [[Int]] in
+
+    var newArrs = arrOfArr.sort { x,y in
+        x.count != 3
+    }
+    print(newArrs)
+    return newArrs
+}
+
+array7B(arrayOfArrays)
+
+
+
+
 
 let letterValues = [
     "a" : 54,
@@ -72,9 +187,20 @@ let letterValues = [
 var codeString = "aldfjaekwjnfaekjnf"
 
 
+
+var str = {(a: String) -> String in
+    
+   
+    
+    
+    
+return "a"
+}
+
+
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
-var codeStringTwo = "znwemnrfewpiqn"
+//var codeStringTwo = "znwemnrfewpiqn"
 
 
 
@@ -85,21 +211,21 @@ var codeStringTwo = "znwemnrfewpiqn"
 
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
-var number = 1
+//var number = 1
 
 //var tripleNumber =
 
 
 
 //9. Given a tuple representation of our names from before:
-
-let firstAndLastTuples = [("Johann S.", "Bach"),
-                                 ("Claudio", "Monteverdi"),
-                                 ("Duke", "Ellington"),
-                                 ("W. A.", "Mozart"),
-                                 ("Nicolai","Rimsky-Korsakov"),
-                                 ("Scott","Joplin"),
-                                 ("Josquin","Des Prez")]
+//
+////let firstAndLastTuples = [("Johann S.", "Bach"),
+//                                 ("Claudio", "Monteverdi"),
+//                                 ("Duke", "Ellington"),
+//                                 ("W. A.", "Mozart"),
+//                                 ("Nicolai","Rimsky-Korsakov"),
+//                                 ("Scott","Joplin"),
+//                                 ("Josquin","Des Prez")]
 
 // sort the array of tuples by last name. Print the sorted array using string interpolation so that
 // the output looks like:
@@ -150,10 +276,10 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 //Victor Zhong	3236
 
 // Here's an example of how to start:
-let ac32folks = [("Amber", "Spadafora",	3201),
-                 ("Ana", "Ma",	3202),
-                 ("Annie", "Tung",	3203)]
-// and so on...
+//let ac32folks = [("Amber", "Spadafora",	3201),
+//                 ("Ana", "Ma",	3202),
+//                 ("Annie", "Tung",	3203)]
+//// and so on...
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
