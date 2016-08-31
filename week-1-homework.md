@@ -139,7 +139,7 @@ let suits = ["♠️", "♣️", "♥️", "♦️"]
 
 for suit in suits {
 for denom in denominations {
-print(denom + suit)
+print("\(denom) \(suit)")
 }
 }
 
