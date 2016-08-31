@@ -5,16 +5,52 @@ import UIKit
 // Closures-One-Exercises
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
+let helloClosures = { () -> () in
+	print("Hello Closures!") }
+
+helloClosures()
 
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+let doubleInt = { (a: Int) -> Int in
+	return a * 2
+}
+
+let testDouble = doubleInt(5)
+print(testDouble)
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
+let divByThree = { (a: Int) -> Bool in
+	return a % 3 == 0
+}
+
+divByThree(3)
+divByThree(4)
 
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+let longerString = { (a: String, b: String) -> Int in
+	if a.characters.count > b.characters.count {
+		return a.characters.count
+	} else {
+		return b.characters.count
+	}
+}
+
+longerString("What's good homes", "Who's there at the door?")
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
+let largestElement = { (a: [Int]) -> Int in
+	return a.sort(>)[0]
+}
+
+print(largestElement([12,312,4123,23123,23]))
 
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+let returnAtX = { (a: [Int], x: Int) -> Int in
+	return a.sort(>)[x-1]
+}
+
+returnAtX([12,3,41,23,1,3231,4,2,123], 5)
+
 
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
 
@@ -22,21 +58,74 @@ import UIKit
 
 let myArray = [34,42,42,1,3,4,3,2,49]
 
+let returnAtXSuper = { (a: [Int], x: Int) -> (Int?) in
+	if x < a.count-1 {
+		return a.sort(>)[x-1]
+	} else {
+		return nil
+	}
+}
+
+returnAtXSuper(myArray, 100)
+
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
-//let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
+let ascendingOrder = { (a: Int, b: Int ) -> Bool in
+	return a < b
+}
+
+let mySortedArray = myArray.sort(ascendingOrder)
+
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
-//let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
+let descendingOrder = { (a: Int, b: Int) -> Bool in
+	return a > b
+}
+
+let mySecondSortedArray = myArray.sort(descendingOrder)
+
 
 let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
+let sadness = {(a:[[Int]], x: Int) -> [[Int]] in
+	return a.sort({ (a: [Int], b: [Int]) -> Bool in
+		return a[x-1] < b[x-1]
+	})
+}
+
+sadness(arrayOfArrays, 3)
+
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
+//let sadnessOverwhelming = {(a:[[Int]], x: Int) -> [[Int]] in
+//	if x < a.count {
+//		return a.sort({ (a: [Int], b: [Int]) -> Bool in
+//			return a[x-1] < b[x-1]
+//		})
+//	} else {
+//		return a[a.endIndex]
+//}
+//}
+
+let arrayOfArraysTest = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74],[1],[23,12]]
+
+let sadnessOverwhelming = {(a:[[Int]], elementNumber: Int) -> [[Int]] in
+	var emptyArray1 = [[Int]]()
+	var emptyArray2 = [[Int]]()
+	for i in a {
+		if elementNumber < i.count {
+			emptyArray1.append(i)
+		} else {
+			emptyArray2.append(i)
+		}
+	}
+	return emptyArray1.sort({$0[elementNumber-1] < $1[elementNumber-1]}) + emptyArray2
+}
+print(sadnessOverwhelming(arrayOfArraysTest, 3))
+
+
 
 let letterValues = [
     "a" : 54,
@@ -70,12 +159,16 @@ let letterValues = [
 //8a. Sort the string below in descending order according the dictionary letterValues
 
 var codeString = "aldfjaekwjnfaekjnf"
-
+codeString.characters.sort{(a,b) -> Bool in
+	return letterValues[String(a)] > letterValues[String(b)]
+}
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
-
+codeStringTwo.characters.sort{(a,b) -> Bool in
+	return letterValues[String(a)] < letterValues[String(b)]
+}
 
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
@@ -83,13 +176,17 @@ var codeStringTwo = "znwemnrfewpiqn"
 //Input: (Int) -> Int
 //Output: (Int) -> Int
 
+
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
 var number = 1
 
-//var tripleNumber =
-
-
+var tripleNumber = {() -> () in
+	number*=3
+}
+tripleNumber()
+tripleNumber()
+number
 
 //9. Given a tuple representation of our names from before:
 
@@ -108,6 +205,11 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 // .
 // .
+let tuples = firstAndLastTuples.sort{ $0.1 < $1.1 }
+for x in tuples {
+	print("\(x.1), \(x.0)")
+}
+
 
 //10. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
