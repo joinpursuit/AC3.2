@@ -181,9 +181,17 @@ let letterValues = [
 
 //8a. Sort the string below in descending order according the dictionary letterValues
 
+////Ben's solution////
+
 var codeString = "aldfjaekwjnfaekjnf"
 
-    var sortedCodeString = codeString.characters.sort(
+    let myString = Array(codeString.characters)
+myString.sort{ (a: Character, b: Character) -> Bool in
+    let aValue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aValue > bValue
+
+}
 
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
