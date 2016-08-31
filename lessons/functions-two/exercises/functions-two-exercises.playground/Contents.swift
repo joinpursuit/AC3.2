@@ -207,23 +207,24 @@ import UIKit
 //5c) Write a function that counts how many characters in a String match a specific character.  (e.g: count how many "a"s are in a String, or count how many ","s are in a String.
 
 //Sample input:
-let FiveCString = "This is a test string for your code"
+//let FiveCString = "This is a test string for your code"
 //let targetCharacter = "i"
 
 //Sample output:
 //3
-func mystring3(mystring: String, myChar: Character)-> Int{
+
+
+//func mystring3(mystring: String, myChar: Character)-> Int{
 //    var counter = 0
-    var myarraytwo:[Character] = [ ]
-    for i in mystring.characters{
-        if i == myChar{
-            counter += 1
-        }
-        
-        
-       
-    }
-}
+//    for i in mystring.characters{
+//        if i == myChar{
+//            counter += 1
+//        }
+//        
+//    }
+// return counter
+//}
+//mystring3(FiveCString, myChar: "s")
 
 
 
@@ -242,9 +243,25 @@ func mystring3(mystring: String, myChar: Character)-> Int{
 //Write your code below
 
 
+//func severalCharacters (myString: String, a: Character, e: Character, i: Character ) -> Int{
+//    var array:[Character]=[]
+//    for i in myString.characters{
+//        if i == a || i==e || i == i {
+//            array.append(i)
+//        }
+//    }
+//    return(array.count)
+//}
+//
+//severalCharacters(FiveDString, a: "a", e: "e", i: "i")
+
+
+
+
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
-//let inputArray = [3,1,4,1,3,2,6,1,9]
+
+let inputArray = [3,1,4,1,3,2,6,1,9]
 
 //Sample output:
 //4
@@ -253,13 +270,63 @@ func mystring3(mystring: String, myChar: Character)-> Int{
 //2, 4, 6, 9 are unique in the array.  Every other number is not unique.
 
 
+
+func uniqueArray(anArray:[Int]) -> Int {
+    var dict = [Int: Int]()
+    
+    for number in inputArray {
+        if var value = dict[number] {
+            value += 1
+            dict[number] = value
+        } else {
+            dict[number] = 1
+        }
+    }
+    
+    var counter = 0
+    
+    for (_,value) in dict {
+        if value == 1 {
+            counter += 1
+        }
+    }
+    
+    return counter
+}
+
+uniqueArray(inputArray)
+
+
+
+
+
+
+
+
+
+
+
+
 //7) Write a function that converts a binary number into decimal.  The binary number will be given as an array of Ints.
 
 //Sample input:
-//let binaryArray = [1,0,1,1,1,0,1]
+let binaryArray = [1,0,1,1,1,0,1]
 
 //Sample output:
 //93
+//
+//func binaryToDecimal (anarray:[Int]) -> Int {
+//    
+//}
+//
+//pow(<#T##Double#>, <#T##Double#>)
+
+
+
+
+
+
+
 
 //8) Copy the movie dictionary from homework two and add another [String] to each movie.
 //   Name it "locations" and add some dummy data. Use the re-factored nested function
