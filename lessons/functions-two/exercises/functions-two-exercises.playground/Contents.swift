@@ -340,17 +340,32 @@ if let report = reportOnMovies(movies) {
 
 //Write your code below
 
-/****** START OF COMMENTING
+func movieTuple(movie: [String:Any]) -> (name: String, year: Int, genre: String) {
+    guard let name = movie["name"] as? String, year = movie["year"] as? Int, genre = movie["genre"] as? String else {
+        return ("no movie", 0, "try again")
+    }
+    return(name, year, genre)
+}
+
+print(movieTuple(movies[0]))
+
 //10) Define a function that takes the movie array that will call the function you just created 
 //    in answer to the previous question. The new function should return an array of the
 //    tuples: (name, year, genre).
 
 //Write your code below
 
+// NOT WORKING
+//func moviesTupleArray(movies: [[String:Any]]) -> [(name: String, year: Int, genre: String)] {
+//    var moviesArray: [(String, Int, String)] = []
+//    for movie in movies {
+//        moviesArray.append(movieTuple(movie))
+//    }
+//    return moviesArray
+//}
 
 //11) Write a function that takes the movie as its only argument that lists all cast members across movies.
 //    The tricky part: no duplicates. I think you'll need to edit the data to create some doubled actors in order
 //    to test this. Return should be [String]?.
 
 //Write your code below
- */
