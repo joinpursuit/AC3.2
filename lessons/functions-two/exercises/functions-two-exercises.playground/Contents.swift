@@ -10,27 +10,72 @@ let tipPercentage = 0.15
 //Write your code below
 
 
+func totalWithTip (cost: Double, tip: Double)-> Double{
+    
+    let tipAmount = cost * tip
+    let total = cost + tipAmount
+    return total
+    
+}
 
-let myFinalCost = totalWithTip() //Fill in the arguments
+
+let myFinalCost = totalWithTip(Double (itemCost), tip: tipPercentage) //Fill in the arguments
+//print(" Your bill costs: $ \(myFinalCost)")
+
+
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
 
 //Write your code below
 
+//func totalAmountWith(totalTip: Double, andTax tax: Double) -> Double {
+//    return (totalTip * (tax + 1))
+//}
+//
+//print(totalAmountWith(myFinalCost, andTax: taxPercentage))
 
-let myFinalCostWithTipAndTax = totalWithTipAndTax() //Fill in the arguments
+
+//func totalWithTipAndTax(tax:Double, beforeTax: Double)-> Double{
+//    
+//    let totalAmount = (beforeTax * tax) + beforeTax
+//    return totalAmount
+
+    
+//}
+//
+
+//let myFinalCostWithTipAndTax = totalWithTipAndTax(taxPercentage, beforeTax: myFinalCost) //Fill in the arguments
 
 
 //2a)Write a function takes an Int as input, and returns true if it is even, and false if it is odd
 
+
+
 //Write your code below
+
+var num: Int
+
+func isEven(number: Int) -> Bool {
+    if number % 2 == 0{
+        
+        return true
+    }
+    return false
+}
+
+let answer = isEven(5)
+
 
 //2b) Using function above, write code that prints out whether dieRoll is even or odd
 
 let dieRoll = Int(arc4random_uniform(6) + 1)
 
+print(isEven(dieRoll))
+
+
 //3)
+
 /*
  Write a function that prints the numbers from 1 to x. EXCEPT:
  * If the number if a multiple of 3, print "Fizz" instead of the number
@@ -41,11 +86,63 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
  */
 
 
+func game(x:[Int]) {
+  
+    for i in x {
+        
+        if (i % 5 == 0) && (i % 3 == 0) {
+            
+            print ("FizzBuzz")
+            
+        } else if i % 5 == 0 {
+            
+            print ("Buzz")
+            
+        } else if   i % 3 == 0 {
+            
+            print ("Fizz")
+      }
+        else{
+            print(i)
+        }
+        
+    }
+
+
+    
+}
+
+var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+//game(numbers)
+
+
+
+
 
 
 //4a) Write a function that takes [Int] as input.  It should return the largest Int in the array.
 
 //Write your code below
+
+func largest(number: [Int]) -> Int {
+    
+   var large = number[0]
+    
+    for i in 0..<number.endIndex {
+        
+        if number[i] > large{
+            
+            large = number[i]
+        }
+    }
+    
+    return large
+    
+}
+
+var largestNum = largest([1,2,3,4,5,6,7,8,10])
+
+print("Largest number is \(largestNum)")
 
 
 
@@ -53,15 +150,34 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
 let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
 
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
-
+print (" Largest Number is \(largest(myArray))")
 
 //4c)
 //Using your solution to 2a), print a sentence that states whether the largest Int in myArray is even or odd
 
+print("True for even and False for Odd. Answer:\(isEven((largest(myArray))))")
 
 //5a) Write a function that takes a String as input and returns the number of characters in the string
 
 //Write your code below
+
+func numOfChar(aString: String) -> Int {
+    
+    var count = 0
+    
+    for i in 0..< aString.characters.endIndex{
+    
+        count += aString[i]
+    
+    }
+    
+    return count
+}
+
+var aString = "Hollywood"
+
+var charNumOfString = numOfChar(aString)
+
 
 
 
