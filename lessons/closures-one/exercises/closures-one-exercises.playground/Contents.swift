@@ -5,36 +5,119 @@ import UIKit
 // Closures-One-Exercises
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
+let greeting = {
+    return "Hello Closures!"
+}
+
+print(greeting())
 
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+let doubledValue = {(value: Int) -> Int in
+    value * 2
+}
+var result = doubledValue(9)
+
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
+let isItDivisibleBy3 = {(x: Int) -> Bool in
+    if x%3==0 {
+        return true
+    } else { return false
+}
+}
+isItDivisibleBy3(34)
+
+
+"z" > "aaaaaaaaaaa"
+
+var at = "a;lsdkfjads;lfkjasdl;fkj"
+var be = "asdl;fjfdsasdfasdlkfjs;ldfkja;"
+at.characters.count
+be.characters.count
 
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+var longestSentence = {(a: String, b: String) -> Int in
+    if a.characters.count > b.characters.count {
+        return a.characters.count
+    }    else { return b.characters.count
+        }
+    }
+longestSentence(be, at)
+
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+var largestElement = {(a: [Int]) -> Int in
+    var largest = 0
+    for i in a {
+        if largest < i {
+            largest = i
+        }
+    }
+    return largest
+}
+
+var array = [2,3,4,1,34,65,75]
+largestElement(array)
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
 
-//5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
+var xthLargest = {(arr: [Int], element: Int) -> Int in
+    let newArray = arr.sort{$0>$1}
+    
+    return newArray[element-1]
+}
+var array1 = [30,1,87,7,2,4,45, 90]
+xthLargest([4,1,6,8,10], 2)
 
+    
+
+//5c.  Rewrite 5b and add handling for cases where x >= the count of the array. Hint: Use Optionals
+
+var thisElement = {(arr: [Int], x: Int) -> Int? in
+    let thisArray = arr.sort{$0>$1}
+    if x >= thisArray.endIndex {
+        return nil
+    } else { return thisArray[x-1]
+}
+    }
+
+thisElement([34,54,12,76,37], 9)
 //Higher order functions
 
 let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
+let ascendingOrder = {(anArray: [Int]) -> [Int] in
+    let arr = anArray.sort{$0<$1}
+    return arr
+}
+let mySortedArray = ascendingOrder(myArray)
+
+
 //let mySortedArray = myArray.sort(ascendingOrder)
 //let ascendingOrder =
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
+let descendingArray = myArray.sort{$0>$1}
+let mySecondSortedArray = descendingArray
+    
 //let mySecondSortedArray = myArray.sort(descendingOrder)
 //let descendingOrder =
 
 let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
+var sortArrays = {(arrays: [[Int]]) -> [[Int]] in
+    
+    for i in 0...arrays.count {
+        print(i)
+    }
+    return arrays
+}
+
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
 

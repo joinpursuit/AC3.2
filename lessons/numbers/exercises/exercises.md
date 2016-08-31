@@ -1,3 +1,49 @@
+
+/*
+
+1.
+
+a. Positive integers and 0 does not have a positive sign.
+b. No.
+c. Yes.
+d. No.
+
+2.
+
+UInt8 is a 8 bit unsigned number, which means it holds numbers from 0 to 2^8-1, which is 0 - 255.
+Int8 holds both negative and positive numbers. So (-2)^7 to (2^7)-1, which is -128 to 127.
+
+3. e.
+
+4.
+
+1. 25
+2. 1
+3. 120
+4. 40
+5. 5
+6. 5
+
+5.
+
+div = 3
+div2 = 3.66666666666667
+
+They are not equal
+
+6. b.
+
+7. Error
+
+8.
+
+11001
+1100100
+1000001
+11111111
+
+[2:58]  
+Sabrina Ip 3229 and Marcel Chaucer 3222
 ## Numbers
 
 #### Question 1.
