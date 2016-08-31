@@ -6,17 +6,102 @@ import UIKit
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
 
+var numbers = {() -> String in
+    return "Hello Closures"
+}
+
+let aNum = numbers()
+print(aNum)
+
+
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+
+var number2 = {(a: Int) -> Int in
+    return a * 2
+}
+
+number2(3)
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+var number3 = {(a: Int) -> Bool in
+    
+    return a % 3 == 0
+
+}
+
+number3 (8)
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+
+var number4 = {(a: String, b: String) -> Int in
+    
+    if a.characters.count > b.characters.count{
+    
+        return a.characters.count
+        }
+    
+    return b.characters.count
+
+}
+
+number4("Ali" , "Hoodd")
+
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+
+var number5a = {(a:[Int]) -> Int in
+    
+    var largest = a[0]
+    
+    for i in a {
+        
+        if i > largest{
+        
+            largest = i
+        }
+
+    }
+    return largest
+
+}
+
+number5a([1,2,3,4,5,6,22,45])
+
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
 
+var number5b = {(a:[Int], x: Int) -> Int in
+    
+    var sortedA = a.sort(>)     // sort from biggest to smallest
+    
+    return sortedA[x-1]
+    
+}
+
+print ( number5b([1,2,3,4,5,6,22,45], 5) )
+
+
+
+
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
+
+
+
+var number5c = {(a:[Int], x: Int) -> Int? in
+    
+    if x > a.count { return nil }
+    
+    var sortedA = a.sort(>)     // sort from biggest to smallest
+    print(sortedA[x - 1])
+    return sortedA[x-1]
+    
+    
+}
+
+print(number5c([1,2,3,4,5], 5)!)
+
 
 //Higher order functions
 
@@ -24,20 +109,87 @@ let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
-//let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
+
+let ascendingOrder = {(x: Int, y: Int) -> Bool in
+    return x < y
+}
+let mySortedArray = myArray.sort(ascendingOrder)
+
+// or let ascendingOrder =  {(a:[Int])-> [Int] in
+//    
+// var  b = a.sort(<)
+//    
+//    return b
+//}
+//
+//ascendingOrder(myArray)
+
+
+
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
-//let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+
+let descendingOrder = { (x: Int, y: Int) -> Bool in
+    return x > y
+}
+
+let mySecondSortedArray = myArray.sort(descendingOrder)
+
+
+let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74],[42,42,41]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
 
+
+print(arrayOfArrays.sort{(a: [Int], b: [Int]) -> Bool in
+    let thirdValueForA = a[2]
+    let thirdValueForB = b[2]
+    return thirdValueForA < thirdValueForB
+    
+    })
+
+
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
 
+var shortArr: [[Int]] = []
+var regularArr: [[Int]] = []
+
+for i in arrayOfArrays{
+    
+    if i.count < 3{
+        
+        shortArr.append(i)
+    }
+    
+    else{
+        regularArr.append(i)
+        
+    
+    }
+    print(shortArr)
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//8a. Sort the string below in descending order according the dictionary letterValues
 let letterValues = [
     "a" : 54,
     "b" : 24,
@@ -67,9 +219,17 @@ let letterValues = [
     "z" : 432
 ]
 
-//8a. Sort the string below in descending order according the dictionary letterValues
-
 var codeString = "aldfjaekwjnfaekjnf"
+let codeStringAsArr = Array(codeString.characters)
+
+codeStringAsArr.sort{(a: Character, b: Character) -> Bool in
+    
+    
+    let aVlaue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aVlaue > bValue
+    
+}
 
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
