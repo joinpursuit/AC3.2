@@ -162,6 +162,26 @@ for movie in movies {
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+// movies is an array of dictionaries [ [:], [:], [:] ]
+
+var moviesByName = [String:[String:Any]]()
+
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String {
+        movies[i]["name"] = nil //this erases the "name" key and value so when properties are added to moviesByName
+        moviesByName[name] = movies[i] //a new key with the values of previous key?
+    }
+}
+
+print(moviesByName["Minions"]!)
+
+
+    //for i in 0..<movies.count {
+    //    if let name = movies[i]["name"] {
+    //        print(name)
+    //        moviesByName
+    //    }
+    //}
     //var moviesByName: [String: [String:Any]];() //the ;???
     //var sortedMovies = [String]()
     //var sortM = [String]()
@@ -181,6 +201,14 @@ for movie in movies {
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
 
+var newDictByYear = [Int:[String:Any]]()
+
+for i in 0..<movies.count {
+    if let year = movies[i]["year"] as? Int {
+        movies[i]["year"] = nil
+        newDictByYear["year"] = movies[i] //cannot subscript a value of type [Int:[String: Any] with an index of type String??
+    }
+}
 
 
 
@@ -198,14 +226,6 @@ for movie in movies {
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
-
-    for movie in movies {
-        if let name = movie["name"], year = movie["year"], genre = movie["genre"], cast = movie["cast"] {
-            for actor in cast {
-            print("\(name) came out in \(year).  It was an \(genre) staring \(actor)")
-            }
-        }
-    }
 
 
 
