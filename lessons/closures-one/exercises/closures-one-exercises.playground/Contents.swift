@@ -6,19 +6,107 @@ import UIKit
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
 
+
+var closureOne = {
+    return "Hello Closures"
+}
+closureOne()
+
+
+
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+
+var closureTwo = { (a:Int) -> Int in
+ return (a * 2)
+}
+closureTwo (4)
+
+
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+
+var closureThree = { (a:Int) -> Bool in
+    if a%3==0{
+        return true
+    }else{
+        return false
+    }
+}
+closureThree (6)
+
+
+
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+
+
+var closureFour = { (a: String, b: String) -> Int in
+    let x = a.characters.count
+    let y = b.characters.count
+    if x>y {
+        return x
+    } else {
+        return y
+    }
+}
+
+closureFour ("hello Bob","hello Bobby and Sam")
+
+
+
+
+
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+var closureFive = { (a:[Int]) -> Int in
+    var largest = 0
+    for i in a {
+        if i > largest {
+        largest = i
+        }
+    }
+    return largest
+}
+
+closureFive([3,5,2])
+
+
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+
+var closureSix = {(a:[Int], x: Int) -> Int in
+    var myArray = a.sort{$0 > $1}
+    return myArray[x-1]
+}
+print ( closureSix ( [34,2,421,32,200], 2) )
+
+
+
+
 
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
 
 //Higher order functions
+
+//var closureSeven = {(a:[Int], x: Int?) -> Int in
+//    var myArray = a.sort{$0 > $1}
+//    if x > myArray.count{
+//        return nil
+//    }else {
+//        
+//    }return myArray[x-1]
+//    
+//}
+//print ( closureSix ( [34,2,421,32,200], 2) )
+
+
+
+
+
+
+
 
 let myArray = [34,42,42,1,3,4,3,2,49]
 
