@@ -6,17 +6,91 @@ import UIKit
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
 
+var Hello: () -> (String) = {
+     "Hello Closures!"
+    }
+
+print(Hello())
+
+
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+
+var HelloTwo: (Int) -> (Int) = {a -> Int in
+    return a * 2
+    
+}
+
+print(HelloTwo(45))
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+var divisbleBy: (Int) -> (Bool) = { x -> Bool in
+    if x%3 == 0 {
+        
+    return true
+        
+    }
+    return false
+
+}
+
+divisbleBy(9)
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+
+var longestCount: (String , String) -> (Int) = { (x: String, y: String) -> (Int) in
+    
+    var first = x.characters.count
+    var second = y.characters.count
+    
+    if first > second {
+        return first
+    }
+    return second
+
+}
+
+longestCount("Kadell", "orNahKadell")
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+var largestElement: ([Int]) -> (Int) = { (arr:[Int]) -> Int in
+        var largest = 0
+    for x in arr {
+        if x > largest {
+            largest = x
+        }
+    }
+    return largest
+}
+
+
+largestElement([34,42,42,51,3,4,3,2,49])
+
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
 
+var certainCount: ([Int], Int) -> (Int) = { (arr: [Int], x:Int) -> Int in
+    var sorted = arr.sort ({ $0 > $1 })
+    return sorted.removeAtIndex(x - 1)
+    
+}
+
+certainCount([34,42,42,1,3,4,3,2,49], 2)
+
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
+
+//var newCount: ([Int], Int) -> (Int?) = { (arr: [Int], x:Int) -> Int? in
+//    
+//    var sorted = arr.sort ({ $0 > $1 })
+//    if let all = {
+//    
+//    }
+//    
+//    return sorted.removeAtIndex(x - 1)
+//    
+//}
+//newCount([34,42,42,1,3,4,3,2,49], 2 )
 
 //Higher order functions
 
@@ -24,19 +98,67 @@ let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
-//let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
+
+let ascendingOrder = {( i: Int, j: Int) -> Bool in
+    return i < j }
+
+let mySortedArray = myArray.sort(ascendingOrder)
+
+//let ascendingOrder = {( i: Int, j: Int) -> Bool in
+//    return i < j }
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
-//let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
+let descendingOrder = {( i: Int, j: Int) -> Bool in
+    return i > j
+}
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+let mySecondSortedArray = myArray.sort(descendingOrder)
+
+//let descendingOrder = {( i: Int, j: Int) -> Bool in
+//    return i > j
+//}
+
+var arrayOfArrays = [[3,65,2,4],[25,3,1,6],[1,4],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
 
+//var sortedArray = arra {(a: [Int], b: [Int], c: [Int]) -> () in
+//    var acess = {(d: Int, e: Int, f: Int) -> [Int] in
+//            var aone = a[3]
+//            var bone = b[3]
+//            var cone = c[3]
+//        
+//    
+//    }
+//}
+
+//var sortedArray = arrayOfArrays.sort{(a: [Int], b: [Int]) -> Bool in
+//    var aOne = a[2]
+//    var bOne = b[2]
+//    
+//    return aOne < bOne
+//}
+//
+//print(sortedArray)
+
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
+
+//var newSortedArray = arrayOfArrays.sort{(a: [Int], b: [Int]) -> Bool in
+//   var validArray = []
+//    var invalidArray = []
+//    
+//    
+//}
+
+    
+//    if a.indexOf(2) == nil || b.indexOf(2) == nil {
+//        return bOne > aOne
+//    }
+    
+//   return aOne < bOne
+//}
+//print(newSortedArray)
 
 let letterValues = [
     "a" : 54,
@@ -71,6 +193,14 @@ let letterValues = [
 
 var codeString = "aldfjaekwjnfaekjnf"
 
+let codeStringAsArr = Array(codeString.characters)
+
+codeStringAsArr.sort{ (a: Character, b: Character ) -> Bool in
+                let aValue = letterValues[String(a)]
+                let bValue = letterValues[String(b)]
+                return aValue > bValue
+    
+}
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 

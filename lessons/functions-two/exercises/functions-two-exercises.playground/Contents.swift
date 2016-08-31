@@ -234,21 +234,23 @@ uniqueNumber([3,1,4,1,3,2,6,1,9])
 //Sample output:
 //93
 
-func convert (x: [Int]) {
-    var y = ""
-    
-    for i in x{
-        y += String(i)
-    }
-    
-    let together = ("0b\(y)")
-    let optional = Int(together)!
-
-    print(optional)
-    
-}
+//func convert (x: [Int]) {
+//    var y = ""
+//    
+//    for i in x{
+//        y += String(i)
+//    }
+//    
+//    let together = ("0b\(y)")
+//    let optional = Int(together)!
+//
+//    print(optional)
+//    
+//}
 //convert([1,0,1,1,1,0,1])
 0b1011101
+
+
 //8) Copy the movie dictionary from homework two and add another [String] to each movie.
 //   Name it "locations" and add some dummy data. Use the re-factored nested function
 //   from the full lesson (we didn't go over it) to print both the cast list and the 
@@ -275,3 +277,5 @@ func convert (x: [Int]) {
 //    to test this. Return should be [String]?.
 
 //Write your code below
+
+
