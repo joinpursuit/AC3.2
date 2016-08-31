@@ -111,7 +111,6 @@ var code = [
 
 var message = "hello world"
 
-//message = "gdkkn vnqkc"
 for i in message.characters {
     for j in code.values {
         if String(i) == j {
@@ -123,10 +122,40 @@ for i in message.characters {
         }
     }
 }
+print("")
+
+//-------------------------OR-----------------------//
+
+var encodedString = ""
+for c in message.characters {
+    if let encodedChar = code[String(c)] {
+        encodedString += encodedChar
+    } else {
+        encodedString += " "
+    }
+}
+print(encodedString)
+
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+
+var deCode = [String: String]()
+
+for (key, value) in code {
+    deCode[value] = key
+}
+
+var decodedString = ""
+for c in encodedMessage.characters {
+    if let encodedChar = deCode[String(c)] {
+        decodedString += encodedChar
+    } else {
+        decodedString += " "
+    }
+}
+print(decodedString)
 
 
 //5)
