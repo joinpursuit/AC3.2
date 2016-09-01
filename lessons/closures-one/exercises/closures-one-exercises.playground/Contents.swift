@@ -111,33 +111,39 @@ let mySecondSortedArray = myArray.sort(descendingOrder)
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+var arrayOfArrays = [  [3,65,2,4]  , [25,3,1,6,40] ,  [245,2,3,5,74]  ]
 
-//var ascendingArrays = { (a: Int, b: Int) -> Bool in
-//    let aValue = [Int(a)]
-//    let bValue = [Int(b)]
-//    return aValue > bValue
-//}
+var ascendingArrays = { (a: [Int], b: [Int]) -> Bool in // This syntax means "move the [Int] parameters around and sort them according to the statements below"
+    let aValue = a[2]
+    let bValue = b[2]
+    return aValue > bValue
+}
 
-//ascendingArrays(arrayOfArrays)
-
-//for index in 0..<arrayOfArrays.count {
-//    var a: Int
-//    var b: Int
-//    if index == 0 {
-//        continue
-//    } else {
-//        if arrayOfArrays[index] > arrayOfArrays[index-1] {
-//            
-//        }
-//    }
-//}
+arrayOfArrays.sort(ascendingArrays)
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
 
-//var superAscending
-//
-//superAscendingArrays(arrayOfArrays)
+var superAscending = { (a: [Int], b: [Int]) -> Bool in 
+    var aValue: Int
+    var bValue: Int
+    if a.count >= 3 {
+        aValue = a[2]
+    } else {
+        aValue = -1
+        bValue = 0
+    }
+    if b.count >= 3 {
+        bValue = b[2]
+    } else {
+        aValue = 0
+        bValue = -1
+    }
+    return aValue > bValue
+}
+
+arrayOfArrays = [  [3,65,2,4]  , [25,3,1,6,40] ,  [245,2,3,5,74], [2], [3,4], []]
+
+arrayOfArrays.sort(superAscending)
 
 let letterValues = [
     "a" : 54,
@@ -172,22 +178,34 @@ let letterValues = [
 
 var codeString = "aldfjaekwjnfaekjnf"
 
+print(codeString.characters.sort({(a, b) -> Bool in // if you specify the type in the parameters, it throws an error claiming that the closure does not take any parameters
+    let aValue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aValue > bValue
+}))
+
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
 
-
+print(codeStringTwo.characters.sort({(a, b) -> Bool in
+    let aValue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aValue < bValue
+}))
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
 
 //Input: (Int) -> Int
 //Output: (Int) -> Int
 
-//func doubleIt(funct: (Int)) -> (Int) -> Int {
-//    var saveIt = funct
-//    return saveIt + saveIt
-//}
+func doubleFunc(x: (Int)) -> Int {
+    
+    return x * 2
+}
+
+doubleFunc(doubleMint(5))
 
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
