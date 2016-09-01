@@ -6,15 +6,66 @@ import UIKit
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
 
+var noParametersAndNoValue = {
+    return "Hello Closures!"
+}
+print(noParametersAndNoValue())
+
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+
+
+var closureWithInt = { (a: Int) -> Int in
+    return a * a
+}
+print(closureWithInt(2))
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+
+var closureWithIntAndBool = { (a: Int) -> Bool in
+    return a % 3 == 0
+}
+print(closureWithIntAndBool(3))
+
+
+
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+
+var closureWithTwoStrings = { (a: String, b: String) -> Int in
+    if a.characters.count > b.characters.count {
+        return a.characters.count
+    } else {
+        return b.characters.count
+    }
+}
+
+closureWithTwoStrings("hi", "bye")
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+
+var arrayOfInt = [2,7,9,3,6]
+
+var closureWithArrayOfInt = {(a: [Int]) -> Int in
+    var largest = a[0]
+    for i in 0..<a.count {
+        if a[i] > largest {
+            largest = a[i]
+        }
+    }
+    return largest
+}
+
+print(closureWithArrayOfInt(arrayOfInt))
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+
+
+//var closureArrayOfIntAndaVariableX = { (array: [Int], x: Int) -> Int
+//    
+//}
+
 
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
 
@@ -24,10 +75,25 @@ let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
+
+let ascendingOrder = {(a: Int, b: Int) -> Bool in
+    return (a < b)
+}
+
+myArray.sort(ascendingOrder)
+
+
 //let mySortedArray = myArray.sort(ascendingOrder)
 //let ascendingOrder =
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
+
+
+let decendingOrder = {(a: Int, b: Int) -> Bool in
+    return (a > b)
+}
+
+myArray.sort(decendingOrder)
 
 //let mySecondSortedArray = myArray.sort(descendingOrder)
 //let descendingOrder =
@@ -70,6 +136,7 @@ let letterValues = [
 //8a. Sort the string below in descending order according the dictionary letterValues
 
 var codeString = "aldfjaekwjnfaekjnf"
+codeString.characters.sort()
 
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
