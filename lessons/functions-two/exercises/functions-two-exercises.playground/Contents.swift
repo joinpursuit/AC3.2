@@ -191,32 +191,50 @@ let inputArray = [3,1,4,1,3,2,6,1,9]
 
 //Sample output:
 //4
-[1,1,2,2,3,3]
+//[1,1,2,2,3,3]
 //Explanation:
 //2, 4, 6, 9 are unique in the array.  Every other number is not unique.
 func specificIntCount (arrayOfInt:[Int]) -> Int {
-    var someArray : [Int] = []
-    for i in 0..<arrayOfInt.count{
-        var unique = false
-        for j in 0..<someArray.count{
-            if arrayOfInt[i] != someArray[j] {
-                unique = true
-            }else {
-                false
-                unique = false
-            }
+    var someDictionary: [Int: Int] = [:]
+    var count = 0
+    for i in 0..<arrayOfInt.count {
+       // print(arrayOfInt[i])
+        if var amount = someDictionary[arrayOfInt[i]] {
+            amount += 1
+            someDictionary[arrayOfInt[i]] = amount
+            //print(amount)
+            //print("Print:\(someDictionary)")
+        } else {
+            someDictionary[arrayOfInt[i]] = 1
         }
-        if unique == true{
-            someArray.append(arrayOfInt[i])
-        //need to work on the logic again
-        }
-        
     }
-    print(someArray)
-    return someArray.count
+    //print(someDictionary)
+    
+    for (_,y) in someDictionary where y == 1 {
+        count += 1
+    }
+    return count
+//    var count = 0
+//    
+//    for i in 0..<arrayOfInt.count {
+//        print(arrayOfInt[i])
+//        if var amount = someDictionary[i] {
+//            amount += 1
+//            someDictionary[i] = amount
+//            print(amount)
+//        } else {
+//            someDictionary[i] = 1
+//        }
+//    }
+//    print(someDictionary)
+//    
+//    for (_,y) in someDictionary where y == 1 {
+//    count += 1
+//    }
+//    return count
 }
-print(inputArray)
-print(specificIntCount(inputArray))
+//print(inputArray)
+specificIntCount(inputArray)
 
 //func specificIntCount (arrayOfInt:[Int]) -> Int {
 //    var someArray : [Int] = []

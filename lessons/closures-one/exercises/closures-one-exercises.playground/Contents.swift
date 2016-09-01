@@ -207,11 +207,17 @@ print(sortByNumber(codeString, b: letterValues))
 
 var codeStringTwo = "znwemnrfewpiqn"
 
-let codeStringTwo = Array(codeString.characters)
-print(codeStringTwo.sort{(a:Character, b:Character) -> Bool in
+let codeStringTwoDecode = Array(codeString.characters)
+print(codeStringTwoDecode.sort{(a:Character, b:Character) -> Bool in
     let aValue = letterValues[String(a)]
     let bValue = letterValues[String(b)]
     return aValue < bValue
+    })
+
+print(codeStringTwoDecode.sort{(a:Character, b:Character) -> Bool in
+    let aValue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aValue > bValue
     })
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
@@ -223,9 +229,11 @@ print(codeStringTwo.sort{(a:Character, b:Character) -> Bool in
 
 var number = 1
 
-//var tripleNumber =
-
-
+var tripleNumber = {
+    number *= 3
+}
+tripleNumber()
+print(number)
 
 //9. Given a tuple representation of our names from before:
 
@@ -244,6 +252,18 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 // .
 // .
+//let sortedFirstAndLastTuple
+var c = firstAndLastTuples[0].1
+print(c)
+let sortedFirstAndLastTuple = firstAndLastTuples.sort{(a:(String, String), b: (String, String)) -> Bool in
+    let aValue = a.1
+    let bValue = b.1
+    return aValue < bValue
+}
+print(sortedFirstAndLastTuple)
+for (a,b) in sortedFirstAndLastTuple{
+    print("\(b), \(a)")
+}
 
 //10. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
@@ -286,14 +306,52 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 //Victor Zhong	3236
 
 // Here's an example of how to start:
-let ac32folks = [("Amber", "Spadafora",	3201),
-                 ("Ana", "Ma",	3202),
-                 ("Annie", "Tung",	3203)]
+let ac32folks = [("Amber", "Spadafora",	3201, 2),
+                 ("Ana", "Ma",	3202, 1),
+                 ("Annie", "Tung",	3203, 3),
+                 ("Cristopher", "Chavez",	3204, 4),
+                 ("Eashir", "Arafat",	3205, 5),
+                 ("Edward", "Anchundia",	3206, 6),
+                 ("Emily", "Chu",	3207, 7),
+                 ("Eric", "Chang",	3208, 8),
+                 ("Erica", "Stevens",	3209, 9),
+                 ("Fernando", "Ventura",	3210, 10),
+                 ("Harichandan", "Singh",	3211, 11),
+                 ("Ilmira", "Estil",	3212, 12),
+                 ("Jermaine", "Kelly",	3213, 13),
+                 ("Gabriel", "Breshears",	3214, 14),
+                 ("Kadell", "Gregory",	3215, 15),
+                 ("Kareem", "James",	3216, 16),
+                 ("Karen",  "Manzanares Fuentes", 	3217, 17),
+                 ("Leandro", "Nunez",	3218, 18),
+                 ("Liam", "Kane",	3219, 19),
+                 ("Luz Loayza", "Herrer",	3220, 20),
+                 ("Madushani Lekam Wasam", "Liyanage",	3221, 21),
+                 ("Marcel", "Chaucer",	3222, 22),
+                 ("Margaret", "Ikeda",	3223, 23),
+                 ("Maria", "Scutaru",	3224, 24),
+                 ("Marty", "Avedon",	3225, 25),
+                 ("Michael", "Pinnock",	3226, 25),
+                 ("Miti",  "Shah",	3227, 27),
+                 ("Rukiye", "Karadeniz",	3228 ,28),
+                 ("Sabrina", "Ip",	3229, 29),
+                 ("Simone", "Grant",	3230, 30),
+                 ("Sophia", "Barrett",	3231, 31),
+                 ("Thinley",  "Dorjee",	3232, 32),
+                 ("Tom", "Seymour",	3233, 33),
+                 ("Tong", "Lin",	3234, 34),
+                 ("Tyler", "Newton",	3235, 35),
+                 ("Victor", "Zhong",	3236, 26)]
 // and so on...
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
+print(ac32folks.sort{(a:(String,String,Int,Int), b:(String, String, Int, Int)) -> Bool in
+    let aValue = a.3
+    let bValue = b.3
+    return aValue < bValue
+})
 
 
 
@@ -301,3 +359,46 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 
 // eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "Old"]
 //      output string: "Hello Darkness My Old Friend
+var array1 =  ["Hello", "My", "Friend", "This", "is", "a", "good", "day"]
+var array2 = ["Darkness", "Old"]
+//output string: "Hello Darkness My Old Friend This is a good day"
+
+let arrayOutPut = {(a:[String], b:[String]) -> String in
+    var messageString11 = ""
+    var j = 0
+    var shorterArray:[String] = []
+    var longerArray:[String] = []
+    var lastCountedIndex = 0
+    
+    if a.count < b.count {
+        shorterArray = a
+        longerArray = b
+        j = b.count - a.count
+    } else {
+        shorterArray = b
+        longerArray = a
+        j = a.count - b.count
+    }
+    for i in 0..<shorterArray.count {
+        messageString11 += a[i] + " "
+        messageString11 += b[i] + " "
+        lastCountedIndex = i
+    }
+    for k in lastCountedIndex..<longerArray.count{
+        messageString11 += longerArray[k] + " "
+    }
+    
+//    if !a.isEmpty {
+//        for i in lastCountedIndex..<a.count {
+//            messageString11 += a[i]
+//        }
+//    }
+//    if !b.isEmpty {
+//        for i in lastCountedIndex..<b.count {
+//            messageString11 += b[i]
+//        }
+//    }
+    return messageString11
+}
+print(arrayOutPut(array1,array2))
+
