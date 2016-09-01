@@ -100,34 +100,38 @@ let descendingOrder = myArray.sort {$0 > $1}
 //let mySecondSortedArray = myArray.sort(descendingOrder)
 
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+let arrayOfArrays = [[3,65,2,4], [25,3,1,6], [245,2,3,5,74], [1], [2, 5]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
-var newArrayOfArrays = arrayOfArrays.sort{(a: [Int], b: [Int]) -> Bool in
-    var arrOne = a[2]
-    var arrTwo = b[2]
-    return arrOne < arrTwo
-}
-print(newArrayOfArrays)
-///////
+//var newArrayOfArrays = arrayOfArrays.sort{(a: [Int], b: [Int]) -> Bool in
+//    var arrOne = a[2]
+//    var arrTwo = b[2]
+//    return arrOne < arrTwo
+//}
+//print(newArrayOfArrays)
+
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
 
-var newArray = {(c: [[Int]], elementNum: Int) -> [[Int]] in
-    var sortedArr = [[Int]]()
-    var unsortedArr = [[Int]]()
-    for i in c {
-        if elementNum <= c.count {
-            sortedArr.append(i)
+var newArray = {(arrays: [[Int]], index: Int) -> [[Int]] in
+    var indexArray = [[Int]]()
+    var lessIndexArray = [[Int]]()
+    for arr in arrays {
+        if index < arr.count {
+            indexArray.append(arr)
         }
         else {
-            unsortedArr.append(i)
+            lessIndexArray.append(arr)
         }
     }
-    return sortedArr.sort({$0[elementNum-1] < $1[elementNum-1]}) + unsortedArr
+    let sortedIndexArray = indexArray.sort({$0[index] < $1[index]})
+    let sortedLessIndexArray = lessIndexArray.sort({ $0.count > $1.count })
+    
+    let sortedArray = sortedIndexArray + sortedLessIndexArray
+    
+    return sortedArray
 }
 
-//print(newArray(arrayOfArrays 3, 4))
-///////
+print(newArray(arrayOfArrays, 2))
 
 let letterValues = [
     "a" : 54,
@@ -170,21 +174,23 @@ myString.sort {(a: Character, b: Character) -> Bool in
     let bValue = letterValues[String(b)]
     return aValue < bValue
 }
-let myInt = 25342
-let myIntAsString = String(myInt)
-print(myIntAsString)
+print(myString)
+//let myInt = 25342
+//let myIntAsString = String(myInt)
+//print(myIntAsString)
+
 ///////////
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
 
-//var emptyString = ""
-//for i in codeString.characters.sort({a, b in letterValues[String(a)] > letterValues[String(b)]}) {
-//    emptyString.append(i)
-//}
-//print(emptyString)
-
-///////
+let myStringTwo = Array(codeStringTwo.characters)
+myStringTwo.sort {(c: Character, d:Character) -> Bool in
+    let cValue = letterValues[String(c)]
+    let dValue = letterValues[String(d)]
+    return cValue > dValue
+}
+print(myStringTwo)
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
 //
@@ -195,9 +201,13 @@ var codeStringTwo = "znwemnrfewpiqn"
 
 var number = 1
 
-//var tripleNumber =
-
-
+let tripleNumber = {() -> Void in
+    number *= 3
+}
+tripleNumber()
+print(number)
+tripleNumber()
+print(number)
 
 //11. Given a tuple representation of our names from before:
 
@@ -216,6 +226,27 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 // .
 // .
+
+// not that great method
+let sortedTuples = firstAndLastTuples.sort { $0.1 < $1.1 }
+for tuple in sortedTuples {
+    print("\(tuple.1), \(tuple.0)")
+}
+
+// the best method
+let sortByLastName = { (fullNames: [(String, String)]) -> [(String, String)] in
+    let sortedFullNames = fullNames.sort({ $0.1 < $1.1 })
+    var lastNameFirst = [(String, String)]()
+    for name in sortedFullNames {
+        lastNameFirst.append((name.1), (name.0))
+    }
+    return lastNameFirst
+}
+
+let sortedNamesArray = sortByLastName(firstAndLastTuples)
+for name in sortedNamesArray {
+    print("\(name.1), \(name.0)")
+}
 
 //12. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
@@ -266,10 +297,54 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
-
-
+let me = ("Annie", "Tung", 3203)
+let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String, Int)) -> [(String, String, Int)] in
+    var selfFirstStudentList = students
+    
+    for index in 0..<selfFirstStudentList.count {
+        if selfFirstStudentList[index] == me {
+            selfFirstStudentList.removeAtIndex(index)
+            selfFirstStudentList.insert(me, atIndex: 0)
+        }
+    }
+    return selfFirstStudentList
+}
+print(cutMicrowaveLine(ac32folks, me))
 
 //13. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
 
 // eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "Old"]
-//      output string: "Hello Darkness My Old Friend
+//      output string: "Hello Darkness My Old Friend"
+
+//let arr1 = ["Hello", "My", "Friend"]
+//let arr2 = ["Darkness", "Old"]
+//let orderedSentence = { (array1: [String], array2: [String]) -> String in
+//    var emptyString = ""
+//    var longestArr = [String]()
+//    var shortestArr = [String]()
+//    if array1.count > array2.count {
+//        longestArr = array1
+//        shortestArr = array2
+//    }
+//    
+//    for index in 0..<shortestArr.count {
+//        if index % 2 == 0 {
+//            if let currentWord = longestArr.first {
+//                emptyString += "\(currentWord) "
+//                longestArr.removeAtIndex(0)
+//            }
+//        } else {
+//            if let currentWord = shortestArr.first {
+//                emptyString += "\(currentWord) "
+//
+//                shortestArr.removeAtIndex(0)
+//            }
+//        }
+//    }
+//    for index in 0..<longestArr.count {
+//        emptyString += "\(longestArr[index]) "
+//    }
+//    return emptyString
+//}
+//
+//print(orderedSentence(arr1, arr2))
