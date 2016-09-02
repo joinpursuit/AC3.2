@@ -1,17 +1,17 @@
-<<<<<<< HEAD
-//: Playground - noun: a place where people can play
-
 import UIKit
 
 // movies is an Array of Dictionaries
 // each element of movies is a Dictionary with the keys
 // 'name','year', 'genre', 'cast' and 'description'
+
+//```swift
+
 var movies: [[String:Any]] = [
     [
         "name": "Minions",
         "year": 2015,
         "genre": "animation",
-        "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
+        "cast": ["Sandra Bullock"],
         "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
     ],
     [
@@ -60,7 +60,7 @@ var movies: [[String:Any]] = [
         "name": "The Hunger Games",
         "year": 2012,
         "genre": "drama",
-        "cast": ["Jennifer Lawrence", "Josh Hutcherson", "Liam Hemsworth"],
+        "cast": ["Jennifer Lawrence", "Josh Hutcherson", "Liam Hemsworth",],
         "description": "Katniss Everdeen voluntarily takes her younger sister\"s place in the Hunger Games, a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death."
     ],
     [
@@ -94,57 +94,77 @@ var presidentsByYear = [1997 : "Bill Clinton",
 ]
 
 
-// ONE NOTE before you start consider this one movie element
+//ONE NOTE before you start consider this one movie element
 
-//let aMovie: [String:Any] = [
-//    "name": "Minions",
-//    "year": 2015,
-//    "genre": "animation",
-//    "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
-//    "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
-//]
+let aMovie: [String:Any] = [
+    "name": "Minions",
+    "year": 2015,
+    "genre": "animation",
+    "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
+    "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
+]
+
+
 
 //if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
 //    print("\(year): \(name)")
-//    
+//
 //    for actor in cast {
 //        print(actor)
 //    }
 //}
 
-// WARM UPS
-// 1. Print the name of the first movie.
+ //WARM UPS
+ //1. Print the name of the first movie.
+
 //if let movieName = (movies[0]["name"]) {
 //    print(movieName)
 //}
-// 2. Print a list of all movie names, preferably on one line.
+
+
+ //2. Print a list of all movie names, preferably on one line.
+
+
 //for i in 0..<movies.count {
 //    if let movieName = (movies[i]["name"]){
 //         print("\(movieName), ", terminator: " ")
 //    }
 //}
+
+
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
 // 2001: Shrek
 // .
 // .
 // .
-//for i in 0..<movies.count {
+//
+//```swift
+
+//fAor i in 0..<movies.count {
 //    if let movieYear = (movies[i]["year"]), movieName = (movies[i]["name"]){
 //        print("\(movieYear)\(":\(movieName)"),", terminator: " ")
 //    }
 //}
 
+//```
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
+//
+
+//Alternate way to solve this problem is to use helper function on switch. statement.
+//
+//```swift
+
 //for i in 0..<movies.count {
 //    if let name = movies[i]["name"] as? String, year = movies[i]["year"]as? Int, genre = movies[i]["genre"] as? String {
 //        switch genre {
-//            case "Action":
+//            case "action":
 //                print("\u{1F52B}" + name + (": \(genre)"))
-//            case "Animation":
+//            case "animation":
 //                print("\u{1F438}" + name + (": \(genre)"))
-//            case "Drama":
+//            case "drama":
 //                print("\u{1F630}" + name + (": \(genre)"))
 //            default:
 //            print("No More Genres Bro")
@@ -152,21 +172,38 @@ var presidentsByYear = [1997 : "Bill Clinton",
 //                        }
 //                    }
 //            }
+
+//```
+//
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
+//
+//Initialized a dictionary inside of a dictionary. The dictionary has a key of strings.
+//
+//```swift
+
 //var moviesByName = [String:[String:Any]]()
 //for i in 0..<movies.count {
 //    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
 //        moviesByName[name] = movies[i]
 //    }
+//    for k in moviesByName.sort(){
+//        if k == "name"
+//    }
+//    print(moviesByName.keys.sort(<))
 //}
-//print(moviesByName.keys.sort(<))
 
 
+//```
+//
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
+//
+//```swift
+
 //var moviesByName = [String:[String:Any]]()
+//
 //for i in 0..<movies.count {
 //    if let name = movies[i]["genre"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
 //        moviesByName[name] = movies[i]
@@ -174,16 +211,17 @@ var presidentsByYear = [1997 : "Bill Clinton",
 //}
 //print(moviesByName.keys.sort(<))
 
-
+//```
+//
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 // first movie as a guide:
+//
+//```swift
+
 var blurb = ""
-var text1 = ""
-var text2 = ""
-var text3 = ""
 for i in 0..<movies.count {
-    if let movieYear = (movies[i]["year"]) as? Int, movieName = (movies[i]["name"]) as? String, movieGenre = (movies[i]["genre"]) as? String, movieCast = (movies[i]["cast"]) as? [String] {
+    if let movieYear = (movies[i]["year"]) as? Int, movieName = (movies[i]["name"]) as? String, movieGenre = (movies[i]["genre"]) as? String, movieCast = (movies[i]["cast"]) as? [String], president = presidentsByYear[movieYear] {
         
         blurb = "\(movieName) came out in \(movieYear). "
         
@@ -204,19 +242,15 @@ for i in 0..<movies.count {
                 blurb += "\(movieCast[i]), "
             }
         }
-//        for i in 0..<movieCast.count {
-//            text3 += movieCast[i] + ", "
-//        }
-//        
-       //print(text3)
-        
-        //print("\(movieName) came out in \("\(movieYear)"). It was a \("\(movieGenre)") staring \(movieCast) ")
+        print(blurb)
+        print("\(president) was President that year.")
     }
-    print(blurb)
 }
 
 
-
+//```
+//
+//
 // Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
 // Barack Obama was president that year.
 
@@ -226,5 +260,3 @@ for i in 0..<movies.count {
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
-=======
->>>>>>> 9cc5679c92519db1993fda2dc0b2f87aac434d33

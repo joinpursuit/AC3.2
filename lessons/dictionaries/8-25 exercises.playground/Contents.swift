@@ -6,8 +6,13 @@ import UIKit
 //1)
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
+//var citiesDict = ["United States":"Washington D.C", "Germany":"Berlin", "Italy":"Rome",]
 
-//b) Add two more countries to your dictionary
+//b) Add two more countries to your dictionary.
+//citiesDict["Columbia"] = "Bogata"
+//citiesDict["Canada"] = "Ottawa"
+//print(citiesDict)
+
 
 //c) Translate at least 3 of the capital names into another language
 
@@ -16,8 +21,10 @@ import UIKit
 var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
+var someDict
 
-//b) Add values to the dictionary for the keys "Six" and "Seven"
+
+b) Add values to the dictionary for the keys "Six" and "Seven"
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 

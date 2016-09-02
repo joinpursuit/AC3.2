@@ -1,90 +1,118 @@
-1)
-Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
-Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
-
-//Write all your code below:
-```swift
-
-var colors = ["Orange", "Red", "Yellow", "Turquosie", "Lavender"]
-
-print(" \(colors[0]), \(colors[2]), \(colors [4]) are some of my favorite colors.")
-```
-2)
-
-```swift
-Remove "Illinois" and "Kansas" from the array below.
-
-var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
-for i in westernStates {
-    if i == "Illinois" {
-        print(westernStates.removeAtIndex(4))
-    }
-        if i == "Kansas" {
-        print(westernStates.removeAtIndex(4))
-    }
-    print(westernStates)
-}
-```
-
-
-//Write all your code below:
-
-3)
-//Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
-
-```swift
-var moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
-var inUSA = [""]
-var outUSA = [""]
-for i in 0..<moreStates.count {
-    if "Hawaii" == moreStates[0] {
-        moreStates.removeAtIndex(0)
-        outUSA.append("Hawaii")
-        print(i)
-        continue
-    }
-    if "Alaska" == moreStates[1] {
-        moreStates.removeAtIndex(1)
-        outUSA.append("Alaska")
-    print(moreStates)
-    }else{
-       inUSA += moreStates
-        break
-        }
-    }
-print("\(inUSA) are in the USA")
-```
-//Write all your code below:
-
-
-////4)
-
-```swift
-
-//a) print out how many non-whitespace characters are in myString
-
-let myString = "This is practice for the next problem!"
-
-var counter = 0
-for c in myString.characters {
-    if c != " " {
-        counter += 1
-    }
-}
-```
+////: Playground - noun: a place where people can play
 
 //
+//import UIKit
+//
+//var str = "Hello, playground"
+//
+//1)
+//Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
+//Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
+//
+////Write all your code below:
+//```swift
+//
+//var colors = ["Orange", "Red", "Yellow", "Turquosie", "Lavender"]
+//
+//print(" \(colors[0]), \(colors[2]), \(colors [4]) are some of my favorite colors.")
+//```
+//2)
+//
+//```swift
+//Remove "Illinois" and "Kansas" from the array below.
+//
+//var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+//for i in westernStates {
+//    if i == "Illinois" {
+//        print(westernStates.removeAtIndex(4))
+//    }
+//    if i == "Kansas" {
+//        print(westernStates.removeAtIndex(4))
+//    }
+//    print(westernStates)
+//}
+//```
+
+
 //Write all your code below:
 
+//3)
+////Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
+//
+//```swift
+//var moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+//var inUSA = [""]
+//var outUSA = [""]
+//for i in 0..<moreStates.count {
+//    if "Hawaii" == moreStates[0] {
+//        moreStates.removeAtIndex(0)
+//        outUSA.append("Hawaii")
+//        print(i)
+//        continue
+//    }
+//    if "Alaska" == moreStates[1] {
+//        moreStates.removeAtIndex(1)
+//        outUSA.append("Alaska")
+//        print(moreStates)
+//    }else{
+//        inUSA += moreStates
+//        break
+//    }
+//}
+//print("\(inUSA) are in the USA")
+//```
+////Write all your code below:
+//
+//
+//////4)
+//
+//```swift
+//
+//a) print out how many non-whitespace characters are in myString
 
+//let myString = "This is practice for the next problem!"
+//
+//var counter = 0
+//for c in myString.characters {
+//    if c != " " {
+//        counter += 1
+//    }
+//}
+//```
+//
+////
+////Write all your code below:
+//
+//
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
-//let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
+let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
+var counter = 5
+myFavoriteQuotes.count
+for i in 0..<myFavoriteQuotes.count {
+    if i != counter {
+        print(myFavoriteQuotes[0])
+//    } for j in myFavoriteQuotes {
+    }
+    i + 1
+}
 
-//Write all your code below:
 
-
-
+//var counter = 0
+//for i in 0...3 {
+//    for j in myFavoriteQuotes.characters {
+//            if j != " " {
+//                counter += 1
+//    }
+//}
+//
+////Write all your code below:
+//var counter = 0
+//for c in myFavoriteQuotes{
+//    if c in 0..<myFavoriteQuotes.count
+//}
+//
+//
 //
 ////5)
 ////The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
