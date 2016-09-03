@@ -85,31 +85,50 @@ fizzBuzz(15)
 
 //Write your code below
 //
-//    func largestInArray [x: [Int]] -
-
+var theArray = [5, 6 ,7, 9, 21]
+var largestInArray = 0
+func largestInArray (x: [Int]) {
+    for i in theArray {
+        if i > largestInArray {
+            largestInArray = i
+            print(i)
+        }
+    }
+}
+largestInArray(theArray)
 //4b)
-//let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
-
+let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
+var largestInMyArray = 0
+func largestInMyArray (x: [Int]) {
+    for i in myArray {
+        if i > largestInMyArray {
+            largestInMyArray = i
+            print(i)
+        }
+    }
+}
+largestInMyArray(myArray)
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
-
+print("The largest Int in myArray is \(largestInMyArray)")
 
 //4c)
 //Using your solution to 2a), print a sentence that states whether the largest Int in myArray is even or odd
 
+//print("The largest Int in myArray is \(largestInMyArray) and it is \()")
 
 //5a) Write a function that takes a String as input and returns the number of characters in the string
 
 //Write your code below
-var myStringOne = "hi bob"
-var myArray: [Character] = []
-
-func numbOfChar (myStringOne: String) -> Int {
-for i in myStringOne.characters {
-    myArray.append(i)
-}
-    return(myArray.count)
-}
-numbOfChar(myStringOne)
+//var myStringOne = "hi bob"
+//var myArray: [Character] = []
+//
+//func numbOfChar (myStringOne: String) -> Int {
+//for i in myStringOne.characters {
+//    myArray.append(i)
+//}
+//    return(myArray.count)
+//}
+//numbOfChar(myStringOne)
 //5b) Using your function above, print how many characters are in myString
 
 let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
@@ -127,7 +146,7 @@ numbOfCharString(myString)
 
 //Sample input:
 let FiveCString = "This is a test string for your code"
-//let targetCharacter = "i"
+let targetCharacter = "i"
 
 //Sample output:
 //3
@@ -135,7 +154,7 @@ let targetCharacter = "s"
 var myArrayFiveC = []
 var counter = 0
 for charInString in FiveCString {
-    
+   if 
 }
 
 //5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
