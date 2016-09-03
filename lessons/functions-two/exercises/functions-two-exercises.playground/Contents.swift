@@ -339,22 +339,18 @@ let binaryArray = [1,0,1,1,1,0,1]
 //Sample output:
 //93
 
-var power = { (num: Int, exp: Int) -> Int in
-    var sum = 0
-    for index in 0...exp {
-        sum += num * num
-    }
-    return sum
-}
-
-func binaryConverter(bi: [Int]) -> Int {
-    let base = 2
-    var sum = 0
-    for index in 0...bi.count-1 {
-        
-    }
-    return sum
-}
+//func binaryConverter(bi: [Int]) -> Int {
+//    var base = 2
+//    var sum = 0
+//    for index in 0..<bi.count {
+//        if bi[index] == 0 {
+//            continue
+//        } else {
+//            //pow(1,4)
+//        }
+//    }
+//    return sum
+//}
 
 binaryConverter(binaryArray)
 
