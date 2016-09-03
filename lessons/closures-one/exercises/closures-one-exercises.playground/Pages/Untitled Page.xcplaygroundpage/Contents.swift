@@ -76,14 +76,15 @@ var myArray1 = [23,45,67,5,100,54] //5,23,45,54,67,100
 
 //var xthLargest = {(arr: [Int], x: Int?) -> Int? in
 //    var arr = arr.sort(<)
-//     y = arr[x-1]
+//    var y = arr[x-1]
 //    
 //    if x >= arr.count {
-//    return nil
+//        return nil
 //    }
 //    else {
-//    return y
+//        return y
 //    }
+//
 //}
 //
 //xthLargest(myArray1, 9)
@@ -132,22 +133,14 @@ let sortedArrayofArraysB = arrayOfArrays.sort {(x: [Int], y: [Int]) -> Bool in
     var arr1 = x[2]
     var arr2 = y[2]
     
-    if x.count < 4 {
+    if x.count < 3 {
        
     }
     
     return arr1 < arr2
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
+    
 let letterValues = [
     "a" : 54,
     "b" : 24,
@@ -204,9 +197,12 @@ var codeStringTwo = "znwemnrfewpiqn"
 
 var number = 1
 
-//var tripleNumber =
-
-
+let tripleNumber = {
+        number *= 3
+    }
+tripleNumber()
+tripleNumber()
+    print(number)
 
 //9. Given a tuple representation of our names from before:
 
@@ -226,6 +222,20 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 // .
 
+let sorted = firstAndLastTuples.sort {(first: (String,String), last: (String,String)) -> Bool in
+    return first.1 < last.1
+    
+}
+    for tuple in sorted {
+        print("\(tuple.1), \(tuple.0)")
+}
+        
+        
+    
+    
+    
+    
+    
 //10. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
 

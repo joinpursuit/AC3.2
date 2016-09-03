@@ -186,7 +186,7 @@ multipleTargetCharacters(FiveDString, targetCharacters: ["a", "b"])
 
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
-//let inputArray = [3,1,4,1,3,2,6,1,9]
+let inputArray = [3,1,4,1,3,2,6,1,9]
 
 //Sample output:
 //4
@@ -196,18 +196,35 @@ multipleTargetCharacters(FiveDString, targetCharacters: ["a", "b"])
 
 func uniqueIntsInArray(arr:[Int]) -> Int {
     let sortedArray = arr.sort()
-    var placeHolder = 0
-    for i in sortedArray {
-        if i > placeHolder {
-            placeHolder = i
+    var counter = 0
+    for i in 0..<sortedArray.count {
+        var behindNum: Int?
+        var frontNum: Int?
+        var isUnique = true
+        if i != 0 {
+            behindNum = sortedArray[i-1]
         }
-        if placeHolder == placeHolder {
-            continue
+        if i != sortedArray.count - 1 {
+            frontNum = sortedArray[i+1]
+        }
+        if let actualBehind = behindNum {
+            if actualBehind == sortedArray[i] {
+                isUnique = false
+            }
+        }
+        if let actualFront = frontNum {
+            if actualFront == sortedArray[i] {
+                isUnique = false
+            }
+        }
+        if isUnique {
+            counter += 1
         }
     }
-    
-    }
+    return counter
 }
+
+print(uniqueIntsInArray(inputArray))
 
 
 
@@ -218,6 +235,9 @@ func uniqueIntsInArray(arr:[Int]) -> Int {
 
 //Sample output:
 //93
+
+
+
 
 //8) Copy the movie dictionary from homework two and add another [String] to each movie.
 //   Name it "locations" and add some dummy data. Use the re-factored nested function
