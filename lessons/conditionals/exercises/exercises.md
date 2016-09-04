@@ -1,4 +1,125 @@
 # Conditionals
+MY ANSWERS:
+
+QUESTION #1: We can use switch when we have multiple conditions, plus it's more useful when there are many possible values.
+
+QUESTION #2: C
+
+QUESTION #3: 
+switch temperatureInFahrenheit {
+case let cold where temperatureInFahrenheit <= 40:
+print("outside temperature is \(cold)")
+case let warm where temperatureInFahrenheit >= 85:
+print("It's really warm.")
+default:
+print("Weather is moderate.")
+}
+
+QUESTION #4: 
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print("cardNum")
+}
+
+QUESTION #5:
+var numberGrade = 75
+
+switch numberGrade {
+case 100:
+print("You got an A+! Great job.")
+case 90..<100:
+print("You got an A!")
+case 80...89:
+print("B! You can do better.")
+case 70...79:
+print("You did okay, try again.")
+case 65...69:
+print("You barely passed.")
+case 0...65:
+print("Go home and study")
+default:
+("Try again")
+}
+
+QUESTION #6:
+Part A: "The answer to life, the universe and everything"
+Part B: "Days in year", "Bytes in a Kilobyte", "Some uninteresting number"
+Part C: If removed, it would give us error because not all the conditions are covered, needs a default if not everything is exhuasted.
+
+QUESTION #7:
+ANSWER 1:
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+}else if population < 10000 && population > 5000{
+message = "\(population) is a medium size town"
+}else{
+message = "\(population) is a mid-size town"
+}
+
+ANSWER 2 & 3:
+switch population{
+case 10000...1000000:
+print("\(population) is a large town")
+case 5000..<10000:
+print("\(population) is a medium size town")
+default:
+print("\(population) is a mid-size town")
+}
+
+QUESTION #8:
+let result = myTuple.0 + myTuple.1
+
+PART A. 
+if result <= 15{
+print("Trueeeeee!")
+}else{
+print("False.")
+}
+
+PART B.
+switch result{
+case let resultOne where result <= 15:
+print("Trueeeee!")
+case let resultTwo where result > 16:
+print("False.")
+default:
+print("Unknown")
+}
+
+QUESTION #9:
+let studentNameAndClass = ("Ben", 3.2)
+
+switch studentNameAndClass{
+case ("Ben", 3.2):
+print("Welcome Benjamin!")
+default:
+print("Wrong class")
+
+}
+
+QUESTION #10:
+let myTuple = (2, 4)
+
+switch myTuple {
+
+case let (x,y) where x==y:
+print("x is equal to y")
+case let (x,y) where y == 2*x:
+print("y is double the value of x")
+case let (x,y) where y == 3*x:
+print("y is triple the value of x")
+case let (x,y):
+print("Nothing is special about this tuple")
+}
 
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?

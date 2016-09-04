@@ -1,5 +1,18 @@
 ## Numbers
 
+1. ANSWER: C
+2. ANSWER: UInt is unsigned meaning it only stores positive or zero, Int means it's signed and stores negative, positive or zero from -128 to 127. 
+3. ANSWER:E
+4.  1) 25
+    2) 1
+    3) 120
+    4) 40
+    5) 5
+    6) 1
+5. ANSWER: They are not equal, div is calculating the integer so the result will be an integer too while div2 is calculating floating-point numbers.
+div = 3
+div2 = 3.6666
+
 #### Question 1.
 What is true about __Integers__ in computers?
 ```

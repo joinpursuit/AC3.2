@@ -7,32 +7,94 @@ Without using string interpolation, print out a string that combines myGreeting 
 let myGreeting = "Hello, "
 let myName = "Ben"
 ```
+ANSWER:
+```swift
+var result = myGreeting + myName
+print(result)
+```
 #### S2.
 Write code that prints out myArray as a single string separated by spaces.
 
 ```swift
 let myArray = ["Hi", "there,", "how","is","it","going?"]
 ```
+ANSWER:
+```swift
+var i = 0
+while i < myArray.endIndex {
+print(myArray[i], terminator: " ")
+i += 1
+}
+```
 #### S3.
 Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
 
+ANSWER:
+```swift
+var myString = 1...10
+
+for i in 1...10 {
+print(String(i), terminator: " ")
+}
+```
 #### S4.
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+
+ANSWER:
+```swift
+for i in 5...51 where i % 2 == 0{
+print(String(i), terminator: " ")
+}
+```
 
 #### S5.
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+ANSWER:
+```swift
+var i = 4
+while i <= 60 {
+print(String(i))
+i += 10
+}
+```
+
 #### S6.
 Print each character in the string ```Hello world!```
+ANSWER:
+```swift
+var myString = "Hello World!"
+
+for character in myString.characters {
+print(character, terminator: " ")
+}
+```
 
 #### S7.
 Using '.characters' and loop, print the last character in the string below
 ```swift
 let myStringSeven = "Hello world!"
 ```
+ANSWER:
+```swift
+var start = myStringSeven.startIndex.advancedBy(11)
+var end = myStringSeven.endIndex.advancedBy(-1)
+var range = start...end
 
+print(myStringSeven[range])
+```
 #### S8.
 Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
+
+ANSWER:
+```swift
+var myString = "Hello World"
+if (myString.characters.count % 2 == 0) {
+print(myString)
+}else{
+print()
+}
+```
 
 #### S9.
 Initialize a String with a character. Show that it is a Character, and not another String, you're using
