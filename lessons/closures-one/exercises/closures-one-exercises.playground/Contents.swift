@@ -321,15 +321,15 @@ var sortedFolks = ac32folks.sort { (x: (String, String, Int), y: (String, String
 
 
 
-var alternatingString = { (x: [String], y: [String]) -> String in
-    var outputString : String = ""
-    var bigCount = x.count
-    var smallCount = y.count
-    
-    
-}
+//var alternatingString = { (x: [String], y: [String]) -> String in
+//    var outputString : String = ""
+//    var bigCount = x.count
+//    var smallCount = y.count
+//    
+//    
+//}
 
-alternatingString(["Hello", "My", "Friend"], ["Darkness", "Old"])
+//alternatingString(["Hello", "My", "Friend"], ["Darkness", "Old"])
 
 
 
