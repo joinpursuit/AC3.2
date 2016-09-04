@@ -1,28 +1,79 @@
+
 ## A) For each prompt below, write a for loop that prints out the specified information.
+
 
 1) All the numbers from 1 to 150 inclusive
 
+for i in 1...150 {
+print(i)
+}
+
 2) All the numbers from 142 to 159 exclusive
+
+for i in 142...159 {
+print(i)
+}
 
 3) Only the even numbers from 15 to 80 inclusive
 
+for i in 15...80 where i%2 == 0 {
+print(i)
+}
+
 4) Only the odd numbers from 19 to 51 inclusive
 
+for i in 19...51 where i%2 != 0 { 
+print(i)
+}
 5) All the numbers that end in a 5 from 1 to 100 exclusive
 
+for i in 1...100 where i%5 == 0 && i%2 != 0 {
+print(i)
+}
+
 6) All the numbers that end in a 7 from 1 to 40 inclusive
+
+for i in 1...40 {
+if i%10 != 7 {
+continue
+} else {
+print(i)
+}
+}
 
 
 ## B) Given a range of numbers from 20 to 150 print out all the numbers that follows these conditions
 
 1) Numbers that are divisible by 3
 
+for i in 20...150 where i%3 == 0 {
+print(i)
+}
+
 2) Numbers that are divisible by 2 and 3
+
+for i in 20...150 where i%3 == 0 && i%2 == 0 {
+print(i)
+}
+
 
 3) Unit digit ends with 4
 
+for i in 20...150 {
+if i%10 != 4 {
+continue
+} else {
+print(i)
+}
+}
+
 4) Print out numbers contain 31, 35, 40 to 60.
 
+for i in 20...150 {
+if i == 31 || i == 35 || i >= 40 && i <= 60 {
+print(i)
+}
+}
 
 ## C) While loop (NO Xcode)
 ```
@@ -33,7 +84,16 @@ while (i > 3) {
 ```
 1) How many times does this while loop execute?
 
+Indefinitely
+
 2) How do you stop the loop when i reaches 9?
+
+var i = 5
+while (i < 9) {
+    i +=1
+}
+
+
 
 3) How would you fix the while loop so that it only execute 1,000 times.
 

@@ -5,21 +5,21 @@
 #### Question 1.
 Provide the following constants/variable names with the most appropriate type annotations.
 
-1. let _firstName_: (type?)
-2. let _middleInitial_:
-3. var _age_:
-4. var _latitude_:
-5. var _longitude_:
-6. var _isRainingCurrently_:
-7. let _completeAddress_:
-8. let _π_:
+1. let _firstName_: (type?) String
+2. let _middleInitial_: String
+3. var _age_: Integer
+4. var _latitude_: double
+5. var _longitude_: Double
+6. var _isRainingCurrently_: Bool
+7. let _completeAddress_: String
+8. let _π_: Double
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
-* 55
-* 122
+* 55    00110111
+* 122   01111010
 * -1
-* 15
+* 15    00001111
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
@@ -28,10 +28,41 @@ Using nested loops, print the numbers from 0 to 100, then back to 0.
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
+for i in 2...220 where i % 2 == 0 {
+print(i)
+}
+
+var i = 2
+while i <= 220 {
+print(i)
+i += 2
+}
+
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
+var simpleInt: Int = 0
+
+for i in 0...50 {
+simpleInt += i
+print(simpleInt)
+}
 * Using a while loop, print all the odd numbers from 0 to 100.
+
+for i in 0...100 where i % 2 != 0 {
+print(i)
+}
+
+var i = 1
+while i <= 100 {
+print(i)
+i += 2
+}
+
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
+
+for i in 50...500 where i % 10 == 0 {
+print(i)
+}
 
 #### Question 6.
 Consider the code below. Loop through the ```professionals``` array and using a switch statement:

@@ -1,4 +1,44 @@
 ## Numbers
+MY RESPONSES
+/* Question 1. A
+
+Question 3.
+
+A / B / C / D
+
+Quesiton 4.
+25
+1
+120
+40
+0
+5
+1
+
+Question 5*/
+
+let div = 11 / 3
+let div2 = 11.0 / 3.0
+print(div)
+print(div2)
+/* Not Equal
+
+Question 6
+
+B
+
+Question 7
+No
+
+Question 8
+D
+
+Question 9
+UInt8
+
+Question 10
+One is decimal other isn't.
+Int have a min and max
 
 #### Question 1.
 What is true about __Integers__ in computers?

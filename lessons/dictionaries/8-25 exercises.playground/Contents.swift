@@ -7,19 +7,43 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var citiesDict = ["U.S.":"Washington D.C.", "Germany":"Berlin", "Italy": "Rome"]
+
 //b) Add two more countries to your dictionary
 
+
+var citiesDict = ["U.S.":"Washington D.C.", "Germany":"Berlin", "Italy": "Rome", "Columbia":"Bogota", "Mexico":"Mexico City"]
+
 //c) Translate at least 3 of the capital names into another language
+
+
+var citiesDict = ["U.S.":"Washington D.C.", "Germany":"Berlin", "Italy": "Rome", "Columbia":"Bogota", "Mexico":"Mexico City"]
+citiesDict["Italy"] = "Spanish Rome"
+citiesDict["Germany"] = "German Berlin"
+citiesDict["Columbia"] = "Italian Bogota"
+print(citiesDict)
 
 //2)
 
 var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
+var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
+
+var newDict = Array(someDict.values)
+var sumDict = [newDict[0] + newDict[3]]
+print(sumDict)
 
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
+someDict["Six"] = 21
+someDict["Seven"] = 8
+print(someDict)
+
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
+
+
 
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
 

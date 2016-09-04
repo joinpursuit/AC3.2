@@ -1,3 +1,91 @@
+```swift
+
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+
+//Question 1
+//If there is a lot of data to compare.
+//If there might be more than one pattern that it fits.
+
+//Question 2
+// C
+
+//Question 3
+let temperatureInFahrenheit = 72
+
+switch true {
+case (temperatureInFahrenheit<=40):
+print("It's cold out.")
+case (temperatureInFahrenheit>=85):
+print("It's really warm.")
+default:
+print("Weather is moderate.")
+}
+
+//Question 4
+let cardNum = 13
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+//Question 5
+let grade = 92
+
+switch grade {
+case 100:
+print("A+")
+case 90...99:
+print("A")
+case 80...89:
+print("B")
+case 70...79:
+print("C")
+case 65...69:
+print("D")
+default:
+print("F")
+}
+
+//Question 6
+//Error message Exhaustive
+
+//Question 7
+var population: Int = 5376
+var message = String()
+
+if population >= 10000 {
+message = "\(population) is a large town"
+} else if population > 5000 {
+print("a medium size town")
+} else {
+print("mid-size town")
+}
+
+switch true {
+
+case (population >= 10000):
+message = "\(population) is a large town"
+case (population > 5000):
+print("a medium size town")
+default:
+print("mid-size town")
+}
+
+//Question 8
+
+
+``
+
 # Conditionals
 
 ### Question 1.
@@ -97,6 +185,15 @@ b) Using a switch statement
 
 ```swift
 let myTuple: (Int, Int) = (5, 10)
+
+let myTuple = (5, 10)
+switch myTuple {
+case let (a,b) where a + b >= 15:
+print("it works")
+default:
+print("Again")
+}
+
 ```
 
 ### Question 9.
@@ -108,6 +205,11 @@ switch myTupleTwo{
    
 }
 
+let studentNameAndClass = ("Ben", 3.2)
+switch studentNameAndClass {
+case let (a,b):
+print("Hello \(a) welcome to class \(b)")
+}
 ```
 
 ### Question 10.
@@ -115,12 +217,18 @@ Consider the below switch with a tuple.
 * Add a case for when _y_ is __double__ the value of _x_
 * Add a case for when _y_ is __triple__ the value of _x_
 
-```swift
+var x = 2
+var y = 6
 switch (x,y) {
 case let (x,y) where x==y :
-    print("x is equal to y")
+print("x is equal to y")
+case let (x,y) where y == 2*x:
+print("Ok")
+case let (x,y) where y == 3*x:
+print("I did it.")
 case let (x,y):
-    print("Nothing is special about this tuple")
+print("Nothing is special about this tuple")
+}
 }
 ```
 
