@@ -9,6 +9,7 @@ let string = "Hello Closures!"
 let helloClosures = {() -> String in
     return "Hello Closures!"
 }
+
 let blah = helloClosures
 print(blah())
 
@@ -179,8 +180,15 @@ let letterValues = [
 
 //8a. Sort the string below in descending order according the dictionary letterValues
 //
-//var codeString = "aldfjaekwjnfaekjnf"
-//
+var codeString = "aldfjaekwjnfaekjnf"
+let codeStringAsArr = Array(codeString.characters)
+codeStringAsArr.dynamicType
+
+codeStringAsArr.sort { (a: Character, b: Character) -> Bool in
+        let aValue = letterValues[String(a)]
+        let bValue = letterValues[String(b)]
+            return aValue < bValue
+}
 //let descendingCharacters = {( letterVals: [String:Int], targetString: String) -> Int in
 //    
 //    for eachChar in targetString.characters {
@@ -196,22 +204,40 @@ let letterValues = [
 //  
 //}
 
+
+
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
-
 
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
 
 //Input: (Int) -> Int
 //Output: (Int) -> Int
+func doubleFunction(number x: Int) -> Int {
+    return x * 2
+}
+
+
+func doubleOutput( function x: Int) -> Int {
+    return x * x
+}
+
+doubleOutput(function: doubleFunction(number: 2))
 
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
 var number = 1
 
-//var tripleNumber =
+var tripleNumber = {() -> () in
+    return number *= 3
+}
+tripleNumber()
+tripleNumber()
+tripleNumber()
+tripleNumber()
+print(number)
 
 
 
@@ -225,6 +251,19 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
                           ("Scott","Joplin"),
                           ("Josquin","Des Prez")]
 
+let sorted = firstAndLastTuples.sort{ $0.1 < $1.1 }
+
+for eachTuple in sorted {
+    
+    print("\(eachTuple.1), \(eachTuple.0)")
+    
+}
+
+
+
+
+
+    
 // sort the array of tuples by last name. Print the sorted array using string interpolation so that
 // the output looks like:
 // Bach, Johann S.
@@ -274,18 +313,82 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 //Victor Zhong	3236
 
 // Here's an example of how to start:
-let ac32folks = [("Amber", "Spadafora",	3201),
-                 ("Ana", "Ma",	3202),
-                 ("Annie", "Tung",	3203)]
+//let ac32folks = [("Amber", "Spadafora",	3201),
+//                 ("Ana", "Ma",	3202),
+//                 ("Annie", "Tung",	3203)]
 // and so on...
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
 
+let ac32folks = [("Amber", "Spadafora",	3201),
+                 ("Ana", "Ma",	3202),
+                 ("Annie", "Tung",	3203),
+                 ("Cristopher", "Chavez", 3204),
+                 ("Eashir", "Arafat", 3205),
+                 ("Edward", "Anchundia", 3206),
+                 ("Emily", "Chu", 3207),
+                 ("Eric", "Chang", 3208),
+                 ("Erica", "Stevens", 3209),
+                 ("Fernando", "Ventura", 3210),
+                 ("Harichandan", "Singh", 3211),
+                 ("Ilmira", "Estil", 3212),
+                 ("Jermaine", "Kelly", 3213),
+                 ("Gabriel", "Breshears", 3214),
+                 ("Kadell", "Gregory", 3215),
+                 ("Kareem", "James", 3216),
+                 ("Karen", "Fuentes", 3217),
+                 ("Leandro", "Nunez", 3218),
+                 ("Liam", "Kane", 3219),
+                 ("Luz", "Herrera", 3220),
+                 ("Madushani", "Liyanage", 3221),
+                 ("Marcel", "Chaucer", 3222),
+                 ("Margaret", "Ikeda", 3223),
+                 ("Maria", "Scutaru", 3224),
+                 ("Marty", "Avedon", 3225),
+                 ("Michael", "Pinnock", 3226),
+                 ("Miti", "Shah", 3227),
+                 ("Rukiye", "Karadeniz", 3228),
+                 ("Sabrina", "Ip", 3229),
+                 ("Simone", "Grant", 3230),
+                 ("Sophia", "Barrett", 3231),
+                 ("Thinley", "Dorjee", 3232),
+                 ("Tom", "Seymour", 3233),
+                 ("Tong", "Lin", 3234),
+                 ("Tyler", "Newton", 3235),
+                 ("Victor", "Zhong", 3236)]
 
+var microwaveLine = ac32folks.sort {
+    $0.2 > $1.2
+}
+
+for peep in microwaveLine {
+    print("\(peep.0)")
+}
+//
+//let me = ("Annie", "Tung", 3203)
+//let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String, Int)) -> [(String, String, Int)] in
+//    var selfFirstStudentList = students
+//    
+//    for index in 0..<selfFirstStudentList.count {
+//        if selfFirstStudentList[index] == me {
+//            selfFirstStudentList.removeAtIndex(index)
+//            selfFirstStudentList.insert(me, atIndex: 0)
+//        }
+//    }
+//    return selfFirstStudentList
+//}
+//print(cutMicrowaveLine(ac32folks, me))
 
 //11. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
 
+
 // eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "Old"]
 //      output string: "Hello Darkness My Old Friend
+
+
+
+
+
+
