@@ -4,12 +4,14 @@
 
 //Write all your code below:
 
-
+var colorArray = ["orange", "red","yellow", "turquoise", "lavender"]
+print("\(colorArray[0]), \(colorArray[2]), \(colorArray[4]) are some of my favorite colors")
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+westernStates.removeLast(2)
 
 
 //Write all your code below:
@@ -17,10 +19,16 @@ var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
 
-let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
-
 //Write all your code below:
 
+let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+for states in moreStates {
+    if states == "Hawaii" || states == "Alaska" {
+        print("\(states) is not in the continential United States.")
+    } else {
+        print("\(states) is in the continential United States.")
+    }
+}
 
 //4)
 //a) print out how many non-whitespace characters are in myString
@@ -28,6 +36,13 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+var sum = 0
+for i in 0..<myString.characters.count {
+    if (myString[myString.characters.startIndex.advancedBy(i)]) != " " {
+        sum += 1
+    }
+}
+print(sum)
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
@@ -35,7 +50,18 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 
 //Write all your code below:
 
-
+var totalSum = 0
+for element in myFavoriteQuotes {
+    var sum = 0
+    for i in 0..<element.characters.count {
+        if (element[element.characters.startIndex.advancedBy(i)]) != " " {
+            sum += 1
+        }
+    }
+    print(sum)
+    totalSum += sum
+}
+print("Total sum = \(totalSum)")
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -48,19 +74,49 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 
 //Write all your code below:
 
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.removeAtIndex(0)
+battingLineup.insert("Reyes", atIndex: 7)
+print(battingLineup)
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
 
+for i in 0..<garden.count {
+    if garden[i] == "🌷" {
+        basket.append(garden[i])
+    }
+}
+
 //Write all your code below:
+
+for i in 0..<garden.count {
+    if garden[i] == "🌷" {
+        basket.append("🌷")
+        garden[i] = "dirt"
+    }
+}
+print(garden)
+print(basket)
 
 //7)
 //Iterating through listOfNumbers and print out the largest element.
-var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
+
+var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
+
+var largestNum = listOfNumbers[0]
+for i in 0..<listOfNumbers.count {
+    if listOfNumbers[i] > largestNum {
+        largestNum = listOfNumbers[i]
+    }
+}
+print(largestNum)
 
 
 //8)
@@ -69,11 +125,21 @@ var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 
 //Write all your code below:
 
+for var i in 0..<secondListOfNumbers.count where secondListOfNumbers[i] % 2 == 1 {
+    print(secondListOfNumbers[i])
+}
+
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
+
+var sumThird = 0
+for num in thirdListOfNumbers {
+    sumThird += num
+}
+print(sumThird)
 
 
 //10)
@@ -85,6 +151,15 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 //Write all your code below:
 
+var match = false
+for i in 0..<fourthListOfNumbers.count {
+    if fourthListOfNumbers[i] == target {
+        match = true
+        break
+    }
+}
+if match == false { print("NO") }
+else { print("YES") }
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.
@@ -92,8 +167,16 @@ var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
 var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
 
-
 //Write all your code below:
+
+for x in listOne {
+    for y in listTwo {
+        if y == x {
+            sharedElements.append(y)
+        }
+    }
+}
+print(sharedElements.count)
 
 
 
@@ -102,21 +185,82 @@ var sharedElements = [Int]()
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
 
+for x in dupeFriendlyList {
+    if noDupeList.contains(x) {
+        
+    } else {
+        noDupeList.append(x)
+    }
+}
+noDupeList
+
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
 
+var smallest = ages[0]
+var small2 = ages[1]
+
+if small2 < smallest {
+    small2 = ages[0]
+    smallest = ages[1]
+}
+for i in ages {
+    if i < small2 {
+        if i < smallest {
+            small2 = smallest
+            smallest = i
+        } else  {
+            small2 = i
+        }
+    }
+}
+print(small2) // prints 18
+print(smallest) // prints 15
 
 //14)
 //Print out the sum of the diagonals of myMatrix
 
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var sum2 = 0
 
+var sitchBool = true
+for i in 0..<myMatrix.count {
+    for j in 0..<myMatrix.count {
+        if sitchBool {
+            sum2 += myMatrix[i][j]
+            sitchBool = false
+        } else {
+            sitchBool = true
+        }
+    }
+}
+print(sum2)
 
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+var array1:[Int] = []
+var array2:[Int] = []
+var array3:[Int] = []
+for x in (0..<toRotate.count) {
+    for y in (0..<toRotate[x].count).reverse() {
+        // print(toRotate[y][x], terminator:" ")
+        if x == 0 {
+            array1.append(toRotate[y][x])
+        } else if x == 1 {
+            array2.append(toRotate[y][x])
+        } else if x == 2 {
+            array3.append(toRotate[y][x])
+        }
+    }
+}
+var rotatedArray = [array1, array2, array3]
+print(rotatedArray)
+
+
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23
