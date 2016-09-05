@@ -216,14 +216,14 @@ print(emptyString2)
 //Input: (Int) -> Int
 //Output: (Int) -> Int
 
-func doubler (a: (Int) -> Int) -> ((Int) -> Int) {
-    func output (b: Int) -> Int {
-       return b + b
+func doubler (a: (Int) -> Int) -> (Int) -> Int {
+    var f = { (x :Int) -> Int 
+       return a(x) + a(x)
     }
-    return output
+    return f
 }
-doubler(closerIntDouble)(closerIntDouble(2))
-
+var doublerer = doubler(closerIntDouble)
+doublerer(4)
 
 
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
@@ -258,8 +258,12 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 
 
-print(firstAndLastTuples.sort({a, b in a.1 < b.1}))
+var namesSorted = firstAndLastTuples.sort({(a: (String,String), b: (String,String)) -> Bool in
+    return a.1 < b.1 })
 
+for i in namesSorted {
+    print("\(i.1), \(i.0)")
+}
 
 //12. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
@@ -325,16 +329,34 @@ print(ac32folks.sort({a, b in a.1 == "Kane"}))
 
 //13. Create a closure that takes two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
 
-// eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "Old"]
+// eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "My", "Friend"]
 //      output string: "Hello Darkness My Old Friend
 
-var closure = {(a: [String], b :[String]) -> String {
+var closureKLLL = {(a: [String], b :[String]) -> String in
     var string = ""
+    var smaller = b.count
+    var larger = a.count
+    var aIsLarger = true
     
+    if larger < smaller {
+        smaller = larger
+        larger = b.count
+        aIsLarger = false
+        
+    }
     
-    
-    
+    for i in 0..<smaller {
+        string.appendContentsOf(a[i] + " " + b[i] + " ")
+    }
+    for i in smaller..<larger {
+        if aIsLarger {
+            string.appendContentsOf(a[i] + " ")
+        } else {
+            string.appendContentsOf(b[i] + " ")
+
+        }
+    }
     return string
 }
 
-
+print(closureKLLL(["Hello", "My", "Friend"] , ["Darkness", "Old"] ))
