@@ -330,7 +330,21 @@ let twoArrays = {(a: [String], b: [String]) -> String in
 		}
 	}
 	return output
+	//	var smaller = 0
+	//	var first = a
+	//	var second = b
+	//	if a.count < b.count {
+	//		smaller = a.count
+	//	} else {
+	//		smaller = b.count
+	//	}
+	//	for x in 0..<smaller {
+	//		first.insert(second[x], atIndex: x)
+	//	}
+	//	let string = first.joinWithSeparator(" ")
+	//	return string
+	//	}
 }
-let array1 = ["Hello", "My", "Friend", "Come", "Talk", "With", "You", "Again"]
-let array2 = ["Darkness", "Old", "I've", "To"]
+var array1 = ["Hello", "My", "Friend", "Come", "Talk", "With", "You", "Again"]
+var array2 = ["Darkness", "Old", "I've", "To"]
 print(twoArrays(array1, array2))
