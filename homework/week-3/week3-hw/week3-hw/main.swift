@@ -64,6 +64,7 @@ func processCommand(arr:[String]) {
     if let command = Command(rawValue: arr[0]) {
         switch command {
         case .Math:
+            
             while true {
             print("Enter two operands and an operator", terminator: "")
             if let mathResponse = readLine(stripNewline: true) {
@@ -112,17 +113,21 @@ func processCommand(arr:[String]) {
                 }
                 }
             }
+            
         case .LessThan6:
+            
             myFilter {(x: Int) -> Bool in
                 x <= 6
             }
+            
         case .Squared:
+            
             myMap {(x: Int) -> Int in
                 return x * x
             }
+            
         }
     }
-    
 }
 
 
