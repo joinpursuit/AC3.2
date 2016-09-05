@@ -49,7 +49,7 @@ while true {
             continue
         }
         else {
-        if let operand1 = Double(commands[0]), operand2 = Double(commands[2]) {
+        if let operand1 = Double(commands[0]), operand2 = Double(commands[2]), x = operatorConversion {
             
             
             var operation = mathStuffFactory(operatorSymbol)
@@ -63,7 +63,6 @@ while true {
             var randomAnswer = randomOperation(operand1, operand2)
             
             
-            if let x = operatorConversion {
                 switch x {
                 case .Plus, .Minus, .Times, .DividedBy:
                     print("\(operand1) \(operatorSymbol) \(operand2) = \(answer). Try another operation!")
@@ -80,7 +79,6 @@ while true {
                         }
                         }
                     }
-                }
             }
             }
         }
