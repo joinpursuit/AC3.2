@@ -342,6 +342,19 @@ let ac32Folks: [(firstName: String, lastName: String, ID: Int)] = [("Amber", "Sp
                  ("Tyler", "Newton", 3235),
                  ("Victor", "Zhong", 3236)]
 
+var me = ac32Folks[8]
+
+var microwaveLine = ac32Folks.filter({ a in
+    a != me
+})
+
+microwaveLine.insert(me, atIndex: 0)
+
+for person in microwaveLine {
+    print(person.firstName)
+}
+
+
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
