@@ -1,5 +1,9 @@
 //: Playground - noun: a place where people can play
 
+
+//Gabriel 3214
+//Thinley 3232
+
 import UIKit
 
 //---------------------------------------------
@@ -57,17 +61,32 @@ var tuple: (Int, Int)?
 if randNum() {
     tuple = (5, 3)
 }
+
+
+if let (x,y) = tuple {
+    print(x,y)
+}
+
+
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
 
 
 
 
-
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
+
+if var doubleInt = myInt {
+        (doubleInt * 2)
+        print ("the answer is \(doubleInt)")
+}
+
+
+
+
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
 
@@ -77,31 +96,34 @@ if randNum() {
 
 
 //C)
-let myString: String?
+var myString: String?
 let stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
-
-
-
+if let name = myString{
+    print("First name: \(name) and last name: \(stringTwo)")
+}
 
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
-
-
-
+if randNum() == true{
+    if let firstDouble = myDouble{
+        print(Int(firstDouble) * doubleTwo)
+    }else{
+        print("Nil")
+    }
+    }
 
 
 
@@ -115,6 +137,14 @@ if randNum() {
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
 
+if randNum() == false{
+    if let b = isTheGreatest{
+        b == false
+    }else{
+        true
+    }
+    }
+    
 
 
 
@@ -138,7 +168,12 @@ if !randNum() {
 //Print the sum of each non-nil element in myTuple.
 
 
-
+if randNum() == true{
+    if var: Int (a,b,c,d) = myTuple{
+            
+        }
+    }
+}
 
 
 
@@ -149,13 +184,14 @@ if !randNum() {
 
 
 //G)
-let myIntString = "35"
+var myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
 
 
 
-
-
+if var add = myIntString{
+    
+}
 
 
 
@@ -165,7 +201,7 @@ let myIntString = "35"
 
 
 //H)
-let pokemon: String?
+var pokemon: String?
 var evolutionaryStone: String?
 pokemon = starterPokemon()
 evolutionaryStone = eStone()

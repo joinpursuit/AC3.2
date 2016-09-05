@@ -1,3 +1,7 @@
+Gabriel Breshears 3214
+Kareem James 3216
+
+
 ### Strings Exercises
 
 #### S1.
@@ -7,17 +11,56 @@ Without using string interpolation, print out a string that combines myGreeting 
 let myGreeting = "Hello, "
 let myName = "Ben"
 ```
+``` swift 
+print(myGreeting, myName)
+
+```
+
 #### S2.
 Write code that prints out myArray as a single string separated by spaces.
 
 ```swift
 let myArray = ["Hi", "there,", "how","is","it","going?"]
 ```
+
+``` swift
+
+for newArray in myArray {
+myArray.startIndex
+print(newArray, terminator: " ")
+
+}
+```
+
+
 #### S3.
 Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
 
+```
+for x in 1...10 {
+    var myString = String(x)
+    print(myString)
+}
+
+
+
 #### S4.
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+
+
+``` swift 
+
+for x in 5...51 {
+
+var myString = String(x)
+if x % 2 == 0 {
+
+print(myString, terminator: " ")
+}
+
+```
+
+
 
 #### S5.
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
@@ -25,11 +68,17 @@ Write code that prints out every number ending in 4 between 1 and 60 as a single
 #### S6.
 Print each character in the string ```Hello world!```
 
-#### S7.
-Using '.characters' and loop, print the last character in the string below
-```swift
-let myStringSeven = "Hello world!"
+``` swift 
+
+let saying = "hello world"
+for c in saying.characters {
+print(c, terminator: "")
+
 ```
+
+
+
+ 
 
 #### S8.
 Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character

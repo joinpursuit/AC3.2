@@ -1,3 +1,6 @@
+Gabriel Breshears 3214
+
+
 ## AC3.2 - Week 1 - Homework
 
 ### I. Variables
@@ -5,32 +8,74 @@
 #### Question 1.
 Provide the following constants/variable names with the most appropriate type annotations.
 
-1. let _firstName_: (type?)
-2. let _middleInitial_:
-3. var _age_:
-4. var _latitude_:
-5. var _longitude_:
-6. var _isRainingCurrently_:
-7. let _completeAddress_:
-8. let _π_:
+1. let _firstName_: (String)
+2. let _middleInitial_:(String)
+3. var _age_:(Int)
+4. var _latitude_: (Double)  This is an intersting question for example my latitude is 40.7909719. So I need to store that number with precision so I would use a Double. A double provides more precision than a float.   
+5. var _longitude_: (Double)
+6. var _isRainingCurrently_:(String)
+7. let _completeAddress_:(string)
+8. let _π_:(Double)
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
-* 55
-* 122
-* -1
-* 15
+* 55    = 0b110111
+* 122   = 0b1111010
+* -1    = -0b1
+* 15    = 0b1111
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
+
+for number in 0...100 {
+
+if number % 2 == 0  || number % 2 != 0{
+print(number)
+}
+}
+//Then back to 0
+
+for number in (0...100).reverse() {
+
+if number % 2 == 0  || number % 2 != 0{
+print(number)
+}
+}
+
+
+
 
 #### Question 4.
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
+for number in 1...220 {
+
+if number % 2 == 0  {
+print(number)
+}
+}
+
+
+
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
+var i = 0
+repeat {
+print (i)
+i = i + 1
+
+}while i <= 50
+
 * Using a while loop, print all the odd numbers from 0 to 100.
+
+var i = 0
+while i < 100 {
+i = i + 1
+if i % 2 != 0 {
+print(i)
+
+
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
 
 #### Question 6.

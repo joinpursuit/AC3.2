@@ -1,3 +1,157 @@
+//: Playground - noun: a place where people can play
+//Peer 
+//Author 08/17
+//Gabriel Breshears
+//Thinley Dorjee
+
+import Cocoa
+
+
+//Question 1
+
+// Switch is more concise. Easier to read. If statments look bad if you have to many nested ifs. Best partice is to use switch when you have a lot of excuteable code.
+
+//Question 2
+
+//C
+
+//Question 3 
+
+var temperatureInFahrenheit = 72
+
+switch temperatureInFahrenheit {
+case 1 ... 40:
+print("It's cold out.")
+case 85...100:
+print("It's really warm.")
+default:
+print("Weather is moderate.")
+}
+
+//Question 4
+
+let cardNum = 12
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+//Question 5
+
+var grade: Int = 79
+
+switch grade {
+case 100:
+print("A+")
+case 90 ... 99:
+print("A")
+case 80 ... 89:
+print("B")
+case 70 ... 79 :
+print("C")
+case 60 ... 69:
+print("D")
+default:
+print("F")
+}
+
+//Question 6
+
+//Consider the below switch statement. What should your system currently print? What happens when you change number to 365? 1024? 65? What happens when you remove the default clause?
+
+/*a. The answer to life, the universe and everything")
+b.Days in year
+c.Bytes in a Kilobyte
+d.Some uninteresting number"
+e. Would error message.*/
+
+//Question 7
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+} else if population < 10000{
+message = "\(population) is a small town"
+} else if population > 5000{
+message = "\(population) a medium size town"
+}
+
+//Switch statement
+
+
+//Question 8
+
+let myTuple: (Int, Int) = (5, 10)
+let checkOut = myTuple
+switch checkOut {
+
+case (_, _):
+if myTuple.0 + myTuple.1 == 15 {
+print("The sum is equals t0 15")
+}
+default:
+print("The sum is not equals to 15")
+}
+
+//Question 9
+
+let studentNameAndClass = ("Ben", 3.2)
+
+switch studentNameAndClass{
+case (_, 3.2):
+print("\(studentNameAndClass.0) is a great student")
+default:
+print("There is no student")
+}
+
+//Question 10
+
+var timesTuple = (4, 8)
+switch timesTuple {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x, y) where y == 2*x:
+print("y is double the x")
+case let (x, y) where y == 3*x:
+print("y is triple the x")
+case let (x,y):
+print("Nothing is special about this tuple")
+}
+
+
+//Question 11
+
+let myPoint = (-5, -2)
+
+switch myPoint {
+case (0...10, 0...10):
+print("Frist quadrant")
+case (-10...0, 0...10):
+print("Second quadrant")
+case (-10 ... 0, -10 ... 0):
+print("Third quadrant")
+case (0...10, -10 ... 0):
+print("Fourth quadrant")
+default:
+print("Does not exist")
+}
+// if statement
+
+
+//Question 12
+
+
+
+
 # Conditionals
 
 ### Question 1.

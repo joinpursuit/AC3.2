@@ -1,3 +1,7 @@
+
+//Gabriel 3214
+//Margaret Ikeda 3223
+
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -11,21 +15,63 @@ import UIKit
 
 //c) Translate at least 3 of the capital names into another language
 
+
+var cititesDict = [ "USA" : "Washington", "Ecuador" : "Quito", "Brazil" : "Brasilia" ]
+
+cititesDict["Turkey"] = "Ankara"
+cititesDict.updateValue("Moscow", forKey: "Russia")
+
+cititesDict.updateValue("Vaŝingtono", forKey: "USA")
+cititesDict.updateValue("Demetas", forKey: "Ecuador")
+cititesDict.updateValue("Braziljo", forKey: "Brazil")
+print(cititesDict)
+
+
+
 //2)
 
 var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+print (someDict["Three"]! + someDict["Five"]!)
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict.updateValue(36, forKey: "Six")
+someDict.updateValue(77, forKey: "Seven")
+
+print(someDict)
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+var product = 1
+
+for x in someDict.values {
+    product *= x
+}
+print(product)
+
+someDict.updateValue( product, forKey: "productUpToSeven")
+
+print(someDict)
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+var sum:
+
+for x in (someDict.keys) where someDict[x] != "Seven" {
+    
+}
+
 
 //e) Remove the new keys made for parts c and d
 
 //f) Add 2 to every value inside of someDict
+
+
+
+
+
+
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
