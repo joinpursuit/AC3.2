@@ -9,26 +9,65 @@ let tipPercentage = 0.15
 
 //Write your code below
 
+//func totalWithTip(itemCost c: Int, tipPercentage p: Double) -> Double? {
+//    let i = Double(c)
+//    let totalCost = i*p
+//    return totalCost
+//}
+//
+//let myFinalCost = totalWithTip(itemCost: itemCost, tipPercentage: tipPercentage) //Fill in the arguments
+//print(myFinalCost!)
 
-
-let myFinalCost = totalWithTip() //Fill in the arguments
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
 
 //Write your code below
 
+//func totalWithTax(itemCost c: Int, tipPercentage p: Double, taxPercentage t: Double) -> Double? {
+//    let i = Double(c)
+//    let totalCost = i*t*p
+//    return totalCost
+//}
 
-let myFinalCostWithTipAndTax = totalWithTipAndTax() //Fill in the arguments
 
+//let myFinalCostWithTipAndTax = totalWithTipAndTax(itemCost: itemCost, tipPercentage: tipPercentage, taxPercentage: taxPercentage) //Fill in the arguments
+//print(finalCost!)
 
 //2a)Write a function takes an Int as input, and returns true if it is even, and false if it is odd
 
 //Write your code below
 
+
+//func myFunction(input i: Int) -> Bool{
+//    if i%2 == 0 {
+//        let input = Bool(true)
+//        return input
+//    }else{
+//        let input = Bool(false)
+//        return input
+//    }
+//}
+//print(myFunction(input: 24))
+
+//let evenOrOdd = myFunction(input: input)
+//print(evenOrOdd)
+
 //2b) Using function above, write code that prints out whether dieRoll is even or odd
 
-let dieRoll = Int(arc4random_uniform(6) + 1)
+//let dieRoll = Int(arc4random_uniform(6) + 1)
+//
+//func dieRollFunction(dieRoll r: Int) -> String{
+//    if r%2 == 0 {
+//        let r = "even"
+//        return r
+//    }else{
+//        let r = "odd"
+//        return r
+//    }
+//}
+//let evenOrOddDieRoll = dieRollFunction(dieRoll: dieRoll)
+//print(evenOrOddDieRoll)
 
 //3)
 /*
@@ -39,9 +78,28 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
  
  Your function should take in one parameter: x (the number to count up to)
  */
+//var myArray = [0,1,2,3,4,5,6,7,8,9,10]
 
+func numbers1ToX(FizzBuzz x: Int) {
 
+    for i in 1...x{
+        if (i%3 == 0) && (i%5 == 0) {
+        print("FizzBuzz")
+            
+    }
+        else if i%3 == 0{
+        print("Fizz")
+    }
+        else if i%5 == 0{
+        print("Buzz")
+    }
+        else{
+            print(i)
+        }
+}
+}
 
+numbers1ToX(FizzBuzz: 10)
 
 //4a) Write a function that takes [Int] as input.  It should return the largest Int in the array.
 
@@ -50,7 +108,7 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
 
 
 //4b)
-let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
+//let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
 
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
 
@@ -67,7 +125,7 @@ let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
 
 //5b) Using your function above, print how many characters are in myString
 
-let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
+//let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
 
 
 //5c) Write a function that counts how many characters in a String match a specific character.  (e.g: count how many "a"s are in a String, or count how many ","s are in a String.
@@ -81,19 +139,27 @@ let myString = "Swift is a new programming language for iOS, OS X, watchOS, and 
 
 
 
+
 //5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
 
 //Sample input:
-//let FiveDString = "This one is a little more complicated"
-//let targetCharacters = ["a", "e", "i", "o" "u"]
+let FiveDString = "This one is a little more complicated"
+let targetCharacters = ["a", "e", "i", "o", "u"]
 
 //Sample output:
 //13
-
-
 //Write your code below
 
-
+func findAllTargets( sent: String, targets: Character) -> Int {
+    var sum2 = 0
+    for character in sent.characters {
+        if character == "a" || character == "e" || character == "i" || character == "o" {
+            sum2 += 1
+        }
+    }
+    return sum2
+}
+print(findAllTargets(FiveDString, targets: " "))
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
 //let inputArray = [3,1,4,1,3,2,6,1,9]

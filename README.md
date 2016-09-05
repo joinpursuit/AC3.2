@@ -6,4 +6,5 @@ The reading for **Tuesday** is on [Structs and Classes](/lessons/structs-and-cla
 
 ## Schedule
 
+Hello my name is Leandro, I like the cap'n crunch
 - [Lesson Schedule](schedule.md)
