@@ -69,7 +69,7 @@ Correct!
 
 > **Note**: Questions 2 and 3 should also be implemented inside a variation of the command
 > loop we built in class, and which you used to work on Question 1. This way you can put
-> the whole assignment in one swift file. To hook this up, you should create functions just like we did for
+> the whole assignment in one swift file. To hook this up, you s hould create functions just like we did for
 > ```echo``` and ```number``` in class. From those functions you can call
 > your implementations of ```myFilter``` and ```myMap```.
 > You will have to look out for ```map``` and ```filter``` commands and treat them

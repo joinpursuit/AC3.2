@@ -387,7 +387,12 @@ let arrayOutPut = {(a:[String], b:[String]) -> String in
     for k in lastCountedIndex..<longerArray.count{
         messageString11 += longerArray[k] + " "
     }
-    
+    return messageString11
+}
+print(arrayOutPut(array1,array2))
+
+
+
 //    if !a.isEmpty {
 //        for i in lastCountedIndex..<a.count {
 //            messageString11 += a[i]
@@ -398,7 +403,3 @@ let arrayOutPut = {(a:[String], b:[String]) -> String in
 //            messageString11 += b[i]
 //        }
 //    }
-    return messageString11
-}
-print(arrayOutPut(array1,array2))
-

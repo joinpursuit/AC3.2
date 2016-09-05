@@ -214,6 +214,8 @@ func specificIntCount (arrayOfInt:[Int]) -> Int {
         count += 1
     }
     return count
+}
+specificIntCount(inputArray)
 //    var count = 0
 //    
 //    for i in 0..<arrayOfInt.count {
@@ -232,9 +234,9 @@ func specificIntCount (arrayOfInt:[Int]) -> Int {
 //    count += 1
 //    }
 //    return count
-}
+
 //print(inputArray)
-specificIntCount(inputArray)
+
 
 //func specificIntCount (arrayOfInt:[Int]) -> Int {
 //    var someArray : [Int] = []
