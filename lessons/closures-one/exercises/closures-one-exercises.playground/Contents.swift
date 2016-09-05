@@ -320,7 +320,7 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
 
 var sortedClass = ac32folks.sort{ (a, b) -> Bool in
-    return a.1 > b.1
+    return a.0 > b.0
 }
 print(sortedClass)
 
