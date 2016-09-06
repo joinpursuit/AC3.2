@@ -64,7 +64,7 @@ while true {
         else {
             var array = myMathProb.componentsSeparatedByString(" ")
             
-            if array.count < 3 {
+            if array.count != 3 {
                 print("Please enter a valid command!")
                 continue
             }
