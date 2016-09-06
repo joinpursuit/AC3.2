@@ -1,5 +1,5 @@
 //: Playground - noun: a place where people can play
-
+//Sabrina Ip 3229 and Jermaine Kelly 3213
 import UIKit
 
 
@@ -7,9 +7,18 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var citiesDict = ["United States": "DC", "Jamaica": "Kingston", "China":"Beijing"]
+
 //b) Add two more countries to your dictionary
 
+citiesDict["Afghanistan"] = "Kabul"
+citiesDict["Australia"] = "Canberra"
+
 //c) Translate at least 3 of the capital names into another language
+
+citiesDict["Afghanistan"] = "کابل"
+citiesDict["China"] = "北京"
+citiesDict["Jamaica"] = "金士頓"
 
 //2)
 
@@ -17,37 +26,90 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+var sum = 0
+
+for i in someDict.keys where i == "Three" || i == "Five"  {
+    sum += someDict[i]!
+}
+
+print(sum)
+
+// print(someDict["Three"]! + someDict["Five"]!)
+
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict["Six"] = 234
+someDict["Seven"] = 456
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+var product = 1
+
+for i in someDict.values {
+    product *= i
+}
+
+someDict["productUptoSeven"] = product
+
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+var sumUpToSix = 0
+
+for i in someDict.keys where i != "productUptoSeven" && i != "Seven" {
+    sumUpToSix += someDict[i]!
+}
+
+someDict["sumUptoSix"] = sumUpToSix
 
 //e) Remove the new keys made for parts c and d
 
+someDict.removeValueForKey("productUptoSeven")
+someDict.removeValueForKey("sumUptoSix")
+
 //f) Add 2 to every value inside of someDict
+
+someDict["One"] = someDict["One"]! + 2
+
+for i in someDict.keys {
+    someDict[i]! += 2
+}
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
 //a) Create a variable that is explicitly typed as a dictionary that maps strings to floating point numbers. Initialize the variable to the data shown in the table below which lists an author name and their comprehensibility score.
 /*
-“Mark Twain” - 8.9
-“Nathaniel Hawthorne” - 5.1
-“John Steinbeck” - 2.3
-“C.S. Lewis” - 9.9
-“Jon Krakaur” - 6.1
-*/
+ “Mark Twain” - 8.9
+ “Nathaniel Hawthorne” - 5.1
+ “John Steinbeck” - 2.3
+ “C.S. Lewis” - 9.9
+ “Jon Krakaur” - 6.1
+ */
+
+var books = ["Mark Twain": 8.9, "Nathaniel Hawthorne": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakaur":6.1]
 
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
 
+print(books["John Steinbeck"]!)
+books["Erik Larson"] = 9.2
+
+if books["Jon Krakaur"]! > books["Mark Twain"]! {
+    print("Jon Krakaur")
+} else {
+    print("Mark Twain")
+}
+
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
-
-
+for (name, rating) in books {
+    print("\(name): \(rating)")
+}
+print()
 
 
 //4 -7 source :  https://www.weheartswift.com/dictionaries/)
-//4)  
+//4)
 //4a)You are given a dictionary code of type [String:String] which has values for all lowercase letters. The code dictionary represents a way to encode a message. For example if code["a"] = "z" and code["b"] = "x" the encoded version if "ababa" will be "zxzxz". You are also given a message which contains only lowercase letters and spaces. Use the code dictionary to encode the message and print it.
 
 var code = [
@@ -80,13 +142,51 @@ var code = [
 ]
 
 var message = "hello world"
+var encodedString =  ""
+//print(code["h"]!)
 
+for chars in message.characters {
+    if chars == " " {
+        print(" ", terminator: "")
+    } else {
+        print(code[String(chars)]!, terminator: "")
+    }
+}
+print()
+
+//Ben's version
+//var message = "helElo wo@$#rld"
+//var encodedString = ""
+//for c in message.characters {
+//    if let encodedCharacter = code[String(c)] {
+//        encodedString += encodedCharacter
+//    } else {
+//        encodedString += String(c)
+//    }
+//}
+//
+//print(encodedString)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
 
+
+for (t, chars) in code where chars == "chars"  {
+    print(t)
+}
+
+
+for chars in encodedMessage.characters {
+    if chars == " " {
+        print(" ", terminator: "")
+    } else {
+        for (k, v) in code where v == String(chars) {
+            print(k, terminator: "")
+        }
+    }
+}
 
 //5)
 //5a)You are given an array of dictionaries. Each dictionary in the array contains exactly 2 keys “firstName” and “lastName”. Create an array of strings called firstNames that contains only the values for “firstName” from each dictionary.
@@ -114,7 +214,28 @@ var people: [[String:String]] = [
     ]
 ]
 
+var firstNames = [String]()
+
+for fname in people{
+    if let first = fname["firstName"]{
+        firstNames.append(first)
+    }
+}
+
+firstNames
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
+
+var fullNames = [String]()
+
+for fulName in people{
+    if let first = fulName["firstName"], last = fulName["lastName"]{
+        
+        fullNames.append("\(first) \(last)")
+    }
+    
+}
+
+fullNames
 
 //6)
 //You are given an array of dictionaries. Each dictionary in the array describes the score of a person. Find the person with the best score and print his full name.
@@ -149,9 +270,9 @@ var peopleWithScores: [[String: String]] = [
 ]
 
 /*6b) Print out the dictionary above in the following format:
-full name - score
-...
-*/
+ full name - score
+ ...
+ */
 
 //7)
 //You are given an array of integers. Find out the frequency of each one.

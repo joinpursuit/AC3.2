@@ -6,4 +6,9 @@ The reading for **Tuesday** is on [Structs and Classes](/lessons/structs-and-cla
 
 ## Schedule
 
+
+Hello my name is Junior
+
+
+
 - [Lesson Schedule](schedule.md)
