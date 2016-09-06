@@ -223,6 +223,11 @@ print(sorted)
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fb4c9f49ecc9ef0e80b649250dc9decec581cff9
+
 //var sortedMovies = [String]()
 //
 //for i in 0..<movies.count {
