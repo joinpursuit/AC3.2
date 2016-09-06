@@ -160,7 +160,28 @@ func multipleChars ( thatString: String, targetChars: [Character]) -> Int {
 multipleChars(fiveCString, targetChars: ["k", "h", "i"])
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
-//let inputArray = [3,1,4,1,3,2,6,1,9]
+let inputArray = [3,1,4,1,3,2,6,1,9]
+
+func uniqueInts (theArray: [Int]) -> Int {
+    var counter = 0
+    for i in 0..<theArray.count {
+        var didFindDuplicate = false
+        for j in (0)..<theArray.count {
+            if i == j {
+                continue
+            }
+            if theArray[i] == theArray[j] {
+              didFindDuplicate = true
+              break
+            }
+        }
+        if didFindDuplicate == false {
+         counter += 1
+        }
+    }
+    return counter
+}
+uniqueInts(inputArray)
 
 //Sample output:
 //4
@@ -173,6 +194,10 @@ multipleChars(fiveCString, targetChars: ["k", "h", "i"])
 
 //Sample input:
 //let binaryArray = [1,0,1,1,1,0,1]
+func binaryConversion(binary: [Int]) -> Double {
+    let number(binary, radix: 2)
+}
+
 
 //Sample output:
 //93
