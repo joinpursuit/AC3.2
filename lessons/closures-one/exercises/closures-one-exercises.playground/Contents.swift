@@ -149,7 +149,7 @@ let mySecondSortedArray = myArray.sort(descendingOrder)
 
 
 
-let arrayOfArrays = [[3,65,2,4],[25,3],[245,2,3,5,74]]
+//let arrayOfArrays = [[3,65,2,4],[25,3],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
 
@@ -160,20 +160,42 @@ let arrayOfArrays = [[3,65,2,4],[25,3],[245,2,3,5,74]]
 //
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
+//var arrayWithThreeOrMore: [Int] = []
+//var arrayWithTwoOrLess: [Int] = []
+//
+//    for i in 0..<arrayOfArrays.count{
+//        if arrayOfArrays[i].count >= 3{
+//        arrayWithThreeOrMore.append(i)
+//        } else {
+//            arrayWithTwoOrLess.append(i)
+//        }
+//}
+//
+//var ascendingOrder5 = {(x: [Int], y: [Int]) -> Bool in
+//    return x[2] > y[2]
+//}
+//
+//let mySecondSortedArray1 = arrayWithThreeOrMore.sort(ascendingOrder5)
 
-var ascendingOrder2 =  {(x: [Int], y: [Int]) -> Bool in
-    var threeOrMore: [Int]
-    var lessThanThree: [Int]
-    if x.count == 3{
-        return x[2] > y[2]
-    } else {
-       return x[0] > y[0]
-        
-    }
-    
-}
-let mySecondSortedArray2 = arrayOfArrays.sort(ascendingOrder2)
-
+//let arrayOfArrays = [[3,65,2,4],[25,3],[245,2,3,5,74]]
+//
+//var arrayWithThreeOrMore = [[Int]]()
+//var arrayWithTwoOrLess = [[Int]]()
+//
+//for i in 0..<arrayOfArrays.count{
+//    if arrayOfArrays[i].count < 3{
+//        arrayWithTwoOrLess.append(arrayOfArrays[i])
+//        
+//    } else {
+//        arrayWithThreeOrMore.append(arrayOfArrays[i])
+//    }
+//}
+//
+//var ascendingOrder5 = arrayWithThreeOrMore.sort{(x: [Int], y: [Int]) -> Bool in
+//    return x[2] > y[2]
+//}
+//
+//print(ascendingOrder5 + arrayWithTwoOrLess)
 
 
 
@@ -299,6 +321,10 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 // .
 // .
+
+
+
+
 
 //10. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
