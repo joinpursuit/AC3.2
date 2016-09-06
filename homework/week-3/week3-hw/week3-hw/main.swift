@@ -173,7 +173,7 @@ func Filter() {
                 break
             }
             
-            var userInput: [Int] = []
+            var userInput = [Int]()
             
             let command = response.componentsSeparatedByString(" ")
             
@@ -192,20 +192,46 @@ func Filter() {
 }
 
 
-func myMap(inputArray: [Int], filter: (Int) -> Bool) -> [Int] {
+func myMap(inputArray: [Int], filter: (Int) -> (Int)) -> [Int] {
     var mappedArray = [Int]()
     
     for num in inputArray {
-        if filter(num) {
-            mappedArray.append(num)
+        mappedArray.append(filter(num))
         }
-    }
     return mappedArray
 }
 
-
-
-
+func Map() {
+    while true {
+        print("Please enter some numbers separated by a space and I will multiply them by the amount of your choice: ", terminator: " ")
+        
+        if let response = readLine(stripNewline: true) {
+            if response == "exit" {
+                break
+            }
+            
+            var userInput = [Int]()
+            let command = response.componentsSeparatedByString(" ")
+            
+            
+            for str in command {
+                if let num = Int(str) {
+                    userInput.append(num)
+                }
+            }
+            print("Please enter a number you would like to multiply by: ", terminator: " ")
+            
+            if let response = readLine(stripNewline: true) {
+                let x = Int(response)!
+                
+                let y = myMap(userInput, filter: { (a) -> Int in a * x})
+                
+                print(y)
+                
+            }
+        }
+    }
+}
 
 
 
@@ -227,7 +253,7 @@ while true {
         case "Calculator":
             Calc()
         case "Map":
-            print("Not ready yet")
+            Map()
         case "Filter":
             Filter()
         default:
