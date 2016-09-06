@@ -76,22 +76,24 @@ func math(m: String) {
 					print("Try again in this format: \"5 + 5\"")
 					continue outer
 				}
-				if Double(mathing[0]) == nil || Double(mathing[2]) == nil {
+				let num1 = Double(mathing[0])
+				let num2 = Double(mathing[2])
+				if num1 == nil || num2 == nil {
 					print("Try again in this format: \"5 + 5\"")
 					continue outer
 				}
 				if let calculator = MathString(rawValue: mathing[1]) {
 					switch calculator {
 					case .Add:
-						print("\(mathing[0]) + \(mathing[2]) = \(Int(plus(Double(mathing[0])!, Double(mathing[2])!)))")
+						print("\(num1) + \(num2) = \(Int(plus(num1!, num2!)))")
 					case .Subtract:
-						print("\(mathing[0]) - \(mathing[2]) = \(Int(minus(Double(mathing[0])!, Double(mathing[2])!)))")
+						print("\(num1) - \(num2) = \(Int(minus(num1!, num2!)))")
 					case .Multiply:
-						print("\(mathing[0]) * \(mathing[2]) = \(Int(mult(Double(mathing[0])!, Double(mathing[2])!)))")
+						print("\(num1) * \(num2) = \(Int(mult(num1!, num2!)))")
 					case .Divide:
-						print("\(mathing[0]) / \(mathing[2]) = \(Int(divide(Double(mathing[0])!, Double(mathing[2])!)))")
+						print("\(num1) / \(num2) = \(Int(divide(num1!, num2!)))")
 					case .Random:
-						randomGuess(Double(mathing[0])!, b: Double(mathing[2])!)
+						randomGuess(num1!, b: num2!)
 					}
 				}
 			}
