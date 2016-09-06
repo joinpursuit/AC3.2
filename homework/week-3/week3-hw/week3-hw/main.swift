@@ -60,9 +60,15 @@ while true {
             break
         }
             
-            
+            //start of else
         else {
             var array = myMathProb.componentsSeparatedByString(" ")
+            
+            if array.count < 3 {
+                print("Please enter a valid command!")
+                continue
+            }
+            
             
             let operation = array[1]
             if let num1 = Double(array[0]),num2 = Double(array[2]) {
@@ -88,7 +94,7 @@ while true {
                         }
                     }
                 }
-                    
+                    // end of else
                 else {
                     print("Unknown Operator: \(operation)")
                 }
