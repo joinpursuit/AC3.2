@@ -190,8 +190,14 @@ func mysteryOperatorCompare(s1: String, s2: String, answer: Double, userGuess: S
 func commandLineMathOutput(s: String) {
     if s == "calculator" {
         print("")
-        print("+, -, /, * operates on any two integers. Please separate with spaces:")
+        print("Operate on any two integers formatted with spaces (i.e. 3 * 6), then press Enter:")
         print("")
+        print("         + -> addition")
+        print("         - -> subtraction")
+        print("         / -> division")
+        print("         * -> multiplication")
+        print("         ^ -> exponentiation")
+        print("         ? -> random; guess the operator")
     }
     
     var wantsToCalculate = true
