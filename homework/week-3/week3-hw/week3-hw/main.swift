@@ -1,9 +1,7 @@
 //
 //  main.swift
 //  week3-hw
-
 import Foundation
-
 //checks cases, then returns a function solving for the operator value
 enum MathOperators: String {
     case Add = "+"
@@ -24,27 +22,23 @@ enum MathOperators: String {
         }
     }
 }
-
 //this creates a random operator, and returns it along with the value of the input of the two numbers
-
 func randomOperator(x: Double, y: Double) -> (Double, String){
     let operators = ["*", "+", "/", "-"]
     let randomOp = operators[Int(arc4random_uniform(4))]
-        switch randomOp {
-        case "+":
-           return (x + y, "+")
-        case "-":
-            return (x - y, "-")
-        case "/":
-            return (x / y, "/")
-        case "*":
-            return (x * y, "*")
-        default:
-            return (0.0, "")
-        }
+    switch randomOp {
+    case "+":
+        return (x + y, "+")
+    case "-":
+        return (x - y, "-")
+    case "/":
+        return (x / y, "/")
+    case "*":
+        return (x * y, "*")
+    default:
+        return (0.0, "")
+    }
 }
-
-
 enum filterOptions: String {
     case Odd = "odd"
     case Even = "even"
@@ -64,7 +58,6 @@ enum filterOptions: String {
         }
     }
 }
-
 func myFilter(inputArray: [Int], filter: (Int) -> Bool) -> [Int] {
     var newArr = [Int]()
     for i in inputArray {
@@ -74,8 +67,6 @@ func myFilter(inputArray: [Int], filter: (Int) -> Bool) -> [Int] {
     }
     return newArr
 }
-
-
 enum mappingOptions: String {
     case Double = "double"
     case Triple = "triple"
@@ -95,7 +86,6 @@ enum mappingOptions: String {
         }
     }
 }
-
 func myMap (inputArray: [Int], map: (Int) -> Int) -> [Int] {
     var outputArray = [Int]()
     for i in inputArray {
@@ -103,7 +93,6 @@ func myMap (inputArray: [Int], map: (Int) -> Int) -> [Int] {
     }
     return outputArray
 }
-
 var exit = false
 while exit == false {
     print("Please input command: ")
@@ -115,14 +104,14 @@ while exit == false {
             //this check basic calculator functions
         } else if let calculator = MathOperators(rawValue: command[1]), x = Double(command[0]), y = Double(command[2]) where command.count == 3 {
             let value = calculator.operate(x, y: y)
-                print("\(x) \(command[1]) \(y) = \(value)")
-            }
+            print("\(x) \(command[1]) \(y) = \(value)")
+        }
         //this enters the random game for us
         if let x = Double(command[0]), y = Double(command[2]) where command.count == 3 && command[1] == "?" {
-                let value = randomOperator(x, y: y)
-                print("\(x) \(command[1]) \(y) = \(value.0)")
-                var gamePlaying = true
-                while gamePlaying {
+            let value = randomOperator(x, y: y)
+            print("\(x) \(command[1]) \(y) = \(value.0)")
+            var gamePlaying = true
+            while gamePlaying {
                 if let guess = readLine() {
                     if guess == value.1 {
                         sleep(1)
@@ -133,7 +122,6 @@ while exit == false {
                         print("Guess Again!")
                     }
                 }
-
             }
         }
         //this allows us to enable to filtering function
@@ -146,7 +134,7 @@ while exit == false {
                         inputArr.append(x)
                     }
                 }
-            print(myFilter(inputArr, filter: x.filterBy()))
+                print(myFilter(inputArr, filter: x.filterBy()))
             }
         }
         if command[0] == "map" {
@@ -158,15 +146,8 @@ while exit == false {
                         inputArr.append(x)
                     }
                 }
-            print(myMap(inputArr, map: x.mapBy()))
+                print(myMap(inputArr, map: x.mapBy()))
             }
         }
     }
 }
-
-
-
-
-
-
-

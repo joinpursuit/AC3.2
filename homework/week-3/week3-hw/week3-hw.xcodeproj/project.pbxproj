@@ -241,6 +241,7 @@
 				1EE8D0131D7A0DD100EFD9B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
