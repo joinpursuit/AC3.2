@@ -1,5 +1,160 @@
 # Conditionals
 
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+/*
+Question1
+Reasons to use switch instead of if
+1. when you have multiple conditions that need to be met with the same data type.
+2.
+
+Question 2
+C.
+
+Question 3
+
+*/
+
+//Question 3
+var temperatureInFahrenheit = 72
+
+switch temperatureInFahrenheit {
+
+case -20..<40:
+print("It's freezing out!")
+case 85..<200:
+print("It's really warm.")
+default:
+print("Weather is moderate.")
+}
+
+//Question 4
+
+let cardNum = 12
+
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+//Question 5
+
+var numGrade: Int = 101
+let msg = "Your grade is "
+
+switch numGrade {
+case 100:
+print("\(msg) A+")
+case 90...99:
+print("\(msg) A")
+case 80...89:
+print("\(msg) B")
+case 70...79:
+print("\(msg) C")
+case 65...69:
+print("\(msg) D")
+case 0...64:
+print("\(msg) F")
+default:
+print("This is not a legit grade!")
+}
+
+/*Question 6
+
+It currently prints out "The answer to life, the universe and everything"
+365 will print "Days in year"
+1024 will print "Bytes in a Kilobyte"
+65 will print default "Some uninteresting number"
+If the default is rremoved there will be an error
+
+*/
+
+//Question 7
+
+var population: Int = 10001
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+}else if population < 10000 && population > 5000{
+message = "It's a medium size town"
+}else{
+message = "it's a mid sized town"
+}
+
+switch population{
+case 0..<5000:
+message = "it's a mid sized town"
+case 5000...10000:
+message  = "It's a medium size town"
+default:
+message = "\(population) is a large town"
+}
+
+
+//Question 8 
+
+let myTuple: (Int, Int) = (5,10)
+let sum = myTuple.0 + myTuple.1
+
+if sum >= 15 {
+print("The sum is at least 15")
+}
+else {
+print("The sum is less than 15")
+}
+
+
+switch sum{
+case 0..<15:
+print ("The sum is less than 15")
+default:
+print("The sum is at least 15")
+
+}
+
+//Question 9
+let studentNameAndClass = ("Ben", 3.2)
+
+var myTupleTwo = studentNameAndClass
+
+
+switch myTupleTwo{
+case(_,3.2):
+print("Welcome \(myTupleTwo.0) to the \(myTuple.1) class")
+default:
+break
+
+}
+
+//Question 10
+var myTupleThree = (x: 2,y: 5)
+
+switch myTupleThree {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where y==2*x:
+print("y is double the value of x")
+case let (x,y) where y==3*x:
+print("y is triple the value of x")
+case let (x,y):
+print("Nothing is special about this tuple")
+default:
+break
+}
+
+
+
+
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?
 
@@ -166,3 +321,4 @@ Write a conditional statement that prints out whether a number is a whole number
  based on "direction" again. It should also report if you're going
  "uptown" or "downtown" (but shouldn't report about east or west).
  
+

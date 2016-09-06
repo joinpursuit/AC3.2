@@ -3,29 +3,45 @@
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
 
 //Write all your code below:
-
-
-
-//2)
-//Remove "Illinois" and "Kansas" from the array below.
-
-var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
-
+//var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
+//print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
+//
+//
+////2)
+////Remove "Illinois" and "Kansas" from the array below.
+//
+//var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+//westernStates.removeAtIndex(4)
+//westernStates.removeAtIndex(4)
 
 //Write all your code below:
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
 
-let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+//var moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+//
+//for i in 0..<moreStates.count where (moreStates[i] == "Hawaii") || (moreStates[i] == "Alaska") {
+//    print("true")
+//}
+
 
 //Write all your code below:
 
 
 //4)
 //a) print out how many non-whitespace characters are in myString
-let myString = "This is practice for the next problem!"
 
+let myString = "This is practice for the next problem!"
+var nonWhite = 0
+
+for char in myString.characters {
+    if char != " " {
+        
+        nonWhite += 1
+    }
+}
+print(nonWhite)
 //Write all your code below:
 
 
@@ -34,6 +50,12 @@ let myString = "This is practice for the next problem!"
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
+for i in 0..<myFavoriteQuotes.count {
+    for char in myFavoriteQuotes(String[myFavoriteQuotes.]) {
+        
+    }
+}
 
 
 
@@ -49,6 +71,7 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 //Write all your code below:
 
 
+
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
@@ -56,10 +79,32 @@ var basket = [String]()
 
 //Write all your code below:
 
+var flower = "\u{1f337}"
+
+for i in 0..<garden.count {
+    print(i)
+    if garden[i] == flower {
+        garden.removeAtIndex(i)
+        garden.append("dirt")
+        basket.append(flower)
+    }
+}
+
+print(basket)
+print(garden)
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
+var max = 0
 
+for i in 0...listOfNumbers.count {
+    if listOfNumbers[i] > max {
+        max = listOfNumbers[i]
+    }
+    print([i])
+}
+print([i])
 //Write all your code below:
 
 
