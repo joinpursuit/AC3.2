@@ -168,43 +168,56 @@ let letterValues = [
 
 //8a. Sort the string below in descending order according the dictionary letterValues
 
-var codeString = "aldfjaekwjnfaekjnf"
-/*
-var sortedCodeString: String = ""
-
-codeString.characters.count
-
-    //sort stuff
-let sortThisCrap = {(x: Int, y: Int) -> Bool in
-    return x < y
-}
-
-    //look for character values
-var arrayCodeString = [Int]()
-for i in 0..<codeString.characters.count {
-    for key in letterValues.keys {
-        if Character(key) == codeString[codeString.startIndex.advancedBy(i)] {
-            arrayCodeString.append(letterValues[key]!)
-        }
-    }
-}
+let codeString = "aldfjaekwjnfaekjnf"
+//var arrCodeString = Array(codeString.characters)
+//
+//let ascend = {(x: Character, y: Character) -> Bool in
+//    let a = letterValues[a]
+//    let b = letterValues[b]
+//}
 
 
-var sortedCrap = arrayCodeString.sort(sortThisCrap)
-for x in sortedCrap {
-    for key in letterValues.keys {
-        if x == value {
-            print(letterValues[x])
-        }
-    }
-}
 
-*/
- 
+
+
+
+
+            /*
+            var sortedCodeString: String = ""
+
+            codeString.characters.count
+
+                //sort stuff
+            let sortThisCrap = {(x: Int, y: Int) -> Bool in
+                return x < y
+            }
+
+                //look for character values
+            var arrayCodeString = [Int]()
+            for i in 0..<codeString.characters.count {
+                for key in letterValues.keys {
+                    if Character(key) == codeString[codeString.startIndex.advancedBy(i)] {
+                        arrayCodeString.append(letterValues[key]!)
+                    }
+                }
+            }
+
+
+            var sortedCrap = arrayCodeString.sort(sortThisCrap)
+            for x in sortedCrap {
+                for key in letterValues.keys {
+                    if x == value {
+                        print(letterValues[x])
+                    }
+                }
+            }
+
+            */
+
 let codeStringAsArr = Array(codeString.characters)
 
 codeStringAsArr.sort{(a: Character, b: Character) -> Bool in
-    let aValue = letterValues[String(a)]
+    let aValue = letterValues[String(a)] // pairing character to keys in dict to value
     let bValue = letterValues[String(b)]
     return aValue < bValue
 }
@@ -219,6 +232,10 @@ print(codeStringAsArr)
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
+
+let ascendd = {()
+
+}
 
 
 
@@ -298,6 +315,16 @@ let ac32folks = [("Amber", "Spadafora",	3201),
                  ("Ana", "Ma",	3202),
                  ("Annie", "Tung",	3203)]
 // and so on...
+
+
+/*
+ var microwaveLine = ac32fols.sort {(a: String, b: String) -> Bool in return a.1 > b.1
+    //$0.1 > $1.1
+ }
+ for peep in microwaveLine {
+    print("\(peep.0)")
+ }
+ */
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
