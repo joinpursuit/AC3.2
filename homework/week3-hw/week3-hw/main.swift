@@ -136,7 +136,7 @@ func randomIntBetween(low: Int, high: Int) -> Int {
 
 
 func playMath() -> Int {
-    let operants = ["+", "-", "/", "*"] //use enums instead???
+    let operants = [mathOps.Add.rawValue, mathOps.Subtract.rawValue, mathOps.Divide.rawValue, mathOps.Multiply.rawValue] //use enums instead???
     
     let randomIndex = randomIntBetween(1, high: 4)
     let randomOperant = operants[randomIndex]
