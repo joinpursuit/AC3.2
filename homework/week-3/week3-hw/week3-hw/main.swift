@@ -192,12 +192,12 @@ func commandLineMathOutput(s: String) {
         print("")
         print("Operate on any two integers formatted with spaces (i.e. 3 * 6), then press Enter:")
         print("")
-        print("         + -> addition")
-        print("         - -> subtraction")
-        print("         / -> division")
-        print("         * -> multiplication")
-        print("         ^ -> exponentiation")
-        print("         ? -> random; guess the operator")
+        print("         + \u{27f6} addition")
+        print("         - \u{27f6} subtraction")
+        print("         / \u{27f6} division")
+        print("         * \u{27f6} multiplication")
+        print("         ^ \u{27f6} exponentiation")
+        print("         ? \u{27f6} random; guess the operator")
     }
     
     var wantsToCalculate = true
