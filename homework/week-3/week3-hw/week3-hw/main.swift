@@ -60,42 +60,42 @@ func calculator() {
         while wrongAnswer {
             if let answer = readLine(stripNewline: true) {
                 switch answer {
-                case "+":
+                case Command.Plus.rawValue:
                     if a + b == c {
                         print("Correct!")
                         wrongAnswer = false
                     } else {
                         print("Wrong! Guess again: \n>>> ", terminator: "")
                     }
-                case "-":
+                case Command.Subtract.rawValue:
                     if a - b == c {
                         print("Correct!")
                         wrongAnswer = false
                     } else {
                         print("Wrong! Guess again: \n>>>", terminator: "")
                     }
-                case "*":
+                case Command.Multiply.rawValue:
                     if a * b == c {
                         print("Correct!")
                         wrongAnswer = false
                     } else {
                         print("Wrong! Guess again: \n>>>", terminator: "")
                     }
-                case "/":
+                case Command.Division.rawValue:
                     if a / b == c {
                         print("Correct!")
                         wrongAnswer = false
                     } else {
                         print("Wrong! Guess again: \n>>>", terminator: "")
                     }
-                case "%":
+                case Command.Modulo.rawValue:
                     if a % b == c {
                         print("Correct!")
                         wrongAnswer = false
                     } else {
                         print("Wrong! Guess again: \n>>>", terminator: "")
                     }
-                case "^":
+                case Command.Power.rawValue:
                     if pow(a,b) == c {
                         print("Correct!")
                         wrongAnswer = false
