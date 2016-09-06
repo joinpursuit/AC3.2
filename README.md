@@ -7,3 +7,7 @@ The reading for **Tuesday** is on [Structs and Classes](/lessons/structs-and-cla
 ## Schedule
 
 - [Lesson Schedule](schedule.md)
+
+Vic says "Hi."
+
+Vic says "Bye."

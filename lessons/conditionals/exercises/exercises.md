@@ -1,3 +1,287 @@
+```swift
+
+//EXCERCISES
+//1.switch statements are primarily useful for comparing a value against a number of potentially matching cases. if/else statements, on the other hand, are better used for checking against a single condition. switches also offer a number of powerful features that allow you to match against ranges, bind values to local constants or variables, and match patterns in tuples 
+
+/* Question 2.
+
+What's missing from the switch statement below?
+
+a. The case statement needs to say month == 1
+b. The code is valid and not missing anything
+c. The below code will not compile because switch statements need case statements for all expected values or a default statement.
+ANSWER IS C */
+
+let monthNum = 3
+
+switch monthNum {
+case 1:
+print("January")
+default:
+break
+
+}
+
+//Question 3.
+//
+//Convert the if/else statement below into a switch statement.
+
+var temperatureInFahrenheit = 72
+
+if temperatureInFahrenheit <= 40 {
+print("It's cold out.")
+} else if temperatureInFahrenheit >= 85 {
+print("It's really warm.")
+} else {
+print("Weather is moderate.")
+}
+
+switch temperatureInFahrenheit {
+case 0...40:
+print("Its cold out")
+case let temp where (temp >= 85):
+print("Its really warm")
+default:
+print("Weather is moderate")
+}
+
+
+//Question 4.
+//
+//Change the below if/else statement into a switch statement.
+
+let cardNum = 12
+
+if cardNum == 11 {
+print("Jack")
+} else if cardNum == 12 {
+print("Queen")
+} else if cardNum == 13 {
+print("King")
+} else {
+print(cardNum)
+}
+
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+
+//Question 5.
+//
+//Create a switch statement that will convert a number grade into a letter grade as shown below:
+//
+//100 -> A+
+//90 - 99 -> A
+//80 - 89 -> B
+//70 - 79 -> C
+//65 - 69 -> D
+//Below 65 -> F
+
+let grade = 100
+
+switch grade {
+case 100:
+print("A+")
+case 90...99:
+print("A")
+case 80...89:
+print("B")
+case 70...79:
+print("C")
+case 65...69:
+print("C")
+default:
+print("F")
+}
+
+
+//Question 6.
+//
+/*Consider the below switch statement. 
+What should your system currently print? 
+The answer to life, the universe and everything
+
+What happens when you change number to 365? 
+Days in year
+
+1024?
+Bytes in a Kilobyte
+
+65?
+Some uninteresting number
+
+What happens when you remove the default clause?
+Switcb will not be exhausted and not compile
+*/
+
+let number = 65
+
+switch number {
+case 365:
+print("Days in year")
+case 1024:
+print("Bytes in a Kilobyte")
+case 0:
+print("Where arrays start")
+case 42:
+print("The answer to life, the universe and everything")
+default:
+print("Some uninteresting number")
+}
+
+//Question 7.
+//
+//Consider the variable below called population and the if-condition. 1. Add an else-if-condition that states if population is less than 10000 but greater than 5000, the message changes to say it's "a medium size town". 2. Add an else-condition where the message changes to say it's a mid-size town. 3. Convert your final if-else statement to a switch statement.
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+} else if population <= 10_000 && population > 5_000 {
+message = "a medium-sized town"
+} else {
+message = "it's a mid-sized town"
+}
+
+switch population{
+case let pop where (pop > 10_000):
+message = "\(population) is a large town"
+case 5_000...10_000:
+message = "a medium-sized town"
+default:
+message = "it's a mid-sized town"
+}
+
+
+//Question 8.
+//
+//Complete the code below so that it prints out and tells the user if the sum of the two numbers in the tuple is at least 15. a) Using a conditional b) Using a switch statement
+
+let myTuple: (Int, Int) = (5, 10)
+
+if myTuple.0 + myTuple.1 >= 15 {
+print("This sum is greater than 15")
+} else {
+print("This sum is less than 15")
+}
+
+switch myTuple {
+case let sum where (sum.0 + sum.1 >= 15):
+print("This sum is greater than 15")
+default:
+print("This sum is less than 15")
+}
+
+//
+//Question 9.
+//
+//Complete the switch statement below. We want it to output a personalized greeting to the student based on their name and class.
+
+let studentNameAndClass = ("Ben", 3.2)
+let myTupleTwo = studentNameAndClass.1
+switch myTupleTwo {
+case (3.2):
+print("Welcome, \(studentNameAndClass.0), to Access Code \(studentNameAndClass.1)")
+default:
+print("Welcome, \(studentNameAndClass.0), to the less awesome coding class.")
+}
+
+//Question 10.
+//
+//Consider the below switch with a tuple.
+//
+//Add a case for when y is double the value of x
+//Add a case for when y is triple the value of x
+
+let xyTuple = (x: 2, y: 4)
+let x = xyTuple.x
+let y = xyTuple.y
+
+switch (x,y) {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where y==x*2 :
+print("y is double the value of x")
+case let (x,y) where y==x*3 :
+print("y is triple the value of x")
+default:
+print("Nothing is special about this tuple")
+}
+
+
+//Question 11
+//
+//Write an if statement that checks to see what quadrant a point is in, then prints that quadrant. Then write it as a switch statement
+
+let myPoint: (Double, Double)
+myPoint = (1.0, 2.0)
+
+
+switch myPoint {
+case let q1 where (myPoint.0 > 0 && myPoint.1 > 0):
+print("The point is in Q1.")
+case let q2 where (myPoint.0 < 0 && myPoint.1 > 0):
+print("The point is in Q2.")
+case let q3 where (myPoint.0 < 0 && myPoint.1 < 0):
+print("The point is in Q3.")
+case let q4 where (myPoint.0 > 0 && myPoint.1 < 0):
+print("The point is in Q4.")
+default:
+print("This is not in any Q or is 0,0.")
+}
+
+//Question 12
+//
+//Write an if statement that prints out what decade of life someone is in (e.g "You are in your twenties). Then write it as a switch statement
+
+let nameAndBirthDate: (String, Int)
+nameAndBirthDate = ("Vic", 30)
+var finalMessage = "You are in your "
+switch nameAndBirthDate {
+case (_, 0...12):
+finalMessage += "adolescence."
+case (_, 13...19):
+finalMessage += "teens."
+case (_, 20...29):
+finalMessage += "twenties."
+case (_, 30...39):
+finalMessage += "thirties."
+case (_, 40...49):
+finalMessage += "forties."
+default:
+finalMessage += "old age."
+}
+
+
+//Question 13
+//Write a switch statement that switches on a tuple with two Bools and prints what logical operators (&&, ||) could be applied to make a true expression.
+
+let pAndQ: (Bool, Bool)
+pAndQ = (true, false)
+var pqMessage = "You can use "
+switch pAndQ {
+case (true, true):
+pqMessage += " && and ||."
+case (true, false):
+pqMessage += " ||."
+case (false, true):
+pqMessage += " ||."
+default:
+pqMessage += " no logical operators that can make that into a true statement."
+}
+
+### End of pair work.
+```
+
 # Conditionals
 
 ### Question 1.
