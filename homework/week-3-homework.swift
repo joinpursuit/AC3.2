@@ -55,7 +55,7 @@ while true {
                 print(runFunc(firstNumber, secondNumber))
             }
         }
-        
+            
         else {
             if let firstNumber = Double(responseSeparated[0]), secondNumber = Double(responseSeparated[2]) {
                 let runFunc = mathStuffFactory(operation)
@@ -66,3 +66,4 @@ while true {
     }
     
 }
+
