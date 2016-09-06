@@ -1,4 +1,4 @@
-//: Playground - noun: a place where people can play
+//: Playground - noun: a place where people can play --8/23/2016
 
 import UIKit
 
@@ -64,27 +64,35 @@ if randNum() {
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
 
 
-
-
+if let f = myInt {
+    var product = f*2
+    print(product)
+} else {
+    print("Error!")
+}
 
 
 
 //C)
-let myString: String?
-let stringTwo = ", LastName"
+var myString: String?
+var stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
+if let firstName = myString {
+    print(firstName + stringTwo)
+} else if myString == nil {
+    print("Error!")
+}
 
 
 
@@ -92,13 +100,18 @@ if randNum() {
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
+if let double = myDouble {
+//    var doubleOne = Int(double)
+    var product = Int(double)*doubleTwo
+    print(product)
+}
 
 
 
@@ -107,14 +120,21 @@ if randNum() {
 
 
 
-//E)
+//E) /*** Not sure **/
 var isTheGreatest: Bool?
 if randNum() {
     isTheGreatest = true
 }
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
 
-
+if let x = isTheGreatest { //x = true
+    if x == true || x == false {
+        print("This is a Bool")
+    } else {
+        print("There's nothing")
+    }
+    
+}
 
 
 
@@ -137,9 +157,21 @@ if !randNum() {
 }
 //Print the sum of each non-nil element in myTuple.
 
+//if let tuple = myTuple {
+//    var sum = tuple.0 + tuple.1
+//}
 
+var sum = 0
 
+if let numZero = myTuple.0 {
+    sum += numZero
+}
 
+if let numOne = myTuple.1 {
+    sum += numOne
+}
+
+//etc.
 
 
 
