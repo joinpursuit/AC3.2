@@ -182,7 +182,7 @@ enum mathOperands: String{
 }
 
 func mathStuffFactory(opString: [String]) -> String{
-    if let operand = mathOperands(rawValue: opString[1]){
+    if let operand = mathOperands(rawValue: opString[1]){ // checks to see with rawValue is being passed through the mathStuffFactory and assigns the case to operand
         
         if let firstOperand = Double(opString[0]), secondOperand = Double(opString[2]) {
             
