@@ -112,26 +112,41 @@ let arrayOfArrays = [[3,65,2,4], [25,3,1,6], [245,2,3,5,74], [1], [2, 5]]
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
 
+//var newArray = {(smallArrays: [[Int]], index: Int) -> [[Int]] in
+//    var arrayWith3Elements = [[Int]]()
+//    var arrayWithLessElements = [[Int]]()
+//    for arr in smallArrays {
+//        if index < arr.count {
+//            arrayWithLessElements.append(arr)
+//        }
+//        else {
+//            arrayWith3Elements.append(arr)
+//        }
+//    }
+//    let sorted3Elemtns =
+//    }
+//}
+
 var newArray = {(arrays: [[Int]], index: Int) -> [[Int]] in
-    var indexArray = [[Int]]()
-    var lessIndexArray = [[Int]]()
-    for arr in arrays {
-        if index < arr.count {
-            indexArray.append(arr)
+    var indexArray = [[Int]]() //Array that has at least 3 elements
+    var lessIndexArray = [[Int]]() //less than 3 elements
+    for arr in arrays { //in each small arrays in the big array
+        if index < arr.count { //if the position is smaller than the whole array
+            indexArray.append(arr) //add it to the 3 element array
         }
         else {
-            lessIndexArray.append(arr)
+            lessIndexArray.append(arr) //else add it to the less ele array
         }
     }
-    let sortedIndexArray = indexArray.sort({$0[index] < $1[index]})
-    let sortedLessIndexArray = lessIndexArray.sort({ $0.count > $1.count })
+    let sortedIndexArray = indexArray.sort({$0[index] < $1[index]}) //sorted 3 element array is sorted by the current index to the new index by acending order
+    let sortedLessIndexArray = lessIndexArray.sort({ $0.count > $1.count }) //sorted less than 3 element array is sorted by the count of the new array to the current count of the array by decending order
     
-    let sortedArray = sortedIndexArray + sortedLessIndexArray
+    let sortedArray = sortedIndexArray + sortedLessIndexArray //final array equals both arrays combined together
     
-    return sortedArray
+    return sortedArray //calling the closure newArray
 }
 
-print(newArray(arrayOfArrays, 2))
+print(newArray(arrayOfArrays, 2)) //passing in the arrayOfArrays with an index int of 2
 
 let letterValues = [
     "a" : 54,
@@ -300,16 +315,32 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 let me = ("Annie", "Tung", 3203)
 let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String, Int)) -> [(String, String, Int)] in
     var selfFirstStudentList = students
-    
-    for index in 0..<selfFirstStudentList.count {
-        if selfFirstStudentList[index] == me {
-            selfFirstStudentList.removeAtIndex(index)
-            selfFirstStudentList.insert(me, atIndex: 0)
-        }
-    }
-    return selfFirstStudentList
-}
-print(cutMicrowaveLine(ac32folks, me))
+//
+//    for index in 0..<selfFirstStudentList.count {
+//        if selfFirstStudentList[index] == me {
+//            selfFirstStudentList.removeAtIndex(index)
+//            selfFirstStudentList.insert(me, atIndex: 0)
+//        }
+//    }
+//    return selfFirstStudentList
+//}
+//print(cutMicrowaveLine(ac32folks, me))
+
+//sorting method
+//var microwaveLine = ac32folks.sort{$0.1 > $1.1}
+//for peep in microwaveLine {
+//    print("\(peep.0)")
+//}
+
+//higher order function
+//selfFirstStudentList = selfFirstStudentList.filter({ (a:(String, String, Int)) -> Bool in
+//     return me != a
+//    })
+//selfFirstStudentList.insert(me, atIndex: 0)
+//print(selfFirstStudentList)
+//return selfFirstStudentList
+//}
+
 
 //13. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
 
