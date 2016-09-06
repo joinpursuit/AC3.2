@@ -184,6 +184,34 @@ func inputDouble (a: (Int)) -> (Int) -> Int {
 }
 inputDouble(inputFunc(7))(3)
 
+//-----------------------OR------------------------//
+
+func doStuff(withNumber x: Int) -> () -> Int {
+  var a = 4
+  func doOtherStuff() -> Int {
+    a += x
+    return a
+  }
+  return doOtherStuff
+}
+let doStuffWithSix: () -> Int = doStuff(withNumber: 6)
+doStuffWithSix()
+print(doStuffWithSix())
+
+//-----------------------OR------------------------//
+
+func stuffFunc(withNumber x: Int) -> (c: Int) -> Int {
+  var a = 4
+  func otherStuffFunc(c: Int) -> Int {
+    a += x
+    return a + c
+  }
+  return otherStuffFunc
+}
+let stuffFuncWithSix: (Int) -> Int = stuffFunc(withNumber: 6)
+stuffFuncWithSix(20)                 // adds the arguement after 4 + 6
+print(stuffFuncWithSix(3))          // adds the arguement after 4 + 6
+
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
 var number = 1
@@ -258,16 +286,65 @@ for i in names {
 //Tyler Newton	3235
 //Victor Zhong	3236
 
-// Here's an example of how to start:
-let ac32folks = [("Amber", "Spadafora",	3201),
-                 ("Ana", "Ma",	3202),
-                 ("Annie", "Tung",	3203)]
-// and so on...
+
+
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
+let ac32folks = [("Amber", "Spadafora",	3201),
+                 ("Ana", "Ma",	3202),
+                 ("Annie", "Tung",	3203),
+                 ("Cristopher", "Chavez", 3204),
+                 ("Eashir", "Arafat", 3205),
+                 ("Edward", "Anchundia", 3206),
+                 ("Emily", "Chu", 3207),
+                 ("Eric", "Chang", 3208),
+                 ("Erica", "Stevens", 3209),
+                 ("Fernando", "Ventura", 3210),
+                 ("Harichandan", "Singh", 3211),
+                 ("Ilmira", "Estil", 3212),
+                 ("Jermaine", "Kelly", 3213),
+                 ("Gabriel", "Breshears", 3214),
+                 ("Kadell", "Gregory", 3215),
+                 ("Kareem", "James", 3216),
+                 ("Karen", "Fuentes", 3217),
+                 ("Leandro", "Nunez", 3218),
+                 ("Liam", "Kane", 3219),
+                 ("Luz", "Herrera", 3220),
+                 ("Madushani", "Liyanage", 3221),
+                 ("Marcel", "Chaucer", 3222),
+                 ("Margaret", "Ikeda", 3223),
+                 ("Maria", "Scutaru", 3224),
+                 ("Marty", "Avedon", 3225),
+                 ("Michael", "Pinnock", 3226),
+                 ("Miti", "Shah", 3227),
+                 ("Rukiye", "Karadeniz", 3228),
+                 ("Sabrina", "Ip", 3229),
+                 ("Simone", "Grant", 3230),
+                 ("Sophia", "Barrett", 3231),
+                 ("Thinley", "Dorjee", 3232),
+                 ("Tom", "Seymour", 3233),
+                 ("Tong", "Lin", 3234),
+                 ("Tyler", "Newton", 3235),
+                 ("Victor", "Zhong", 3236)]
 
+var microwaveLine = ac32folks.sort{(a, b) -> Bool in
+  var x = a.2
+  var y = b.2
+  if x == 3208 {
+    x += 1000
+    return x > y
+  }
+  return x > y
+}
+for i in microwaveLine {
+  if i.0 == "Eric" {
+    print("\(i.0) is awesome!!")
+  } else {
+    print("\(i.0) is awesome but less awesome than Eric!!")
+  }
+}
 
 
 //11. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
