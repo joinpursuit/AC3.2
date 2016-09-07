@@ -18,6 +18,9 @@ enum Math: String {
   
 }
 
+/**
+ * Math Stuff Factory
+ */
 func math(m: String) {
   if m == "mathStuffFactory" {
     var mathing = true
@@ -135,7 +138,7 @@ while true {
     processCommand(command)
   }
   else {
-    print("You gotta enter something")
+    print("Wat...?")
   }
 }
 
