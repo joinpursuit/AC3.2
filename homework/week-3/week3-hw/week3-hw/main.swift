@@ -86,11 +86,11 @@ func myFilter(inputArray: [Int], filter: Int -> Bool) -> [Int] {
 
 func processFilter() {
     let ints = [4,2,6,3,4,6,2,8,5]
-    print("The array is \(ints)")
+    print("The array is \(ints).")
     let afterFilter = myFilter(ints, filter: { a in
         a % 2 == 0
     })
-    print("After filtering by even numbers, the array is \(afterFilter)")
+    print("After filtering by even numbers, the array is \(afterFilter).")
 }
 
 func myMap(inputArray: [Int], map: Int -> Int) -> [Int] {
@@ -103,11 +103,11 @@ func myMap(inputArray: [Int], map: Int -> Int) -> [Int] {
 
 func processMap() {
     let ints = [4,2,6,3,4,6,2,8,5]
-    print("The array is \(ints)")
+    print("The array is \(ints).")
     let afterMap = myMap(ints, map: { a in
         a * 2
     })
-    print("After mapping by doubling, the array is \(afterMap)")
+    print("After mapping by doubling, the array is \(afterMap).")
 }
 
 console: while true {
