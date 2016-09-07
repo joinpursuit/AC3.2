@@ -12,3 +12,5 @@ Topics:
 ## Schedule
 
 - [Lesson Schedule](schedule.md)
+
+Hello World, my name is Eric!!!. I am creativity :o
