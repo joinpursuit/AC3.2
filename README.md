@@ -12,3 +12,7 @@ Topics:
 ## Schedule
 
 - [Lesson Schedule](schedule.md)
+
+- I didn't write this. - Simone
+
+Another Change!

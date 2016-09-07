@@ -1,5 +1,149 @@
 # Conditionals
 
+//Exercises
+
+/* Question 1:
+Switch is great for finding patterns
+
+*/
+
+//Question 2:
+
+/*let monthNum = 3
+switch monthNum {
+case 1:
+print("January")
+}*/
+
+//c. The below code will not compile because switch statements need case statements for all expected values or a default statement.
+
+//Question 3:
+
+/*
+let temperatureInFahrenheit = 32
+
+switch true {
+case (temperatureInFahrenheit <= 40):
+print("It's cold out.")
+case (temperatureInFahrenheit >= 85):
+print("It's really warm.")
+default:
+print("Weather is moderate.")
+} */
+
+//Question 4:
+/*let cardNum = 12
+
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}*/
+
+//Question 5:
+//Create a switch statement that will convert a number grade into a letter grade as shown below:
+
+/*let numberGrade = 85
+
+switch numberGrade {
+case 100:
+print("A+")
+case 90...99:
+print("A")
+case 80...89:
+print("B")
+case 70...79:
+print("C")
+case 65...69:
+print("D")
+default:
+print("F")
+}
+*/
+
+//Question 6
+//Consider the below switch statement. What should your system currently print? What happens when you change number to 365? Days in year
+//1024? Bytes in a Kilobyte
+//65? Some uninteresting number
+//What happens when you remove the default clause? It gives an error because the case is not exhaustive
+
+//Question 7
+
+/*Consider the variable below called population and the if-condition. 1. Add an else-if-condition that states if population is less than 10000 but greater than 5000, the message changes to say it's "a medium size town". 2. Add an else-condition where the message changes to say it's a mid-size town. 3. Convert your final if-else statement to a switch statement.*/
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+}
+else if population < 10000 && population > 5000 {
+message = "\(population) is a medium size town"
+}
+else {
+message = "\(population) is a mid-size town"
+}
+
+switch true {
+case (population > 10000):
+message = "\(population) is a large town"
+case (population < 10000 && population > 5000):
+message = "\(population) is a medium size town"
+default:
+message = "\(population) is a mid-size town"
+}
+
+//Question 8
+
+/*Complete the code below so that it prints out and tells the user if the sum of the two numbers in the tuple is at least 15. a) Using a conditional b) Using a switch statement*/
+
+
+
+//Question 9.
+
+//Complete the switch statement below. We want it to output a personalized greeting to the student based on their name and class.
+
+/*let studentNameAndClass = ("Ben", 3.2)
+var myTupleTwo: (String, Int)
+
+switch myTupleTwo {
+case studentNameAndClass.0:
+print("Hello Ben")
+fallthrough
+case studentNameAndClass.1:
+print("Welcome to class 3.2")
+default:
+print("Error")
+
+
+Note: Sophia and I didn't get this far as a pair. This answer is just self-brainstorming but I'm aware it's wrong.
+*/
+
+}
+/*Question 10.
+
+Consider the below switch with a tuple.
+
+Add a case for when y is double the value of x
+Add a case for when y is triple the value of x
+switch (x,y) {
+case let (x,y) where x==y:
+print("x is equal to y")
+case let (x,y) where y==2*x:
+print("y is two times x")
+case let (x,y) where y == 3*x:
+print("y is three times x")
+default:
+print("Nothing is special about this tuple")
+
+
+}
+
 ### Question 1.
 What are some reasons to use a __switch__ instead of an __if__?
 

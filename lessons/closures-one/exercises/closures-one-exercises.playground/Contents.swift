@@ -6,35 +6,123 @@ import UIKit
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
 
+var hello: (String) {
+    return "Hello Closures!"
+}
+
+print(hello)
+
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+
+var intDoubled: (Int) -> (Int) = { a -> Int in
+        return a * 2
+}
+
+
+let newVar = intDoubled
+print(newVar(2))
+
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+var modInt: (Int) -> (Bool) = { x -> Bool in
+    if x % 3 == 0 {
+        return true
+    }
+    return false
+}
+
+modInt(9)
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+
+//var myString: (String, String) -> (String) = { a, b -> String in
+//    for numA in 1...a.characters.count {
+//        for numB in 1...b.characters.count {
+//            if numA > numB {
+//                return "The first string is larger"
+//            }
+//            return "The second string is larger"
+//            }
+//        }
+//    }
+//    return a
+//}
+
+//   print(myString("Onomotopeia", "cat burglar strikes again"))
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+var values = [10,5,2,8,3,6,1,1000,9]
+
+//.reduce() to combine values and reduce down to one
+
+//let max = values.reduce(values[0]) {
+//    if $0 > $1 {
+//        return $0
+//    } else {
+//        return $1
+//    }
+//}
+//print(max)
+
+
+
+
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+
+var numbers = [1, 4, 2, 5, 8, 3]
+
+//var myNum: ([Int], Int) -> Int = { numbers, x -> Int in
+//        var newNum = numbers
+//        newNum.sortInPlace(<)//sorts ascending
+//        return newNum[x]
+//}
+//
+//myNum(numbers, 5)
+
+
 
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
 
+var myNum: ([Int], Int) -> Int? = { numbers, x -> Int? in
+    var newNum = numbers
+    newNum.sortInPlace(<)//sorts ascending
+        if x > newNum.count {
+            return nil
+        }
+    return newNum[x]
+}
+
+
 //Higher order functions
 
-let myArray = [34,42,42,1,3,4,3,2,49]
+var myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
+
 //let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
+let ascendingOrder = myArray.sort({
+    return $0 < $1 })
+
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
 //let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
+let descendingOrder = myArray.sort({
+    return $0 > $1 })
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+
+
+var arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
+//
+//arrayOfArrays.sort({ (a: Int, b: Int) -> Int in
+//    return a < b
+//})
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
 
@@ -71,6 +159,16 @@ let letterValues = [
 
 var codeString = "aldfjaekwjnfaekjnf"
 
+
+
+let myString = Array(codeString.characters)
+
+myString[4]
+myString.sort({ (a: Character, b: Character) -> Bool in
+        let aValue = letterValues[String(a)]
+        let bValue = letterValues[String(b)]
+        return aValue < bValue
+})
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
@@ -150,14 +248,53 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 //Victor Zhong	3236
 
 // Here's an example of how to start:
-let ac32folks = [("Amber", "Spadafora",	3201),
-                 ("Ana", "Ma",	3202),
-                 ("Annie", "Tung",	3203)]
+//let ac32folks = [("Amber", "Spadafora",	3201),
+//                 ("Ana", "Ma",	3202),
+//                 ("Annie", "Tung",	3203)]
 // and so on...
 
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
+
+let ac32folks: [(String, String, Int)] = [ ("Amber", "Spadafora", 3201),
+("Ana", "Ma", 3202),
+("Annie", "Tung", 3203),
+("Cristopher", "Chavez", 3204),
+("Eashir", "Arafat", 3205),
+("Edward", "Anchundia", 3206),
+("Emily", "Chu", 3207),
+("Eric", "Chang", 3208),
+("Erica", "Stevens", 3209),
+("Fernando", "Ventura", 3210),
+("Harichandan", "Singh", 3211),
+("Ilmira", "Estil",	3212),
+("Jermaine", "Kelly", 3213),
+("Gabriel", "Breshears", 3214),
+("Kadell", "Gregory", 3215),
+("Kareem", "James",	3216),
+("Karen", "Manzanares Fuentes", 3217),
+("Leandro", "Nunez", 3218),
+("Liam", "Kane", 3219),
+("Luz", "Loayza Herrera", 3220),
+("Madushani", "Lekam Wasam Liyanage", 3221),
+("Marcel", "Chaucer", 3222),
+("Margaret", "Ikeda", 3223),
+("Maria", "Scutaru",	3224),
+("Marty", "Avedon",	3225),
+("Michael", "Pinnock", 3226),
+("Miti", "Shah", 3227),
+("Rukiye", "Karadeniz",	3228),
+("Sabrina", "Ip", 3229),
+("Simone", "Grant",	3230),
+("Sophia", "Barrett", 3231),
+("Thinley", "Dorjee", 3232),
+("Tom", "Seymour", 3233),
+("Tong", "Lin", 3234),
+("Tyler", "Newton",	3235),
+("Victor", "Zhong",	3236)
+]
+
 
 
 
