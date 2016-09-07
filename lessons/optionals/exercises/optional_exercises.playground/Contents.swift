@@ -58,54 +58,53 @@ if randNum() {
     tuple = (5, 3)
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
-
-
-
+if let i = tuple {
+    print (i)
+}
 
 
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
-
-
-
-
-
-
+if let i = myInt {
+    print(i * 2)
+} else {
+    print("Error!")
+}
 
 //C)
-let myString: String?
-let stringTwo = ", LastName"
+var myString: String?
+var stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
 
-
-
-
+if let j = myString{
+    print(j + " \(stringTwo)")
+} else{
+    print("Error")
+}
 
 
 
 
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
 
 
-
-
-
-
-
-
+if let i = myDouble{
+    var doubleInOptional = Double(doubleTwo)
+    print(i * doubleInOptional)
+}
 
 //E)
 var isTheGreatest: Bool?
@@ -116,6 +115,11 @@ if randNum() {
 
 
 
+if let i = isTheGreatest{
+    print("It contains a Boolean")
+} else{
+    isTheGreatest = false
+}
 
 
 
@@ -137,30 +141,31 @@ if !randNum() {
 }
 //Print the sum of each non-nil element in myTuple.
 
-
-
-
-
-
-
-
-
-
-
+var sum = 0
+if let numZero = myTuple.0{
+    sum += numZero
+}
+if let numOne = myTuple.1{
+    sum += numOne
+}
+if let numTwo = myTuple.2{
+    sum += numTwo
+}
+if let numThree = myTuple.3{
+    sum += numThree
+}
+print(sum)
 
 //G)
 let myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
 
 
+var xzs = Int(myIntString)
 
-
-
-
-
-
-
-
+if let i = xzs{
+    print(i + 15)
+}
 
 
 
@@ -171,11 +176,9 @@ pokemon = starterPokemon()
 evolutionaryStone = eStone()
 // evolve your pokemon with appropriate stone
 
-
-
-
-
-
+if let i = pokemon, let j = evolutionaryStone {
+    print("\(i) can be evolved with \(j) stone! ")
+}
 
 
 //I)
@@ -184,9 +187,19 @@ lvl = lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
 
+if let i = lvl {
+    if i > 7 {
+        var newExp = exp + 150
+        print(newExp)
+    }
+}
 
+//or 
+if let i = lvl where i>7 {
+    exp += 150
+}
 
-
+print(exp)
 
 
 

@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		1EE8D00A1D7A0DD100EFD9B0 /* week3-hw */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "week3-hw"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE8D00D1D7A0DD100EFD9B0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A775D5131D7C4E020012C8BD /* week-3-homework1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "week-3-homework1"; path = "../../../../../../Documents/Work/Access Code/Git Backup/week-3-homework1"; sourceTree = "<group>"; };
+		A775D5141D7C740E0012C8BD /* week-3-homework2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "week-3-homework2"; path = "../../../../../../Documents/Work/Access Code/Git Backup/week-3-homework2"; sourceTree = "<group>"; };
+		A7F033271D7C78A2000F6E70 /* week-3-homework3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "week-3-homework3"; path = "../../../../../../Documents/Work/Access Code/Git Backup/week-3-homework3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				1EE8D00D1D7A0DD100EFD9B0 /* main.swift */,
+				A7F033271D7C78A2000F6E70 /* week-3-homework3 */,
+				A775D5141D7C740E0012C8BD /* week-3-homework2 */,
+				A775D5131D7C4E020012C8BD /* week-3-homework1 */,
 			);
 			path = "week3-hw";
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 				1EE8D0131D7A0DD100EFD9B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
