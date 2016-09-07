@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3EAD11FA1D7F3B450015DE47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD11F91D7F3B450015DE47 /* main.swift */; };
 		3EAD12011D7F3BE90015DE47 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD12001D7F3BE90015DE47 /* Movie.swift */; };
+		3EAD12031D7F4E510015DE47 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD12021D7F4E510015DE47 /* Person.swift */; };
+		3EAD12051D7F4F1D0015DE47 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD12041D7F4F1D0015DE47 /* Actor.swift */; };
+		3EAD12071D7F4F900015DE47 /* President.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD12061D7F4F900015DE47 /* President.swift */; };
+		3EAD12091D8065F10015DE47 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD12081D8065F10015DE47 /* Rectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +31,10 @@
 		3EAD11F61D7F3B450015DE47 /* structsClassesExercises */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = structsClassesExercises; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAD11F91D7F3B450015DE47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3EAD12001D7F3BE90015DE47 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		3EAD12021D7F4E510015DE47 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
+		3EAD12041D7F4F1D0015DE47 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		3EAD12061D7F4F900015DE47 /* President.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = President.swift; sourceTree = "<group>"; };
+		3EAD12081D8065F10015DE47 /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,10 @@
 			children = (
 				3EAD11F91D7F3B450015DE47 /* main.swift */,
 				3EAD12001D7F3BE90015DE47 /* Movie.swift */,
+				3EAD12021D7F4E510015DE47 /* Person.swift */,
+				3EAD12041D7F4F1D0015DE47 /* Actor.swift */,
+				3EAD12061D7F4F900015DE47 /* President.swift */,
+				3EAD12081D8065F10015DE47 /* Rectangle.swift */,
 			);
 			path = structsClassesExercises;
 			sourceTree = "<group>";
@@ -122,8 +134,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAD12031D7F4E510015DE47 /* Person.swift in Sources */,
 				3EAD12011D7F3BE90015DE47 /* Movie.swift in Sources */,
 				3EAD11FA1D7F3B450015DE47 /* main.swift in Sources */,
+				3EAD12091D8065F10015DE47 /* Rectangle.swift in Sources */,
+				3EAD12051D7F4F1D0015DE47 /* Actor.swift in Sources */,
+				3EAD12071D7F4F900015DE47 /* President.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +261,7 @@
 				3EAD11FF1D7F3B450015DE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
