@@ -8,6 +8,30 @@
 
 import Foundation
 
+
+var r = Rectangle()
+r.x = 100
+r.y = 100
+r.height = 100
+r.width = 100
+
+dump(r)
+
+print(r.xPrime, r.yPrime)
+print(r.width, r.height)
+
+r.xPrime = 600
+r.yPrime = 50
+
+print(r.xPrime, r.yPrime)
+print(r.width, r.height)
+
+
+
+
+
+
+
 var movies: [[String:Any]] = [
     [
         "name": "Minions",
@@ -110,40 +134,49 @@ enum Genre: String{
 var movieArray = [Movie]()
 for movieDict in movies{
     if let name = movieDict["name"] as? String, year = movieDict["year"] as? Int, genre = movieDict["genre"] as? String, cast = movieDict["cast"] as? [String], description = movieDict["description"] as? String{
-        let movie = Movie()
-        var actorArr = [Actor]()
-        movie.name = name
-        movie.year = year
-        movie.genre = genre
-        movie.description = description
-        if let a = Genre(rawValue: genre) {
-            switch a {
-            case .Drama:
-                movie.genre = a.rawValue
-            case .Animation:
-                movie.genre = a.rawValue
-            case .Action:
-                movie.genre = a.rawValue
-            }
-        }
-        for i in cast{
-            let actor = Actor()
-            actor.name = i
-            actorArr.append(actor)
-        }
-        movie.cast = actorArr
+//        var actorArr = [Actor]()
+//        movie.name = name
+//        movie.year = year
+//        movie.genre = genre
+//        movie.description = description
+//        if let a = Genre(rawValue: genre) {
+//            switch a {
+//            case .Drama:
+//                movie.genre = a.rawValue
+//            case .Animation:
+//                movie.genre = a.rawValue
+//            case .Action:
+//                movie.genre = a.rawValue
+//            }
+//        }
+//        var actorInString = ""
+//        for i in cast{
+//            actorArr.append(Actor(name: i, born: 1999, died: nil, breakoutYear: nil, breakoutRole: nil))
+//            if i == cast.last{
+//                actorInString += i
+//            }else{
+//                actorInString += "\(i), "
+//            }
+//        }
+//        movie.cast = actorArr
+//        for i in cast{
+//            let actor = Actor()
+//            actor.name = i
+//            actorArr.append(actor)
+//        }
+//        movie.cast = actorArr
+        let movie = Movie(name: name, year: year, genre: genre, cast: cast, description: description)
         movieArray.append(movie)
-//        print(movie.name, movie.year)
     }
 }
 
 var presidentArray = [President]()
 for i in presidentData{
     var presidentDict = i.componentsSeparatedByString(", ")
-    let president = President()
-    president.name = presidentDict[2]
-    president.yearEnteredOffice = Int(presidentDict[0])!
-    president.yearLeftOffice = Int(presidentDict[1])!
+    let president = President(entered: Int(presidentDict[0])!, left: Int(presidentDict[1])!, name: presidentDict[2], born: 1977, died: nil)
+//    president.name = presidentDict[2]
+//    president.yearEnteredOffice = Int(presidentDict[0])!
+//    president.yearLeftOffice = Int(presidentDict[1])!
     presidentArray.append(president)
 //    print(president.name, president.yearEnteredOffice, president.yearLeftOffice)
 }
@@ -158,7 +191,7 @@ for year in presidentsByYear.keys{
     }
 }
 
-
+/*
 //Print the name of the first movie.
 print(movieArray[0].name)
 //Print a list of all movie names, preferably on one line.
@@ -186,7 +219,7 @@ for movie in movieArray{
 //THE PROJECT
 //Iterate over all movies and print a formatted blurb about each one. Use this out put of the first movie as a guide:
 //Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton. Barack Obama was president that year.
-
+*/
 for movie in movieArray{
     print("\(movie.name) came out in \(movie.year). It was ", terminator: "")
     let genre = movie.genre
@@ -215,5 +248,10 @@ for movie in movieArray{
     }
     print("")
 }
+
+
+
+
+
 
 
