@@ -234,5 +234,33 @@ for i in 0..<movies.count {
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
-
+struct Vehicle {
+    var wheels = 0
+    enum Type {
+        case Unicycle
+        case Bike
+        case Trike
+        case Car
+        case Mystery
+    }
+    var carType: Type {                    //Line 10
+        get {                                          //Line 11
+            switch self.wheels {
+            case 1:
+                return .Unicycle
+            case 2:
+                return .Bike
+            case 3:
+                return .Trike
+            case 4:
+                return .Car
+            default:
+                return .Mystery
+            }
+        }
+    }
+}
+var myVehicle = Vehicle()           //Line 27
+myVehicle.wheels = 3
+print(myVehicle.carType)           //Line 29
 
