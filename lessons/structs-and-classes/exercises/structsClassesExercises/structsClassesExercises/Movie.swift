@@ -23,27 +23,26 @@ class Movie{
         self.description = description
     }
     
-    convenience init(name: String, year: Int, genre: String, cast: [String], description: String){
+    convenience init(movie: Dictionary<String,Any>){
         var tupleActor = [(name: String(), born: Int(), died: Int?(), breakoutYear: Int(), breakoutRole: String())]
-        for i in cast{
-            let cc = Actor(name: i, born: 1999, died: nil, breakoutYear: 2011, breakoutRole: "Actor")
-            let actor = (name: cc.name, born: cc.yearBorn, died: cc.yearDied, breakoutYear: cc.breakoutYear, breakoutRole: cc.breakoutRole)
-            tupleActor.append(actor)
-        }
+        //var arrString = [String]()
+        var year = 0
+        var name = "", genre = "", description = ""
+            if let n = movie["name"] as? String,
+                y = movie["year"] as? Int,
+                g = movie["genre"] as? String,
+                cast = movie["cast"] as? [String],
+                d = movie["description"] as? String{
+                name = n
+                year = y
+                genre = g
+                description = d
+                for i in cast{
+                    let cc = Actor(name: i, born: 1999, died: nil, breakoutYear: 2011, breakoutRole: "Actor")
+                    let actor = (name: cc.name, born: cc.yearBorn, died: cc.yearDied, breakoutYear: cc.breakoutYear, breakoutRole: cc.breakoutRole)
+                    tupleActor.append(actor)
+                }
+            }
         self.init(name: name, year: year, genre: genre, cast: tupleActor, description: description)
     }
-    
-//    var castString: String{
-//        get{
-//            return "\(cast[0].name), \(cast[1].name) and \(cast[2].name)"
-//        }
-//        set(actorString){
-//            let temp = actorString.componentsSeparatedByString(", ")
-//            for name in temp{
-//                let tempActor = Actor()
-//                tempActor.name = name
-//                cast.append(tempActor)
-//            }
-//        }
-//    }
-};
+}

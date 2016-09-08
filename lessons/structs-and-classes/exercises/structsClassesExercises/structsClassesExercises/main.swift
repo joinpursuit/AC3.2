@@ -133,52 +133,15 @@ enum Genre: String{
 
 var movieArray = [Movie]()
 for movieDict in movies{
-    if let name = movieDict["name"] as? String, year = movieDict["year"] as? Int, genre = movieDict["genre"] as? String, cast = movieDict["cast"] as? [String], description = movieDict["description"] as? String{
-//        var actorArr = [Actor]()
-//        movie.name = name
-//        movie.year = year
-//        movie.genre = genre
-//        movie.description = description
-//        if let a = Genre(rawValue: genre) {
-//            switch a {
-//            case .Drama:
-//                movie.genre = a.rawValue
-//            case .Animation:
-//                movie.genre = a.rawValue
-//            case .Action:
-//                movie.genre = a.rawValue
-//            }
-//        }
-//        var actorInString = ""
-//        for i in cast{
-//            actorArr.append(Actor(name: i, born: 1999, died: nil, breakoutYear: nil, breakoutRole: nil))
-//            if i == cast.last{
-//                actorInString += i
-//            }else{
-//                actorInString += "\(i), "
-//            }
-//        }
-//        movie.cast = actorArr
-//        for i in cast{
-//            let actor = Actor()
-//            actor.name = i
-//            actorArr.append(actor)
-//        }
-//        movie.cast = actorArr
-        let movie = Movie(name: name, year: year, genre: genre, cast: cast, description: description)
-        movieArray.append(movie)
-    }
+    let movie = Movie(movie: movieDict)
+    movieArray.append(movie)
 }
 
 var presidentArray = [President]()
 for i in presidentData{
     var presidentDict = i.componentsSeparatedByString(", ")
     let president = President(entered: Int(presidentDict[0])!, left: Int(presidentDict[1])!, name: presidentDict[2], born: 1977, died: nil)
-//    president.name = presidentDict[2]
-//    president.yearEnteredOffice = Int(presidentDict[0])!
-//    president.yearLeftOffice = Int(presidentDict[1])!
     presidentArray.append(president)
-//    print(president.name, president.yearEnteredOffice, president.yearLeftOffice)
 }
 
 
