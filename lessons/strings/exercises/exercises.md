@@ -6,24 +6,88 @@ Without using string interpolation, print out a string that combines myGreeting 
 ```
 let myGreeting = "Hello, "
 let myName = "Ben"
+
+print(myGreeting + myName) // String Concatenation
+
 ```
 #### S2.
 Write code that prints out myArray as a single string separated by spaces.
 
 ```swift
 let myArray = ["Hi", "there,", "how","is","it","going?"]
+
+let myArray = ["Hi", "there,", "how","is","it","going?"]
+
+for i in 0..<myArray.count{
+    print(myArray[i], terminator: " ")
+
+}
+
+
 ```
 #### S3.
 Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
+```swift
+
+var numString = ""
+var numString2 = ""
+
+for i in 1...10{
+    numString = String(i)
+    numString2 = numString2 + " " + numString
+}
+print (numString2)
+
+
+
+```
 
 #### S4.
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
+``` swift
+
+var numString = ""
+var numString2 = ""
+
+for i in 5...51 where i % 2 == 0{
+numString = String(i)
+numString2 = numString2 + " " + numString
+}
+print (numString2)
+
+
+
+
+
+```
+
 #### S5.
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+``` Swift
+
+var numString = ""
+var numString2 = ""
+
+for i in 1...60 where i % 10 == 4{
+    numString = String(i)
+    numString2 = numString2 + " " + numString
+}
+print (numString2)
+
+```
+
+
 #### S6.
 Print each character in the string ```Hello world!```
+``` Swift
+for c: Character in "Hello World!".characters {
+    print("\(c)")
+}
+
+```
+
 
 #### S7.
 Using '.characters' and loop, print the last character in the string below
@@ -31,12 +95,63 @@ Using '.characters' and loop, print the last character in the string below
 let myStringSeven = "Hello world!"
 ```
 
+let myStringSeven = "Hello world!"
+
+var amount = myStringSeven.characters.count
+
+var counter = 1
+
+for c: Character in myStringSeven.characters{
+    if counter == amount{
+        print(c)
+    }
+    counter += 1
+}
+
+
+
+
+
+
 #### S8.
 Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
 
+``` Swift
+
+var myString = "Hello World!"
+
+switch myString{
+case _ where myString.characters.count % 2 == 0:
+    var i = 0
+    while i < myString.characters.count{
+        print(myString[myString.startIndex.advancedBy(i)])
+        i += 1
+}
+default:
+    var i = 0
+    while i < myString.characters.count{
+        print(myString[myString.startIndex.advancedBy(i)])
+        i += 2
+    }
+}
+
+
+
+
+
+
+```
+
 #### S9.
-Initialize a String with a character. Show that it is a Character, and not another String, you're using
-to initialize it.
+Initialize a String with a character. Show that it is a Character, and not another String, you're using to initialize it.
+
+
+
+
+
+
+
+
 
 ### Unicode exercises
 

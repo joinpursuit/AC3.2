@@ -1,7 +1,5 @@
 //: Playground - noun: a place where people can play
-
 import UIKit
-
 //---------------------------------------------
 // Helper Function
 func randNum() -> Bool {
@@ -11,12 +9,9 @@ func randNum() -> Bool {
     }
     return false
 }
-
-
 func lvlGenerator() -> Int {
     return Int(arc4random_uniform(12))
 }
-
 func eStone() -> String {
     let random = Int(arc4random_uniform(3))
     switch random {
@@ -32,7 +27,6 @@ func eStone() -> String {
         return "No Stone"
     }
 }
-
 func starterPokemon() -> String {
     let random = Int(arc4random_uniform(3))
     switch random {
@@ -49,115 +43,95 @@ func starterPokemon() -> String {
     }
 }
 //---------------------------------------------
-
-
-
 //A)
 var tuple: (Int, Int)?
 if randNum() {
     tuple = (5, 3)
 }
 // safely unwrap “tuple” if there’s a non-nil tuple value and print it out
-
-
-
-
-
+if let i = tuple {
+    print (i)
+}
 //B)
-let myInt: Int?
+var myInt: Int?
 if randNum() {
     myInt = 5
 }
 //Write code that either doubles myInt and then prints it, or prints an error message if myInt is nil
-
-
-
-
-
-
-
+if let i = myInt {
+    print(i * 2)
+} else {
+    print("Error!")
+}
 //C)
-let myString: String?
-let stringTwo = ", LastName"
+var myString: String?
+var stringTwo = ", LastName"
 if randNum() {
     myString = "FirstName"
 }
 //Write code that prints out “FirstName, LastName” using string concatenation or prints an error message if myString is nil.
-
-
-
-
-
-
-
-
+if let j = myString{
+    print(j + " \(stringTwo)")
+} else{
+    print("Error")
+}
 //D)
-let myDouble: Double?
-let doubleTwo = 5
+var myDouble: Double?
+var doubleTwo = 5
 if randNum() {
     myDouble = 12
 }
 //Write code that prints out the product of myDouble and doubleTwo or prints an error message if myDouble is nil
-
-
-
-
-
-
-
-
-
+if let i = myDouble{
+    var doubleInOptional = Double(doubleTwo)
+    print(i * doubleInOptional)
+}
 //E)
 var isTheGreatest: Bool?
 if randNum() {
     isTheGreatest = true
 }
 //  Determine if the variable contains a Boolean or nil value. If nil set the variable to false else keep it true
-
-
-
-
-
-
-
-
-
-
+if let i = isTheGreatest{
+    print("It contains a Boolean")
+} else{
+    isTheGreatest = false
+}
 //F)
 var myTuple: (Int?, Int?, Int?, Int?)
-
 if randNum() {
     myTuple.0 = 5
     myTuple.2 = 14
 }
-
 if !randNum() {
     myTuple.1 = 9
     myTuple.3 = 10
 }
 //Print the sum of each non-nil element in myTuple.
 
-
-
-
-
-
-
-
-
-
+var sum = 0
+if let numZero = myTuple.0{
+    sum += numZero
+}
+if let numone = myTuple.1{
+    sum += numone
+}
+if let numTwo = myTuple.2{
+    sum += numTwo
+}
+if let numThree = myTuple.3{
+    sum += numThree
+}
+print(sum)
 
 
 //G)
 let myIntString = "35"
 //Write code that adds 15 to myIntString, then prints the sum.  Use the Int() function which returns an Integer?
-
-
-
-
-
-
-
+var xzs = Int(myIntString)
+if let i = xzs{
+    print(i + 15)
+}
 
 
 
@@ -183,6 +157,39 @@ var lvl: Int?
 lvl = lvlGenerator()
 var exp = 21
 // add 150 exp if lvl is above 7
+
+if let currentLevel = lvl where lvl > 7 {
+    exp += 150
+}
+
+if lvl! > 7{
+    exp += 150
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,3 +12,7 @@ Topics:
 ## Schedule
 
 - [Lesson Schedule](schedule.md)
+
+
+My changes to README.md CC
+
