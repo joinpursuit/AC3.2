@@ -4,15 +4,21 @@
 
 //Write all your code below:
 
-
+var colors: [String] = ["orange", "red", "yellow", "turquoise", "lavender"]
+print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
 
-
 //Write all your code below:
+
+while westernStates.count > 4 {
+    westernStates.removeAtIndex(4)
+}
+
+print(westernStates) // checking to see if we got it
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
@@ -22,12 +28,29 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 //Write all your code below:
 
 
+for state in 0..<moreStates.count{
+    if moreStates[state] == "Alaska" || moreStates[state] == "Hawaii" {
+        print("The state of \(moreStates[state]) is not in the continental United States.")
+    } else {
+        print("The state of \(moreStates[state]) is in the continental United States.")
+    }
+}
+
 //4)
 //a) print out how many non-whitespace characters are in myString
 let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+var nonspaces = 0
+
+for char in myString.characters {
+    if char != " " {
+        nonspaces += 1
+    }
+}
+
+print("There are \(nonspaces) characters that aren't just spaces in myString.")
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
@@ -35,7 +58,17 @@ let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only s
 
 //Write all your code below:
 
+var nonspaces2 = 0
 
+for sentence in myFavoriteQuotes {
+    nonspaces2 = 0
+    for char in sentence.characters {
+        if char != " " {
+            nonspaces2 += 1
+        }
+    }
+    print("There are \(nonspaces2) characters in this quote: \"\(sentence)\"")
+}
 
 //5)
 //The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
@@ -48,11 +81,25 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 
 //Write all your code below:
 
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Guerrero"
+battingLineup.removeAtIndex(0); battingLineup.insert("Reyes", atIndex: 7)
+
+print(battingLineup)
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
+
+for index in 0..<garden.count {
+    if garden[index] != "dirt" {
+        basket.append(garden[index])
+        garden[index] = "dirt"
+    }
+}
+print("There are \(basket.count) \u{1F337}flowers in my basket.")
 
 //Write all your code below:
 
@@ -62,10 +109,30 @@ var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
 
+var largestSoFar: Int?
+
+for num in listOfNumbers {
+    if largestSoFar == nil {
+        largestSoFar = num
+    } else {
+        if num > largestSoFar {
+            largestSoFar = num
+        } else {
+            continue
+        }
+    }
+}
+if let largestSoFar = largestSoFar {
+    print("The biggest number is \(largestSoFar)")
+}
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+
+for num in secondListOfNumbers where num%2 != 0{
+    print("\(num)", terminator: " ")
+}
 
 //Write all your code below:
 
@@ -75,6 +142,13 @@ var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 //Write all your code below:
 
+var sum = 0
+
+for num in thirdListOfNumbers {
+    sum += num
+}
+
+print("\nThe sum is \(sum)")
 
 //10)
 //Iterate through the array and check to see if there is at least one integer that equals target.  Then, print "YES" if you found a match, and "NO" if you didn't
@@ -85,6 +159,20 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 //Write all your code below:
 
+var isTargetThere:Bool = false
+
+for num in fourthListOfNumbers {
+    if num == target {
+        isTargetThere = true
+        break
+    }
+}
+
+if isTargetThere {
+    print("YES")
+} else {
+    print("NO")
+}
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.
@@ -95,12 +183,46 @@ var sharedElements = [Int]()
 
 //Write all your code below:
 
+var shared: Int?
+for numOne in listOne {
+    for numToo in listTwo {
+        if numOne == numToo {
+            shared = numOne
+            sharedElements.append(shared!)
+        }
+    }
+}
 
+print("There are \(sharedElements.count) shared elements.")
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+
+var sortedFriend = dupeFriendlyList.sort()
+var lastOne: Int?
+var current: Int
+
+for index in 0..<sortedFriend.count {
+    if index == 0 && sortedFriend.count > 1 {
+        lastOne = sortedFriend[index]
+    } else if sortedFriend.count > 1 && index != 0 {
+        current = sortedFriend[index]
+        if current == lastOne {
+            lastOne = current
+            continue
+        } else {
+            noDupeList.append(current)
+            lastOne = current
+        }
+    } else {
+        noDupeList.append(sortedFriend[index])
+        break
+    }
+}
+
+print(noDupeList)
 
 //13)
 //Find the second smallest Int in ages

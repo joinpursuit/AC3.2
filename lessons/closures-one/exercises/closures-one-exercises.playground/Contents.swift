@@ -6,17 +6,89 @@ import UIKit
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
 
+var statementCannotBeginWithClosureExpression = { () -> () in
+    print("Hello closures!")
+}
+
+statementCannotBeginWithClosureExpression() // needs parentheses to actually print
+
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+
+var doubleMint = { (num: Int) -> Int in
+    return num * 2
+}
+
+print(doubleMint(2))
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+var threeable = { (num: Int) -> Bool in
+    return num%3 == 0
+}
+
+print(threeable(30))
+print(threeable(31))
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+
+var longString = { (word1:String, word2:String) -> Int in
+    if word1.characters.count < word2.characters.count {
+        return word2.characters.count
+    } else {
+        return word1.characters.count
+    }
+}
+
+longString("cats", "catscatscats") // in this closure, we don't need to explicitly name the second argument as we would in a function. Those arguments are not in the same scope as longString. longString is not really aware of them. longString is just a name for something that, when we type it in, calls up a closure; it's not the same thing at all as a function with a name, where the name is directly part of the function. longString is a humble variable in the global scope, whereas the closure's arguments are in the scope of the closure
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
 
+var bigNum = { (arr: [Int]) -> Int in
+    let start = 0
+    var biggest = start
+    for num in arr {
+        if num > biggest {
+            biggest = num
+        } else {
+            continue
+        }
+    }
+    return biggest
+}
+
+var arrArrMatey = [1, 7, 666, 69, 42, 13, 39, 122222222222, 16, 32, 64]
+
+print(bigNum(arrArrMatey))
+
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
 
+var xth = { (arr:[Int], x: Int) -> Int in
+    let sortArr = arr.sort(>)
+    if x < arr.count && x > 0 {
+        return sortArr[x-1]
+    //} else if x > arr.count {
+      //  return sortArr[sortArr.count-1]
+    } else {
+        return sortArr[0]
+    }
+}
+
+print(xth(arrArrMatey, 4))
+
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
+
+var xth2000 = { (arr:[Int], x: Int) -> Int in
+    let sortArr = arr.sort(>)
+    if x < arr.count && x > 0 {
+        return sortArr[x-1]
+        } else if x >= arr.count {
+          return sortArr[sortArr.count-1]
+    } else {
+        return sortArr[0]
+    }
+}
+
+print(xth2000(arrArrMatey, 1000_000_000))
 
 //Higher order functions
 
@@ -24,19 +96,54 @@ let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
 
-//let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
+let ascendingOrder = { (a: Int, b: Int) -> Bool in
+    return a < b
+}
+let mySortedArray = myArray.sort(ascendingOrder)
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
-//let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
+let descendingOrder = { (a: Int, b: Int) -> Bool in
+    return a > b
+}
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+let mySecondSortedArray = myArray.sort(descendingOrder)
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
 
+var arrayOfArrays = [  [3,65,2,4]  , [25,3,1,6,40] ,  [245,2,3,5,74]  ]
+
+var ascendingArrays = { (a: [Int], b: [Int]) -> Bool in // This syntax means "move the [Int] parameters around and sort them according to the statements below"
+    let aValue = a[2]
+    let bValue = b[2]
+    return aValue > bValue
+}
+
+arrayOfArrays.sort(ascendingArrays)
+
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
+
+var superAscending = { (a: [Int], b: [Int]) -> Bool in 
+    var aValue: Int
+    var bValue: Int
+    if a.count >= 3 {
+        aValue = a[2]
+    } else {
+        aValue = -1
+        bValue = 0
+    }
+    if b.count >= 3 {
+        bValue = b[2]
+    } else {
+        aValue = 0
+        bValue = -1
+    }
+    return aValue > bValue
+}
+
+arrayOfArrays = [  [3,65,2,4]  , [25,3,1,6,40] ,  [245,2,3,5,74], [2], [3,4], []]
+
+arrayOfArrays.sort(superAscending)
 
 let letterValues = [
     "a" : 54,
@@ -71,27 +178,52 @@ let letterValues = [
 
 var codeString = "aldfjaekwjnfaekjnf"
 
+print(codeString.characters.sort({(a, b) -> Bool in // if you specify the type in the parameters, it throws an error claiming that the closure does not take any parameters
+    let aValue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aValue > bValue
+}))
+
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
 
-
+print(codeStringTwo.characters.sort({(a, b) -> Bool in
+    let aValue = letterValues[String(a)]
+    let bValue = letterValues[String(b)]
+    return aValue < bValue
+}))
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
 
 //Input: (Int) -> Int
 //Output: (Int) -> Int
 
+func doubleFunc(x: (Int)) -> Int {
+    
+    return x * 2
+}
+
+doubleFunc(doubleMint(5))
+
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
 var number = 1
 
-//var tripleNumber =
+var tripleNumber = { () -> () in
+    var num = 3 * number
+    number = num
+}
 
+tripleNumber()
+tripleNumber()
+tripleNumber()
+//tripleNumber()
 
+print(number)
 
-//9. Given a tuple representation of our names from before:
+//11. Given a tuple representation of our names from before:
 
 let firstAndLastTuples = [("Johann S.", "Bach"),
                                  ("Claudio", "Monteverdi"),
@@ -109,7 +241,7 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // .
 // .
 
-//10. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
+//12. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
 
 //Amber Spadafora	3201
@@ -161,7 +293,7 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 
 
 
-//11. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
+//13. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
 
 // eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "Old"]
 //      output string: "Hello Darkness My Old Friend

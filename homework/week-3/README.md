@@ -63,7 +63,6 @@ Nope!
 >>> *
 Correct!
 >>> Exit
-```
 
 #### Q2. Implement your **own** filter function
 
