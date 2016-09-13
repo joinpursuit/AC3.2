@@ -1,60 +1,154 @@
+import UIKit
+
+//Array Previous
+
 //1)
 //Create an array of strings called colors that contain "orange", "red", "yellow", "turquoise", and "lavender"
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
 
 //Write all your code below:
 
+//var myArray = ["orange", "red", "yellow", "turquoise", "lavender" ]
+//
+//print("\(myArray[0]), \(myArray[1]),\(myArray[2]),\(myArray[3]), \(myArray[4])")
+//
 
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
-var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
-
+//var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+//
+//for i in westernStates{
+//
+//    westernStates.removeAtIndex(4)
+//    westernStates.removeAtIndex(5)
+//
 
 //Write all your code below:
 
 //3)
 //Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
 
-let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
-
-//Write all your code below:
+//let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+//
+////Write all your code below:
+//
+//for i in 0...6{
+//
+//    if moreStates[i] == "Hawaii" || moreStates[i] == "Alaska"{
+//
+//
+//        print(moreStates[i] , "is not continental")
+//
+//    } else{
+//
+//
+//    }
+//
+//
+//}
 
 
 //4)
 //a) print out how many non-whitespace characters are in myString
-let myString = "This is practice for the next problem!"
-
-//Write all your code below:
-
-
-//b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
-
-let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
-
-//Write all your code below:
-
-
-
-//5)
-//The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
-
-//Add "Suzuki" to the end of your lineup.
-//Change "Jeter" to "Tejada".
-//Change "Thomas" for "Guerrero"
-//Put "Reyes" to bat 8th instead.
-var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
-
-//Write all your code below:
+//let myString = "This is practice for the next problem!"
+//
+////Write all your code below:
+//
+//
+//var count = 0
+//
+//
+//for i in myString.characters{
+//
+//    if i != " "{
+//
+//        count += 1
+//
+//    }
+//
+//}
+//
+//
+////b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
+//
+//
+//let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
+//
+////Write all your code below:
+//
+//var varNonSpace : Int = 0
+//
+//for sentence in myFavoriteQuotes {
+//
+//    varNonSpace = 0
+//
+//    for j in sentence.characters{
+//
+//        if j != " "{
+//
+//            varNonSpace += 1
+//
+//            }
+//
+//    }
+//
+//    print ("\(varNonSpace) , Non-white space at sentence , \(sentence)")
+//}
+//
+//
+////5)
+////The below array represents an unfinished batting lineup for a baseball team. You, the coach, need to make some last minute changes.
+//
+////Add "Suzuki" to the end of your lineup.
+////Change "Jeter" to "Tejada".
+////Change "Thomas" for "Guerrero"
+////Put "Reyes" to bat 8th instead.
+//var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
+//
+////Write all your code below:
+//
+//battingLineup.append("Suzuki")
+//battingLineup[1] = "Tejada"
+//battingLineup[5] = "Guerrero"
+//battingLineup.removeAtIndex(0)
+//battingLineup.insert("Reyes", atIndex: 7)
+//print(battingLineup)
+//
 
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
-var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
-var basket = [String]()
 
-//Write all your code below:
+//var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
+//var basket = [String]()
+//
+////Write all your code below:
+//
+//var flowerCounter = 0
+//
+//
+//for i in 0..<garden.count {
+//
+//    if garden[i] != "dirt"{
+//
+//      basket.append("dirt")
+//
+//        flowerCounter += 1
+//
+//    }
+//
+//
+//}
+// print(flowerCounter)
+
+
+
+
+
+
+
 
 //7)
 //Iterating through listOfNumbers and print out the largest element.
@@ -62,18 +156,62 @@ var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
 
+//var sum = 0
+//
+//var largest = listOfNumbers[0]
+//
+//for i in 0..<listOfNumbers.count{
+//
+//    if listOfNumbers[i] > largest
+//    {
+//        largest = listOfNumbers[i]
+//
+//    }
+//
+//}
+//
+//print(largest)
+
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
-var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+//var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+//
+//for i in 0..<secondListOfNumbers.count {
+//
+//
+//    if (secondListOfNumbers[i] % 2 ) != 0 {
+//
+//    print (secondListOfNumbers[i])
+//
+//    }
+//
+//
+//}
+
+
+
 
 //Write all your code below:
 
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
-var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
+//var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
+//
+////Write all your code below:
+//
+//var sum  = 0
+//
+//for i in 0..<thirdListOfNumbers.count {
+//
+//
+//    sum += thirdListOfNumbers[i]
+//
+//
+//}
+//
+//print (sum)
 
-//Write all your code below:
 
 
 //10)
@@ -83,7 +221,28 @@ let target = 84
 var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
-//Write all your code below:
+var flag  = "no"
+
+for i in 0..<fourthListOfNumbers.count {
+    
+    
+    if fourthListOfNumbers[i] == target{
+        
+        flag = "yes"
+        
+    }
+    
+}
+
+print (flag)
+
+//for i in 0..<fourthListOfNumbers.count where target == i {
+//
+//        print("Yes found \(i)")
+//
+//
+//}
+//
 
 
 //11)
@@ -93,18 +252,83 @@ var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
 
 
-//Write all your code below:
+////Write all your code below:
+//
+//for i in listOne {
+//    
+//    for j in listTwo where i == j {
+//        
+//        sharedElements.append(i)
+//        
+//        //print(i)
+//        }
+//   }
+//var counterm = 0
+//print("\(sharedElements) and \(sharedElements.count) are mutual")
 
 
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
-var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
+var dupeFriendlyList = [4,2,6,2,2,9,4,0,2,1]
 var noDupeList: [Int] = []
+
+////noDupeList = dupeFriendlyList
+//var countList = 0
+//
+////for i in 0..<dupeFriendlyList.count{
+////    for j in 0..<noDupeList.count where dupeFriendlyList[i] == noDupeList[j] {
+////        noDupeList.removeAtIndex(j)
+////        }
+////}print(noDupeList)
+//
+////sabina's
+//var greatest1 = dupeFriendlyList[0]
+//for i in dupeFriendlyList {
+//    if i > greatest1 {
+//        greatest1 = i
+//    }
+//}
+//
+//
+//var check = [Bool](count: greatest1+1, repeatedValue: false)
+//
+//for i in dupeFriendlyList {
+//    check[i] = true
+//     print("i is \(i): \n\(check)\n")
+//}
+////print(check)
+//
+//for j in 0..<check.count {
+//    if check[j] {
+//        noDupeList.append(j)
+//        print(j)
+//    }
+//}
+//
+//print(noDupeList)
+//
+
+
+//if dupeFriendlyList[j] != dupeFriendlyList[i]{
+//    noDupeList.append(dupeFriendlyList[j])
+
 
 //13)
 //Find the second smallest Int in ages
 var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 70, 38, 69, 66, 71, 68, 61, 86, 85, 41, 15, 81, 40]
+//
+var smallestI = ages[0]
+var secondSmall = ages[1]
+
+//use them as a place holder
+
+for i in ages where i <= smallestI{
+    secondSmall = smallestI
+    smallestI = i
+}
+
+print("Smallest value is \(smallestI) and second small is \(secondSmall)")
 
 
 //14)
@@ -139,5 +363,8 @@ var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,3
 //If there are multiple triplets, print all possible triplets.
 
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
+
+
+
 
 

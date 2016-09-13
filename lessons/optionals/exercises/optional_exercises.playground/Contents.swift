@@ -185,10 +185,3 @@ var exp = 21
 // add 150 exp if lvl is above 7
 
 
-
-
-
-
-
-
-
