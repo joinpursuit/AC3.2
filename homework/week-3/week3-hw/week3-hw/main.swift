@@ -81,7 +81,7 @@ while true {
 }
 
 
-
+//Problem 1B
 //while true {
 //    print("Operator and two operands please: ", terminator: "")
 //    if let response = readLine(stripNewline: true) {
@@ -119,6 +119,8 @@ while true {
 //}
 
 
+
+//Problem 1A
 //while true {
 //    print("Operator and two operands please: ", terminator: "")
 //    if let response = readLine(stripNewline: true) {
