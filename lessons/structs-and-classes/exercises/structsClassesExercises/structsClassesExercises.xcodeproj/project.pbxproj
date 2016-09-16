@@ -12,6 +12,7 @@
 		2DBA235B1D7F4E6400F4B171 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA235A1D7F4E6400F4B171 /* Person.swift */; };
 		2DBA235D1D7F4F1100F4B171 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA235C1D7F4F1100F4B171 /* Actor.swift */; };
 		2DBA235F1D7F4FAB00F4B171 /* President.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA235E1D7F4FAB00F4B171 /* President.swift */; };
+		2DBA23611D8065B100F4B171 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA23601D8065B100F4B171 /* Rectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		2DBA235A1D7F4E6400F4B171 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		2DBA235C1D7F4F1100F4B171 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Actor.swift; path = ../Actor.swift; sourceTree = "<group>"; };
 		2DBA235E1D7F4FAB00F4B171 /* President.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = President.swift; sourceTree = "<group>"; };
+		2DBA23601D8065B100F4B171 /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				2DBA235C1D7F4F1100F4B171 /* Actor.swift */,
 				2DBA235E1D7F4FAB00F4B171 /* President.swift */,
+				2DBA23601D8065B100F4B171 /* Rectangle.swift */,
 				2DBA23511D7F3B0B00F4B171 /* main.swift */,
 				2DBA23581D7F3BD700F4B171 /* Movie.swift */,
 				2DBA235A1D7F4E6400F4B171 /* Person.swift */,
@@ -134,6 +137,7 @@
 				2DBA235B1D7F4E6400F4B171 /* Person.swift in Sources */,
 				2DBA23591D7F3BD700F4B171 /* Movie.swift in Sources */,
 				2DBA23521D7F3B0B00F4B171 /* main.swift in Sources */,
+				2DBA23611D8065B100F4B171 /* Rectangle.swift in Sources */,
 				2DBA235D1D7F4F1100F4B171 /* Actor.swift in Sources */,
 				2DBA235F1D7F4FAB00F4B171 /* President.swift in Sources */,
 			);

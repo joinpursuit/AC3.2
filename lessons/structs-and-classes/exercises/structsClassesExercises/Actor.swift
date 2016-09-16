@@ -10,6 +10,14 @@ import Foundation
 
 class Actor: Person {
     
-    var breakOutYear = 0
-    var breakOutRole = ""
+    var breakOutYear: Int
+    var breakOutRole: String
+
+
+init(breakYear: Int, breakRole: String, name: String, born: Int, died: Int?) {
+    self.breakOutYear = breakYear
+    self.breakOutRole = breakRole
+    super.init(name: name, born: born, died: died)
+}
+
 }

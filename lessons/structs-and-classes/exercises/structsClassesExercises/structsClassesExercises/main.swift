@@ -9,7 +9,7 @@
 import Foundation
 
 
-var Movies: [[String:Any]] = [
+var Movies: [[String:AnyObject]] = [
     [
         "name": "Minions",
         "year": 2015,
@@ -75,32 +75,48 @@ var Movies: [[String:Any]] = [
     ]
 ]
 
+for newMovie in Movies {
+    let newMovie = Movie(movieDict: newMovie)
+    dump(newMovie)
+}
+
+
 var movieArray = [Movie]()
 for aMovie in Movies{
 if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, genre = aMovie["genre"] as? String, cast = aMovie["cast"] as? [String], description = aMovie["description"] as? String{
     
+//  let theMovie = Movie(name: <#T##String#>, year: <#T##Int#>, genre: <#T##String#>, cast: <#T##[Actor]#>, description: <#T##String#>, castString: <#T##String#>)
+//    theMovie.name = name
+//    theMovie.year = year
+//    
+//    theMovie.description = description
+// 
+//    //    var theMovie.cast = [Actor]()
+//    
+//    theMovie.genre = genre
 
-  let theMovie = Movie()
-    theMovie.name = name
-    theMovie.year = year
-    theMovie.genre = genre
-    theMovie.description = description
- 
-//    var theMovie.cast = [Actor]()
-
+     var arrayActor = [Actor]()
     for actor in cast{
-        let classActor = Actor()
-        classActor.name = actor
-        classActor.breakOutYear = theMovie.year
-        classActor.breakOutRole = theMovie.name
-   theMovie.cast.append(classActor)
+       var newActor = Actor(breakYear: 6789, breakRole: "new", name: "idk", born: 1989, died: 2060)
+//        classActor.name = actor
+//        classActor.breakOutYear = theMovie.year
+//        classActor.breakOutRole = theMovie.name
+//   theMovie.cast.append(classActor)
 //    dump(classActor)
+        arrayActor.append(newActor)
+
     }
-movieArray.append(theMovie)
     //    print("Name: \(theMovie.name) Year: \(theMovie.year) genre: \(theMovie.genre) cast: \(theMovie.cast) description: \(theMovie.description)")
+//
+    
+    let dumpThis =  Movie(name: name, year: year, genre: genre, cast: arrayActor, description: description)
+    //dump(dumpThis)
     }
 }
-dump(movieArray)
+
+
+
+//dump(movieArray)
 
 //dump(movieArray[0].name)
 
@@ -114,8 +130,46 @@ dump(movieArray)
 //b = ronaldReagan.inOffice(1983)
 //b = ronaldReagan.inOffice(1999)
 //
-//dump(ronaldReagan)
+//
+//var io = ronaldReagan.yearsInOffice
+//
+////
+////dump(ronaldReagan)
+//
+
+//
+//
+//var r = Rectangle()
+//r.x = 100.0
+//
+//r.y = 100.0
+//
+//r.width = 200
+//
+//r.height = 100
+//
+//dump(r)
+//
+//print("The bottom right is (\(r.xPrime), (\(r.yPrime) ))")
+//
+//r.xPrime = 600
+//r.yPrime = 50
+//
+//print("The bottom right is (\(r.yPrime), (\(r.yPrime) )) ")
+//print("width (\(r.width), (\(r.height) ))")
+//
+//
+//
+//
+//
+//
+//
 //
 
 
+
+
+var p = President(start: 1200, terms: 4, name: "John", born: 1989, died: nil)
+
+var k = President(
 
