@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2C616341D8AE961006868F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C616331D8AE961006868F1 /* AppDelegate.swift */; };
+		A2C6163B1D8AE961006868F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C616391D8AE961006868F1 /* Main.storyboard */; };
+		A2C6163D1D8AE961006868F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C6163C1D8AE961006868F1 /* Assets.xcassets */; };
+		A2C616401D8AE961006868F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C6163E1D8AE961006868F1 /* LaunchScreen.storyboard */; };
+		A2C616481D8AECB3006868F1 /* MontyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C616471D8AECB3006868F1 /* MontyEngine.swift */; };
+		A2C6164A1D8AED0B006868F1 /* NCardMontyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C616491D8AED0B006868F1 /* NCardMontyViewController.swift */; };
+		A2C6164C1D8AED3A006868F1 /* MontyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C6164B1D8AED3A006868F1 /* MontyViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2C616301D8AE960006868F1 /* TabbedMonty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedMonty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C616331D8AE961006868F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A2C6163A1D8AE961006868F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2C6163C1D8AE961006868F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2C6163F1D8AE961006868F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A2C616411D8AE961006868F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2C616471D8AECB3006868F1 /* MontyEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MontyEngine.swift; sourceTree = "<group>"; };
+		A2C616491D8AED0B006868F1 /* NCardMontyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NCardMontyViewController.swift; path = ../NCardMontyViewController.swift; sourceTree = "<group>"; };
+		A2C6164B1D8AED3A006868F1 /* MontyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MontyViewController.swift; path = ../MontyViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2C6162D1D8AE960006868F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2C616271D8AE960006868F1 = {
+			isa = PBXGroup;
+			children = (
+				A2C616321D8AE960006868F1 /* TabbedMonty */,
+				A2C616311D8AE960006868F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2C616311D8AE960006868F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2C616301D8AE960006868F1 /* TabbedMonty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2C616321D8AE960006868F1 /* TabbedMonty */ = {
+			isa = PBXGroup;
+			children = (
+				A2C616491D8AED0B006868F1 /* NCardMontyViewController.swift */,
+				A2C6164B1D8AED3A006868F1 /* MontyViewController.swift */,
+				A2C616471D8AECB3006868F1 /* MontyEngine.swift */,
+				A2C616391D8AE961006868F1 /* Main.storyboard */,
+				A2C616331D8AE961006868F1 /* AppDelegate.swift */,
+				A2C6163C1D8AE961006868F1 /* Assets.xcassets */,
+				A2C6163E1D8AE961006868F1 /* LaunchScreen.storyboard */,
+				A2C616411D8AE961006868F1 /* Info.plist */,
+			);
+			path = TabbedMonty;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2C6162F1D8AE960006868F1 /* TabbedMonty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2C616441D8AE961006868F1 /* Build configuration list for PBXNativeTarget "TabbedMonty" */;
+			buildPhases = (
+				A2C6162C1D8AE960006868F1 /* Sources */,
+				A2C6162D1D8AE960006868F1 /* Frameworks */,
+				A2C6162E1D8AE960006868F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TabbedMonty;
+			productName = TabbedMonty;
+			productReference = A2C616301D8AE960006868F1 /* TabbedMonty.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2C616281D8AE960006868F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Kadell;
+				TargetAttributes = {
+					A2C6162F1D8AE960006868F1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = A2C6162B1D8AE960006868F1 /* Build configuration list for PBXProject "TabbedMonty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A2C616271D8AE960006868F1;
+			productRefGroup = A2C616311D8AE960006868F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2C6162F1D8AE960006868F1 /* TabbedMonty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2C6162E1D8AE960006868F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2C616401D8AE961006868F1 /* LaunchScreen.storyboard in Resources */,
+				A2C6163D1D8AE961006868F1 /* Assets.xcassets in Resources */,
+				A2C6163B1D8AE961006868F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2C6162C1D8AE960006868F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2C616481D8AECB3006868F1 /* MontyEngine.swift in Sources */,
+				A2C616341D8AE961006868F1 /* AppDelegate.swift in Sources */,
+				A2C6164C1D8AED3A006868F1 /* MontyViewController.swift in Sources */,
+				A2C6164A1D8AED0B006868F1 /* NCardMontyViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A2C616391D8AE961006868F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2C6163A1D8AE961006868F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A2C6163E1D8AE961006868F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2C6163F1D8AE961006868F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A2C616421D8AE961006868F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2C616431D8AE961006868F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A2C616451D8AE961006868F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TabbedMonty/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Example.TabbedMonty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A2C616461D8AE961006868F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TabbedMonty/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Example.TabbedMonty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2C6162B1D8AE960006868F1 /* Build configuration list for PBXProject "TabbedMonty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2C616421D8AE961006868F1 /* Debug */,
+				A2C616431D8AE961006868F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2C616441D8AE961006868F1 /* Build configuration list for PBXNativeTarget "TabbedMonty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2C616451D8AE961006868F1 /* Debug */,
+				A2C616461D8AE961006868F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2C616281D8AE960006868F1 /* Project object */;
+}
