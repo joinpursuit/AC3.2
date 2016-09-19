@@ -8,23 +8,29 @@ let ic = 45.0
 let tp = 0.15
 
 //Write your code below
-func totalWithTip(priceOfItem itemCost: Double, tipCost tipPercentage: Double) -> Double {
-    return itemCost + tipPercentage
+func totalCostWithTip(itemCost ic: Double, tipCost tp: Double) -> Double {
+    return ic + tp
 }
-print(totalWithTip(priceOfItem: Double(ic), tipCost: tp))
+let myFinalCost = totalCostWithTip(itemCost: 45, tipCost: 0.15)
+print(myFinalCost)
 
-let myFinalCost = totalWithTip(priceOfItem: Double(ic), tipCost: tp) //Fill in the arguments
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
 
 //Write your code below
-func totalWithTipAndTax(priceOfItem itemCost: Double, tipCost tipPercentage: Double, taxCost taxPercentage: Double) -> Double {
-    return itemCost * (taxPercentage + 1) + tipPercentage
+func totalCostWithTipAndTax(itemCost ic: Double, tipCost tp: Double, taxPercentage tax: Double) -> Double {
+    return (ic * tax) + ic + tp
 }
-print(totalWithTipAndTax(priceOfItem: Double(ic), tipCost: tp, taxCost: taxPercentage))
+let CostWithTipAndTax = totalCostWithTipAndTax(itemCost: 45, tipCost: 0.15, taxPercentage: 0.09)
+print(CostWithTipAndTax)
 
-let myFinalCostWithTipAndTax = totalWithTipAndTax(priceOfItem: Double(ic), tipCost: tp, taxCost: taxPercentage) //Fill in the arguments
+//func totalWithTipAndTax(priceOfItem itemCost: Double, tipCost tipPercentage: Double, taxCost taxPercentage: Double) -> Double {
+//    return itemCost * (taxPercentage + 1) + tipPercentage
+//}
+//print(totalWithTipAndTax(priceOfItem: Double(ic), tipCost: tp, taxCost: taxPercentage))
+//
+//let myFinalCostWithTipAndTax = totalWithTipAndTax(priceOfItem: Double(ic), tipCost: tp, taxCost: taxPercentage) //Fill in the arguments
 
 //2a)Write a function takes an Int as input, and returns true if it is even, and false if it is odd
 
@@ -47,6 +53,14 @@ if EvenOdd(dieRoll) {
 else {
     print("odd")
 }
+
+//let dieRoll = Int(arc4random_uniform(6) + 1)
+//if EvenOdd(dieRoll) {
+//    print("even")
+//}
+//else {
+//    print("odd")
+//}
 
 //3)
 /*
@@ -74,9 +88,9 @@ func fb(x: Int) {
 //4a) Write a function that takes [Int] as input.  It should return the largest Int in the array.
 
 //Write your code below
-func array(numbers: [Int]) -> Int {
-    var largestInt = numbers[0]
-    for num in numbers {
+func array(array: [Int]) -> Int {
+    var largestInt = array[0]
+    for num in array {
         if num > largestInt {
             largestInt = num
         }
@@ -88,32 +102,28 @@ func array(numbers: [Int]) -> Int {
 let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
 
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
-
-array(myArray)
-var largestIntInMyArray = array(myArray)
-print("The largest Int in myArray is \(largestIntInMyArray)")
+var theLargestArray = array(myArray)
+print("The largest Int in myArray is \(theLargestArray)")
 
 //4c)
 //Using your solution to 2a), print a sentence that states whether the largest Int in myArray is even or odd
 if array(myArray) % 2 == 0 {
     print("The largest Int is even")
-}
-else {
-    print("The largest Int in odd")
+} else {
+    print("The largest Int is odd")
 }
 
 //5a) Write a function that takes a String as input and returns the number of characters in the string
 
 //Write your code below
-func myStringOne(i: String) -> Int {
-    return i.characters.count
+func functionTwo(s: String) -> Int {
+    return s.characters.count
 }
-
 
 //5b) Using your function above, print how many characters are in myString
 
 let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
-myStringOne(myString)
+functionTwo(myString)
 
 //5c) Write a function that counts how many characters in a String match a specific character.  (e.g: count how many "a"s are in a String, or count how many ","s are in a String.
 
@@ -123,25 +133,18 @@ let targetCharacter: Character = "i"
 
 //Sample output:
 //3
-
-//func howManyCharacterMatch(char: Character, with thisString: String) {
-//    
-//}
-//
-//howManyCharacterMatch(targetCharacter, with: fiveCString)
-
-func howManyCharacters(sentence: String, compareChar: Character) -> Int {
+func howManyCharacters(target: Character, sentence: String) -> Int {
     var i = 0
     for char in sentence.characters {
-        if char == compareChar {
+        if char == target {
             i += 1
         }
     }
     return i
 }
-howManyCharacters(fiveCString, compareChar: targetCharacter)
+howManyCharacters(targetCharacter, sentence: fiveCString)
 
-//5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
+//???5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
 
 //Sample input:
 let fiveDString = "This one is a little more complicated"
@@ -150,17 +153,25 @@ let targetCharacters = ["a", "e", "i", "o", "u"]
 //Sample output:
 //13
 //Write your code below
-func howManyCharMatch(st: String, ch: Character) -> Int {
-    var j = 0
-    for char in st.characters {
-        if char == "a" || char == "e" || char == "i" || char == "o" || char == "u" {
-            j += 1
-        }
-    }
-    return j
-}
-howManyCharMatch(fiveDString, ch: targetCharacter)
+//func howManyVowels(target: [String], sentence: String) -> Int {
+//    var vowels = 0
+//    for char in sentence.characters {
+//        if char == target {
+//            
+//        }
+//    }
+//}
 
+//func howManyCharMatch(st: String, ch: Character) -> Int {
+//    var j = 0
+//    for char in st.characters {
+//        if char == "a" || char == "e" || char == "i" || char == "o" || char == "u" {
+//            j += 1
+//        }
+//    }
+//    return j
+//}
+//howManyCharMatch(fiveDString, ch: targetCharacter)
 
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
@@ -176,13 +187,14 @@ let inputArray = [3,1,4,1,3,2,6,1,9]
 //Explanation:
 //2, 4, 6, 9 are unique in the array.  Every other number is not unique.
 
-func arrayOfInt(array: [Int]) -> [Int] {
-    let uniqueSet = Set(array) //????
-    let uniqueArray = Array(uniqueSet)
-    return uniqueArray
-}
+//func arrayOfInt(array: [Int]) -> [Int] {
+//    let uniqueSet = Set(array) //????
+//    let uniqueArray = Array(uniqueSet)
+//    return uniqueArray
+//}
+//arrayOfInt(inputArray)
 
-//func uniqueArray(array: [Int]) -> [Int] {
+//func myUniqueArray(array: [Int]) -> [Int] {
 //    var uniqueArray = [Int]()
 //    for num in array {
 //        for uniqueNum in uniqueArray {
@@ -193,9 +205,10 @@ func arrayOfInt(array: [Int]) -> [Int] {
 //            }
 //        }
 //    }
+//    return uniqueArray
 //}
-
-arrayOfInt(inputArray)
+//
+//myUniqueArray(inputArray)
 
 //7) Write a function that converts a binary number into decimal.  The binary number will be given as an array of Ints.
 
@@ -297,47 +310,49 @@ var movies: [[String:Any]] = [
 //   from the full lesson (we didn't go over it) to print both the cast list and the
 //   locations.
 //Write your code below
-func movieList(ls: [[String:Any]]) -> String? {
-    func buildCommaSeparatedList(words: [String]) -> String {
-        var output = ""
-        for (key, value) in movies.enumerate() {
-            output += "location"
-        }
-    }
-}
+//func movieList(ls: [[String:Any]]) -> String? {
+//    func buildCommaSeparatedList(words: [String]) -> String {
+//        var output = ""
+//        for (key, value) in movies.enumerate() {
+//            output += "location"
+//        }
+//    }
+//}
+
+
 ////
-func reportOnMovies(movies:[[String:Any]]) -> String? {
-    func buildCommaSeparatedList(words: [String]) -> String {
-        var output = ""
-        for (i, word) in words.enumerate() {
-            if i == words.count - 1 {
-                output += "and \(word)"
-            }
-            else {
-                output += "\(word), "
-            }
-        }
-        return output
-    }
-    
-    var output: String?
-    for movie in movies {
-        if let name = movie["name"] as? String, year = movie["year"] as? Int, cast = movie["cast"] as? [String] {
-            if output == nil {
-                output = ""
-            }
-            
-            let castString = buildCommaSeparatedList(cast)
-            
-            output?.appendContentsOf("\(name) came out in \(year) starring \(castString).")
-            if let president = presidentsByYear[year] {
-                output?.appendContentsOf(" \(president) was president.")
-            }
-            output?.appendContentsOf("\n")
-        }
-    }
-    return output
-}
+//func reportOnMovies(movies:[[String:Any]]) -> String? {
+//    func buildCommaSeparatedList(words: [String]) -> String {
+//        var output = ""
+//        for (i, word) in words.enumerate() {
+//            if i == words.count - 1 {
+//                output += "and \(word)"
+//            }
+//            else {
+//                output += "\(word), "
+//            }
+//        }
+//        return output
+//    }
+//    
+//    var output: String?
+//    for movie in movies {
+//        if let name = movie["name"] as? String, year = movie["year"] as? Int, cast = movie["cast"] as? [String] {
+//            if output == nil {
+//                output = ""
+//            }
+//            
+//            let castString = buildCommaSeparatedList(cast)
+//            
+//            output?.appendContentsOf("\(name) came out in \(year) starring \(castString).")
+//            if let president = presidentsByYear[year] {
+//                output?.appendContentsOf(" \(president) was president.")
+//            }
+//            output?.appendContentsOf("\n")
+//        }
+//    }
+//    return output
+//}
 
 //9) Given one movie write a function that takes the movie (remember to use its type)
 //   as its only argument and return a tuple that contains name, year and genre.

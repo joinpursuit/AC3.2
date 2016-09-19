@@ -10,17 +10,14 @@ enum Command: String {
     case myFilter = "myFilter"
 }
 
-enum operators { //enum operator class
-    case Addition, Subtraction, Multiplication, Division
-    func mathStuffFactory() -> String {
-        switch self {
-        case .Addition: return "+"
-        case .Subtraction: return "-"
-        case .Multiplication: return "*"
-        case .Division: return "/"
-        }
-    }
+enum Operators: String {
+    case Add = "+"
+    case Subtract = "-"
+    case Multiply = "*"
+    case Divide = "/"
+    case Random = "?"
 }
+//define rawValue for above
 
 func processCommand(cmd: [String]) {
     switch cmd[0] {
@@ -44,25 +41,38 @@ func play(s: String) {
             print("Enter a math problem, can be any two numbers, try addition, subtraction, multplication or division.")
             if let input = userInput() {
                 func mathStuffFactory(opString: String) -> (x: Double, y: Double) -> Double {
+                    if let opString = Operators(rawValue: opString) {
                     switch opString {
-                    case "+":
+                    case .Add:
                         return {x, y in x + y }
-                    case "-":
+                    case .Subtract:
                         return {x, y in x - y }
-                    case "*":
+                    case .Multiply:
                         return {x, y in x * y }
-                    case "/":
+                    case .Divide:
                         return {x, y in x / y }
-                    default:
-                        return {x, y in x + y }
+                    case .Random:
+                        return{x, y in x + y }
                     }
                 }
+                    return {x, y in x + y }
             }
         }
     }
 }
+//func myFilter(inputArray: [Int], filter: (Int) -> Bool) -> [Int] {
+//    var outputArray:[Int]()
+//    for value in inputArray{
+//        if filter(value) == true{
+//            outputArray.append(i)
+//        }else{
+//            continue
+//        }
+//    }
+//        return outputArray
 
 //let array = ["+", "-", "/", "*"]
+//let randomArray = Int(arc4random_uniform(4))
 //for item in array {
 //    if let input = userInput() {
 //    
@@ -87,12 +97,30 @@ while true {
     }
     else {
         print("You have to enter something!")
+        }
     }
 }
 
+let ints = [4,2,6,3,4,6,2,8,5]
+
 func myFilter(ints: [Int], filter: (Int) -> Bool) -> [Int] {
-    while true {
-        let ints = [4,2,6,3,4,6,2,8,5]
-        var evenNums = ints.filter { $0 % 2 == 0 }
+var outputArray = [Int]()
+    for num in ints {
+    if filter(num) {
+    outputArray.append(num)
+        }
     }
+return outputArray
+}
+
+myFilter(ints) {(a) -> Bool in
+    a % 2 == 0
+}
+
+func myMap(inputArray: [Int], map: (Int) -> String) -> [String] {
+    var outputArray = [String]()
+    for num in inputArray {
+        outputArray.append(map(num))
+    }
+    return outputArray
 }

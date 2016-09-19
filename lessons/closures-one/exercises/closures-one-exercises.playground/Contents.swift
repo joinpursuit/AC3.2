@@ -312,9 +312,10 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
-let me = ("Annie", "Tung", 3203)
-let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String, Int)) -> [(String, String, Int)] in
-    var selfFirstStudentList = students
+
+//let me = ("Annie", "Tung", 3203)
+//let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String, Int)) -> [(String, String, Int)] in
+//    var selfFirstStudentList = students
 //
 //    for index in 0..<selfFirstStudentList.count {
 //        if selfFirstStudentList[index] == me {
@@ -325,6 +326,21 @@ let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String
 //    return selfFirstStudentList
 //}
 //print(cutMicrowaveLine(ac32folks, me))
+
+//method #2
+let cutMicrowaveLine = { (students: [(String, String, Int)], me: (String, String, Int)) -> [(String, String, Int)]? in
+    var finishedList = students
+    for (index, student) in finishedList.enumerate() { //taking out the index, becomes a tuple of integer with objects inside the array. Enumerate is used for looping!
+        if student == me {
+            finishedList.removeAtIndex(index)
+            finishedList.insert(me, atIndex: 0)
+            return finishedList
+        }
+    }
+            return nil
+}
+let me = ("Annie", "Tung",	3203)
+print(cutMicrowaveLine(ac32folks, me))
 
 //sorting method
 //var microwaveLine = ac32folks.sort{$0.1 > $1.1}
