@@ -1,8 +1,6 @@
 # Access Code 3.2: Mobile Development with iOS
 
-Friday. We finish by 4:30. :) Monday is a day off. :D
-
-The reading for **Tuesday** is on [Structs and Classes](/lessons/structs-and-classes).
+Hello on this **fine** Monday. The homework submission and project instructions are [here](/lessons/2_2_battleship_1/).
 
 ## Schedule
 
@@ -10,3 +8,5 @@ The reading for **Tuesday** is on [Structs and Classes](/lessons/structs-and-cla
 
 
 Harichandan Singh - Access Code 3.2
+=======
+- [Lesson Schedule](/schedule.md)
