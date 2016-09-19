@@ -7,9 +7,16 @@ import UIKit
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
 
+var citiesDict = ["USA": "Washington DC", "Japan": "Tokyo", "England": "London"]
+
 //b) Add two more countries to your dictionary
 
+citiesDict["China"] = "BeiJing"
+citiesDict["France"] = "Paris"
+
 //c) Translate at least 3 of the capital names into another language
+
+
 
 //2)
 
@@ -17,15 +24,46 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+var sum = 0
+sum = someDict["Three"]! + someDict["Five"]!
+print(sum)
+
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+
+someDict["Six"] = 36
+someDict["Seven"] = 49
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
 
+someDict["productUpToSeven"] = 1
+for (i, j) in someDict{
+    someDict["productUpToSeven"] = j * someDict["productUpToSeven"]!
+}
+print(someDict["productUpToSeven"]!)
+
+
+
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+
+someDict["sumUpToSix"] = 0
+for (i, j) in someDict where i != "Seven" && i != "productUpToSeven"{
+    someDict["sumUpToSix"]! += j
+}
+print(someDict["sumUpToSix"]!)
 
 //e) Remove the new keys made for parts c and d
 
+someDict.removeValueForKey("productUpToSeven")
+someDict["sumUpToSix"] = nil
+print(someDict)
+
 //f) Add 2 to every value inside of someDict
+
+for var i in someDict.keys{
+    someDict[i]! += 2
+}
+print(someDict)
+
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
@@ -37,11 +75,26 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “C.S. Lewis” - 9.9
 “Jon Krakaur” - 6.1
 */
+var authorsDict = ["Mark Twain": 8.9, "Nathaniel Hawthrone": 5.1, "John Steinbeck": 2.3, "C.S. Lewis": 9.9, "Jon Krakaur": 6.1]
 
 //b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
 
+print(authorsDict["John Steinbeck"]!)
+authorsDict["Erik Larson"] = 9.2
+
+if authorsDict["John Krakaur"] > authorsDict["Mark Twain"] {
+    print("John Krakaur has the higher score!")
+}
+else {
+    print("Mark Twain has the higher score!")
+}
+
+
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
+for var (author, rating) in authorsDict {
+    print("\(author): \(rating)")
+}
 
 
 
@@ -81,11 +134,37 @@ var code = [
 
 var message = "hello world"
 
+for char in message.characters {
+    for var (i,j) in code {
+        if char == Character(i) {
+            print("\(j)", terminator: "")
+        }
+    }
+    if char == Character(" "){
+        print(" ", terminator: " ")
+    }
+
+}
+
+print(" ")
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
 
 var encodedMessage = "uijt nfttbhf jt ibse up sfbe"
+
+for char in encodedMessage.characters {
+    for var (i,j) in code {
+        if char == Character(j) {
+            print("\(i)", terminator: "")
+        }
+    }
+    if char == Character(" "){
+        print(" ", terminator: " ")
+    }
+    
+}
+
 
 
 //5)

@@ -21,6 +21,15 @@ let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New Yor
 
 //Write all your code below:
 
+for states in moreStates {
+    if states == "Hawaii" || states == "Alaska"
+    {
+        print("\(states) is not in the continental United States")
+    }
+    else {
+        print("\(states) is in the continental United States")
+    }
+}
 
 //4)
 //a) print out how many non-whitespace characters are in myString
@@ -28,12 +37,35 @@ let myString = "This is practice for the next problem!"
 
 //Write all your code below:
 
+let whiteSpace = " "
+var counter = 0
+var nonWhiteChars = 0
+
+for char in myString.characters {
+    if String(char) == whiteSpace {
+        counter += 1
+    }
+}
+nonWhiteChars = myString.characters.count - counter
+print(nonWhiteChars)
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 //Write all your code below:
+
+let whiteSpaceAgain = " "
+var nonWhiteCharsAgain = 0
+
+for i in myFavoriteQuotes {
+    for char in i.characters {
+        if String(char) != whiteSpaceAgain {
+        nonWhiteCharsAgain += 1
+        }
+    }
+}
+print(nonWhiteCharsAgain)
 
 
 
@@ -48,6 +80,13 @@ var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","J
 
 //Write all your code below:
 
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[5] = "Gierrero"
+battingLineup.removeFirst()
+battingLineup.insert(("Reyes"), atIndex: 7)
+print(battingLineup)
+
 
 //6)
 //Iterate through the garden and place any 🌷 that you find into the basket.  Replace any 🌷 that you pick up with "dirt".  Then print how many 🌷 are in your basket.
@@ -56,22 +95,54 @@ var basket = [String]()
 
 //Write all your code below:
 
+for flower in garden {
+    if flower == "🌷" {
+        basket.append("🌷")
+    }
+}
+
+print(basket)
+
 //7)
 //Iterating through listOfNumbers and print out the largest element.
 var listOfNumbers = [1, 2, 3, 10, 100, 13, 14, 31]
 
 //Write all your code below:
 
+var largest = listOfNumbers[0]
+
+for num in listOfNumbers {
+    if largest < num {
+        largest = num
+    }
+}
+
+print(largest)
 
 //8)
 //Iterate through secondListOfNumbers, and print out all the odd numbers.
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+
+for num in secondListOfNumbers {
+    if num % 2 != 0 {
+        print(num)
+    }
+}
+
 
 //Write all your code below:
 
 //9)
 //Iterate through thirdListOfNumbers, and print out the sum.
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
+
+var sum = 0
+for num in thirdListOfNumbers {
+    sum += num
+}
+
+print(sum)
+
 
 //Write all your code below:
 
@@ -81,9 +152,21 @@ var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
 let target = 84
 var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
+var isTargetThere = false
 
 
 //Write all your code below:
+
+for num in fourthListOfNumbers {
+    if num == target {
+        print("Yes")
+        isTargetThere = false
+    }
+}
+
+if isTargetThere == false {
+    print("NO")
+}
 
 
 //11)
@@ -95,12 +178,36 @@ var sharedElements = [Int]()
 
 //Write all your code below:
 
-
+for i in 0..<listOne.count {
+    for j in 0..<listTwo.count {
+        if listOne[i] == listTwo[j] {
+            sharedElements.append(listOne[i])
+        }
+    }
+}
+print(sharedElements)
 
 //12)
 //Write code such that noDupeList has all the same Ints as dupeFriendlyList, but has no more than one of each Int.
 var dupeFriendlyList = [4,2,6,2,2,6,4,9,2,1]
 var noDupeList: [Int] = []
+
+//for i in 0..<dupeFriendlyList.count {
+//    var num = dupeFriendlyList[i]
+//    for j in 0..<dupeFriendlyList.count {
+//        if dupeFriendlyList[j] == num {
+//           noDupeList.append(num)
+//            
+//            //break
+//        }
+//        else {
+//          
+//           // break
+//        }
+//        //continue
+//    }
+//}
+//print(noDupeList)
 
 //13)
 //Find the second smallest Int in ages
@@ -111,12 +218,22 @@ var ages = [53, 31, 88, 65, 25, 44, 77, 18, 24, 84, 46, 42, 50, 28, 78, 67, 83, 
 //Print out the sum of the diagonals of myMatrix
 
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var sumOfDiagonals = 0
 
+for i in 0...2 {
+    for j in 0...2 {
+        if i == j {
+            sumOfDiagonals += myMatrix[i][j]
+        }
+    }
+}
+print(sumOfDiagonals)
 
 //15)
 //Using for loops, rotate myMatrix 90 degrees (https://sharecode.io/assets/problem_images/2518_5.jpg)
 
 var toRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
 
 //16)
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23

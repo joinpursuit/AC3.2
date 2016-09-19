@@ -6,4 +6,10 @@ Have a good weekend.
 
 ## Schedule
 
+<<<<<<< HEAD
+- [Lesson Schedule](schedule.md)
+
+Hello, My name is Madushani!
+=======
 - [Lesson Schedule](/schedule.md)
+>>>>>>> 16f6c7e70bf4e12eafd37e717ac5e636a8c7897d
