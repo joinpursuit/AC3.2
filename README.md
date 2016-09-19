@@ -4,4 +4,9 @@ Hello on this **fine** Monday. The homework submission and project instructions 
 
 ## Schedule
 
+- [Lesson Schedule](schedule.md)
+
+
+Harichandan Singh - Access Code 3.2
+=======
 - [Lesson Schedule](/schedule.md)
