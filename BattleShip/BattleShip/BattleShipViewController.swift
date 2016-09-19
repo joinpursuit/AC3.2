@@ -104,13 +104,14 @@ class BattleShipViewController: UIViewController {
         gameLabel.text = "Let's Play!"
     }
     
+  
     func setUpGameButtons(v: UIView, totalButtons: Int, buttonsPerRow : Int) {
         for i in 1...howManyCards {
             let y = ((i - 1) / buttonsPerRow)
             let x = ((i - 1) % buttonsPerRow)
-            let side : CGFloat = v.bounds.size.width / CGFloat(buttonsPerRow)
+            let side : CGFloat = (v.bounds.size.width + 20) / CGFloat(buttonsPerRow)
             
-            let rect = CGRect(origin: CGPoint(x: side * CGFloat(x), y: (CGFloat(y) * side)), size: CGSize(width: side, height: side))
+            let rect = CGRect(origin: CGPoint(x: side * CGFloat(x), y: (CGFloat(y) * side)), size: CGSize(width: side - 2 , height: side - 2))
             let button = UIButton(frame: rect)
             button.tag = i
             button.backgroundColor = UIColor.blue

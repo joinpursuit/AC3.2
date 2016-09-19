@@ -14,7 +14,6 @@
 		A245785B1D8DD13F00622A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A24578591D8DD13F00622A42 /* LaunchScreen.storyboard */; };
 		A24578661D8DD13F00622A42 /* BattleShipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24578651D8DD13F00622A42 /* BattleShipTests.swift */; };
 		A24578711D8DD1D400622A42 /* ShipEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24578701D8DD1D400622A42 /* ShipEngine.swift */; };
-		A24578731D8F0EB500622A42 /* Ships.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24578721D8F0EB500622A42 /* Ships.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		A24578651D8DD13F00622A42 /* BattleShipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleShipTests.swift; sourceTree = "<group>"; };
 		A24578671D8DD13F00622A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A24578701D8DD1D400622A42 /* ShipEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipEngine.swift; sourceTree = "<group>"; };
-		A24578721D8F0EB500622A42 /* Ships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ships.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 			children = (
 				A24578501D8DD13F00622A42 /* AppDelegate.swift */,
 				A24578521D8DD13F00622A42 /* BattleShipViewController.swift */,
-				A24578721D8F0EB500622A42 /* Ships.swift */,
 				A24578701D8DD1D400622A42 /* ShipEngine.swift */,
 				A24578541D8DD13F00622A42 /* Main.storyboard */,
 				A24578571D8DD13F00622A42 /* Assets.xcassets */,
@@ -206,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A24578531D8DD13F00622A42 /* BattleShipViewController.swift in Sources */,
-				A24578731D8F0EB500622A42 /* Ships.swift in Sources */,
 				A24578711D8DD1D400622A42 /* ShipEngine.swift in Sources */,
 				A24578511D8DD13F00622A42 /* AppDelegate.swift in Sources */,
 			);
