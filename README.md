@@ -4,4 +4,11 @@ Hello on this **fine** Monday. The homework submission and project instructions 
 
 ## Schedule
 
+<<<<<<< HEAD
+- [Lesson Schedule](schedule.md)
+
+
+my name is Tong.
+=======
 - [Lesson Schedule](/schedule.md)
+>>>>>>> b3fbf94f22bcfcb47d60df1ab6dec39d30ae2edc

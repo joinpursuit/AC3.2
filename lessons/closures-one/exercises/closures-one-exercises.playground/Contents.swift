@@ -5,38 +5,98 @@ import UIKit
 // Closures-One-Exercises
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
+let printHello = {()->() in
+    print("Hello Closures")
+}
+printHello()
 
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+let intToDOuble = {(i: Int) -> Double in
+    return Double(i)
+}
+print(intToDOuble(3))
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
+let divisibleBy3 = {(i: Int) -> Bool in
+    guard i%3 == 0 else{
+        return false
+    }
+    return true
+}
+print(divisibleBy3(5))
 
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
+let longestChar = {(s1: String, s2: String) -> String in
+    guard s1.characters.count == s2.characters.count else{
+        guard s1.characters.count < s2.characters.count else{
+            return s1
+        }
+        return s2
+    }
+    return "Two strings has same char count"
+}
+longestChar("first string","another string")
 
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
+let largestInt = {(a: [Int]) -> Int in
+    var largest = a[0]
+    for i in 1..<a.count{
+        if a[i] > largest{
+            largest = a[i]
+        }
+    }
+    return largest
+}
 
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+let xLargestInt = {(a: [Int], x: Int) -> Int in
+    return a.sort(>)[x-1]
+}
 
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
+let xLargestIntSP = {(a: [Int], x: Int) -> Int? in
+    guard x >= a.count else{
+        return a.sort(>)[x-1]
+    }
+    return nil
+}
 
 //Higher order functions
 
 let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
+let ascendingOrder = {(a: Int, b: Int) -> Bool in
+    return a < b
+}
+let mySortedArray = myArray.sort(ascendingOrder)
 
-//let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
 
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
+let descendingOrder = {(a: Int, b: Int) -> Bool in
+    return a > b
+}
+let mySecondSortedArray = myArray.sort(descendingOrder)
 
-//let mySecondSortedArray = myArray.sort(descendingOrder)
-//let descendingOrder =
 
-let arrayOfArrays = [[3,65,2,4],[25,3,1,6],[245,2,3,5,74]]
+let arrayOfArrays = [[3,6],[3,65,2,4],[8,5],[25,3,1,6],[9],[245,2,3,5,74]]
 
 //7a. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Assume each array will have at least 3 elements
+//print(arrayOfArrays.sort{(a: [Int],b: [Int]) -> Bool in
+//    return a[2] < b[2]
+//})
 
 //7b. Sort arrayOfArrays in ascending order by the 3rd element in each array.  Don't assume each array will have at least 3 elements.  Put all arrays that have less than 3 elements at the end in any order.
+
+arrayOfArrays.sort{(a: [Int], b: [Int]) -> Bool in
+    return a.count > b.count
+    }.sort{(a: [Int],b: [Int]) -> Bool in
+        if (a.count >= 3) && (b.count >= 3){
+            return a[2] < b[2]
+        }
+        return false
+}
+
 
 let letterValues = [
     "a" : 54,
@@ -70,36 +130,45 @@ let letterValues = [
 //8a. Sort the string below in descending order according the dictionary letterValues
 
 var codeString = "aldfjaekwjnfaekjnf"
-
+print(codeString.characters.sort{(a: Character, b: Character) -> Bool in
+    return letterValues[String(a)] > letterValues[String(b)]
+    })
 
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
-
-
+print(codeStringTwo.characters.sort{(a: Character, b: Character) -> Bool in
+    return letterValues[String(a)] < letterValues[String(b)]
+    })
 
 //9.  Write a function that takes a function as input and returns a function that doubles the output of the input function
 
 //Input: (Int) -> Int
 //Output: (Int) -> Int
+//let doubleTheInt = {(a: Int)-> Int in
+//    return a*2
+//}
+//let takingInput = {(i: Int->Int)-> Int in
+//    return i
+//}
 
 //10.  Write a closure tripleNumber that takes no arguments and returns void.  It should multiply the global variable number by 3 each time the closure is run.
 
 var number = 1
 
-//var tripleNumber =
-
-
+var tripleNumber = {
+    number *= 3
+}
 
 //9. Given a tuple representation of our names from before:
 
 let firstAndLastTuples = [("Johann S.", "Bach"),
-                                 ("Claudio", "Monteverdi"),
-                                 ("Duke", "Ellington"),
-                                 ("W. A.", "Mozart"),
-                                 ("Nicolai","Rimsky-Korsakov"),
-                                 ("Scott","Joplin"),
-                                 ("Josquin","Des Prez")]
+                          ("Claudio", "Monteverdi"),
+                          ("Duke", "Ellington"),
+                          ("W. A.", "Mozart"),
+                          ("Nicolai","Rimsky-Korsakov"),
+                          ("Scott","Joplin"),
+                          ("Josquin","Des Prez")]
 
 // sort the array of tuples by last name. Print the sorted array using string interpolation so that
 // the output looks like:
@@ -107,47 +176,52 @@ let firstAndLastTuples = [("Johann S.", "Bach"),
 // Des Prez, Josquin
 // .
 // .
-// .
+var temp = firstAndLastTuples.sort{(a, b)-> Bool in
+    return a.1 < b.1
+}
+for i in temp{
+    print("\(i.1), \(i.0)")
+}
 
 //10. Build an array of tuples representing everyone in the class. Here you are sorted by first name:
 //
 
-//Amber Spadafora	3201
-//Ana Ma	3202
-//Annie Tung	3203
-//Cristopher Chavez	3204
-//Eashir Arafat	3205
-//Edward Anchundia	3206
-//Emily Chu	3207
-//Eric Chang	3208
-//Erica Stevens	3209
-//Fernando Ventura	3210
-//Harichandan Singh	3211
-//Ilmira Estil	3212
-//Jermaine Kelly	3213
-//Gabriel Breshears	3214
-//Kadell Gregory	3215
-//Kareem James	3216
-//Karen  Manzanares Fuentes 	3217
-//Leandro Nunez	3218
-//Liam Kane	3219
-//Luz Loayza Herrera	3220
-//Madushani Lekam Wasam Liyanage	3221
-//Marcel Chaucer	3222
-//Margaret Ikeda	3223
-//Maria Scutaru	3224
-//Marty Avedon	3225
-//Michael Pinnock	3226
-//Miti  Shah	3227
-//Rukiye Karadeniz	3228
-//Sabrina Ip	3229
-//Simone Grant	3230
-//Sophia Barrett	3231
-//Thinley  Dorjee	3232
-//Tom Seymour	3233
-//Tong Lin	3234
-//Tyler Newton	3235
-//Victor Zhong	3236
+//(Amber Spadafora	3201
+//(Ana Ma	3202
+//(Annie Tung	3203
+//(Cristopher Chavez	3204
+//(Eashir Arafat	3205
+//(Edward Anchundia	3206
+//(Emily Chu	3207
+//(Eric Chang	3208
+//(Erica Stevens	3209
+//(Fernando Ventura	3210
+//(Harichandan Singh	3211
+//(Ilmira Estil	3212
+//(Jermaine Kelly	3213
+//(Gabriel Breshears	3214
+//(Kadell Gregory	3215
+//(Kareem James	3216
+//(Karen  Manzanares Fuentes 	3217
+//(Leandro Nunez	3218
+//(Liam Kane	3219
+//(Luz Loayza Herrera	3220
+//(Madushani Lekam Wasam Liyanage	3221
+//(Marcel Chaucer	3222
+//(Margaret Ikeda	3223
+//(Maria Scutaru	3224
+//(Marty Avedon	3225
+//(Michael Pinnock	3226
+//(Miti  Shah	3227
+//(Rukiye Karadeniz	3228
+//(Sabrina Ip	3229
+//(Simone Grant	3230
+//(Sophia Barrett	3231
+//(Thinley  Dorjee	3232
+//(Tom Seymour	3233
+//(Tong Lin	3234
+//(Tyler Newton	3235
+//(Victor Zhong	3236
 
 // Here's an example of how to start:
 let ac32folks = [("Amber", "Spadafora",	3201),
@@ -158,10 +232,37 @@ let ac32folks = [("Amber", "Spadafora",	3201),
 // Build a sort comparison closure that will bring your name as close to the top as possible.
 // We will use this to determine the order we use to access the microwave.
 // Feel free to add fields to the tuple to accomplish this -- yes, this is a cheat.
-
-
+ac32folks.sort{(a, b)->Bool in
+    return a.2 > b.2
+}
 
 //11. Create a closure that takes an two arrays of strings as input. Output a new string with the contents of the arrays in alternating order and separated by a space. If one array's length is longer than the other, append the rest of it's contents to the new string.
 
 // eg: input array1: ["Hello", "My", "Friend"] array2: ["Darkness", "Old"]
 //      output string: "Hello Darkness My Old Friend
+
+let newString = {(s1: [String], s2: [String]) in
+    var temp = ""
+    if s1.count > s2.count{
+        for i in 0..<s2.count{
+            temp += "\(s1[i]) "
+            temp += "\(s2[i]) "
+        }
+        for j in s2.count..<s1.count-1{
+            temp += "\(s1[j]) "
+        }
+        temp += "\(s1.last!)."
+    }else{
+        for i in 0..<s1.count{
+            temp += "\(s2[i]) "
+            temp += "\(s1[i]) "
+        }
+        for j in s1.count..<s2.count-1{
+            temp += "\(s2[j]) "
+        }
+        temp += "\(s2.last!)."
+    }
+    print(temp)
+}
+
+newString(["Darkness", "Old"], ["Hello", "My", "Friend"])

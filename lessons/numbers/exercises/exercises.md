@@ -1,3 +1,40 @@
+```
+//1. C
+
+//2. The unsigned int can only be postive number from 0 to 255. Int range from -128 to 127.
+
+//3. E
+
+//4.
+
+var a = 20
+var b = 5
+var c = 4
+
+
+
+
+1. a += b  25
+2. b -= c  1
+3. b * (c + a)  120
+4. (b * c) + a   40
+5. b %= a   5
+6. b %= c   1
+
+
+
+//5
+
+let div = 11 / 3
+let div2 = 11.0 / 3.0
+
+//they are not equal, because div is integer and div2 is double.
+
+//6 B
+
+//7 there will be a error, because these two variables has different data type
+```
+
 ## Numbers
 
 #### Question 1.

@@ -8,27 +8,50 @@ let itemCost = 45
 let tipPercentage = 0.15
 
 //Write your code below
+func totalWithTip(Cost c: Int, Tip t: Double)->Double{
+    return Double(c)*(1+t)
+}
 
+let myFinalCost = totalWithTip(Cost: itemCost, Tip: tipPercentage) //Fill in the arguments
 
-
-let myFinalCost = totalWithTip() //Fill in the arguments
 
 //1b)Write a function  that it will print out total cost after tip and tax
 let taxPercentage = 0.09
 
 //Write your code below
 
+func totalWithTipAndTax(cost c: Int, tipP ti: Double, taxP ta: Double)->Double{
+    return Double(c)*(1+ta+ti)
+}
 
-let myFinalCostWithTipAndTax = totalWithTipAndTax() //Fill in the arguments
+let myFinalCostWithTipAndTax = totalWithTipAndTax(cost: itemCost, tipP: tipPercentage, taxP: taxPercentage) //Fill in the arguments
 
 
 //2a)Write a function takes an Int as input, and returns true if it is even, and false if it is odd
 
 //Write your code below
 
+func evenOrOdd(num: Int)->Bool{
+    guard num%2 == 0 else{
+        return false
+    }
+    return true
+}
+
+
 //2b) Using function above, write code that prints out whether dieRoll is even or odd
 
 let dieRoll = Int(arc4random_uniform(6) + 1)
+
+func evenOdd(num: Int)->String{
+    guard evenOrOdd(num) == false else{
+        return "\(num) is a even number"
+    }
+    return "\(num) is a odd number"
+}
+
+print(evenOdd(dieRoll))
+
 
 //3)
 /*
@@ -40,13 +63,28 @@ let dieRoll = Int(arc4random_uniform(6) + 1)
  Your function should take in one parameter: x (the number to count up to)
  */
 
-
+func fizzBuzzGame(maxNum x: Int){
+    for i in 1...x{
+        if i%3 == 0 && i%5 == 0{
+            print("fizzBuzz")
+        }else if i%3 == 0{
+            print("Fizz")
+        }else if i%5 == 0{
+            print("Buzz")
+        }else{
+            print(i)
+        }
+    }
+}
 
 
 //4a) Write a function that takes [Int] as input.  It should return the largest Int in the array.
 
 //Write your code below
 
+func largestInt(array a: [Int])->Int{
+    return a.sort(>)[0]
+}
 
 
 //4b)
@@ -54,21 +92,29 @@ let myArray = [3,5,1,3,532,1,4,91,20,30,92,143]
 
 //Using your function in part a, use String interpolation to print a sentence that states what the largest Int in myArray is
 
+print("The largest Int in myArray is \(largestInt(array: myArray))")
+
 
 //4c)
 //Using your solution to 2a), print a sentence that states whether the largest Int in myArray is even or odd
+
+evenOdd(largestInt(array: myArray))
 
 
 //5a) Write a function that takes a String as input and returns the number of characters in the string
 
 //Write your code below
 
+func countString(string s: String)->Int{
+    return s.characters.count
+}
 
 
 //5b) Using your function above, print how many characters are in myString
 
 let myString = "Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility."
 
+countString(string: myString)
 
 //5c) Write a function that counts how many characters in a String match a specific character.  (e.g: count how many "a"s are in a String, or count how many ","s are in a String.
 
@@ -79,30 +125,62 @@ let myString = "Swift is a new programming language for iOS, OS X, watchOS, and 
 //Sample output:
 //3
 
+func findChar(string s: String, character c: Character)->Int{
+    var count = 0
+    for i in s.characters where i == c{
+        count += 1
+    }
+    return count
+}
 
 
 //5d) Write a function that counts how many characters in a String match one of several possible characters.  (e.g: count how many vowels are in a String, or count how many "a"s "b"s and "c"s are in a Sting)
 
 //Sample input:
 //let FiveDString = "This one is a little more complicated"
-//let targetCharacters = ["a", "e", "i", "o" "u"]
+//let targetCharacters = ["a", "e", "i", "o", "u"]
 
 //Sample output:
 //13
 
-
 //Write your code below
+
+func findChars(string s: String, characters c: [String])->Int{
+    var count = 0
+    for i in s.characters{
+        for j in c{
+            if i == Character(j){
+                count += 1
+            }
+        }
+    }
+    return count
+}
 
 
 //6) Write a function that returns the number of unique Ints in an array of Ints
 //Sample input:
-//let inputArray = [3,1,4,1,3,2,6,1,9]
+let inputArray = [3,1,4,1,3,2,6,1,9]
 
 //Sample output:
 //4
 
 //Explanation:
 //2, 4, 6, 9 are unique in the array.  Every other number is not unique.
+
+func findUniqueNum(array a: [Int])->Int?{
+    outer:  for i in 0..<a.count{
+        for j in 0..<a.count{
+            if i != j{
+                if a[i] == a[j]{
+                    continue outer
+                }
+            }
+        }
+        return a[i]
+    }
+    return nil
+}
 
 
 //7) Write a function that converts a binary number into decimal.  The binary number will be given as an array of Ints.
@@ -113,25 +191,92 @@ let myString = "Swift is a new programming language for iOS, OS X, watchOS, and 
 //Sample output:
 //93
 
+func binaryToNum(array a: [Int])->Int{
+    func powerOf2(power p: Int)->Int{
+        var temp = 1
+        if p == 0{
+            return 1
+        }
+        for _ in 1...p{
+            temp *= 2
+        }
+        return temp
+    }
+    
+    var sum = 0
+    for i in 0...a.count-1{
+        if a[a.count-1-i] == 1{
+            sum += powerOf2(power: i)
+        }
+    }
+    return sum
+}
+
 //8) Copy the movie dictionary from homework two and add another [String] to each movie.
 //   Name it "locations" and add some dummy data. Use the re-factored nested function
-//   from the full lesson (we didn't go over it) to print both the cast list and the 
+//   from the full lesson (we didn't go over it) to print both the cast list and the
 //   locations.
 
 //Write your code below
 
+func reportOnMovies(movies:[[String:Any]]) -> String? {
+    func buildCommaSeparatedList(words: [String]) -> String {
+        var output = ""
+        for (i, word) in words.enumerate() {
+            if i == words.count - 1 {
+                output += "and \(word)"
+            }
+            else {
+                output += "\(word), "
+            }
+        }
+        return output
+    }
+    
+    var output: String?
+    for movie in movies {
+        if let name = movie["name"] as? String, location = movie["locations"] as? String, cast = movie["cast"] as? [String] {
+            if output == nil {
+                output = ""
+            }
+            
+            let castString = buildCommaSeparatedList(cast)
+            
+            output?.appendContentsOf("\(name) came out in \(location), starring \(castString).")
+            output?.appendContentsOf("\n")
+        }
+    }
+    return output
+}
+
+//print(reportOnMovies(movies)!)
 
 //9) Given one movie write a function that takes the movie (remember to use its type)
 //   as its only argument and return a tuple that contains name, year and genre.
 
 //Write your code below
 
+func movieToTuple(oneMovie m: [String:Any])->(name: Any, year: Any, genre: Any){
+    let name = m["name"] as? String
+    let year = m["year"] as? Int
+    let genre = m["genre"] as? String
+    return (name, year, genre)
+}
 
-//10) Define a function that takes the movie array that will call the function you just created 
+
+//10) Define a function that takes the movie array that will call the function you just created
 //    in answer to the previous question. The new function should return an array of the
 //    tuples: (name, year, genre).
 
 //Write your code below
+
+//func moviesToTuple(array a:[[String:Any]]){
+//    var temp: []
+//    for i in movies{
+//        temp.
+//        movieToTuple(oneMovie: i)
+//    }
+//}
 
 
 //11) Write a function that takes the movie as its only argument that lists all cast members across movies.

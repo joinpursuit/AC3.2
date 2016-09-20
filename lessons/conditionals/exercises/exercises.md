@@ -1,3 +1,214 @@
+```swift
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+// 1. A switch is easier to read if there are a lot of conditions.
+
+// 2. C.
+
+// 3.
+
+var temperatureInFahrenheit = 72
+
+switch temperatureInFahrenheit {
+case let cold where temperatureInFahrenheit <= 40:
+print("It's cold out.")
+case let warm where temperatureInFahrenheit >= 85:
+print("It's really warm).")
+default:
+print("Weather is moderate")
+}
+
+
+// 4.
+let cardNum = 12
+switch cardNum {
+case 11:
+print("Jack")
+case 12:
+print("Queen")
+case 13:
+print("King")
+default:
+print(cardNum)
+}
+
+
+// 5.
+
+var grade = 100
+
+switch grade {
+case 100:
+print("A+")
+case 90...99:
+print("A")
+case 80...89:
+print("B")
+case 70...79:
+print("C")
+case 65...69:
+print("D")
+default:
+print("F")
+}
+
+
+// 6.
+// The system currently prints "The answer to life, the universe and everything".
+// When we change number to 365, it will print "Days in year".
+// When we change number to 1024, it will print "Bytes in a Kilobyte".
+// When we change number to 65, it will print the default message of "Some uninteresting number".
+// When we remove the default clause, it will have a compilation error.
+
+// 7.
+
+var population: Int = 10000
+var message = String()
+
+if population > 10000 {
+message = "\(population) is a large town"
+} else if population <= 10000 && population > 5000 {
+message = "\(population) is a medium size town"
+} else if population <= 5000 && population > 1000 {
+message = "\(population) is a mid-size town"
+}
+
+// Part 2: Switch statement
+
+switch population {
+case let large where population > 10000:
+message = "\(population) is a large town"
+case 5001...10000:
+message = "\(population) is a medium size town"
+case 1001...5000:
+message = "\(population) is a mid-size town"
+default:
+break
+}
+
+// 8.
+
+let myTuple: (Int, Int) = (5, 10)
+
+
+// a) conditional
+
+var result = myTuple.0 + myTuple.1
+
+if result >= 15 {
+print("The sum of the numbers are at least 15")
+} else {
+print("The sum of the numbers are less than 15")
+}
+
+// b) switch statement
+
+switch result {
+case let large where result >= 15:
+print("The sum of the numbers are at least 15")
+default:
+print("The sum of the numbers are less than 15")
+}
+
+
+// 9.
+
+let studentNameAndClass = ("Ben", 3.2)
+var myTupleTwo = studentNameAndClass
+
+switch myTupleTwo{
+case (_, 3.1):
+print("Hi \(myTupleTwo.0), you are in \(myTupleTwo.1). Yay web development")
+case (_, 3.2):
+print("Hi \(myTupleTwo.0), you are in \(myTupleTwo.1). Welcome to the world of iOS")
+case (_, 3.3):
+print("Hi \(myTupleTwo.0), you are in \(myTupleTwo.1). Anroid rocks")
+default:
+print("Who are you???")
+}
+
+// 10.
+
+var (x,y) = (3,6)
+
+switch (x,y) {
+case let (x,y) where x==y :
+print("x is equal to y")
+case let (x,y) where 2*x==y :
+print("y is double x")
+case let (x,y) where 3*x==y :
+print("y is triple x")
+default:
+print("Nothing is special about this tuple")
+}
+
+
+// 11.
+
+// Write an if statement that checks to see what quadrant a point is in, then prints that quadrant. Then write it as a switch statement
+
+let myPoint: (Double, Double) = (1, 1)
+var x1 = myPoint.0
+var y1 = myPoint.1
+
+if x1 > 0 && y1 > 0 {
+print("Q1")
+} else if x1 < 0 && y1 > 0 {
+print("Q2")
+} else if x1 < 0 && y1 < 0 {
+print("Q3")
+} else if x1 > 0 && y1 < 0 {
+print("Q4")
+} else {
+print("It's not on a quadrant")
+}
+
+switch myPoint {
+case let q1 where (myPoint.0 > 0 && myPoint.1 > 0):
+print("Q1")
+case let q2 where (myPoint.0 < 0 && myPoint.1 > 0):
+print("Q2")
+case let q3 where (myPoint.0 < 0 && myPoint.1 < 0):
+print("Q3")
+case let q4 where (myPoint.0 > 0 && myPoint.1 < 0):
+print("Q4")
+default:
+print("It's not on a quadrant")
+}
+
+
+//12
+
+let nameAndBirthDate: (String, Int) = ("Jack", 2000)
+
+if nameAndBirthDate.1 < 2100 && nameAndBirthDate.1 > 1999{
+print("Hi \(nameAndBirthDate.0), You are in your 20s ")
+}else if nameAndBirthDate.1 < 2000 && nameAndBirthDate.1 > 1899{
+print("Hi \(nameAndBirthDate.0), You are in your 19s ")
+}else if nameAndBirthDate.1 < 1900 && nameAndBirthDate.1 > 1799{
+print("Hi \(nameAndBirthDate.0), You are in your 18s ")
+
+
+switch nameAndBirthDate{
+case let c20 where (nameAndBirthDate.1 < 2100 && nameAndBirthDate.1 > 1999):
+print("Hi \(nameAndBirthDate.0), You are in your 20s ")
+case let c19 where (nameAndBirthDate.1 < 2000 && nameAndBirthDate.1 > 1899):
+print("Hi \(nameAndBirthDate.0), You are in your 19s ")
+case let c18 where (nameAndBirthDate.1 < 1900 && nameAndBirthDate.1 > 1799):
+print("Hi \(nameAndBirthDate.0), You are in your 18s ")
+}
+
+
+
+
+
+
+
+
+```
+
 # Conditionals
 
 ### Question 1.
