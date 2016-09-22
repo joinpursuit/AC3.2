@@ -67,7 +67,7 @@ var movies: [[String:Any]] = [
         "name": "American Sniper",
         "year": 2014,
         "genre": "drama",
-        "cast": ["Bradley Cooper", "Sienna Miller", "Kyle Gallner"],
+        "cast": ["Bradley Cooper"],
         "description": "Navy S.E.A.L. sniper Chris Kyle\"s pinpoint accuracy saves countless lives on the battlefield and turns him into a legend. Back home to his wife and kids after four tours of duty, however, Chris finds that it is the war he can\"t leave behind."
     ]
 ]
@@ -141,7 +141,7 @@ let aMovie: [String:Any] = [
 //
 //```swift
 
-//fAor i in 0..<movies.count {
+//for i in 0..<movies.count {
 //    if let movieYear = (movies[i]["year"]), movieName = (movies[i]["name"]){
 //        print("\(movieYear)\(":\(movieName)"),", terminator: " ")
 //    }
@@ -225,22 +225,33 @@ for i in 0..<movies.count {
         
         blurb = "\(movieName) came out in \(movieYear). "
         
-        switch movieGenre {
-        case "animation", "action":
+        if movieGenre[movieGenre.startIndex] == "a" {
             blurb += "It was an \(movieGenre) "
-        default:
+        } else {
             blurb += "It was a drama "
         }
+//        switch movieGenre {
+//        case "animation", "action":
+//            ç
+//        default:
+//            blurb += "It was a drama "
+//        }
         
         blurb += "starring "
         
         for i in 0..<movieCast.count {
-            switch i {
-            case _ where i == movieCast.count - 1:
-                blurb += "and \(movieCast[i])."
-            default:
+            
+                if i == movieCast.count - 1 {
+                    blurb += "and \(movieCast[i])."
+                } else {
                 blurb += "\(movieCast[i]), "
             }
+//            switch i {
+//            case _ where i == movieCast.count - 1:
+//                blurb += "and \(movieCast[i])."
+//            default:
+//                blurb += "\(movieCast[i]), "
+//            }
         }
         print(blurb)
         print("\(president) was President that year.")
