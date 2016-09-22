@@ -12,6 +12,7 @@ func Calc() {
         case Divide = "/"
         case Random = "?"
     }
+    // creates a random operator for guess the operator game
     
     func operatorRandomizer(x x: Double, y: Double) -> Double {
         let rand = Double(arc4random_uniform(4))
@@ -87,6 +88,38 @@ func Calc() {
     //    let s = readLine(stripNewline: true)
     //    return s
     //}
+    
+    /*
+ func mathStuffFactory(opString: String) -> (Double, Double) -> Double {
+ if let op = Operator(rawValue: opString) {
+ switch op {
+ case .Add:
+    return {x, y in x + y}
+ case .Subtract:
+    return {x,y in x - y}
+ case .Multiply:
+    return {x, y in x * y}
+ case .Divide:
+    return {x, y in x / y}
+ case .Random:
+    return {x, y in x + y}
+        }
+    }
+    return {x, y in x + y}
+ }
+ 
+ var add = mathStuffFactory(Operator.Add.rawValue)
+ var subtract = mathStuffFactory(Operator.Subtract.rawValue)
+ var multiply = mathStuffFactor(Operator.Multiply.rawValue)
+ var divide = mathStuffFactory(Operator.Divide.rawValue)
+ 
+ */
+    
+    
+    
+    
+    
+    
     
     func mathStuffFactory(opString: String) -> (Double, Double) -> Double {
         switch opString {
@@ -232,13 +265,6 @@ func Map() {
         }
     }
 }
-
-
-
-
-
-
-
 
 
 while true {
