@@ -6,26 +6,56 @@ import UIKit
 //1)
 
 //a) Create an instance of a dictionary called citiesDict that maps 3 countries to their capital cities
+var citiesDict = ["USA" : "Washington, D.C.", "France" : "Paris", "England" : "London"]
 
 //b) Add two more countries to your dictionary
+citiesDict["Turkey"] = "Ankara"
+print(citiesDict)
 
+citiesDict.updateValue("Moscow", forKey: "Russia")
+print(citiesDict)
 //c) Translate at least 3 of the capital names into another language
-
+citiesDict.updateValue("Vaŝingtono", forKey: "USA")
+citiesDict.updateValue("paris", forKey: "France")
+citiesDict.updateValue("Moskvo", forKey: "Russia")
+citiesDict.updateValue("Ankara", forKey: "Turkey")
+citiesDict.updateValue("london", forKey: "England")
+print(citiesDict)
 //2)
 
 var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
 
 //a) using someDict, add together the values associated with "Three" and "Five" and print the result.
 
+print (someDict["Three"]! + someDict["Five"]!)
+
+//var sum = 0
+//for (key, value) in someDict where key != "One" {
+//}
+//print(sum)
 //b) Add values to the dictionary for the keys "Six" and "Seven"
+someDict.updateValue(36, forKey: "Six")
+someDict.updateValue(49, forKey: "Seven")
+print(someDict)
 
 //c) Make a key caled "productUpToSeven" and set its value equal to the product of all the values
-
+var productUpToSeven = 1
+for value in someDict.values{
+    productUpToSeven *= value
+}
+print(productUpToSeven)
 //d) Make a key called "sumUpToSix" and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six"
+someDict.updateValue( productUpToSeven, forKey: "productUpToSix")
+//for sum in Array(someDict.keys) where someDict[sum]! != "Seven" {
 
+//}
 //e) Remove the new keys made for parts c and d
 
 //f) Add 2 to every value inside of someDict
+for (key, value) in someDict {
+    someDict.updateValue(value+2, forKey: key)
+}
+
 
 
 //3)  (from http://www.themobilemontage.com/wp-content/uploads/2015/05/hw1.pdf)
@@ -38,11 +68,26 @@ var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five":
 “Jon Krakaur” - 6.1
 */
 
-//b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+var comprehensibilityScore: [String:Float] = ["Mark Twain" : 8.9, "Nathaniel Hawthorne" : 5.1, "John Steinbeck" : 2.3, "C.S. Lewis" : 9.9, "Jon Krakaur" : 6.1]
 
+//b) Using the dictionary created in the previous problem, do the following: Print out the floating-point score for “John Steinbeck”. Add an additional author named “Erik Larson” with an assigned score of 9.2.  Write an if/else statement that compares the score of John Krakaur with Mark  Twain. Print out the name of the author with the highest score.
+let steinbeckRating = comprehensibilityScore["John Steinbeck"]
+print(steinbeckRating)
+comprehensibilityScore["Erik Larson"] = 9.2
+let twainRating = comprehensibilityScore["Mark Twain"]
+let krakaurRating = comprehensibilityScore["Jon Krakaur"]
+if twainRating > krakaurRating {
+    print("Mark Twain")
+}else if twainRating < krakaurRating{
+    print("Jon Krakaur")
+}else{
+    print("They are equal")
+}
 //c)  Use a for loop to iterate through the dictionary created in problem 3a and print out the content in the form of key: value, one entry per line.
 
-
+for (authorName, rating) in comprehensibilityScore {
+    print("\(authorName): \(rating)", terminator: "")
+}
 
 
 
@@ -79,8 +124,14 @@ var code = [
     "z" : "a"
 ]
 
-var message = "hello world"
+var message = "helloworld"
 
+var endcodedString = ""
+for c in message.characters {
+    let a = code[String(c)]
+        print (a)
+    }
+print(endcodedString)
 
 //4b)
 //You are also given a encodedMessage which contains only lowercase letters and spaces. Use the code dictionary to decode the message and print it.
@@ -113,6 +164,9 @@ var people: [[String:String]] = [
         "lastName": "Bowen"
     ]
 ]
+
+let firstName = Array(people.keys)
+print("\(firstName)")   
 
 //5b) Create an array of strings called fullNames that contains the values for “firstName” and “lastName” from the dictionary separated by a space.
 
@@ -148,6 +202,13 @@ var peopleWithScores: [[String: String]] = [
     ]
 ]
 
+var firstNames = [String]()
+for dict in people{
+    if let first = dict["firstName"] {
+    firstNames.append("first")
+}
+ }
+print(firstNames)
 /*6b) Print out the dictionary above in the following format:
 full name - score
 ...

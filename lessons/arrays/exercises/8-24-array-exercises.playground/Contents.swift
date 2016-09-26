@@ -3,31 +3,57 @@
 //Using array subscripting and string interpolation, print out the String "orange, yellow, and lavender are some of my favorite colors"
 
 //Write all your code below:
+//
+var colors: [String] = ["orange", "red", "yellow", "turquoise", "lavender"]
 
+print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
 
+//
+//var myFavoriteColor = colors[0]
+//var myFavoriteColors = colors.count
+//var statement: [String] = []
+//for element in colors {
+//    if element == myFavoriteColors {
+//        statement += String(myFavoriteColors)
+//    }
+//
+//var myOtherFavoriteColor = colors[4]
+//var stringA = ""
+//for element in colors {
+//    stringA += String(myFavoriteColors)
+//    print(element, terminator: " ")
+//}
+//if
 
 //2)
 //Remove "Illinois" and "Kansas" from the array below.
 
+
+//Write all your code below:
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
-
-
-//Write all your code below:
-
-//3)
-//Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
-
-let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
-
-//Write all your code below:
-
+westernStates.removeLast()
+westernStates.removeLast()
+print(westernStates)
+////3)
+////Iterate through the array below.  For each each state, print out whether or not it is in the continental United States.
+//
+//let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+//
+////Write all your code below:
+//var continentalUS = ["New Mexico", "Montana", "Texas", "New York", "Florida"]
+//var notContinentalUS = ["Hawaii", "Alaska"]
+//for i in moreStates {
+//    if i == continentalUS.characters.count {
+//    print("is Continental")
+//}
 
 //4)
 //a) print out how many non-whitespace characters are in myString
-let myString = "This is practice for the next problem!"
 
 //Write all your code below:
-
+let myString = "This is practice for the next problem!"
+var x = myString.characters.count - 6
+print(x)
 
 //b) Iterate through the array below.  For each sentence, print out how many non-whitespace characters are in it.
 
@@ -84,7 +110,13 @@ var fourthListOfNumbers = [83, 1, 66, 64, 90, 22, 97, 10, 84, 27]
 
 
 //Write all your code below:
-
+var wasFound = false
+for number in fourthListOfNumbers where number == target {
+    wasFound = true
+    break
+} else {
+    print("No")
+}
 
 //11)
 //Append every Int that appears in both listOne and listTwo to the sharedElements array.  Then print how many Ints are shared.

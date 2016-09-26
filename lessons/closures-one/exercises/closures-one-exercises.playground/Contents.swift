@@ -5,28 +5,74 @@ import UIKit
 // Closures-One-Exercises
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
+var closureOne = { () -> () in
+    print("Hello closures!")
+}
 
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
-
+var closureTwo = { (a: Int) -> Int in
+    return a * 2
+}
+closureTwo(6)
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
-
+var closureThree = { (a: Int) -> Bool in
+    return a % 3 == 0
+}
+closureThree(9)
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
-
+var closureFour = { (a: String, b: String) -> Int in
+    if a.characters.count >= b.characters.count {
+        return a.characters.count
+    } else {
+        return b.characters.count
+    }
+}
+closureFour("Howdy", "Konichiwa")
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
+var arrayFive1 = [88, 99, 77, 66, 55, 44]
 
+var arrayFiveLargestElement = { (a: [Int]) -> Int in
+    var largest = 0
+    for num in a {
+        if num > largest {
+            largest = num
+        }
+    }
+    return largest
+    }
+
+arrayFiveLargestElement(arrayFive1)
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+var arrayFiveBee = [7, 99999, 3, 4, 50]
 
-//5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
+var xthLargestElement = { (array: [Int], b: Int) -> Int in
+    var sortedArray = array.sort(>)
+    return(sortedArray[b-1])
+    }
+xthLargestElement(arrayFiveBee, 4)
+//5c.  Rewrite 5b and add handling for cases where x >= the count of the array
+
+var xthLargestElementHandled = { (array: [Int], b: Int) -> Int in
+    if b > arrayFiveBee.count {
+        return 0
+    }else{
+        var sortedArray = array.sort(>)
+        return(sortedArray[b-1])
+    }
+    
+}
+xthLargestElementHandled(arrayFiveBee, 5)
 
 //Higher order functions
 
 let myArray = [34,42,42,1,3,4,3,2,49]
 
 //6a. Sort myArray in ascending order by defining the constant ascendingOrder below.
-
+//let ascendingOrder = { (a, b) -> Bool {
+//    return a < b
+//    }
 //let mySortedArray = myArray.sort(ascendingOrder)
-//let ascendingOrder =
-
+//print(mySortedArray)
 //6b. Sort myArray in descending order by defining the constant descendingOrder below.
 
 //let mySecondSortedArray = myArray.sort(descendingOrder)
@@ -71,7 +117,12 @@ let letterValues = [
 
 var codeString = "aldfjaekwjnfaekjnf"
 
-
+    let codeStringAsArray = Array(codeString.characters)
+    codeStringAsArray.sort{(a: Character, b: Character) -> Bool in
+        let aValue = letterValues[String(a)]
+        let bValue = letterValues[String(b)]
+        return aValue > bValue
+    }
 //8b.  Sort the string below in ascending order according the dictionary letterValues
 
 var codeStringTwo = "znwemnrfewpiqn"
