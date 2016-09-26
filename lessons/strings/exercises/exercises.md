@@ -1,77 +1,135 @@
-### Strings Exercises
+//: Playground - noun: a place where people can play
 
-#### S1.
-Without using string interpolation, print out a string that combines myGreeting and myName.
-
-```
+import UIKit
+//
+//### Strings Exercises
+//
+//#### S1.
+//Without using string interpolation, print out a string that combines myGreeting and myName.
+//
+//```
 let myGreeting = "Hello, "
 let myName = "Ben"
-```
-#### S2.
-Write code that prints out myArray as a single string separated by spaces.
-
-```swift
+//```
+//
+var newString = myGreeting + myName
+//
+//#### S2.
+//Write code that prints out myArray as a single string separated by spaces.
+//
+//```swift
 let myArray = ["Hi", "there,", "how","is","it","going?"]
-```
-#### S3.
-Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
 
-#### S4.
-Write code that prints out all the even numbers from 5 to 51 as a single string.
+for word in myArray {
+    print(word, terminator: " ")
+}
 
-#### S5.
-Write code that prints out every number ending in 4 between 1 and 60 as a single string.
+//```
+//#### S3.
+//Write code that prints out all the numbers from 1 to 10 as a single string.  (Hint: the String() function can convert an int to a string)
+//
 
-#### S6.
-Print each character in the string ```Hello world!```
+var oneThruTen = String()
 
-#### S7.
-Using '.characters' and loop, print the last character in the string below
-```swift
-let myStringSeven = "Hello world!"
-```
+for num in 1...10 {
+    oneThruTen += String(num)
+}
+print(oneThruTen)
 
-#### S8.
-Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
+//#### S4.
+//Write code that prints out all the even numbers from 5 to 51 as a single string.
+//
 
-#### S9.
-Initialize a String with a character. Show that it is a Character, and not another String, you're using
-to initialize it.
+var fiveThruFiftyOne = String()
 
-### Unicode exercises
+for num in 5...51 where num%2 == 0 {
+    fiveThruFiftyOne += String(num)
+}
+print(fiveThruFiftyOne)
 
-#### U1.
-Build five pairs of canonically equivalent strings, the first of each being a pre-composed character and
-the second being one that uses combinable unicode scalars. Show that they are equivalent.
+//#### S5.
+//Write code that prints out every number ending in 4 between 1 and 60 as a single string.
+//
 
-Refer to this [Unicode Table](http://unicode-table.com/en/).
+var fours = String()
 
-#### U2.
-* Using only Unicode, print out "HELLO WORLD!"
+for num in 1...60 where num%10 == 4 {
+    fours += String(num)
+}
+print(fours)
 
-#### U3.
-* Using only Unicode, print out your name.
+//#### S6.
+//Print each character in the string ```Hello world!```
 
-#### U4
-* (Bonus) Using only Unicode, print "Hello World" in another language.
+let helloWorld = "Hello world!"
 
-#### U5.
-Print the below flower box using the following information.
-* The unicode number for ⚘ is U-2698
-* The top and bottom of the box are represented by dashes and the rows are ```|```
-* Use the __terminator__ argument in your print statements to print on the same line.
-* Hint: It may be useful to try printing out a box of just one character to start then work your way from there.
+for char in helloWorld.characters {
+    print(char)
+}
 
-```
-- - - - - - - - - - -
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
-- - - - - - - - - - -
+//#### S7.
+//Using '.characters' and loop, print the last character in the string below
+//```swift
+!!!!!!! let myStringSeven = "Hello world!"
 
-```
+
+//for char in myStringSeven.characters {
+//     if char == 1 {
+//        print(myStringSeven[myStringSeven.endIndex.predecessor()])
+//    }
+//}
+
+//#### S8.
+//Write code that switches on a string.  If the string's length is even, print out every character.  If the string's length is odd, print out every other character
+//
+//#### S9.
+//Initialize a String with a character. Show that it is a Character, and not another String, you're using
+//to initialize it.
+//
+
+var char: Character = "A";
+var stringy = String(char);
+var stringo = String(Character("B"))
+
+
+//### Unicode exercises
+//
+//#### U1.
+//Build five pairs of canonically equivalent strings, the first of each being a pre-composed character and
+//the second being one that uses combinable unicode scalars. Show that they are equivalent.
+//
+//Refer to this [Unicode Table](http://unicode-table.com/en/).
+//
+
+var oneCaf = cafe
+var twoCaf = cafe
+
+//#### U2.
+//* Using only Unicode, print out "HELLO WORLD!"
+//
+//#### U3.
+//* Using only Unicode, print out your name.
+//
+//#### U4
+//* (Bonus) Using only Unicode, print "Hello World" in another language.
+//
+//#### U5.
+//Print the below flower box using the following information.
+//* The unicode number for ⚘ is U-2698
+//* The top and bottom of the box are represented by dashes and the rows are ```|```
+//* Use the __terminator__ argument in your print statements to print on the same line.
+//* Hint: It may be useful to try printing out a box of just one character to start then work your way from there.
+//
+//```
+//- - - - - - - - - - -
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//| ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
+//- - - - - - - - - - -
+//
+//```
