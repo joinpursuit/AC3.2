@@ -95,20 +95,64 @@ let professionals = [sarah, beth, jana, lauren, charles, steve, jamal, navindra]
 //    }
 //}
 
-for person in 0...professionals.count {
-    switch person {
-        case "
-    }
-}
+// Print everyone with the last name "Smith".
 
+//for person in professionals {
+//    switch person.lastName{
+//    case "Smith":
+//        print("\(person.firstName)'s last name is \(person.lastName) they are a \(person.job).")
+//    default:
+//        break
+//    }
+//}
 
+// Print everyone who is a "developer".
+
+//for person in professionals {
+//    switch person.job {
+//    case "developer":
+//        print("\(person.firstName) \(person.lastName) is a \(person.job).")
+//    default:
+//        break
+//    }
+//}
+
+//Print everyone who is not a "developer".
+
+//for person in professionals {
+//    switch person.job {
+//    case _ where person.job != "developer":
+//        print("\(person.firstName) \(person.lastName) is a \(person.job).")
+//    default:
+//        break
+//    }
+//}
+
+//print everyone who is in their 20s/ 30s
+
+//for person in professionals {
+//    switch person.age {
+//    case _ where person.age < 30:
+//        print("\(person.firstName) \(person.lastName) is \(person.age). They are in their twenties.")
+//    default:
+//        print("\(person.firstName) \(person.lastName) is \(person.age). They are in their thirties.")
+//    }
+//}
 
 //Question 7.
 //
 //Given the arrays below, use nested loops to print out every possible card in the deck.
 //
+
 //let denominations = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 //let suits = ["♠️", "♣️", "♥️", "♦️"]
+//
+//for suit in suits {
+//    for den in denominations {
+//        print(suit+den)
+//    }
+//}
+
 //Question 8.
 //
 //Print out the lyrics to the song "99 Bottles of Beer"
@@ -118,6 +162,14 @@ for person in 0...professionals.count {
 //for i in (1...5).reverse() {
 //    print(i)
 //}
+
+
+//for i in (1...99).reverse() {
+//    var lessBeer = i - 1
+//    print("\(i) bottles of beer on the wall, \(i) bottles of beer. take one down pass it around \(lessBeer) bottles of on the wall.")
+//}
+
+
 //Question 9.
 //
 //"FizzBuzz"
@@ -126,8 +178,46 @@ for person in 0...professionals.count {
 //For all multiples of 3, print out "Fizz" instead of the number.
 //For all multiples of 5, print out "Buzz" instead of the number.
 //For all multiples of 3 and 5, print out "FizzBuzz" instead of the number.
+
+//All numbers between 1 && 100
+
+//for i in 0...100 {
+//    print(i)
+//}
+
+//Multiples of 3
+
+//for i in 0...100 {
+//    if i % 3 == 0 {
+//        print("\(i): Fizz")
+//    }
+//}
+
+//Multiples of 5
+
+//for i in 0...100 {
+//    if i % 5 == 0 {
+//        print("\(i): Buzz")
+//    }
+//}
+
+//Multiples of 3 && 5
+
+//for i in 0...100 {
+//    if i % 3 == 0 && i % 5 == 0 {
+//        print("\(i): FizzBuzz")
+//    }
+//}
+
+
 //Question 10.
 //
 //Write code that will print out the first 10 Fibonacci numbers:
 //
 //0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+//var fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+//
+//for i in fibonacci {
+//    print(i)
+//}
