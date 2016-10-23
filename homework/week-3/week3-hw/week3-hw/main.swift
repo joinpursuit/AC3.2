@@ -1,5 +1,6 @@
 //
 //  main.swift
+<<<<<<< HEAD
 //  week3HW
 //
 //  Created by Tong Lin on 9/5/16.
@@ -214,3 +215,10 @@ while true {
         print("You gotta enter something")
     }
 }
+=======
+//  week3-hw
+
+import Foundation
+
+
+>>>>>>> e6fed9bc33396c5729f254a05d04786d5bc0d0d9

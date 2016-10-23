@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e6fed9bc33396c5729f254a05d04786d5bc0d0d9
 //: Playground - noun: a place where people can play
 
 import UIKit
@@ -94,6 +97,7 @@ var presidentsByYear = [1997 : "Bill Clinton",
 ]
 
 
+<<<<<<< HEAD
 // ONE NOTE before you start consider this one movie element
 
 let aMovie: [String:Any] = [
@@ -128,6 +132,13 @@ for i in movies{
     }
 }
 
+=======
+// WARM UPS
+// 1. Print the name of the first movie.
+
+// 2. Print a list of all movie names, preferably on one line.
+
+>>>>>>> e6fed9bc33396c5729f254a05d04786d5bc0d0d9
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
 // 2001: Shrek
@@ -135,6 +146,7 @@ for i in movies{
 // .
 // .
 
+<<<<<<< HEAD
 for i in movies{
     if let n = i["name"] as? String, var y = i["year"] as? Int{
         print("\(y): \(n)")
@@ -159,10 +171,16 @@ for i in movies{
     }
 }
 
+=======
+// 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
+// and add an appropriate emoji to represent its genre
+
+>>>>>>> e6fed9bc33396c5729f254a05d04786d5bc0d0d9
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+<<<<<<< HEAD
 
 var moviesByName = [String:[String:Any]]()
 for i in movies{
@@ -220,11 +238,26 @@ for i in movies{
         }
     }
 }
+=======
+// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
+// What happens, and why? How might you change your approach?
+
+// THE PROJECT
+// Iterate over all movies and print a formatted blurb about each one. Use this out put of the
+// first movie as a guide:
+
+// Minions came out in 2015. It was an animation staring Sandra Bullock, Jon Hamm, and Michael Keaton.
+// Barack Obama was president that year.
+
+>>>>>>> e6fed9bc33396c5729f254a05d04786d5bc0d0d9
 
 // Note how it should generate "an animation" in contrast to "a drama"
 // Similarly notice the "and" before the last member of the cast listed.
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+<<<<<<< HEAD
 =======
 >>>>>>> 9cc5679c92519db1993fda2dc0b2f87aac434d33
+=======
+>>>>>>> e6fed9bc33396c5729f254a05d04786d5bc0d0d9
