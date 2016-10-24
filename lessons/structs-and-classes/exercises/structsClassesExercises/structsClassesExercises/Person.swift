@@ -9,9 +9,15 @@
 import Foundation
 
 class Person {
-    var name = String()
-    var yearBorn = 0
-    var yearDied = 0
+    var name: String
+    var yearBorn: Int
+    var yearDied: Int?
+    
+    init(name: String, born: Int, died: Int?) {
+        self.name = name
+        self.yearBorn = born
+        self.yearDied = died
+    }
 }
 
 

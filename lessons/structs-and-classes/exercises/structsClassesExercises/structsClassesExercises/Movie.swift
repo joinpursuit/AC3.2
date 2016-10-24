@@ -9,18 +9,25 @@
 import Foundation
 
 class Movie {
-    var name = String()
-    var year = Int()
-    var genre = String()
-    var cast = [String]()
-    var castString: String {
-        get {
-            return cast.joinWithSeparator(", ")
-        }
+    var name: String
+    var year: Int
+    var cast: [Actor]
+    var genre: Genre
+    var description: String
+    
+    enum Genre: String {
+        case Action = "action"
+        case Animation = "animation"
+        case Drama = "drama"
     }
-    var description = String()
     
-    
+    init(name: String, year: Int, genre: Genre, cast: [Actor], description: String) {
+        self.name = name
+        self.year = year
+        self.genre = genre
+        self.cast = cast
+        self.description = description
+    }
 }
 
 //Ana's Solution:
