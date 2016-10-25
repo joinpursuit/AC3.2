@@ -1,0 +1,447 @@
+{
+    "meta" : {
+        "view" : {
+            "id" : "yczb-msz7",
+            "name" : "FC BID Walkof Fame Data",
+            "attribution" : "Fashion Center BID",
+            "averageRating" : 0,
+            "category" : "Recreation",
+            "createdAt" : 1318307216,
+            "description" : "Data from the FC BID Walk of Fame",
+            "displayType" : "table",
+            "downloadCount" : 517,
+            "hideFromCatalog" : false,
+            "hideFromDataJson" : false,
+            "indexUpdatedAt" : 1414260510,
+            "newBackend" : false,
+            "numberOfComments" : 0,
+            "oid" : 4140674,
+            "publicationAppendEnabled" : false,
+            "publicationDate" : 1371843673,
+            "publicationGroup" : 244614,
+            "publicationStage" : "published",
+            "rowClass" : "",
+            "rowsUpdatedAt" : 1371843671,
+            "rowsUpdatedBy" : "5fuc-pqz2",
+            "tableId" : 932824,
+            "totalTimesRated" : 0,
+            "viewCount" : 328,
+            "viewLastModified" : 1409962349,
+            "viewType" : "tabular",
+            "columns" : [ {
+                         "id" : -1,
+                         "name" : "sid",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":sid",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "id",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":id",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "position",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":position",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "created_at",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":created_at",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "created_meta",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":created_meta",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "updated_at",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":updated_at",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "updated_meta",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":updated_meta",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : -1,
+                         "name" : "meta",
+                         "dataTypeName" : "meta_data",
+                         "fieldName" : ":meta",
+                         "position" : 0,
+                         "renderTypeName" : "meta_data",
+                         "format" : { }
+                         }, {
+                         "id" : 75763615,
+                         "name" : "DESIGNER",
+                         "dataTypeName" : "text",
+                         "fieldName" : "designer",
+                         "position" : 2,
+                         "renderTypeName" : "text",
+                         "tableColumnId" : 1570448,
+                         "width" : 196,
+                         "cachedContents" : {
+                         "non_null" : 28,
+                         "largest" : "Willi Smith",
+                         "null" : 0,
+                         "top" : [ {
+                                  "item" : "Stephen Burrows",
+                                  "count" : 20
+                                  }, {
+                                  "item" : "Norma Kamali",
+                                  "count" : 19
+                                  }, {
+                                  "item" : "Betsey Johnson",
+                                  "count" : 18
+                                  }, {
+                                  "item" : "Marc Jacobs",
+                                  "count" : 17
+                                  }, {
+                                  "item" : "Geoffrey Beene",
+                                  "count" : 16
+                                  }, {
+                                  "item" : "Bill Blass",
+                                  "count" : 15
+                                  }, {
+                                  "item" : "Diane von Furstenberg",
+                                  "count" : 14
+                                  }, {
+                                  "item" : "Calvin Klein",
+                                  "count" : 13
+                                  }, {
+                                  "item" : "Ralph Lauren",
+                                  "count" : 12
+                                  }, {
+                                  "item" : "Liz Claiborne",
+                                  "count" : 11
+                                  }, {
+                                  "item" : "Ralph Rucci",
+                                  "count" : 10
+                                  }, {
+                                  "item" : "Donald Brooks",
+                                  "count" : 9
+                                  }, {
+                                  "item" : "Rudi Gernreich",
+                                  "count" : 8
+                                  }, {
+                                  "item" : "Halston",
+                                  "count" : 7
+                                  }, {
+                                  "item" : "Claire McCardell",
+                                  "count" : 6
+                                  }, {
+                                  "item" : "Normal Norell",
+                                  "count" : 5
+                                  }, {
+                                  "item" : "Perry Eillis",
+                                  "count" : 4
+                                  }, {
+                                  "item" : "Willi Smith",
+                                  "count" : 3
+                                  }, {
+                                  "item" : "Lily Dache",
+                                  "count" : 2
+                                  }, {
+                                  "item" : "Mainbocher",
+                                  "count" : 1
+                                  } ],
+                         "smallest" : "Anne Klein"
+                         },
+                         "format" : { }
+                         }, {
+                         "id" : 75763616,
+                         "name" : "INFO",
+                         "dataTypeName" : "text",
+                         "fieldName" : "info",
+                         "position" : 3,
+                         "renderTypeName" : "text",
+                         "tableColumnId" : 1570449,
+                         "width" : 148,
+                         "cachedContents" : {
+                         "non_null" : 28,
+                         "largest" : "Willi Smith was inspired, he said, not by Paris, but by Sunday church in Harlem. His WilliWear line, founded in 1976, was characterized by loose silhouettes in brightly colored fabrics. Exuberant and witty, his clothes were sophisticated, yet inexpensive. Signature garments, such as violet linen blazers and loose cotton separates, appealed to both men and women. His “street couture” had a significant impact on fashion in the 1980s.",
+                         "null" : 0,
+                         "top" : [ {
+                                  "item" : "Stephen Burrows, best known for fluid body-conscious  clothes in bold colors, “stretches a rainbow over the body,” said one admirer. In 1970 he opened a boutique called Stephen Burrows’ World and Henri Bendel, where he sold his famous jersey dresses with rippled “lettuce” hems. Other trademarks include bold color blocking, decorative stitching and innovative styles in suede and leather. Burrows’ vivacious clothes were featured in the 1973 epochal American fashion show at Versailles.",
+                                  "count" : 20
+                                  }, {
+                                  "item" : "A spirit of experimentation is central to the work of Norma Kamali. She first became famous in 1980 for designing separates made from sweatshirt material. Another innovation was her use of parachute silk to make jumpsuits. Perhaps best known for her much imitated “sleeping bag coat,” Kamali also became the ultimate swimwear designer by fusing her work with Hollywood-style glamour.",
+                                  "count" : 19
+                                  }, {
+                                  "item" : "From the beginning of her career in the 1960s, Betsey Johnson has been known for a youthful, exuberant style – epitomized by her habit of cartwheeling down the runway at the end of her fashion shows. Her colorful, flirtatious clothes often utilize feminine lingerie details, as well as innovative stretch fabrics that move with the body. Coming from a background in dance, Johnson once said, “I’m basically about a ballerina torso and a full skirt.”",
+                                  "count" : 18
+                                  }, {
+                                  "item" : "A fashion prodigy, Marc Jacobs has attracted attention from the very beginning of his career.  Known for his clever, witty designs, as in his “Freudian Slip” dress, he became controversial with his “grunge” collection for Perry Ellis in 1992. His current success for Louis Vuitton in Paris and for his own New York-based collections, rests on his ability to meld the past with the present.",
+                                  "count" : 17
+                                  }, {
+                                  "item" : "A designer’s designer, Geoffrey Beene is one of the most artistic and individual of fashion’s creators. He is known for his surgically clean cutting and his fluid use of materials. His designs display a sensuous appreciation of the body and always permit movement. Beene blends masterful construction techniques with seemingly disparate elements, such as whimsically patterned fabrics. The end results are spirited garments, like his famous sequined football jersey evening gown.",
+                                  "count" : 16
+                                  }, {
+                                  "item" : "Having brought the comfort and simplicity of sportswear into the realm of formal dressing, Blass can rightly be credited as one of the creators of a true “American Style.” His blending of classic fabrics, like cashmere and satin, have made him a favorite among the country’s best-dressed women. Labeled the “hardest working man on Seventh Avenue,” Blass has cultivated an unforgettable personal and professional style.",
+                                  "count" : 15
+                                  }, {
+                                  "item" : "Diane von Furstenberg made fashion history in 1972 when she developed her iconic wrap dress and encouraged her customers to \"Feel like a woman. Wear a dress.\" By 1976 she had sold 5 million dressesand landed on the cover of Newsweek. An entrepreneur who expanded into fragrance, cosmetics, home furnishings and home shopping, she left the New York fashion world for more than a decade, but re-emerged in 1997 , bringing the wrap dress to a whole new generation.",
+                                  "count" : 14
+                                  }, {
+                                  "item" : "There has never been a more recognizable and controversial name in American fashion than Calvin Klein. He is the master of the clean and minimal style that dominated global fashion in the late 20th Century, but is also famous for his groundbreaking advertisements for products ranging from jeans to perfume to underwear. An indisputable marketing genius, his very name evokes assertive sensuality.",
+                                  "count" : 13
+                                  }, {
+                                  "item" : "Ralph Lauren’s genius lies in identifying and interpreting classic American style. He has drawn on every important look in this country’s clothing history – from Native American styles and the cowboy look of the Old West, to the elegance of Hollywood and the sophisticated sportswear of the Anglo-American country gentry. Having begun his career as a designer of neckties, Ralph Lauren has ultimately developed a total lifestyle approach, designing for both the body and the home.",
+                                  "count" : 12
+                                  }, {
+                                  "item" : "In 1986, Liz Claiborne Inc. became the first company founded by a women to be ranked among the Fortune 500. When the Belgian-born designer retired from active management in 1989, it was the largest women's apparel maker in the U.S., with $1.4 Billion in sales. The company excelled because Liz Claiborne grasped exactly what American women needed as the housewife of the 1950s morphed into the professional of the 1970s. She created the template for a working woman's wardrobe.",
+                                  "count" : 11
+                                  }, {
+                                  "item" : "Born in 1957 in Philadelphia, Rucci showed his first collection in New York in 1981. His work contains both spiritual and intellectual elements, which combined with an obsessive dedication to cut and luxury, creates a sensual appeal. Considered to be the first American couturier since Mainbocher, he is also the only American ever to be invited to show at the Paris Haute Couture collections under his own name.",
+                                  "count" : 10
+                                  }, {
+                                  "item" : "Donald Brooks was one of the most important sportswear designers in the mid-twentieth century. He began his fashion career in the 1950s before launching his line in 1965. His designs, which featured uncluttered silhouettes, bold colors, and large graphic patterns, garnered accolades and a Coty Award. Later, Brooks became a costumer for both film and stage; he won an Emmy award, and was nominated for a Tony and an Oscar.",
+                                  "count" : 9
+                                  }, {
+                                  "item" : "Bold, original, and controversial, Gernreich was America’s first fashion futurist, a social commentator who worked in the medium of clothes. Best known for his body-baring creations such as the no-bra bra and the topless bathing suit, he also designed colorful knits and mini-dresses with clear plastic insertions. His love of modern dance and his eternal youthfulness were themes that animated his designs.",
+                                  "count" : 8
+                                  }, {
+                                  "item" : "The ‘70s belonged to Halston. Though he began his career as a milliner, his shift to ready-to-wear clothing made him a superstar. He was America’s first minimalist designer. By combining clean lines and classic fabrics, Halston designed clothing that was seasonless, made for travel and looked elegant night or day. It is no surprise that many members of the burgeoning “jet set” became his most celebrated clients.",
+                                  "count" : 7
+                                  }, {
+                                  "item" : "One of the most important designers of the 20th Century, Claire McCardell  helped create the “American Look.” McCardell pioneered the American style of casual sportswear. Inspired by activewear and menswear, she made practical, comfortable and wearable clothes. She was dedicated to the democratization of fashion. As she once said, “I belong to a mass production country where any of us, all of us, deserve the right to good fashion.”",
+                                  "count" : 6
+                                  }, {
+                                  "item" : "Norman Norell demonstrated that clothes designed on Seventh Avenue could rival the most elegant creations from Paris. Norell was sometimes called “the American Balenciaga” because of the perfection of his tailoring. He also used the finest fabrics in the world and made sure that every detail, from buttonhole to hemline, was beautifully finished.  This superb workmanship was all the more remarkable since he made ready-to-wear, not couture. His sequined mermaid dress epitomized glamour.",
+                                  "count" : 5
+                                  }, {
+                                  "item" : "One of the most popular designers of the 1980s, Perry Ellis brought a new look to American sportswear. His clothes were relaxed, unpretentious and fresh. “I don’t make fashion,” Ellis insisted, “I make clothes.” By experimenting with proportion, juxtaposing the oversized and the shrunken, he made traditional ideas modern and witty. He also pioneered the revival of hand-knit sweaters.",
+                                  "count" : 4
+                                  }, {
+                                  "item" : "Willi Smith was inspired, he said, not by Paris, but by Sunday church in Harlem. His WilliWear line, founded in 1976, was characterized by loose silhouettes in brightly colored fabrics. Exuberant and witty, his clothes were sophisticated, yet inexpensive. Signature garments, such as violet linen blazers and loose cotton separates, appealed to both men and women. His “street couture” had a significant impact on fashion in the 1980s.",
+                                  "count" : 3
+                                  }, {
+                                  "item" : "Lilly Dache was one of the world’s most successful milliners. Working in New York, she utilized techniques learned in her native France. Her hats were characterized by bold, sculptural shapes, which required complex blocking. Many were also decorated with seductive veils and trimmings. Most famous during the 1930s and 1940s when a chic hat was at leats as important as a stylish dress, Dache was a milliner extraordinaire.",
+                                  "count" : 2
+                                  }, {
+                                  "item" : "Mainbocher was known for the understated elegance of his couture clothing. Among his innovations were his short evening dresses, jeweled sweaters, and a revival of the corset that anticipated Dior’s New Look. Most famous for designing the Duchess of Windsor’s trousseau in 1937, he also designed uniforms for the WAVES, the Red Cross, and the Girl Scouts.",
+                                  "count" : 1
+                                  } ],
+                         "smallest" : "A designer’s designer, Geoffrey Beene is one of the most artistic and individual of fashion’s creators. He is known for his surgically clean cutting and his fluid use of materials. His designs display a sensuous appreciation of the body and always permit movement. Beene blends masterful construction techniques with seemingly disparate elements, such as whimsically patterned fabrics. The end results are spirited garments, like his famous sequined football jersey evening gown."
+                         },
+                         "format" : { }
+                         }, {
+                         "id" : 75763617,
+                         "name" : "LOCATION",
+                         "dataTypeName" : "text",
+                         "fieldName" : "location",
+                         "position" : 4,
+                         "renderTypeName" : "text",
+                         "tableColumnId" : 1570450,
+                         "width" : 196,
+                         "cachedContents" : {
+                         "non_null" : 28,
+                         "largest" : "577  7th Avenue",
+                         "null" : 0,
+                         "top" : [ {
+                                  "item" : "577  7th Avenue",
+                                  "count" : 20
+                                  }, {
+                                  "item" : "567 7th Avenue",
+                                  "count" : 19
+                                  }, {
+                                  "item" : "561 7th Avenue",
+                                  "count" : 18
+                                  }, {
+                                  "item" : "555 7th Avenue",
+                                  "count" : 17
+                                  }, {
+                                  "item" : "535 7th Avenue",
+                                  "count" : 16
+                                  }, {
+                                  "item" : "525 7th Avenue",
+                                  "count" : 15
+                                  }, {
+                                  "item" : "515 7th Avenue",
+                                  "count" : 14
+                                  }, {
+                                  "item" : "501 7th Avenue",
+                                  "count" : 13
+                                  }, {
+                                  "item" : "499 7th Avenue",
+                                  "count" : 12
+                                  }, {
+                                  "item" : "485 7th Avenue",
+                                  "count" : 11
+                                  }, {
+                                  "item" : "469 7th Avenue",
+                                  "count" : 10
+                                  }, {
+                                  "item" : "463 7th Avenue",
+                                  "count" : 9
+                                  } ],
+                         "smallest" : "463 7th Avenue"
+                         },
+                         "format" : { }
+                         }, {
+                         "id" : 75763618,
+                         "name" : "SKETCH BY DESIGNER",
+                         "dataTypeName" : "text",
+                         "fieldName" : "sketch_by_designer",
+                         "position" : 5,
+                         "renderTypeName" : "text",
+                         "tableColumnId" : 1570451,
+                         "width" : 316,
+                         "cachedContents" : {
+                         "non_null" : 28,
+                         "largest" : "FC_Walk_of_Fame_plaque_9.jpg",
+                         "null" : 0,
+                         "top" : [ {
+                                  "item" : "FC_Walk_of_Fame_plaque_1.jpg",
+                                  "count" : 20
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_2.jpg",
+                                  "count" : 19
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_3.jpg",
+                                  "count" : 18
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_4.jpg",
+                                  "count" : 17
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_5.jpg",
+                                  "count" : 16
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_6.jpg",
+                                  "count" : 15
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_7.jpg",
+                                  "count" : 14
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_8.jpg",
+                                  "count" : 13
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_9.jpg",
+                                  "count" : 12
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_10.jpg",
+                                  "count" : 11
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_11.jpg",
+                                  "count" : 10
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_12.jpg",
+                                  "count" : 9
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_13.jpg",
+                                  "count" : 8
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_14.jpg",
+                                  "count" : 7
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_15.jpg",
+                                  "count" : 6
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_16.jpg",
+                                  "count" : 5
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_17.jpg",
+                                  "count" : 4
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_18.jpg",
+                                  "count" : 3
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_19.jpg",
+                                  "count" : 2
+                                  }, {
+                                  "item" : "FC_Walk_of_Fame_plaque_20.jpg",
+                                  "count" : 1
+                                  } ],
+                         "smallest" : "FC_Walk_of_Fame_plaque_1.jpg"
+                         },
+                         "format" : { }
+                         } ],
+            "grants" : [ {
+                        "inherited" : false,
+                        "type" : "viewer",
+                        "flags" : [ "public" ]
+                        } ],
+            "metadata" : {
+                "custom_fields" : {
+                    "Update" : {
+                        "Update Frequency" : "As needed"
+                    },
+                    "Dataset Information" : {
+                        "Agency" : "Other"
+                    }
+                },
+                "rdfSubject" : "0",
+                "rowIdentifier" : "0",
+                "rdfClass" : ""
+            },
+            "owner" : {
+                "id" : "5fuc-pqz2",
+                "displayName" : "NYC OpenData",
+                "roleName" : "administrator",
+                "screenName" : "NYC OpenData",
+                "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "short_session", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+            },
+            "query" : { },
+            "rights" : [ "read" ],
+            "tableAuthor" : {
+                "id" : "5fuc-pqz2",
+                "displayName" : "NYC OpenData",
+                "roleName" : "administrator",
+                "screenName" : "NYC OpenData",
+                "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "short_session", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+            },
+            "tags" : [ "fc bid", "walk of fame", "fame", "bid", "artist", "designer" ],
+            "flags" : [ "default", "restorable", "restorePossibleForType" ]
+        }
+    },
+    "data" : [ [ 2, "3902B158-C6F8-44A7-9FFB-DA40553BB1FA", 2, 1319544696, "392904", 1319544696, "392904", "{\n}", "Stephen Burrows", "Stephen Burrows, best known for fluid body-conscious  clothes in bold colors, “stretches a rainbow over the body,” said one admirer. In 1970 he opened a boutique called Stephen Burrows’ World and Henri Bendel, where he sold his famous jersey dresses with rippled “lettuce” hems. Other trademarks include bold color blocking, decorative stitching and innovative styles in suede and leather. Burrows’ vivacious clothes were featured in the 1973 epochal American fashion show at Versailles.", "577  7th Avenue", "FC_Walk_of_Fame_plaque_1.jpg" ]
+              , [ 3, "41ABE576-5C44-4D9A-B400-17D71ED588DC", 3, 1319544696, "392904", 1319544696, "392904", "{\n}", "Norma Kamali", "A spirit of experimentation is central to the work of Norma Kamali. She first became famous in 1980 for designing separates made from sweatshirt material. Another innovation was her use of parachute silk to make jumpsuits. Perhaps best known for her much imitated “sleeping bag coat,” Kamali also became the ultimate swimwear designer by fusing her work with Hollywood-style glamour.", "577  7th Avenue", "FC_Walk_of_Fame_plaque_2.jpg" ]
+              , [ 4, "66449D01-CF89-4789-9261-A1E185E8662E", 4, 1319544696, "392904", 1319544696, "392904", "{\n}", "Betsey Johnson", "From the beginning of her career in the 1960s, Betsey Johnson has been known for a youthful, exuberant style – epitomized by her habit of cartwheeling down the runway at the end of her fashion shows. Her colorful, flirtatious clothes often utilize feminine lingerie details, as well as innovative stretch fabrics that move with the body. Coming from a background in dance, Johnson once said, “I’m basically about a ballerina torso and a full skirt.”", "567 7th Avenue", "FC_Walk_of_Fame_plaque_3.jpg" ]
+              , [ 5, "784661E5-E640-42C4-B140-AC49F299364C", 5, 1319544696, "392904", 1319544696, "392904", "{\n}", "Marc Jacobs", "A fashion prodigy, Marc Jacobs has attracted attention from the very beginning of his career.  Known for his clever, witty designs, as in his “Freudian Slip” dress, he became controversial with his “grunge” collection for Perry Ellis in 1992. His current success for Louis Vuitton in Paris and for his own New York-based collections, rests on his ability to meld the past with the present.", "561 7th Avenue", "FC_Walk_of_Fame_plaque_4.jpg" ]
+              , [ 6, "0243CBD9-D425-4FBA-B405-97FB8857153D", 6, 1319544696, "392904", 1319544696, "392904", "{\n}", "Geoffrey Beene", "A designer’s designer, Geoffrey Beene is one of the most artistic and individual of fashion’s creators. He is known for his surgically clean cutting and his fluid use of materials. His designs display a sensuous appreciation of the body and always permit movement. Beene blends masterful construction techniques with seemingly disparate elements, such as whimsically patterned fabrics. The end results are spirited garments, like his famous sequined football jersey evening gown.", "555 7th Avenue", "FC_Walk_of_Fame_plaque_5.jpg" ]
+              , [ 7, "157477D8-FB65-4545-9D80-FBD6F3034743", 7, 1319544696, "392904", 1319544696, "392904", "{\n}", "Bill Blass", "Having brought the comfort and simplicity of sportswear into the realm of formal dressing, Blass can rightly be credited as one of the creators of a true “American Style.” His blending of classic fabrics, like cashmere and satin, have made him a favorite among the country’s best-dressed women. Labeled the “hardest working man on Seventh Avenue,” Blass has cultivated an unforgettable personal and professional style.", "555 7th Avenue", "FC_Walk_of_Fame_plaque_6.jpg" ]
+              , [ 8, "B76C9015-7E15-4C6B-887E-808496CF03BE", 8, 1319544696, "392904", 1319544696, "392904", "{\n}", "Diane von Furstenberg", "Diane von Furstenberg made fashion history in 1972 when she developed her iconic wrap dress and encouraged her customers to \"Feel like a woman. Wear a dress.\" By 1976 she had sold 5 million dressesand landed on the cover of Newsweek. An entrepreneur who expanded into fragrance, cosmetics, home furnishings and home shopping, she left the New York fashion world for more than a decade, but re-emerged in 1997 , bringing the wrap dress to a whole new generation.", "555 7th Avenue", "FC_Walk_of_Fame_plaque_7.jpg" ]
+              , [ 9, "A52156A3-0BDA-4C00-8828-17BA4EBD9410", 9, 1319544696, "392904", 1319544696, "392904", "{\n}", "Calvin Klein", "There has never been a more recognizable and controversial name in American fashion than Calvin Klein. He is the master of the clean and minimal style that dominated global fashion in the late 20th Century, but is also famous for his groundbreaking advertisements for products ranging from jeans to perfume to underwear. An indisputable marketing genius, his very name evokes assertive sensuality.", "555 7th Avenue", "FC_Walk_of_Fame_plaque_8.jpg" ]
+              , [ 10, "E74A6140-86B3-4327-A46D-5FAD878D278F", 10, 1319544696, "392904", 1319544696, "392904", "{\n}", "Ralph Lauren", "Ralph Lauren’s genius lies in identifying and interpreting classic American style. He has drawn on every important look in this country’s clothing history – from Native American styles and the cowboy look of the Old West, to the elegance of Hollywood and the sophisticated sportswear of the Anglo-American country gentry. Having begun his career as a designer of neckties, Ralph Lauren has ultimately developed a total lifestyle approach, designing for both the body and the home.", "555 7th Avenue", "FC_Walk_of_Fame_plaque_9.jpg" ]
+              , [ 11, "C07902FF-47BB-47D6-B75F-9D6DF3273CA5", 11, 1319544696, "392904", 1319544696, "392904", "{\n}", "Liz Claiborne", "In 1986, Liz Claiborne Inc. became the first company founded by a women to be ranked among the Fortune 500. When the Belgian-born designer retired from active management in 1989, it was the largest women's apparel maker in the U.S., with $1.4 Billion in sales. The company excelled because Liz Claiborne grasped exactly what American women needed as the housewife of the 1950s morphed into the professional of the 1970s. She created the template for a working woman's wardrobe.", "555 7th Avenue", "FC_Walk_of_Fame_plaque_10.jpg" ]
+              , [ 12, "1E73138C-2EC1-45FF-8CAD-664ECA4C40FC", 12, 1319544696, "392904", 1319544696, "392904", "{\n}", "Ralph Rucci", "Born in 1957 in Philadelphia, Rucci showed his first collection in New York in 1981. His work contains both spiritual and intellectual elements, which combined with an obsessive dedication to cut and luxury, creates a sensual appeal. Considered to be the first American couturier since Mainbocher, he is also the only American ever to be invited to show at the Paris Haute Couture collections under his own name.", "535 7th Avenue", "FC_Walk_of_Fame_plaque_11.jpg" ]
+              , [ 13, "1D7E6106-EB84-46CA-9986-C7C8EF296914", 13, 1319544696, "392904", 1319544696, "392904", "{\n}", "Donald Brooks", "Donald Brooks was one of the most important sportswear designers in the mid-twentieth century. He began his fashion career in the 1950s before launching his line in 1965. His designs, which featured uncluttered silhouettes, bold colors, and large graphic patterns, garnered accolades and a Coty Award. Later, Brooks became a costumer for both film and stage; he won an Emmy award, and was nominated for a Tony and an Oscar.", "535 7th Avenue", "FC_Walk_of_Fame_plaque_12.jpg" ]
+              , [ 14, "A6221755-1203-40D7-B0A5-EA1A34A75A6F", 14, 1319544696, "392904", 1319544696, "392904", "{\n}", "Rudi Gernreich", "Bold, original, and controversial, Gernreich was America’s first fashion futurist, a social commentator who worked in the medium of clothes. Best known for his body-baring creations such as the no-bra bra and the topless bathing suit, he also designed colorful knits and mini-dresses with clear plastic insertions. His love of modern dance and his eternal youthfulness were themes that animated his designs.", "535 7th Avenue", "FC_Walk_of_Fame_plaque_13.jpg" ]
+              , [ 15, "2C45EDEE-05FF-4E14-AB9E-E2AB02B751B9", 15, 1319544696, "392904", 1319544696, "392904", "{\n}", "Halston", "The ‘70s belonged to Halston. Though he began his career as a milliner, his shift to ready-to-wear clothing made him a superstar. He was America’s first minimalist designer. By combining clean lines and classic fabrics, Halston designed clothing that was seasonless, made for travel and looked elegant night or day. It is no surprise that many members of the burgeoning “jet set” became his most celebrated clients.", "525 7th Avenue", "FC_Walk_of_Fame_plaque_14.jpg" ]
+              , [ 16, "9A3C7C10-2EED-4B45-A2C5-EE12B7D8268E", 16, 1319544696, "392904", 1319544696, "392904", "{\n}", "Claire McCardell", "One of the most important designers of the 20th Century, Claire McCardell  helped create the “American Look.” McCardell pioneered the American style of casual sportswear. Inspired by activewear and menswear, she made practical, comfortable and wearable clothes. She was dedicated to the democratization of fashion. As she once said, “I belong to a mass production country where any of us, all of us, deserve the right to good fashion.”", "525 7th Avenue", "FC_Walk_of_Fame_plaque_15.jpg" ]
+              , [ 17, "66DB1513-4D51-46B6-AC07-66E7FF6C58BF", 17, 1319544696, "392904", 1319544696, "392904", "{\n}", "Normal Norell", "Norman Norell demonstrated that clothes designed on Seventh Avenue could rival the most elegant creations from Paris. Norell was sometimes called “the American Balenciaga” because of the perfection of his tailoring. He also used the finest fabrics in the world and made sure that every detail, from buttonhole to hemline, was beautifully finished.  This superb workmanship was all the more remarkable since he made ready-to-wear, not couture. His sequined mermaid dress epitomized glamour.", "525 7th Avenue", "FC_Walk_of_Fame_plaque_16.jpg" ]
+              , [ 18, "0BFF2A43-8D5B-4B97-95C2-1F748B709128", 18, 1319544696, "392904", 1319544696, "392904", "{\n}", "Perry Eillis", "One of the most popular designers of the 1980s, Perry Ellis brought a new look to American sportswear. His clothes were relaxed, unpretentious and fresh. “I don’t make fashion,” Ellis insisted, “I make clothes.” By experimenting with proportion, juxtaposing the oversized and the shrunken, he made traditional ideas modern and witty. He also pioneered the revival of hand-knit sweaters.", "515 7th Avenue", "FC_Walk_of_Fame_plaque_17.jpg" ]
+              , [ 19, "978FA79C-E57B-4D93-A187-05636C4561CA", 19, 1319544696, "392904", 1319544696, "392904", "{\n}", "Willi Smith", "Willi Smith was inspired, he said, not by Paris, but by Sunday church in Harlem. His WilliWear line, founded in 1976, was characterized by loose silhouettes in brightly colored fabrics. Exuberant and witty, his clothes were sophisticated, yet inexpensive. Signature garments, such as violet linen blazers and loose cotton separates, appealed to both men and women. His “street couture” had a significant impact on fashion in the 1980s.", "515 7th Avenue", "FC_Walk_of_Fame_plaque_18.jpg" ]
+              , [ 20, "8FCD5AE6-53D0-468C-BA59-05C74F3978C3", 20, 1319544696, "392904", 1319544696, "392904", "{\n}", "Lily Dache", "Lilly Dache was one of the world’s most successful milliners. Working in New York, she utilized techniques learned in her native France. Her hats were characterized by bold, sculptural shapes, which required complex blocking. Many were also decorated with seductive veils and trimmings. Most famous during the 1930s and 1940s when a chic hat was at leats as important as a stylish dress, Dache was a milliner extraordinaire.", "501 7th Avenue", "FC_Walk_of_Fame_plaque_19.jpg" ]
+              , [ 21, "D5376E8C-7695-4991-8D28-1F87373242AF", 21, 1319544696, "392904", 1319544696, "392904", "{\n}", "Mainbocher", "Mainbocher was known for the understated elegance of his couture clothing. Among his innovations were his short evening dresses, jeweled sweaters, and a revival of the corset that anticipated Dior’s New Look. Most famous for designing the Duchess of Windsor’s trousseau in 1937, he also designed uniforms for the WAVES, the Red Cross, and the Girl Scouts.", "501 7th Avenue", "FC_Walk_of_Fame_plaque_20.jpg" ]
+              , [ 22, "C759C301-F44B-434F-BB2A-B7A127BA1685", 22, 1319544696, "392904", 1319544696, "392904", "{\n}", "Bonnie Cashin", "Following a career in costume design, Cashin launched her fashion business in the 1950s. Calling her clothing “kinetic art forms for living,” she adapted simple cuts from the history of world clothing to meet the needs of modern women.  She advocated playful but subtle exoticism and introduced layered, interlocking garments that could be rearranged to suit the wearer’s taste and activity. Fusing practicality and whimsy, Cashin’s distinctive style and philosophy celebrated independence.", "499 7th Avenue", "FC_Walk_of_Fame_plaque_21.jpg" ]
+              , [ 23, "227A36A1-5590-4E46-8CAF-C470881A0EDE", 23, 1319544696, "392904", 1319544696, "392904", "{\n}", "Giorgio Si' Sant'Angelo", "Di Sant’Angelo emplified the individual designer. He rose to prominence during the late 1960s when exuberant youth styles dominated. Inspired by non-western dress and hippy anti-fashion, di Sant’Angelo’s clothes were and eclectic mix of vibrant fabrics, rich ornamentation and ease of cut. Freeing the body was a prime focus. Leotards, bandeaux and tube dresses made of stretch fabrics covered with layers of filmy chiffon became his leitmotif.", "499 7th Avenue", "FC_Walk_of_Fame_plaque_22.jpg" ]
+              , [ 24, "A7CD41F9-285C-4CFD-8127-33F4C2A4A4C6", 24, 1319544696, "392904", 1319544696, "392904", "{\n}", "Charles James", "This Anglo-American couturier is widely regarded as one of the greatest fashion designers in history. Having begun his career as a milliner in the 1920s, James later incorporated the sculptural techniques of hat making into his dress designs. His juxtaposition of opulent fabrics and unparalleled color combinations was enhanced by his inimitable and complex constructions. James’ engineered garments came as close to works of art as anything ever made in the realm of fashion.", "485 7th Avenue", "FC_Walk_of_Fame_plaque_23.jpg" ]
+              , [ 25, "E6D90365-CD5C-48A8-ADBD-DC89F5A4AC55", 25, 1319544696, "392904", 1319544696, "392904", "{\n}", "Anne Klein", "The work of Anne Klein epitomized the ease and comfort associated with Post War American sportswear. She was instrumental in the development and popularization of coordinated separates for both day and evening. These separates, such as body suits and zippered skirts, have become classic staples of the modern wardrobe.  Klein’s company was also a training ground for others who would become leading designers.", "485 7th Avenue", "FC_Walk_of_Fame_plaque_24.jpg" ]
+              , [ 26, "7E09EB3A-5E4C-48FB-AC09-28AB47342FEA", 26, 1319544696, "392904", 1319544696, "392904", "{\n}", "Oscar De La Renta", "Born in the Dominican Republic,  de la Renta came to New York in the 1960s and soon became known for the charm of his designs. His work balances the seemingly disparate qualities of sexiness and elegance. He deftly combines body fitting silhouettes and the exposure of just enough skin, with multi-colored tiers of ruffles and embroideries that ornament blouses and full skirts. His vivacious fashions blend the best of Latin elegance and American ease.", "469 7th Avenue", "FC_Walk_of_Fame_plaque_25.jpg" ]
+              , [ 27, "50AE501B-5845-4DD7-900D-F915C18BBC47", 27, 1319544696, "392904", 1319544696, "392904", "{\n}", "James Galanos", "Galanos rose to prominence in the 1950s. The couture quality of his designs is conspicuous, although his clothes were meant to be sold “off the rack.” Disdaining mass production, Galanos the finest tailoring and draping techniques and used the finest materials.  He consistently earned kudos for his reworking of proportion and scale, making his otherwise classic style unique.  Galanos’ most memorable pieces were ornamented with his virtuoso sewing and beaded elements.", "469 7th Avenue", "FC_Walk_of_Fame_plaque_26.jpg" ]
+              , [ 28, "041FAF11-D6ED-42E9-A3C3-289D7197CD7C", 28, 1319544696, "392904", 1319544696, "392904", "{\n}", "Donna Karan", "Successful and independent-minded women are Karan’s inspiration. She is credited with providing comfortable, practical and decidedly elegant clothes for the burgeoning professional woman who came to prominence in the 1980s. Using rich fabrics and her concept of “seven easy pieces,” Karan broke the trend of the masculine corporate uniform. Her ensembles strike a perfect balance of serious professionalism and sensual individualism.", "463 7th Avenue", "FC_Walk_of_Fame_plaque_27.jpg" ]
+              , [ 29, "3933897E-A24B-4586-8705-285379C98114", 29, 1319544696, "392904", 1319544696, "392904", "{\n}", "Pauline Trigere", "The daughter of European-trained tailors, Trigere brought the mastery of traditional craftsmanship to dramatic and clean-lined designs. From her first independent collection in 1942, she has been known for expert draping techniques and imaginative tailoring, in which garments were cut directly on live models. Trigere pioneered new looks in jumpsuits, dresses, timeless suits and her  signature double-faced coats.", "463 7th Avenue", "FC_Walk_of_Fame_plaque_28.jpg" ]
+              ]
+}
