@@ -1,5 +1,6 @@
 # Access Code 3.2: Mobile Development with iOS
 
+<<<<<<< HEAD
 Friday. We finish by 4:30. :) Monday is a day off. :D
 
 The reading for **Tuesday** is on [Structs and Classes](/lessons/structs-and-classes).
@@ -122,3 +123,12 @@ a. 25
 b. 100
 c. 65
 d. 255
+=======
+Happy Halloween! Today's iOS lesson is on [UICollectionView](/lessons/unit3/collectionview).
+
+## Schedule
+
+* [Lesson Schedule](/schedule.md)
+* [Curriculum Overview](/curriculum_overview.pdf)
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093

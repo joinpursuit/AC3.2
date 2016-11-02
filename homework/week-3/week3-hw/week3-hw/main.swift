@@ -1,6 +1,7 @@
 //
 //  main.swift
 //  week3-hw
+<<<<<<< HEAD
 import Foundation
 //checks cases, then returns a function solving for the operator value
 enum MathOperators: String {
@@ -151,3 +152,9 @@ while exit == false {
         }
     }
 }
+=======
+
+import Foundation
+
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093

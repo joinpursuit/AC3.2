@@ -1,10 +1,17 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+<<<<<<< HEAD
 // movies is an Array of Dictionaries
 // each element of movies is a Dictionary with the keys
 // 'name','year', 'genre', 'cast' and 'description'
 
+=======
+
+// movies is an Array of Dictionaries
+// each element of movies is a Dictionary with the keys
+// 'name','year', 'genre', 'cast' and 'description'
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 var movies: [[String:Any]] = [
     [
         "name": "Minions",
@@ -93,6 +100,7 @@ var presidentsByYear = [1997 : "Bill Clinton",
 ]
 
 
+<<<<<<< HEAD
 // ONE NOTE before you start consider this one movie element
 /*
 
@@ -129,6 +137,13 @@ if let name = movies[0]["name"] as? String{
     }
 }
 
+=======
+// WARM UPS
+// 1. Print the name of the first movie.
+
+// 2. Print a list of all movie names, preferably on one line.
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
 // 2001: Shrek
@@ -136,6 +151,7 @@ if let name = movies[0]["name"] as? String{
 // .
 // .
 
+<<<<<<< HEAD
 for i in 0..<movies.count {
     if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int{
         print("\(year): \(name)")
@@ -160,10 +176,16 @@ for i in 0..<movies.count{
         }
     }
 }
+=======
+// 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
+// and add an appropriate emoji to represent its genre
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+<<<<<<< HEAD
 var moviesByName: [String:[String:Any]] = ["": [:]]
 var namesSorted = [String]()
 
@@ -214,6 +236,11 @@ print(genreSorted.sort())
 
 
 
+=======
+// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
+// What happens, and why? How might you change your approach?
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 // first movie as a guide:
@@ -227,6 +254,7 @@ print(genreSorted.sort())
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+<<<<<<< HEAD
 
 */
 for i in 0..<movies.count {
@@ -263,3 +291,5 @@ for i in 0..<movies.count {
 
 
 
+=======
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
