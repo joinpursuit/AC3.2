@@ -5,6 +5,7 @@
 import Foundation
 
 
+<<<<<<< HEAD
 func mathStuffFactory(opString: String) -> (Double, Double) -> Double {
     switch opString {
     case "+":
@@ -140,3 +141,5 @@ while true {
 //        }
 //    }
 //}
+=======
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
