@@ -238,16 +238,18 @@ print(secondSmallest)
 //14)
 //Print out the sum of the diagonals of myMatrix
 
-var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var myMatrix = [[10, 14, 12],
+                [91, 1, 9],
+                [31, 3, 21]]
     
-//    var sum1 = 0
-//
-//    for i in 0...2 {
-//        for j in 0...myMatrix[0].count - 1 {
-//            sum1 += myMatrix[i][j]
-//        }
-//    }
-//    print(sum1 - (myMatrix[0][1] + myMatrix[2][1]))
+    var sum1 = 0
+
+    for i in 0...2 {
+        for j in 0...myMatrix[0].count - 1 {
+            sum1 += myMatrix[i][j]
+        }
+    }
+    print(sum1 - (myMatrix[0][1] + myMatrix[2][1]))
 
 
 //15)
