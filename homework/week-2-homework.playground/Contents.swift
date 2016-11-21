@@ -1,10 +1,17 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+<<<<<<< HEAD
+// movies is an Array of Dictionaries
+// each element of movies is a Dictionary with the keys
+// 'name','year', 'genre', 'cast' and 'description'
+
+=======
 
 // movies is an Array of Dictionaries
 // each element of movies is a Dictionary with the keys
 // 'name','year', 'genre', 'cast' and 'description'
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 var movies: [[String:Any]] = [
     [
         "name": "Minions",
@@ -93,11 +100,50 @@ var presidentsByYear = [1997 : "Bill Clinton",
 ]
 
 
+<<<<<<< HEAD
+// ONE NOTE before you start consider this one movie element
+/*
+
+let aMovie: [String:Any] = [
+    "name": "Minions",
+    "year": 2015,
+    "genre": "animation",
+    "cast": ["Sandra Bullock", "Jon Hamm", "Michael Keaton"],
+    "description": "Evolving from single-celled yellow organisms at the dawn of time, Minions live to serve, but find themselves working for a continual series of unsuccessful masters, from T. Rex to Napoleon. Without a master to grovel for, the Minions fall into a deep depression. But one minion, Kevin, has a plan."
+]
+
+if let name = aMovie["name"] as? String, year = aMovie["year"] as? Int, cast = aMovie["cast"] as? [String] {
+    print("\(year): \(name)")
+    
+    for actor in cast {
+        print(actor)
+    }
+}
+
+// WARM UPS
+// 1. Print the name of the first movie.
+
+
+if let name = movies[0]["name"] as? String{
+    print(name)
+}
+
+// 2. Print a list of all movie names, preferably on one line.
+
+
+    for i in 0..<movies.count {
+        if let name = movies[i]["name"] as? String{
+            print(name, terminator: " ")
+    }
+}
+
+=======
 // WARM UPS
 // 1. Print the name of the first movie.
 
 // 2. Print a list of all movie names, preferably on one line.
 
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 // 3. Print a list of all movie years and names as follows:
 // 2015: Minions
 // 2001: Shrek
@@ -105,16 +151,96 @@ var presidentsByYear = [1997 : "Bill Clinton",
 // .
 // .
 
+<<<<<<< HEAD
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int{
+        print("\(year): \(name)")
+    }
+}
+
 // 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
 // and add an appropriate emoji to represent its genre
 
+for i in 0..<movies.count{
+    if let name = movies[i]["name"] as? String, genre = movies[i]["genre"] as? String{
+        switch genre {
+        case "animation":
+            print("\(name) \u{1F478}")
+        case "drama":
+            print("\(name) \u{1f3ad}")
+        case "action":
+            print("\(name) \u{2694}")
+        default:
+            break
+        
+        }
+    }
+}
+=======
+// 4. Iterate over all movies. Inside the loop use switch on genre. Print each title
+// and add an appropriate emoji to represent its genre
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 // 5. In code, not by literal initialization, create a new dictionary called moviesByName of type
 // [String:[String:Any]]. Copy the elements of movies, adding each to moviesByName
 // with the name as key. Sort by name.
 
+<<<<<<< HEAD
+var moviesByName: [String:[String:Any]] = ["": [:]]
+var namesSorted = [String]()
+
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String{
+        movies[i]["name"] = nil
+        moviesByName[name] = movies[i]
+        namesSorted.append(name)
+    }
+}
+print(namesSorted.sort())
+ 
+ 
 // 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
 // What happens, and why? How might you change your approach?
 
+
+var moviesByYear = [Int:[String:Any]]()
+var yearsSorted = [Int]()
+
+for i in 0..<movies.count {
+    if let year = movies[i]["year"] as? Int{
+        movies[i]["year"] = nil
+        moviesByYear[year] = movies[i]
+        yearsSorted.append(year)
+    }
+}
+
+print(yearsSorted.sort())
+
+//In this instance none of the years ovverlap, but if they did then it would only print one value for the year since a key can only have a single value.
+
+var moviesByGenre: [String:[String:Any]] = ["": [:]]
+var genreSorted = [String]()
+
+for i in 0..<movies.count {
+    if let genre = movies[i]["genre"] as? String{
+        movies[i]["genre"] = nil
+        moviesByGenre[genre] = movies[i]
+        genreSorted.append(genre)
+    }
+}
+print(moviesByGenre.count)
+print(genreSorted.sort())
+//Here the multiple instances of drama keep overwriting the previous one since a dictionary key can only have one value. It would be better to use the moviesByName dictionary to sort into genre, because then it would provide dictionaries with seperate keys inside of the genre dictionary (the single value would be a dictionary, which itself would have keys which lead to further dictionaries).
+
+
+
+
+
+=======
+// 6. Do the same thing as in (5) for year and genre, creating a new dictionary for each one.
+// What happens, and why? How might you change your approach?
+
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
 // THE PROJECT
 // Iterate over all movies and print a formatted blurb about each one. Use this out put of the
 // first movie as a guide:
@@ -128,3 +254,42 @@ var presidentsByYear = [1997 : "Bill Clinton",
 // Get it to work any which way you can but try your best to follow these guidelines
 //   * Don't use forced unwrapping
 //   * Use multiple bindings in one "if let" (no pyramid of doom)
+<<<<<<< HEAD
+
+*/
+for i in 0..<movies.count {
+    if let name = movies[i]["name"] as? String, year = movies[i]["year"] as? Int, cast = movies[i]["cast"] as? [String], genre = movies[i]["genre"] as? String {
+        var castMembers = ""
+        for (index, actor) in cast.enumerate() {
+            if index == cast.count - 1 && cast.count > 1 {
+                castMembers.appendContentsOf("and \(actor)")
+            } else {
+                castMembers.appendContentsOf("\(actor), ")
+            }
+        }
+    let vowels: [Character] = ["a", "e", "i", "o    ", "u"]
+    var genreGrammar = ""
+    for m in vowels {
+        if m == genre[genre.startIndex] {
+            genreGrammar = "an \(genre)"
+            break
+        } else {
+            genreGrammar = "a \(genre)"
+            
+        }
+    }
+    for k in presidentsByYear where year == k.0{
+            print("\(name) came out in \(year). It was \(genreGrammar) staring \(castMembers).\n\(k.1) was president that year.\n")
+            }
+        
+    }
+}
+
+
+
+
+
+
+
+=======
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093

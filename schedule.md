@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+| Unit|Week|Date|Prework|Lesson|Prework HW Quiz|Midday Check-in|Pair Programming Checkin|
+|--- |---| ---|---|---|---|---|---|
+| 1|1|2016-08-15| [Prework link](https://github.com/C4Q/AC3.2/tree/master/lessons/prework) | [Environment, Tools & Resources, Pair programming](lessons/env-and-tools) | [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|1|2016-08-16| (1) Complete all readings under ["Resources"](/lessons/variables-and-logic).  (2) Read and sign your Terms and Conditions and Pay it Forward forms. (3) Read the [student handbook](https://docs.google.com/document/d/18gpBDlm3ARrIYHF69AlOCXwVaimQX-D7gzicdoYkJ1M/edit?usp=sharing). |[Variables/constants, interpolation, logic](/lessons/variables-and-logic) | [Link](https://goo.gl/forms/XLwjFkPJ0iJ6TsGx2) | [Link](https://goo.gl/forms/XuhHIG8ofS4Fg8B83) | [Link](https://goo.gl/forms/8oXSPMncOc6FKFcJ2) |
+| 1|1|2016-08-17| Complete all readings under ["Resources"](/lessons/conditionals) | [Conditionals, Advanced conditionals](/lessons/conditionals) | [Link](https://goo.gl/forms/FpLzjG4bXeC5YRs42) | [Link](https://goo.gl/forms/HTDtdnsPw8gyWrFm2) | [Link](https://goo.gl/forms/PYaQ6hKojodyCa332) |
+| 1|1|2016-08-18| Complete all readings under ["Resources"](/lessons/numbers) |[Numbers & operations](/lessons/numbers)| [Link](https://goo.gl/forms/JI9LE17GPHH7yZkk1) | [Link](https://goo.gl/forms/v3FTfHRzPhj7OjpI3) | [Link](https://goo.gl/forms/AXJOO8LV5FZiVqod2) |
+| 1|1|2016-08-19| Complete all readings under ["Resources"](/lessons/loops) |[For loops, while loops](/lessons/loops)| [Link](https://goo.gl/forms/92ccKar0rJOtSr8g2) | [Link](https://goo.gl/forms/Wx64ayEsSldtUouj2) | [Link](https://goo.gl/forms/Lr9iKHf0yRIZSQ5I2) |
+| 1|2|2016-08-22| Complete all readings under ["Resources"](/lessons/strings) |[Strings, Unicode](/lessons/strings)| [Link](https://goo.gl/forms/2esEyMPTb18lUTk03) | [Link](https://goo.gl/forms/btvYfzKVwkEBiMD72) | [Link](https://goo.gl/forms/GBCdGknVNgkFzS0b2) | 
+| 1|2|2016-08-23| Complete all readings under ["Resources"](/lessons/optionals) |[Optionals](/lessons/optionals)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|2|2016-08-24| Prework Link |[Arrays](/lessons/arrays)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|2|2016-08-25| Prework Link |[Dictionaries](/lessons/dictionaries)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|2|2016-08-26| Prework Link |[Collections Review & Assessment](/lessons/review-and-assessment-collections)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|3|2016-08-29| Prework Link |[Functions](/lessons/functions-one)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|3|2016-08-30| Prework Link |[Functions, continued](/lessons/functions-two)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|3|2016-08-31| Prework Link |[Closures](/lessons/closures-one)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|3|2016-09-01| Prework Link |[Closures, continued](/lessons/closures-two)| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|3|2016-09-02| Prework Link |Functions and Closures Review| [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|4|2016-09-05| Prework Link |[Enums](/lessons/enums) | [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|4|2016-09-05| Prework Link |[Structs & Classes](/lessons/structs-and-classes) | [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|4|2016-09-05| Prework Link |[Classes - Properties, Methods, & Initialization](/lessons/classes-one) | [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|4|2016-09-05| Prework Link |[Classes - Inheritance](/lessons/classes-two) | [Link](/link) | [Link](/link) | [Link](/link) |
+| 1|4|2016-09-05| Prework Link |[Enums, Structs, and Classes Review & Assessment](/lessons/review-and-assessment-enums-structs-and-classes) | [Link](/link) | [Link](/link) | [Link](/link) |
+=======
+=======
 ## Unit 4
 
 |Unit|Week|Date       |Prework                   |Lesson                                |Prework HW Quiz    |Midday Check-in        |DSA Lesson              |
@@ -44,6 +70,7 @@
 
 [416_homework]: #
 
+>>>>>>> 7d9a43354ce3d936de70a5b0fa2524915e3fffbd
 ## Unit 3
 
 |Unit|Week|Date       |Prework                   |Lesson                                |Prework HW Quiz    |Midday Check-in        |DSA Lesson              |
@@ -208,3 +235,4 @@
 | 1|4|2016-09-07| Prereading |[Classes - Properties, Methods, & Initialization](/lessons/unit1/classes-one) and [Classes - Inheritance](/lessons/unit1/classes-two) | [Link](/link) | [Link](/link) | [Link](/link) |
 | 1|4|2016-09-08| Prereading |Review and assessment | n/a | n/a | n/a |
 | 1|4|2016-09-09| Prereading | No class | n/a | n/a | n/a |
+>>>>>>> 796ffbd8fd2a79714564930268e87a0d39fd1093
