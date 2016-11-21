@@ -5,16 +5,70 @@ import UIKit
 // Closures-One-Exercises
 
 //1. Create a closure that has no parameters or values and prints "Hello Closures!". Check by passing closure's return to a variable
+//var p = "Hello Closures!"
+//func noParameters(){
+//    let p = "Hello Closures!"
+//    return p
+//}
+//print(noParameters())
 
 //2. Create a closure that takes one Int and returns the doubled value. Check by passing closure's return to a variable.
+//func doubledValue(a: Int) -> Int {
+//    return a*2
+//}
+//doubledValue(2)
+
 
 //3. Create a closure that takes one Int and returns a bool whether or not it's divisible by 3.
 
+//func returnsABool(b: Int) -> Bool {
+//    let n = (b%3 == 0)
+//    if n == true {
+//        return n
+//    }else{
+//        return n
+//    }
+//    
+//}
+//returnsABool(9)
+
 //4. Create a closure that takes two strings as input and returns the longest character count of the two strings.
 
+//func returnsLongestCharacterCount(a: String, b: String) -> (String, Int) {
+//    if a.characters.count > b.characters.count{
+//       let Answer = a.characters.count
+//    return (b, Answer)
+//    }else{
+//        let Answer = b.characters.count
+//        return (b, Answer)
+//    }
+//    }
+//    
+//returnsLongestCharacterCount("Hello World", b: "Hello Universe")
+
 //5a. Create a closure that takes an array of Int as input and returns the largest element in the array
+//var newArray = [0,1,2,3,4,5,6,7,8,9,10]
+//func largestElementInArray(a: [Int]) -> Int {
+//    let max = a.sort().endIndex
+//    let largestelement = max
+//    return largestelement
+
+//    var max = a[0]
+//    for i in a.startIndex..<a.endIndex {
+//        if i > max {
+//            max = i
+//            return max
+//        }
+//    return (max)
+//}
+
+//largestElementInArray(newArray)
+
+    
 
 //5b.  Create a closure that takes an array of Int and variable x: Int as input and returns the xth largest element in the array.  Assume x is always < the count of the array
+
+
 
 //5c.  Rewrite 5b and add handling for cases where x >= the count of the array (Hint: Use optionals)
 

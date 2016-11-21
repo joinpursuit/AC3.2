@@ -5,33 +5,55 @@
 #### Question 1.
 Provide the following constants/variable names with the most appropriate type annotations.
 
-1. let _firstName_: (type?)
-2. let _middleInitial_:
-3. var _age_:
-4. var _latitude_:
-5. var _longitude_:
+1. let _firstName_: String = "Leandro"
+2. let _middleInitial_: Character = "E"
+3. var _age_: Int = 23
+4. var _latitude_: Double
+5. var _longitude_: Double
 6. var _isRainingCurrently_:
-7. let _completeAddress_:
-8. let _π_:
+7. let _completeAddress_: Array
+8. let _π_: Float = 3.14159
 
 #### Question 2.
 Convert the following decimal numbers to Binary:
-* 55
-* 122
-* -1
-* 15
+* 55 = 00110111
+* 122 = 01111010
+* -1 = 1111111111111111111111111111111111111111111111111111111111111111
+* 15 = 00001111
 
 #### Question 3.
 Using nested loops, print the numbers from 0 to 100, then back to 0.
+
+for i in 0...100 {
+print(i)
+}
+
+for j in 99.stride(to: -1, by: -1){
+print(j)
+}
+
 
 #### Question 4.
 While ```i``` is greater than 1, print only all positive even numbers and break 
 out of the loop when you've reached 220.
 
+var i = 2
+while i > 1 {
+i += 1
+if i%2 == 0 && i == 222 {
+break
+}
+else if i%2 == 0{
+print(i)
+}
+}
+
 #### Question 5.
 * Using any kind of loop, print the sum of all numbers between 0 to 50.
 * Using a while loop, print all the odd numbers from 0 to 100.
 * Using a ```for case``` loop, print all the multiples of 10 from 50 to 500.
+
+
 
 #### Question 6.
 Consider the code below. Loop through the ```professionals``` array and using a switch statement:
