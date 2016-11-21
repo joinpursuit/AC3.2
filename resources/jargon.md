@@ -34,16 +34,22 @@ is used both in direct coding applications as well as metaphorically about any p
 
 - **[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) = Hypertext Transport Protocol**: The TCP-based network protocol used to transmit web pages and other resources over the Internet.
 
+- **lint**: To check for something, for example: comparing your source code against a [style guide](https://github.com/C4Q/AC3.2/tree/master/resources/swift-style-guide)
+
 - **low level**: Using technology that's more basic and "closer to the machine." It's often used to compare programming languages. C is a low level language as compared to JavaScript. This implies it's more challenging to use and more at risk to crash.
 
 - **native**: We distinguish a native app from a web-based solution. Native apps have the potential to perform better with more complicated and sophisticated features and interfaces. The contrast is a cross-platform or web-based app. 
 
-- **parameter**: An input to a function, specifically in its definition, related to argument. A function can define zero, one or many parameters. Most languages also provide a way to pass a variable number of arguments. 
+- **function**: A named section of code. It can optionally have parameters, and can declare that when the section of code is finished, it will return a specific type of object. Also can be called a method. Quite similar to a closure. 
+
+- **parameter**: An input to a function, specifically in its definition, related to argument. A function can define zero, one or many parameters. Most languages also provide a way to pass a variable number of arguments.
+
+- **operating system**: A computer needs code to be useful, it needs something that can transform inputs from  keyboard/mice/others into useful actions on a screen. It's the job of the operating system to turn all that raw data into something you can understand. Applications then sit on top of the operating system and provide individual features, like the web browser you're using.
 
 - **set**: v. To assign a value to a variable.
 	adv. The state in which a variable has a value. For example, the variable numberOfHamburgers is currently set (it is equal to 10). This is in contrast to unset/nil/null.
 
 # TODO
 
-initialize, nil/null, idiomatic, nested, diagnostic, lifecycle, operating system
+initialize, nil/null, idiomatic, nested, diagnostic, lifecycle
 
