@@ -1,0 +1,19 @@
+{ 
+	"cats" : [
+		{
+			"cat_id" : "001",
+			"name" : "Nala Cat",
+			"instagram" : "https://www.instagram.com/nala_cat/?hl=en"
+		},
+		{
+			"cat_id" : "002",
+			"name" : "Princess Monster Truck",
+			"instagram" : "https://www.instagram.com/princessmonstertruck/?hl=en"
+		},
+		{	
+			"cat_id" : "003",
+			"name" : "Grumpy Cat",
+			"instagram" : "https://www.instagram.com/grump_cat_/?hl=en"
+		}
+	]
+}

@@ -45,6 +45,8 @@ class StudentsTableViewController: UITableViewController {
         cell.setData(student: student)
         return cell
     }
+    
+    
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedStudent = self.students[indexPath.row]

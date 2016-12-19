@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w3P-JF-fnf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Giphy Table View Controller-->
+        <scene sceneID="eK6-JV-Dyl">
+            <objects>
+                <tableViewController id="8Z4-4e-Po6" customClass="GiphyTableViewController" customModule="GiphyUrlProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Cu-kI-uyP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Giphy Cell" textLabel="it2-R7-MHv" detailTextLabel="o0a-cD-3et" style="IBUITableViewCellStyleSubtitle" id="2Eu-PN-YC6">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Eu-PN-YC6" id="NXK-J5-kYZ">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="it2-R7-MHv">
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o0a-cD-3et">
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8Z4-4e-Po6" id="THc-gg-PxV"/>
+                            <outlet property="delegate" destination="8Z4-4e-Po6" id="f7e-ct-Efy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="w9W-PX-zec"/>
+                    <connections>
+                        <segue destination="nnf-cQ-89G" kind="show" identifier="detailSegue" id="MKD-p6-vbM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xij-au-9nS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="119.1904047976012"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FAw-td-BuF">
+            <objects>
+                <viewController id="nnf-cQ-89G" customClass="ViewController" customModule="GiphyUrlProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FaJ-q3-zgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="kkL-1R-P2J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="vMo-sV-qeX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9YO-p5-6JO"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9YO-p5-6JO" firstAttribute="top" secondItem="FaJ-q3-zgS" secondAttribute="bottom" constant="205" id="DpS-ai-vhX"/>
+                            <constraint firstItem="9YO-p5-6JO" firstAttribute="centerY" secondItem="vMo-sV-qeX" secondAttribute="centerY" id="Lld-nO-FqF"/>
+                            <constraint firstItem="9YO-p5-6JO" firstAttribute="centerX" secondItem="vMo-sV-qeX" secondAttribute="centerX" id="W8r-qz-5Ad"/>
+                            <constraint firstItem="9YO-p5-6JO" firstAttribute="leading" secondItem="vMo-sV-qeX" secondAttribute="leadingMargin" constant="51" id="qxd-lK-bwk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="giphyImage" destination="9YO-p5-6JO" id="Meu-rR-hIh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmm-TA-hXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="119"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wj8-Z6-oG5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w3P-JF-fnf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Xb-sX-vZ6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Z4-4e-Po6" kind="relationship" relationship="rootViewController" id="gze-5b-ScN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zw-ST-Uq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="119.1904047976012"/>
+        </scene>
+    </scenes>
+</document>

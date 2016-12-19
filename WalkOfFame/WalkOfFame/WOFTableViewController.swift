@@ -104,7 +104,7 @@ class WOFTableViewController: UITableViewController {
                             let instagramURL = URL(string: instagram)
                         {
                             let WOFData = Walk(name: name, id: catIDInt, instagramURL: instagramURL, description: nil)
-                            walkOf.append(catData)
+                            walkOf.append(getData)
                         }
                     }
                 }

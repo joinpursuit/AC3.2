@@ -39,7 +39,7 @@ class ViewController: UITableViewController {
         
         let url: URL! = URL(string: "https://itunes.apple.com/search?term=flappy&entity=software")
         task = session.downloadTask(with: url, completionHandler: { (location: URL?, response: URLResponse?, error: Error?) -> Void in
-        
+         
             if location != nil {
                 let data: Data! = try? Data(contentsOf: url)
                 do {
