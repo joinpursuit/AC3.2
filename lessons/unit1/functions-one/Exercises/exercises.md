@@ -52,12 +52,14 @@ Write a function that takes in any two positive integers and return the sum.
 ### Question 5.
 Write a function takes in any number grade and returns a letter grade
 
-* 100 -> A+
-* 90 - 99 -> A
-* 80 - 89 -> B
-* 70 - 79 -> C
-* 65 - 69 -> D
-* Below 65 -> F
+| Number Grade | Equivalent Letter Grade |
+| :--------: | :---------: |
+| 100 | A+ |
+| 90 - 99 | A |
+| 80 - 89 | B |
+| 70 - 79 | C |
+| 65 - 69 | D | 
+| Below 65 | F |
 
 
 
